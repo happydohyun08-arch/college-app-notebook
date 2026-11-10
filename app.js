@@ -312,7 +312,7 @@ function showOrder(box, out, actIds, honIds) {
 let schools = null;
 let schoolLimit = 50; // ponytail: 2,370행을 한 번에 그리면 느려서 50개씩. 더 커지면 가상 스크롤로.
 const sv = { q: "", state: "", kind: "", fit: "", sort: "name" };
-const KINDS = ["liberal_arts", "research", "doctoral", "masters", "baccalaureate", "special", "other"];
+const KINDS = ["liberal_arts", "research", "doctoral", "masters", "baccalaureate", "special_arts", "special_tech", "special_business", "special_health", "special_faith", "special_tribal", "special_other", "other"];
 function schoolControls() {
   $("#schoolQ").placeholder = t("search_ph");
   const states = [...new Set((schools ?? []).map((s) => s.state))].sort();

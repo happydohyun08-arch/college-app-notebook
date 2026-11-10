@@ -1,4 +1,4 @@
-# College Application Notebook
+# College App Manager
 
 고등학생용 대학 지원 관리 사이트. 설치할 것 없는 순수 HTML/JS.
 

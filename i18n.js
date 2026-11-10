@@ -14,7 +14,7 @@ export const RECOGNITION = ["School", "State/Regional", "National", "Internation
 
 export const STR = {
   ko: {
-    title: "College Application Notebook", tagline: "내 브라우저에만 저장돼요",
+    title: "College App Manager", tagline: "내 브라우저에만 저장돼요",
     tab_about: "안내", tab_profile: "내 정보", tab_activities: "활동·수상", tab_schools: "학교 분류", tab_apps: "지원 목록", tab_essays: "에세이", tab_backup: "백업",
     store_warn: "이 브라우저는 저장을 막고 있어요 (사생활 보호 모드 등). 창을 닫으면 입력한 내용이 사라지니 '백업'에서 파일로 저장해 주세요.",
     about_h: "안내와 개인정보 고지", about_lead: "성적, 활동, 에세이, 마감일을 한곳에서 관리하고 에세이는 채점 기준표로 피드백을 받아요.",
@@ -87,7 +87,7 @@ export const STR = {
     school_count: "{n}개 학교 중 {m}개 표시", sat_approx: "≈ SAT 영역 점수 합 (총점 범위의 근사치)", public: "공립", private: "사립", "for-profit": "영리",
     schools_lead: "미국 4년제 대학 2,370곳 (리버럴 아츠 칼리지 215곳 포함). 미국 교육부 IPEDS 자료이고, 일부 학교는 더 최신 Common Data Set(CDS) 원문 값을 써요. 학교 유형은 카네기 분류(2021) 기준이에요. 출처를 눌러 직접 확인할 수 있어요.",
     r_open: "지원자를 모두 받는 학교예요 (open admission). 단, 전공·장학금은 따로 기준이 있을 수 있어요.", open_adm: "모두 합격", all_kinds: "모든 유형", hbcu: "HBCU (역사적 흑인 대학)",
-    k_liberal_arts: "리버럴 아츠 칼리지", k_research: "연구중심 대학", k_doctoral: "박사과정 대학", k_masters: "석사과정 중심 대학", k_baccalaureate: "학부 중심 대학", k_special: "특수 분야 대학 (예술·공학·경영 등)", k_other: "기타",
+    k_liberal_arts: "리버럴 아츠 칼리지", k_research: "연구중심 대학", k_doctoral: "박사과정 대학", k_masters: "석사과정 중심 대학", k_baccalaureate: "학부 중심 대학", k_special_arts: "특수 분야: 예술·음악·디자인", k_special_tech: "특수 분야: 공학·기술", k_special_business: "특수 분야: 경영", k_special_health: "특수 분야: 의료·보건", k_special_faith: "특수 분야: 신학·종교", k_special_tribal: "특수 분야: 원주민 부족 대학", k_special_other: "특수 분야: 기타", k_other: "기타",
     land_eyebrow: "미국 대학 지원 준비",
     land_h_html: "에세이는 직접 쓰고,<br><span>피드백은 정확하게.</span>",
     land_sub: "활동·성적·마감일을 한곳에 정리하고, 에세이는 입학사정관의 평가 기준으로 점검합니다. 글은 끝까지 학생이 씁니다.",
@@ -118,11 +118,11 @@ export const STR = {
     land_end_h: "지원 준비, 지금 시작하세요.",
     land_end_note: "무료 · 만 14세 이상 · 결제 없음",
     terms_h: "이용약관",
-    terms_html: "<p><b>1. 서비스</b> College Application Notebook(이하 '서비스')는 고등학생이 대학 지원 자료를 정리하고 에세이 피드백을 받도록 돕는 무료 도구예요. 결제 기능은 없어요.</p><p><b>2. 이용 조건</b> 만 14세 이상만 쓸 수 있어요. 만 14세 미만은 보호자 동의가 필요해서 지금은 이용할 수 없어요.</p><p><b>3. 자료 보관</b> 입력한 자료는 이용자의 브라우저에만 저장돼요. 기기 변경이나 브라우저 기록 삭제로 자료가 사라질 수 있으니 '백업'으로 직접 보관해 주세요. 운영자는 이용자 자료를 갖고 있지 않아 복구해 드릴 수 없어요.</p><p><b>4. AI 기능</b> AI 평가와 추천은 이용자가 매번 동의할 때만 Anthropic으로 보내져 처리돼요. AI 결과는 틀릴 수 있는 참고 의견이고, 합격을 보장하거나 예측하지 않아요.</p><p><b>5. 이용자의 책임</b> 지원서에 내는 글은 이용자 본인이 써야 해요. 다른 사람이나 AI가 쓴 글을 내면 학교 규정 위반이나 표절이 될 수 있어요. AI에게 다른 지시를 숨겨 넣거나, 자동으로 대량 요청을 보내는 등 서비스를 방해하는 행동은 금지돼요.</p><p><b>6. 사용 제한</b> 공정한 이용을 위해 AI 기능은 하루 횟수 제한이 있어요.</p><p><b>7. 학교 자료</b> 학교 분류와 통계는 공개 자료(IPEDS, Common Data Set)를 옮긴 참고용이에요. 정확한 내용은 출처와 각 학교 공식 안내를 확인해 주세요.</p><p><b>8. 약관 변경</b> 약관이 바뀌면 다음 방문 때 다시 동의를 받아요.</p>",
-    footer: "College Application Notebook · 입시 결과를 보장하지 않는 참고용 도구예요.", lang_btn: "English",
+    terms_html: "<p><b>1. 서비스</b> College App Manager(이하 '서비스')는 고등학생이 대학 지원 자료를 정리하고 에세이 피드백을 받도록 돕는 무료 도구예요. 결제 기능은 없어요.</p><p><b>2. 이용 조건</b> 만 14세 이상만 쓸 수 있어요. 만 14세 미만은 보호자 동의가 필요해서 지금은 이용할 수 없어요.</p><p><b>3. 자료 보관</b> 입력한 자료는 이용자의 브라우저에만 저장돼요. 기기 변경이나 브라우저 기록 삭제로 자료가 사라질 수 있으니 '백업'으로 직접 보관해 주세요. 운영자는 이용자 자료를 갖고 있지 않아 복구해 드릴 수 없어요.</p><p><b>4. AI 기능</b> AI 평가와 추천은 이용자가 매번 동의할 때만 Anthropic으로 보내져 처리돼요. AI 결과는 틀릴 수 있는 참고 의견이고, 합격을 보장하거나 예측하지 않아요.</p><p><b>5. 이용자의 책임</b> 지원서에 내는 글은 이용자 본인이 써야 해요. 다른 사람이나 AI가 쓴 글을 내면 학교 규정 위반이나 표절이 될 수 있어요. AI에게 다른 지시를 숨겨 넣거나, 자동으로 대량 요청을 보내는 등 서비스를 방해하는 행동은 금지돼요.</p><p><b>6. 사용 제한</b> 공정한 이용을 위해 AI 기능은 하루 횟수 제한이 있어요.</p><p><b>7. 학교 자료</b> 학교 분류와 통계는 공개 자료(IPEDS, Common Data Set)를 옮긴 참고용이에요. 정확한 내용은 출처와 각 학교 공식 안내를 확인해 주세요.</p><p><b>8. 약관 변경</b> 약관이 바뀌면 다음 방문 때 다시 동의를 받아요.</p>",
+    footer: "College App Manager · 입시 결과를 보장하지 않는 참고용 도구예요.", lang_btn: "English",
   },
   en: {
-    title: "College Application Notebook", tagline: "Saved only in your browser",
+    title: "College App Manager", tagline: "Saved only in your browser",
     tab_about: "About", tab_profile: "My profile", tab_activities: "Activities & honors", tab_schools: "School fit", tab_apps: "My list", tab_essays: "Essays", tab_backup: "Backup",
     store_warn: "This browser is blocking storage (for example, private mode). Your work will be lost when you close the window, so save a file from Backup.",
     about_h: "About & privacy notice", about_lead: "Keep your scores, activities, essays and deadlines in one place, and get rubric-based essay feedback.",
@@ -195,8 +195,8 @@ export const STR = {
     school_count: "Showing {m} of {n} schools", sat_approx: "≈ Sum of SAT section scores (approximates the total range)", public: "Public", private: "Private", "for-profit": "For-profit",
     schools_lead: "2,370 four-year US colleges (including 215 liberal arts colleges) from the US Department of Education's IPEDS, with newer Common Data Set (CDS) figures for some schools. School type follows the Carnegie Classification (2021). Click a source to check it.",
     r_open: "Admits all applicants (open admission). Some majors or scholarships may have their own requirements.", open_adm: "Open", all_kinds: "All types", hbcu: "HBCU (Historically Black College)",
-    k_liberal_arts: "Liberal arts college", k_research: "Research university", k_doctoral: "Doctoral university", k_masters: "Master's university", k_baccalaureate: "Baccalaureate college", k_special: "Special focus (arts, engineering, business…)", k_other: "Other",
-    land_eyebrow: "College Application Notebook",
+    k_liberal_arts: "Liberal arts college", k_research: "Research university", k_doctoral: "Doctoral university", k_masters: "Master's university", k_baccalaureate: "Baccalaureate college", k_special_arts: "Special focus: arts, music & design", k_special_tech: "Special focus: engineering & technology", k_special_business: "Special focus: business", k_special_health: "Special focus: health & medicine", k_special_faith: "Special focus: faith-related", k_special_tribal: "Special focus: tribal college", k_special_other: "Special focus: other", k_other: "Other",
+    land_eyebrow: "US college applications",
     land_h_html: "Everything for your applications.<br><span>Essay feedback included.</span>",
     land_sub: "Organize scores, activities and deadlines, and get essay feedback grounded in what admissions readers look for. It never writes for you.",
     land_cta: "Get started free",
@@ -226,7 +226,7 @@ export const STR = {
     land_end_h: "Start today.",
     land_end_note: "Free · Ages 14+ · No payments",
     terms_h: "Terms of Use",
-    terms_html: "<p><b>1. The service</b> College Application Notebook (the 'Service') is a free tool that helps high-school students organize application materials and get essay feedback. It has no payments.</p><p><b>2. Who can use it</b> Ages 14 and up. Users under 14 need a parent's consent and cannot use the Service for now.</p><p><b>3. Your data</b> What you enter is stored only in your browser. Changing devices or clearing browser data can erase it, so keep your own copy with Backup. The operator does not hold your data and cannot restore it.</p><p><b>4. AI features</b> AI feedback and suggestions are sent to Anthropic for processing only when you agree each time. AI results are opinions that can be wrong and do not guarantee or predict admission.</p><p><b>5. Your responsibilities</b> What you submit to colleges must be your own writing. Submitting work by someone else or by AI can break college rules or count as plagiarism. Do not disrupt the Service, for example by hiding instructions to the AI or sending automated bulk requests.</p><p><b>6. Usage limits</b> AI features have a daily limit for fair use.</p><p><b>7. School data</b> School fit and statistics come from public data (IPEDS, Common Data Set) and are only a guide. Check the source and each college's official information.</p><p><b>8. Changes</b> If these terms change, we will ask you to agree again on your next visit.</p>",
-    footer: "College Application Notebook · A guide only; it does not predict admission results.", lang_btn: "한국어",
+    terms_html: "<p><b>1. The service</b> College App Manager (the 'Service') is a free tool that helps high-school students organize application materials and get essay feedback. It has no payments.</p><p><b>2. Who can use it</b> Ages 14 and up. Users under 14 need a parent's consent and cannot use the Service for now.</p><p><b>3. Your data</b> What you enter is stored only in your browser. Changing devices or clearing browser data can erase it, so keep your own copy with Backup. The operator does not hold your data and cannot restore it.</p><p><b>4. AI features</b> AI feedback and suggestions are sent to Anthropic for processing only when you agree each time. AI results are opinions that can be wrong and do not guarantee or predict admission.</p><p><b>5. Your responsibilities</b> What you submit to colleges must be your own writing. Submitting work by someone else or by AI can break college rules or count as plagiarism. Do not disrupt the Service, for example by hiding instructions to the AI or sending automated bulk requests.</p><p><b>6. Usage limits</b> AI features have a daily limit for fair use.</p><p><b>7. School data</b> School fit and statistics come from public data (IPEDS, Common Data Set) and are only a guide. Check the source and each college's official information.</p><p><b>8. Changes</b> If these terms change, we will ask you to agree again on your next visit.</p>",
+    footer: "College App Manager · A guide only; it does not predict admission results.", lang_btn: "한국어",
   },
 };
