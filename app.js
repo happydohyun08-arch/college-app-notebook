@@ -641,4 +641,4 @@ function renderAll() {
   showTab(tab);
 }
 applyLang();
-setView();
+setView(true); // 가입한 사람도 항상 시작 페이지에서 연다. '내 노트 열기'로 들어간다.
