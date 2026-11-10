@@ -47,6 +47,7 @@ function applyLang() {
     k.endsWith("_html") ? (n.innerHTML = t(k)) : (n.textContent = t(k)); // _html은 운영자가 쓴 i18n.js 글뿐이다
   }
   if (signedUp(data)) for (const b of document.querySelectorAll("[data-signup]")) b.textContent = t("land_back");
+  paintThemeBtn();
   renderAll();
 }
 function toggleLang() {
@@ -56,6 +57,23 @@ function toggleLang() {
   applyLang();
 }
 $("#langBtn").addEventListener("click", toggleLang);
+
+// ---------- 화면 모드 (밝게/어둡게) ----------
+// 저장은 가입한 뒤에만 한다 (동의 전에는 아무것도 저장하지 않는다).
+const THEME_KEY = "college-app.theme";
+try { const th = localStorage.getItem(THEME_KEY); if (th === "dark" || th === "light") document.documentElement.dataset.theme = th; } catch {}
+const isDark = () => (document.documentElement.dataset.theme ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+function paintThemeBtn() {
+  $("#themeBtn").textContent = isDark() ? "☀" : "☾";
+  $("#themeBtn").ariaLabel = $("#themeBtn").title = t(isDark() ? "theme_light" : "theme_dark");
+}
+$("#themeBtn").addEventListener("click", () => {
+  const next = isDark() ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  if (signedUp(data)) try { localStorage.setItem(THEME_KEY, next); } catch {}
+  paintThemeBtn();
+});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintThemeBtn);
 
 // ---------- 탭 ----------
 let tab = "about";

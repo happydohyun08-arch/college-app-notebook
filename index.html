@@ -10,10 +10,6 @@
   --accent:#0071e3; --accent-hover:#0077ed; --link:#0066cc; --accent-ink:#ffffff;
   --reach:#c9341f; --target:#0071e3; --safety:#1d8a3a; --warn:#6e6e73;
 }
-@media (prefers-color-scheme: dark) { :root {
-  --bg:#000000; --bg-2:#161617; --fg:#f5f5f7; --muted:#a1a1a6; --faint:#86868b; --line:#424245; --hair:#2c2c2e;
-  --accent:#0071e3; --accent-hover:#2b8cff; --link:#2997ff; --accent-ink:#ffffff;
-  --reach:#ff6a55; --target:#2997ff; --safety:#30d158; --warn:#a1a1a6; } }
 * { box-sizing:border-box; }
 html { -webkit-text-size-adjust:100%; }
 body { margin:0; background:var(--bg); color:var(--fg);
@@ -156,8 +152,6 @@ footer { max-width:1024px; margin:0 auto; padding:20px 22px 40px; color:var(--fa
   --grad:linear-gradient(110deg, #ff5f9e 0%, #a960ee 35%, #635bff 65%, #22c3e6 100%);
   --tint:#f6f5ff; --glow:rgb(99 91 255 / .28);
 }
-@media (prefers-color-scheme: dark) { :root {
-  --accent:#7a73ff; --accent-hover:#8f89ff; --link:#a39dff; --tint:#14122b; --glow:rgb(122 115 255 / .35); } }
 .grad-text, .hero h2 span, .tile .k, .tile p.k, .score b {
   background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .btn:not(.ghost) { background:var(--grad); background-size:160% 100%; background-position:0 0; box-shadow:0 6px 18px -6px var(--glow);
@@ -175,7 +169,6 @@ nav button[aria-current="true"] { color:var(--accent); font-weight:600; }
 #landing::before { content:""; position:absolute; inset:-200px -10% auto; height:900px; z-index:-1; pointer-events:none; filter:blur(60px); opacity:.55;
   background:radial-gradient(40% 50% at 20% 30%, #ff8cc6 0%, transparent 70%), radial-gradient(35% 45% at 75% 20%, #8b7bff 0%, transparent 70%),
     radial-gradient(40% 40% at 60% 60%, #4fd8ff 0%, transparent 70%), radial-gradient(30% 35% at 35% 70%, #ffd36b 0%, transparent 70%); }
-@media (prefers-color-scheme: dark) { #landing::before { opacity:.35; } }
 .eyebrow { color:var(--accent); }
 .preview .frame { background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
   border:1px solid color-mix(in srgb, var(--accent) 20%, transparent); box-shadow:0 30px 60px -20px var(--glow); }
@@ -194,6 +187,37 @@ section > h2 { background:linear-gradient(90deg, var(--fg) 40%, var(--accent)); 
 .note { border-left-color:var(--accent); }
 .chips label:has(input:checked) { background:var(--accent); border-color:var(--accent); color:#fff; }
 input:focus, select:focus, textarea:focus { border-color:var(--accent); }
+
+/* ---------- 다크 모드: 기기 설정을 따르고, 버튼으로 바꾸면 그 선택을 따른다 ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme:dark;
+  --bg:#0b0b14; --bg-2:#14142a; --fg:#f2f2f7; --muted:#a6a6b8; --faint:#7d7d92; --line:#34344d; --hair:#22223a;
+  --accent:#7a73ff; --accent-hover:#8f89ff; --link:#a39dff; --accent-ink:#ffffff; --tint:#16143a; --glow:rgb(122 115 255 / .4);
+  --reach:#ff7a66; --target:#8f89ff; --safety:#3ddc84; --warn:#a6a6b8; }
+  :root:not([data-theme="light"]) #landing::before { opacity:.32; }
+}
+:root[data-theme="dark"] { color-scheme:dark;
+  --bg:#0b0b14; --bg-2:#14142a; --fg:#f2f2f7; --muted:#a6a6b8; --faint:#7d7d92; --line:#34344d; --hair:#22223a;
+  --accent:#7a73ff; --accent-hover:#8f89ff; --link:#a39dff; --accent-ink:#ffffff; --tint:#16143a; --glow:rgb(122 115 255 / .4);
+  --reach:#ff7a66; --target:#8f89ff; --safety:#3ddc84; --warn:#a6a6b8; }
+:root[data-theme="dark"] #landing::before { opacity:.32; }
+#themeBtn { order:3; border:0; background:none; color:var(--fg); width:30px; height:30px; border-radius:50%; font-size:15px; line-height:1; cursor:pointer; }
+#themeBtn:hover { background:var(--tint); }
+body.out #themeBtn { order:2; }
+body { transition:background-color .25s, color .25s; }
+
+/* ---------- 다듬기 ---------- */
+nav button[aria-current="true"] { box-shadow:inset 0 -2px 0 var(--accent); }
+.tag.Reach, .tag.Target, .tag.Safety { padding:2px 10px; border-radius:980px; }
+.tag.Reach { background:color-mix(in srgb, var(--reach) 13%, transparent); }
+.tag.Target { background:color-mix(in srgb, var(--target) 13%, transparent); }
+.tag.Safety { background:color-mix(in srgb, var(--safety) 13%, transparent); }
+tbody tr { transition:background-color .15s; }
+tbody tr:hover { background:var(--tint); }
+input, select, textarea { border-radius:10px; transition:border-color .15s, box-shadow .15s; }
+.item { border-radius:16px; transition:background-color .15s; }
+section h3 { letter-spacing:-0.025em; }
+dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
 </style>
 </head>
 <body>
@@ -210,6 +234,7 @@ input:focus, select:focus, textarea:focus { border-color:var(--accent); }
     <button data-tab="backup" data-t="tab_backup"></button>
   </nav>
   <button class="btn" id="headStart" data-signup data-t="land_cta"></button>
+  <button id="themeBtn" type="button"></button>
   <button id="langBtn" data-t="lang_btn"></button>
  </div>
  <div class="ribbon" data-t="tagline_long"></div>
