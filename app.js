@@ -640,5 +640,34 @@ function renderAll() {
   renderApps();
   showTab(tab);
 }
+// ---------- 3D 모션 (시작 페이지) ----------
+// 미리보기 카드는 스크롤하면 눕혀진 상태에서 일어서고, 카드들은 마우스 쪽으로 살짝 기운다.
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const frame = $(".preview .frame");
+  const lift = () => {
+    const r = frame.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight * 0.85)));
+    frame.style.setProperty("--rx", `${((1 - p) * 22).toFixed(2)}deg`);
+  };
+  addEventListener("scroll", lift, { passive: true });
+  addEventListener("resize", lift);
+  for (const card of [frame, ...document.querySelectorAll(".tile")]) {
+    const max = card === frame ? 4 : 7;
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--ty", `${(((e.clientX - r.left) / r.width - 0.5) * 2 * max).toFixed(2)}deg`);
+      card.style.setProperty("--tx", `${(-((e.clientY - r.top) / r.height - 0.5) * 2 * max).toFixed(2)}deg`);
+    });
+    card.addEventListener("pointerleave", () => { card.style.setProperty("--tx", "0deg"); card.style.setProperty("--ty", "0deg"); });
+  }
+  const io = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { const n = e.target; n.classList.add("in"); io.unobserve(n); setTimeout(() => (n.style.transitionDelay = ""), 1200); } }, { threshold: 0.15 });
+  document.querySelectorAll("#landing .band > h2, #landing .band > p.sub, .tile, .steps > div, .closing h2").forEach((n, i) => {
+    n.classList.add("reveal");
+    n.style.transitionDelay = n.classList.contains("tile") || n.parentElement.classList.contains("steps") ? `${(i % 4) * 80}ms` : "";
+    io.observe(n);
+  });
+  requestAnimationFrame(lift);
+}
+
 applyLang();
 setView(true); // 가입한 사람도 항상 시작 페이지에서 연다. '내 노트 열기'로 들어간다.
