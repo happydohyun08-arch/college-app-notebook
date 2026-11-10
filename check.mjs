@@ -107,7 +107,7 @@ for (const s of schools) {
   if (s.act25) assert.ok(s.act25 >= 1 && s.act75 <= 36 && s.act25 <= s.act75, `${s.name} ACT range`);
 }
 assert.equal(new Set(schools.map((s) => s.id)).size, schools.length, "no duplicate schools");
-assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length, 41, "CDS-verified rows kept");
+assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length, 47, "CDS-verified rows kept");
 
 // 사전: 두 언어의 키가 같아야 한다
 assert.deepEqual(Object.keys(STR.ko).sort(), Object.keys(STR.en).sort());

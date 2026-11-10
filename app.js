@@ -353,7 +353,9 @@ async function renderSchools() {
   $("#schoolMore").hidden = list.length <= schoolLimit;
   body.replaceChildren(...list.slice(0, schoolLimit).map(({ sc, r }) => el("tr", {},
     el("td", {}, sc.web ? el("a", { href: sc.web, target: "_blank", rel: "noopener", textContent: sc.name }) : sc.name,
-      el("div", { className: "muted", textContent: [sc.city && `${sc.city}, ${sc.state}`, sc.control && t(sc.control), sc.kind && t(`k_${sc.kind}`), sc.hbcu && t("hbcu"), sc.note].filter(Boolean).join(" · ") })),
+      el("div", { className: "muted", textContent: [sc.city && `${sc.city}, ${sc.state}`, sc.control && t(sc.control), sc.kind && t(`k_${sc.kind}`), sc.hbcu && t("hbcu"), sc.note].filter(Boolean).join(" · ") }),
+      // 순위는 US News 상품이라 싣지 않고 링크만 건다 (구글 검색: US News 내부 주소 형식이 바뀌어도 동작)
+      el("a", { className: "mini", href: `https://www.google.com/search?q=${encodeURIComponent(`${sc.name} ${sc.state ?? ""} site:usnews.com/best-colleges`)}`, target: "_blank", rel: "noopener", textContent: t("usnews") })),
     el("td", { className: "num", textContent: sc.open_admission ? t("open_adm") : pct(sc.admit_rate) }),
     el("td", { className: "num", textContent: range(sc.sat25, sc.sat75, sc.sat_approx), title: sc.sat_approx ? t("sat_approx") : "" }),
     el("td", { className: "num", textContent: range(sc.act25, sc.act75) }),
