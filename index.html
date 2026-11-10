@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>College Application Notebook</title>
+<style>
+:root {
+  --bg:#ffffff; --bg-2:#f5f5f7; --fg:#1d1d1f; --muted:#6e6e73; --faint:#86868b; --line:#d2d2d7; --hair:#e8e8ed;
+  --accent:#0071e3; --accent-hover:#0077ed; --link:#0066cc; --accent-ink:#ffffff;
+  --reach:#c9341f; --target:#0071e3; --safety:#1d8a3a; --warn:#6e6e73;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#000000; --bg-2:#161617; --fg:#f5f5f7; --muted:#a1a1a6; --faint:#86868b; --line:#424245; --hair:#2c2c2e;
+  --accent:#0071e3; --accent-hover:#2b8cff; --link:#2997ff; --accent-ink:#ffffff;
+  --reach:#ff6a55; --target:#2997ff; --safety:#30d158; --warn:#a1a1a6; } }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--fg);
+  font:17px/1.47 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Pretendard", "Segoe UI", "Malgun Gothic", sans-serif;
+  letter-spacing:-0.022em; -webkit-font-smoothing:antialiased; }
+a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
+
+/* 상단: Apple식 로컬 내비게이션 (제목 왼쪽, 메뉴 오른쪽) */
+header { position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter:saturate(1.8) blur(20px); -webkit-backdrop-filter:saturate(1.8) blur(20px); border-bottom:1px solid var(--hair); }
+.bar { max-width:1024px; margin:0 auto; padding:0 22px; min-height:52px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+.brand { display:flex; align-items:center; gap:14px; cursor:pointer; }
+.brand h1 { margin:0; font-size:21px; font-weight:600; letter-spacing:-0.02em; white-space:nowrap; }
+.brand small { display:none; }
+nav { display:flex; gap:22px; overflow-x:auto; margin-left:auto; scrollbar-width:none; }
+nav::-webkit-scrollbar { display:none; }
+nav button { flex:none; border:0; background:none; color:var(--fg); opacity:.8; padding:16px 0; font:inherit; font-size:12px; letter-spacing:-0.01em; cursor:pointer; }
+nav button:hover { opacity:1; color:var(--link); }
+nav button[aria-current="true"] { opacity:1; color:var(--faint); cursor:default; }
+#langBtn { order:3; border:0; background:var(--accent); color:var(--accent-ink); border-radius:980px; padding:4px 11px; font:inherit; font-size:12px; cursor:pointer; }
+.ribbon { background:var(--bg-2); text-align:center; font-size:14px; color:var(--fg); padding:12px 22px; }
+
+main { max-width:1024px; margin:0 auto; padding:56px 22px 96px; }
+/* 제목: Stripe식 두 톤 (굵은 제목 + 회색 이어지는 문장) */
+section > h2 { font-size:40px; line-height:1.1; font-weight:600; letter-spacing:-0.028em; margin:0; }
+section > .lead { font-size:21px; line-height:1.38; color:var(--muted); margin:8px 0 40px; max-width:720px; letter-spacing:-0.016em; }
+section h3 { font-size:24px; font-weight:600; letter-spacing:-0.02em; margin:48px 0 16px; }
+.card { padding:24px 0; border-top:1px solid var(--hair); margin:0; }
+.card p:first-child { margin-top:0; } .card p:last-child { margin-bottom:0; }
+.note { color:var(--muted); font-size:14px; margin:0 0 24px; padding:0 0 0 14px; border-left:2px solid var(--line); }
+.muted { color:var(--muted); font-size:14px; }
+.points { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:32px; margin:0 0 48px; }
+.points .card { border:0; padding:0; }
+.points h3 { margin:0 0 6px; font-size:19px; }
+.points p { margin:0; color:var(--muted); font-size:15px; }
+
+label { display:block; font-size:12px; color:var(--muted); margin:18px 0 6px; letter-spacing:0; }
+input, select, textarea { width:100%; font:inherit; font-size:15px; padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+  background:var(--bg); color:var(--fg); }
+input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+textarea { min-height:96px; resize:vertical; line-height:1.55; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0 16px; }
+
+.btn { display:inline-flex; align-items:center; font:inherit; font-size:15px; padding:9px 20px; border-radius:980px; border:0;
+  background:var(--accent); color:var(--accent-ink); cursor:pointer; white-space:nowrap; letter-spacing:-0.01em; }
+.btn:hover { background:var(--accent-hover); }
+.btn.ghost { background:none; color:var(--link); padding:9px 4px; border-radius:0; }
+.btn.ghost:hover { background:none; text-decoration:underline; }
+.btn:disabled { opacity:.35; cursor:default; text-decoration:none; }
+.mini { font-size:13px; padding:4px 6px; }
+.row { display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:20px; }
+
+.toolbar { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:10px; margin:0 0 8px; }
+@media (max-width:700px) { .toolbar { grid-template-columns:1fr 1fr; } .toolbar input { grid-column:1 / -1; } }
+.myspec { display:grid; grid-template-columns:repeat(3, 1fr); gap:0 16px; background:var(--bg-2); border-radius:18px; padding:4px 20px 20px; }
+.fitsum { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 24px; }
+.fitsum button { font:inherit; font-size:15px; border:1px solid var(--line); background:var(--bg); color:var(--fg); border-radius:980px; padding:8px 16px; cursor:pointer; font-variant-numeric:tabular-nums; }
+.fitsum button b { margin-right:6px; }
+.fitsum button[aria-pressed="true"] { border-color:var(--fg); background:var(--fg); color:var(--bg); }
+.fitsum button[aria-pressed="true"] b { color:inherit; }
+@media (max-width:700px) { .myspec { grid-template-columns:1fr 1fr 1fr; padding:4px 14px 16px; } }
+.scroll { overflow-x:auto; padding:0; border:0; }
+table { width:100%; border-collapse:collapse; font-size:14px; letter-spacing:-0.01em; }
+thead th { color:var(--muted); font-size:12px; font-weight:400; text-align:left; padding:10px 12px 10px 0; border-bottom:1px solid var(--line); white-space:nowrap; }
+td { padding:14px 12px 14px 0; border-bottom:1px solid var(--hair); vertical-align:top; }
+td input, td select { min-width:120px; padding:6px 8px; font-size:14px; }
+td .muted { font-size:12px; margin-top:2px; }
+.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.tag { font-size:13px; font-weight:600; color:var(--fg); white-space:nowrap; font-variant-numeric:tabular-nums; }
+.tag:empty { display:none; }
+.tag.Reach { color:var(--reach); } .tag.Target { color:var(--target); } .tag.Safety { color:var(--safety); } .tag.Unknown { color:var(--faint); font-weight:400; }
+
+.score { display:flex; align-items:baseline; gap:8px; }
+.score b { font-size:48px; font-weight:600; letter-spacing:-0.03em; line-height:1; }
+.crit { border-top:1px solid var(--hair); padding-top:16px; margin-top:16px; }
+.meter { height:4px; border-radius:2px; background:var(--hair); overflow:hidden; margin:8px 0 10px; max-width:320px; }
+.meter i { display:block; height:100%; background:var(--fg); }
+blockquote { margin:10px 0; padding:0 0 0 14px; border-left:2px solid var(--line); color:var(--muted); }
+
+.item { padding:20px 0; }
+.item-head { display:flex; align-items:center; gap:12px; }
+.item-head .num-badge { font-size:13px; color:var(--faint); font-variant-numeric:tabular-nums; width:20px; flex:none; }
+.item-head b { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chips label { display:inline-flex; align-items:center; gap:6px; margin:0; padding:6px 14px; border:1px solid var(--line); border-radius:980px; font-size:14px; color:var(--fg); cursor:pointer; }
+.chips label:has(input:checked) { border-color:var(--fg); background:var(--fg); color:var(--bg); }
+.chips input { position:absolute; opacity:0; pointer-events:none; }
+.counter { float:right; font-variant-numeric:tabular-nums; }
+
+dialog { max-width:480px; width:calc(100% - 32px); border:0; border-radius:18px; padding:32px; background:var(--bg); color:var(--fg); box-shadow:0 30px 80px rgb(0 0 0 / .3); }
+dialog h2 { margin:0 0 10px; font-size:28px; font-weight:600; letter-spacing:-0.025em; }
+dialog p, dialog li { font-size:15px; color:var(--muted); }
+dialog::backdrop { background:rgb(0 0 0 / .4); backdrop-filter:blur(6px); }
+.check { display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--fg); margin:12px 0; }
+.check input { width:18px; height:18px; margin-top:2px; flex:none; accent-color:var(--accent); }
+/* 시작 페이지 (가입 전) */
+body.out main, body.out nav, body.out .ribbon, body:not(.out) #landing, body:not(.out) #headStart { display:none; }
+#headStart { margin-left:auto; padding:4px 14px; font-size:12px; }
+body.out #langBtn { order:2; }
+.hero { text-align:center; padding:96px 22px 56px; max-width:980px; margin:0 auto; }
+.eyebrow { font-size:17px; font-weight:600; color:var(--accent); margin:0 0 10px; letter-spacing:-0.01em; }
+.hero h2 { font-size:64px; line-height:1.05; font-weight:700; letter-spacing:-0.035em; margin:0 auto; max-width:860px; }
+.hero h2 span { color:var(--faint); }
+.hero p.sub { font-size:24px; line-height:1.33; color:var(--muted); margin:20px auto 32px; max-width:680px; letter-spacing:-0.02em; }
+.cta { display:flex; gap:28px; justify-content:center; align-items:center; flex-wrap:wrap; }
+.cta .btn { font-size:17px; padding:12px 24px; }
+.cta a::after { content:" ›"; }
+.preview { max-width:760px; margin:0 auto 112px; padding:0 22px; }
+.preview .frame { background:var(--bg-2); border-radius:28px; padding:40px; }
+.preview .frame .tagline { font-size:12px; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; margin:0 0 14px; }
+.band { max-width:1024px; margin:0 auto; padding:0 22px 112px; }
+.band > h2 { font-size:48px; line-height:1.08; font-weight:700; letter-spacing:-0.03em; margin:0 0 12px; max-width:760px; }
+.band > p.sub { font-size:21px; color:var(--muted); margin:0 0 40px; max-width:680px; }
+.tiles { display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+.tile { background:var(--bg-2); border-radius:24px; padding:36px; }
+.tile .k { font-size:44px; font-weight:700; letter-spacing:-0.03em; line-height:1; margin:0 0 14px; font-variant-numeric:tabular-nums; }
+.tile h3 { margin:0 0 6px; font-size:21px; font-weight:600; }
+.tile p { margin:0; color:var(--muted); font-size:15px; }
+.tile p.k { color:var(--fg); margin:0 0 14px; }
+.steps { display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; counter-reset:s; }
+.steps div { border-top:1px solid var(--line); padding-top:20px; counter-increment:s; }
+.steps div::before { content:counter(s, decimal-leading-zero); display:block; font-size:13px; color:var(--faint); margin-bottom:10px; font-variant-numeric:tabular-nums; }
+.steps h3 { margin:0 0 6px; font-size:19px; } .steps p { margin:0; color:var(--muted); font-size:15px; }
+.closing { text-align:center; background:var(--bg-2); padding:96px 22px; }
+.closing h2 { font-size:48px; font-weight:700; letter-spacing:-0.03em; margin:0 0 24px; line-height:1.08; }
+.terms { max-height:200px; overflow:auto; font-size:13px; color:var(--muted); background:var(--bg-2); border-radius:10px; padding:12px 14px; margin:6px 0 4px; }
+.terms p { font-size:13px; margin:0 0 8px; }
+details summary { cursor:pointer; color:var(--link); font-size:13px; margin-left:28px; }
+.check.all { font-weight:600; border-bottom:1px solid var(--hair); padding-bottom:14px; }
+.req { color:var(--accent); font-size:13px; }
+@media (max-width:700px) { .hero { padding-top:56px; } .hero h2 { font-size:40px; } .hero p.sub { font-size:19px; }
+  .band > h2, .closing h2 { font-size:32px; } .tiles, .steps { grid-template-columns:1fr; } .preview .frame, .tile { padding:24px; } }
+footer { max-width:1024px; margin:0 auto; padding:20px 22px 40px; color:var(--faint); font-size:12px; border-top:1px solid var(--hair); }
+@media (max-width:700px) { main { padding-top:36px; } section > h2 { font-size:32px; } section > .lead { font-size:19px; } nav { margin-left:0; width:100%; } }
+
+/* ---------- 색 테마: Stripe식 그라데이션 ---------- */
+:root {
+  --accent:#635bff; --accent-hover:#5248f0; --link:#533afd;
+  --grad:linear-gradient(110deg, #ff5f9e 0%, #a960ee 35%, #635bff 65%, #22c3e6 100%);
+  --tint:#f6f5ff; --glow:rgb(99 91 255 / .28);
+}
+@media (prefers-color-scheme: dark) { :root {
+  --accent:#7a73ff; --accent-hover:#8f89ff; --link:#a39dff; --tint:#14122b; --glow:rgb(122 115 255 / .35); } }
+.grad-text, .hero h2 span, .tile .k, .tile p.k, .score b {
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.btn:not(.ghost) { background:var(--grad); background-size:160% 100%; background-position:0 0; box-shadow:0 6px 18px -6px var(--glow);
+  transition:background-position .4s, transform .15s, box-shadow .2s; }
+.btn:not(.ghost):hover { background:var(--grad); background-size:160% 100%; background-position:100% 0; transform:translateY(-1px); box-shadow:0 10px 24px -8px var(--glow); }
+.btn:not(.ghost):disabled { transform:none; box-shadow:none; }
+#langBtn { background:var(--fg); color:var(--bg); }
+header { border-bottom:0; box-shadow:0 1px 0 var(--hair); }
+header::after { content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--grad); opacity:.85; }
+.brand h1 { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+nav button[aria-current="true"] { color:var(--accent); font-weight:600; }
+.ribbon { background:var(--tint); color:var(--accent); font-weight:500; }
+/* 시작 페이지: 흐릿한 색 덩어리 배경 */
+#landing { position:relative; overflow:hidden; }
+#landing::before { content:""; position:absolute; inset:-200px -10% auto; height:900px; z-index:-1; pointer-events:none; filter:blur(60px); opacity:.55;
+  background:radial-gradient(40% 50% at 20% 30%, #ff8cc6 0%, transparent 70%), radial-gradient(35% 45% at 75% 20%, #8b7bff 0%, transparent 70%),
+    radial-gradient(40% 40% at 60% 60%, #4fd8ff 0%, transparent 70%), radial-gradient(30% 35% at 35% 70%, #ffd36b 0%, transparent 70%); }
+@media (prefers-color-scheme: dark) { #landing::before { opacity:.35; } }
+.eyebrow { color:var(--accent); }
+.preview .frame { background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border:1px solid color-mix(in srgb, var(--accent) 20%, transparent); box-shadow:0 30px 60px -20px var(--glow); }
+.tile { background:var(--tint); border:1px solid color-mix(in srgb, var(--accent) 12%, transparent); transition:transform .2s, box-shadow .2s; }
+.tile:hover { transform:translateY(-3px); box-shadow:0 18px 40px -18px var(--glow); }
+.steps div { border-top:2px solid transparent; border-image:var(--grad) 1; }
+.steps div::before { color:var(--accent); font-weight:600; }
+.closing { background:linear-gradient(135deg, #0a2540 0%, #312a7a 55%, #635bff 100%); color:#fff; }
+.closing h2, .hero h2 { margin-left:auto; margin-right:auto; } .closing h2 { background:none; color:#fff; } .closing .muted, .closing p { color:rgb(255 255 255 / .75); }
+.closing .btn:not(.ghost) { background:#fff; color:#0a2540; box-shadow:0 10px 30px -10px rgb(0 0 0 / .5); }
+/* 앱 화면 */
+section > h2 { background:linear-gradient(90deg, var(--fg) 40%, var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent; width:fit-content; }
+.myspec { background:var(--tint); border:1px solid color-mix(in srgb, var(--accent) 15%, transparent); }
+.fitsum button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; }
+.meter i { background:var(--grad); }
+.note { border-left-color:var(--accent); }
+.chips label:has(input:checked) { background:var(--accent); border-color:var(--accent); color:#fff; }
+input:focus, select:focus, textarea:focus { border-color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+ <div class="bar">
+  <div class="brand" id="brand" role="link" tabindex="0"><h1 data-t="title"></h1><small data-t="tagline"></small></div>
+  <nav id="tabs" aria-label="menu">
+    <button data-tab="about" data-t="tab_about"></button>
+    <button data-tab="profile" data-t="tab_profile"></button>
+    <button data-tab="activities" data-t="tab_activities"></button>
+    <button data-tab="schools" data-t="tab_schools"></button>
+    <button data-tab="apps" data-t="tab_apps"></button>
+    <button data-tab="essays" data-t="tab_essays"></button>
+    <button data-tab="backup" data-t="tab_backup"></button>
+  </nav>
+  <button class="btn" id="headStart" data-signup data-t="land_cta"></button>
+  <button id="langBtn" data-t="lang_btn"></button>
+ </div>
+ <div class="ribbon" data-t="tagline_long"></div>
+</header>
+<div id="landing">
+  <section class="hero">
+    <p class="eyebrow" data-t="land_eyebrow"></p>
+    <h2 data-t="land_h_html"></h2>
+    <p class="sub" data-t="land_sub"></p>
+    <div class="cta"><button class="btn" data-signup data-t="land_cta"></button><a href="#how" data-t="land_how_link"></a></div>
+  </section>
+  <div class="preview" aria-hidden="true"><div class="frame">
+    <p class="tagline" data-t="land_demo"></p>
+    <div class="score"><b>72</b><span class="muted">/ 100</span></div>
+    <div class="crit"><b data-t="c_fit"></b> <span class="muted">16 / 20</span><div class="meter"><i style="width:80%"></i></div></div>
+    <div class="crit"><b data-t="c_specific"></b> <span class="muted">17 / 20</span><div class="meter"><i style="width:85%"></i></div>
+      <blockquote>"I timed myself, watched videos, and finally asked her to talk me through it."</blockquote></div>
+    <div class="crit"><b data-t="c_reflect"></b> <span class="muted">12 / 20</span><div class="meter"><i style="width:60%"></i></div>
+      <div class="muted" data-t="land_demo_fix"></div></div>
+  </div></div>
+  <section class="band">
+    <h2 data-t="land_f_h"></h2><p class="sub" data-t="land_f_sub"></p>
+    <div class="tiles">
+      <div class="tile"><p class="k">5</p><h3 data-t="land_t1_h"></h3><p data-t="land_t1"></p></div>
+      <div class="tile"><p class="k">2,370</p><h3 data-t="land_t2_h"></h3><p data-t="land_t2"></p></div>
+      <div class="tile"><p class="k">10 · 5</p><h3 data-t="land_t3_h"></h3><p data-t="land_t3"></p></div>
+      <div class="tile"><p class="k">D-30</p><h3 data-t="land_t4_h"></h3><p data-t="land_t4"></p></div>
+    </div>
+  </section>
+  <section class="band" id="how">
+    <h2 data-t="land_s_h"></h2><p class="sub" data-t="land_s_sub"></p>
+    <div class="steps">
+      <div><h3 data-t="land_s1_h"></h3><p data-t="land_s1"></p></div>
+      <div><h3 data-t="land_s2_h"></h3><p data-t="land_s2"></p></div>
+      <div><h3 data-t="land_s3_h"></h3><p data-t="land_s3"></p></div>
+    </div>
+  </section>
+  <section class="band">
+    <h2 data-t="land_p_h"></h2><p class="sub" data-t="land_p_sub"></p>
+    <div class="steps">
+      <div><h3 data-t="pt1_h"></h3><p data-t="pt1"></p></div>
+      <div><h3 data-t="pt2_h"></h3><p data-t="pt2"></p></div>
+      <div><h3 data-t="pt3_h"></h3><p data-t="pt3"></p></div>
+    </div>
+  </section>
+  <section class="closing">
+    <h2 data-t="land_end_h"></h2>
+    <div class="cta"><button class="btn" data-signup data-t="land_cta"></button></div>
+    <p class="muted" data-t="land_end_note"></p>
+  </section>
+</div>
+<main>
+  <div id="storeWarn" class="note" hidden data-t="store_warn"></div>
+
+  <section id="about">
+    <h2 data-t="about_h"></h2><p class="lead" data-t="about_lead"></p>
+    <div class="points">
+      <div class="card"><h3 data-t="pt1_h"></h3><p data-t="pt1"></p></div>
+      <div class="card"><h3 data-t="pt2_h"></h3><p data-t="pt2"></p></div>
+      <div class="card"><h3 data-t="pt3_h"></h3><p data-t="pt3"></p></div>
+    </div>
+    <div class="card">
+      <p data-t="about1_html"></p><p data-t="about2_html"></p><p data-t="about3_html"></p>
+      <p data-t="about4_html"></p><p data-t="about5_html"></p><p data-t="about6_html"></p>
+      <h3 data-t="terms_h"></h3><div data-t="terms_html"></div>
+      <p class="muted"><span data-t="contact"></span>: <span data-t="contact_value"></span></p>
+    </div>
+  </section>
+
+  <section id="profile" hidden>
+    <h2 data-t="profile_h"></h2><p class="lead" data-t="profile_lead"></p>
+    <div class="card" id="profileForm">
+      <label for="p-major" data-t="f_major"></label><input id="p-major" name="major" maxlength="100">
+      <div class="grid">
+        <div><label for="p-gpa" data-t="f_gpa"></label><input id="p-gpa" name="gpa" type="number" step="0.01" min="0" max="4"></div>
+        <div><label for="p-sat" data-t="f_sat"></label><input id="p-sat" name="sat" type="number" min="400" max="1600" step="10"></div>
+        <div><label for="p-act" data-t="f_act"></label><input id="p-act" name="act" type="number" min="1" max="36"></div>
+        <div><label for="p-toefl" data-t="f_toefl"></label><input id="p-toefl" name="toefl" type="number" min="0" max="120"></div>
+      </div>
+      <label for="p-ap" data-t="f_ap"></label><textarea id="p-ap" name="ap"></textarea>
+      <label for="p-otherTests" data-t="f_other"></label><textarea id="p-otherTests" name="otherTests"></textarea>
+      <div id="legacy" hidden><label for="p-legacy" data-t="f_legacy"></label><textarea id="p-legacy" name="legacy"></textarea></div>
+      <p class="muted" data-t="autosave"></p>
+    </div>
+  </section>
+
+  <section id="activities" hidden>
+    <h2 data-t="act_h"></h2><p class="lead" data-t="act_lead"></p>
+    <div class="note" data-t="act_note"></div>
+    <div class="row" style="margin:0 0 14px"><button class="btn" id="orderBtn" data-t="order_btn"></button></div>
+    <div id="orderResult"></div>
+    <h3 data-t="act_sec"></h3><div id="actList"></div>
+    <div class="row" style="margin-bottom:24px"><button class="btn ghost" id="addAct" data-t="add_activity"></button><span class="muted" id="actCount"></span></div>
+    <h3 data-t="hon_sec"></h3><div id="honList"></div>
+    <div class="row"><button class="btn ghost" id="addHon" data-t="add_honor"></button><span class="muted" id="honCount"></span></div>
+  </section>
+
+  <section id="schools" hidden>
+    <h2 data-t="schools_h"></h2><p class="lead" data-t="schools_lead"></p>
+    <div class="note" data-t="schools_note_html"></div>
+    <div class="myspec" id="mySpec">
+      <div><label for="s-gpa" data-t="f_gpa"></label><input id="s-gpa" name="gpa" type="number" step="0.01" min="0" max="4"></div>
+      <div><label for="s-sat" data-t="f_sat"></label><input id="s-sat" name="sat" type="number" min="400" max="1600" step="10"></div>
+      <div><label for="s-act" data-t="f_act"></label><input id="s-act" name="act" type="number" min="1" max="36"></div>
+    </div>
+    <p class="muted" id="specHint" data-t="spec_hint"></p>
+    <div class="fitsum" id="fitSum"></div>
+    <div class="toolbar">
+      <input id="schoolQ" type="search" autocomplete="off">
+      <select id="schoolState"></select>
+      <select id="schoolKind"></select>
+      <select id="schoolFit"></select>
+      <select id="schoolSort"></select>
+    </div>
+    <p class="muted" id="schoolCount"></p>
+    <div class="card scroll"><table>
+      <thead><tr><th data-t="th_school"></th><th data-t="th_rate"></th><th data-t="th_sat"></th><th data-t="th_act"></th><th data-t="th_gpa"></th><th data-t="th_class"></th><th data-t="th_source"></th><th></th></tr></thead>
+      <tbody id="schoolRows"></tbody>
+    </table></div>
+    <div class="row"><button class="btn ghost" id="schoolMore" data-t="show_more"></button></div>
+  </section>
+
+  <section id="apps" hidden>
+    <h2 data-t="apps_h"></h2><p class="lead" data-t="apps_lead"></p>
+    <div class="card scroll"><table>
+      <thead><tr><th data-t="th_school"></th><th data-t="th_round"></th><th data-t="th_deadline"></th><th data-t="th_dday"></th><th data-t="th_status"></th><th></th></tr></thead>
+      <tbody id="appRows"></tbody>
+    </table>
+    <div class="row" style="padding:0 14px 14px"><button class="btn" id="addApp" data-t="add_school"></button><span class="muted" data-t="apps_note"></span></div></div>
+  </section>
+
+  <section id="essays" hidden>
+    <h2 data-t="essays_h"></h2><p class="lead" data-t="essays_lead"></p>
+    <div class="note" data-t="essays_note"></div>
+    <div id="essayList"></div>
+    <div class="row"><button class="btn" id="addEssay" data-t="add_essay"></button></div>
+  </section>
+
+  <section id="backup" hidden>
+    <h2 data-t="backup_h"></h2><p class="lead" data-t="backup_lead"></p>
+    <div class="card">
+      <p data-t="backup_p"></p>
+      <div class="row">
+        <button class="btn" id="exportBtn" data-t="export"></button>
+        <label class="btn ghost" style="margin:0"><span data-t="import"></span><input type="file" id="importFile" accept="application/json,.json" hidden></label>
+        <button class="btn ghost" id="wipeBtn" data-t="wipe"></button>
+      </div>
+      <p class="muted" id="backupMsg"></p>
+    </div>
+    <div class="card">
+      <h3 data-t="gd_h"></h3>
+      <p data-t="gd_p_html"></p>
+      <div class="row">
+        <button class="btn" id="gdSave" data-t="gd_save"></button>
+        <button class="btn ghost" id="gdLoad" data-t="gd_load"></button>
+        <button class="btn ghost" id="gdOut" data-t="gd_out" hidden></button>
+      </div>
+      <label class="check"><input type="checkbox" id="gdAuto"> <span data-t="gd_auto"></span></label>
+      <p class="muted" id="gdMsg"></p>
+    </div>
+  </section>
+</main>
+
+<dialog id="gate">
+  <h2 data-t="gate_h"></h2><p data-t="gate_p_html"></p>
+  <label class="check all"><input type="checkbox" id="gateAll"> <span data-t="gate_all"></span></label>
+  <label class="check"><input type="checkbox" class="gc" id="gateAge"> <span><span class="req" data-t="req"></span> <span data-t="gate_age"></span></span></label>
+  <label class="check"><input type="checkbox" class="gc" id="gateTerms"> <span><span class="req" data-t="req"></span> <span data-t="gate_terms"></span></span></label>
+  <details><summary data-t="view"></summary><div class="terms" data-t="terms_html"></div></details>
+  <label class="check"><input type="checkbox" class="gc" id="gatePriv"> <span><span class="req" data-t="req"></span> <span data-t="gate_priv"></span></span></label>
+  <details><summary data-t="view"></summary><div class="terms"><p data-t="about1_html"></p><p data-t="about2_html"></p><p data-t="about3_html"></p><p data-t="about6_html"></p></div></details>
+  <div class="row"><button class="btn" id="gateOk" disabled data-t="gate_ok"></button><button class="btn ghost" id="gateCancel" data-t="cancel"></button><button class="btn ghost" id="gateNo" data-t="gate_no"></button></div>
+  <p class="muted" id="gateMsg"></p>
+</dialog>
+
+<dialog id="send">
+  <h2 data-t="send_h"></h2><p data-t="send_p_html"></p>
+  <ul id="sendWhat"></ul>
+  <p class="muted" data-t="send_pii"></p>
+  <label class="check"><input type="checkbox" id="sendOk"> <span data-t="send_ok"></span></label>
+  <div class="row"><button class="btn" id="sendGo" disabled data-t="send_go"></button><button class="btn ghost" id="sendCancel" data-t="cancel"></button></div>
+</dialog>
+
+<footer data-t="footer"></footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

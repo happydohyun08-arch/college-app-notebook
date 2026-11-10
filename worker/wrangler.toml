@@ -1,0 +1,19 @@
+name = "college-essay-eval"
+main = "index.js"
+compatibility_date = "2026-10-01"
+
+# rubric.md를 글자 그대로 불러온다
+rules = [{ type = "Text", globs = ["**/*.md"], fallthrough = true }]
+
+# 요청 내용(에세이)이 Cloudflare 로그에 남지 않게 끈다
+[observability]
+enabled = false
+
+[vars]
+# 허용할 사이트 주소들. 쉼표로 구분, 끝에 / 없이, 경로 없이
+ALLOWED_ORIGIN = "http://localhost:8000,https://happydohyun08-arch.github.io"
+
+# 하루 횟수 세기용 저장소. `npx wrangler kv namespace create LIMITS`가 알려 주는 id를 넣는다.
+[[kv_namespaces]]
+binding = "LIMITS"
+id = "7afbe385f13c4605a8f78d5e4bdf228b"
