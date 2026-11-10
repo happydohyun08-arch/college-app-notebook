@@ -47,7 +47,7 @@ python3 -m http.server 8000
 값을 넣으면 `source`와 `year`도 꼭 넣는다 (`node check.mjs`가 검사함).
 
 ## 처음 공개 전에 할 일
-- `index.html`의 `[운영자 연락처]`를 실제 연락 이메일로 바꾼다 (개인정보 문의처).
+- 개인정보 문의처: dlehgus080310@gmail.com (`i18n.js`의 `contact_value`).
 
 ## 채점 보정 검사 (calibrate.mjs)
 품질을 미리 아는 연습용 에세이 5편(직접 쓴 가짜 글)을 배포된 Worker로 보내 점수가 기대 범위에 드는지 확인합니다.
