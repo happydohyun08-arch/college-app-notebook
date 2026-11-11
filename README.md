@@ -61,7 +61,7 @@ python3 -m http.server 8000
 후속 조사에서 Caltech, NYU, Stanford, UC Berkeley, UCLA, Chicago, Penn, Brown 8곳의 CDS 2025-26 C1·C9를 반영했습니다(`research/cds-evidence-2026-11-11-followup.json`). Brown은 Tableau 'C - Admissions' 탭 기준이며 GPA를 수집하지 않아 `gpa_status=not_reported`입니다. Chicago의 GPA는 재확인 대기입니다.
 
 - `research/cds-evidence-2026-11-11.json`: 변경 전 값, 원문 URL·연도·페이지, 검증한 값.
-- `research/cds-followup.json`: 아직 반영하지 않은 Purdue(Main Campus) 1곳. CDS가 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라 보류했습니다. 접근 실패를 미공개로 판단하지 않습니다.
+- `research/cds-followup.json`: CDS를 쓰지 않은 Purdue(Main Campus) 1곳. CDS가 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라서입니다. 대신 Purdue Data Digest의 West Lafayette 캠퍼스 Fall 2026 지원·합격·등록(75,901/40,273/10,173)을 반영했습니다. 캠퍼스 단위 SAT/ACT 범위는 공개되지 않아 비워 두었습니다. 접근 실패를 미공개로 판단하지 않습니다.
 - `research/data-coverage.json`: 전체 대학의 조사 상태와 빈 항목. `node audit-data.mjs`로 다시 만듭니다.
 - `node check.mjs`: 지원자·합격자·등록자 관계, 합격률 계산, 근거 기록 일치 검사.
 
@@ -71,7 +71,7 @@ python3 -m http.server 8000
 
 UC 9개 캠퍼스는 공식 정책에 따라 `test_policy=not_considered`를 기록하며, 분류 계산에서 실제·추정 SAT/ACT를 모두 제외합니다. 시험 점수만 입력하면 GPA 입력을 안내합니다. GPA 추정값을 사용하는 경우 기존 추정 안내는 유지합니다.
 
-UCLA Fall 2025 및 Berkeley Fall 2026 입학처 프로필도 반영했습니다. Berkeley는 2026년 8월 잠정 집계입니다. 합격자 GPA 중간 50%를 등록자 평균 GPA로 대체하지 않았습니다. 이 두 행은 CDS 확인 수에 포함하지 않습니다. 근거는 `research/admissions-evidence-2026-11-11.json`에 있습니다.
+UCLA Fall 2025 및 Berkeley Fall 2026 입학처 프로필도 반영했습니다. Berkeley는 2026년 8월 잠정 집계입니다. 합격자 GPA 중간 50%를 등록자 평균 GPA로 대체하지 않았습니다. 이 두 행은 CDS 확인 수에 포함하지 않습니다. Purdue Main Campus 행도 같은 파일에 근거를 둡니다(Data Digest, West Lafayette만). 근거는 `research/admissions-evidence-2026-11-11.json`에 있습니다.
 
 ## 대학 분야별 필터
 

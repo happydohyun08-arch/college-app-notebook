@@ -2,10 +2,10 @@
   {
     "id": "243780",
     "name": "Purdue University-Main Campus",
-    "status": "not_applied_campus_combined",
+    "status": "cds_not_used_campus_data_applied",
     "checked_at": "2026-11-11",
     "landing": "https://www.purdue.edu/idata/products-services/common-data-set/",
     "document": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
-    "note": "god 제공 XLSX(purdue.xlsx) 확인: CDS-C C1은 87,220 지원/37,881 합격/9,656 등록, C9 SAT 1220–1470·ACT 28–34. CDS-G가 PWL/PIN/PSW로 나뉘고 공식 안내상 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라 Main Campus 행에 반영하지 않음."
+    "note": "god 제공 XLSX(purdue.xlsx) 확인: CDS-C C1은 87,220 지원/37,881 합격/9,656 등록, C9 SAT 1220–1470·ACT 28–34. CDS-G가 PWL/PIN/PSW로 나뉘고 공식 안내상 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라 Main Campus 행에 반영하지 않음. 2026-11-11: 대신 Purdue Data Digest(Campus Locations=West Lafayette) Fall 2026 지원 75,901/합격 40,273/등록 10,173을 반영(research/admissions-evidence-2026-11-11.json). 캠퍼스 단위 SAT/ACT 범위는 미공개."
   }
 ]

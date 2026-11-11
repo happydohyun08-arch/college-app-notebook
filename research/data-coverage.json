@@ -3,14 +3,14 @@
     "total": 2370,
     "cds_records": 61,
     "reviewed_this_batch": 15,
-    "source_access_pending": 1,
+    "source_access_pending": 0,
     "cds_review_pending": 2308,
     "missing_fields": {
       "admit_rate": 638,
-      "sat25": 1387,
-      "sat75": 1387,
-      "act25": 1403,
-      "act75": 1403,
+      "sat25": 1388,
+      "sat75": 1388,
+      "act25": 1404,
+      "act75": 1404,
       "gpa_avg": 2341
     }
   },
@@ -21443,13 +21443,17 @@
     {
       "id": "243780",
       "name": "Purdue University-Main Campus",
-      "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=243780",
+      "status": "official_campus_data",
+      "year": "Data Digest Fall 2026",
+      "source": "https://tableau.it.purdue.edu/t/public/views/AppsAdmits/AppsAdmitsMatrics?Campus%20Description=West%20Lafayette",
       "missing_fields": [
+        "sat25",
+        "sat75",
+        "act25",
+        "act75",
         "gpa_avg"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "review_pending",
       "open_admission": false
     },
     {

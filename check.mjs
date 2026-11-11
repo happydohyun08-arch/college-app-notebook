@@ -248,6 +248,7 @@ assert.equal(evidence.length, 15);
 assert.equal(new Set(evidence.map((e) => e.id)).size, 15);
 const followup = JSON.parse(fs.readFileSync(new URL("./research/cds-followup.json", import.meta.url), "utf8"));
 assert.deepEqual(followup.map((f) => f.id).sort(), ["243780"], "only Purdue stays pending");
+assert.equal(followup[0].status, "cds_not_used_campus_data_applied", "Purdue CDS stays unused; campus data comes from Data Digest");
 for (const f of followup) assert.ok(!evidence.some((e) => e.id === f.id), `${f.name} is pending, not verified`);
 for (const entry of evidence) {
   const school = schools.find((s) => s.id === entry.id);

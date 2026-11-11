@@ -32,7 +32,7 @@
       "enrolled": null,
       "admit_rate": 0.1050789669337699,
       "admitted_gpa25": 3.9,
-      "admitted_gpa75": 4.0,
+      "admitted_gpa75": 4,
       "admitted_gpa_median": null,
       "profile_preliminary": true
     },
@@ -71,10 +71,54 @@
       "enrolled": 6553,
       "admit_rate": 0.0941448116621291,
       "admitted_gpa25": 3.95,
-      "admitted_gpa75": 4.0,
-      "admitted_gpa_median": 4.0,
+      "admitted_gpa75": 4,
+      "admitted_gpa_median": 4,
       "profile_preliminary": false
     },
     "caution": "Admission-office profile, not a CDS replacement; admitted GPA percentiles must not be stored as enrolled mean GPA."
+  },
+  {
+    "id": "243780",
+    "name": "Purdue University-Main Campus",
+    "source": "https://tableau.it.purdue.edu/t/public/views/AppsAdmits/AppsAdmitsMatrics?Campus%20Description=West%20Lafayette",
+    "year": "Data Digest Fall 2026",
+    "source_export": "https://tableau.it.purdue.edu/t/public/views/AppsAdmits/AppsAdmitsMatrics.pdf?Campus%20Description=West%20Lafayette",
+    "source_filters": "Semester Fall; Campus West Lafayette; Campus Locations West Lafayette; Admissions Population New Beginner; Student Level Undergraduate; data updated 2026-10-15",
+    "cross_checks": [
+      "Same view CSV admit rate Fall 2026 = 0.530599070 (40,273/75,901)",
+      "Purdue newsroom 2026 Q3: Fall 2026 freshman enrollment West Lafayette 10,173, Indianapolis 645",
+      "Campus Locations All (West Lafayette+Indianapolis): 82,160 applied / 43,814 admitted / 10,818 enrolled = 53.3%, matching admissions class profile"
+    ],
+    "previous": {
+      "id": "243780",
+      "name": "Purdue University-Main Campus",
+      "state": "IN",
+      "city": "West Lafayette",
+      "web": "https://www.purdue.edu/",
+      "control": "public",
+      "admit_rate": 0.503,
+      "sat25": 1190,
+      "sat75": 1460,
+      "sat_approx": true,
+      "act25": 27,
+      "act75": 34,
+      "gpa_avg": null,
+      "year": "IPEDS Fall 2023",
+      "source": "https://nces.ed.gov/collegenavigator/?id=243780",
+      "note": "",
+      "kind": "research"
+    },
+    "verified": {
+      "applicants": 75901,
+      "admitted": 40273,
+      "enrolled": 10173,
+      "admit_rate": 0.530599069840977,
+      "sat25": null,
+      "sat75": null,
+      "act25": null,
+      "act75": null,
+      "gpa_avg": null
+    },
+    "caution": "Campus-level counts only. Purdue publishes no West Lafayette-only SAT/ACT percentiles; admissions profile ranges (admitted, WL+Indianapolis) are kept in the note, not in sat/act fields. CDS 2025-26 C1/C9 combine WL+Indianapolis+Polytechnic Statewide and are not used."
   }
 ]

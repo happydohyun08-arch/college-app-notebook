@@ -3,12 +3,12 @@ import fs from "node:fs";
 const root = new URL("./", import.meta.url);
 const schools = JSON.parse(fs.readFileSync(new URL("schools.json", root), "utf8"));
 const followup = JSON.parse(fs.readFileSync(new URL("research/cds-followup.json", root), "utf8"));
-const pending = new Map(followup.map((s) => [s.id, s]));
+const pending = new Map(followup.filter((s) => s.status.startsWith("not_applied")).map((s) => [s.id, s]));
 const fields = ["admit_rate", "sat25", "sat75", "act25", "act75", "gpa_avg"];
 const rows = schools.map((s) => ({
   id: s.id,
   name: s.name,
-  status: pending.has(s.id) ? "source_access_pending" : s.cds_checked ? "reviewed_this_batch" : s.year.startsWith("CDS") ? "prior_cds_record" : "cds_review_pending",
+  status: pending.has(s.id) ? "source_access_pending" : s.cds_checked ? "reviewed_this_batch" : s.profile_checked ? "official_campus_data" : s.year.startsWith("CDS") ? "prior_cds_record" : "cds_review_pending",
   year: s.year,
   source: s.source,
   missing_fields: fields.filter((k) => s[k] == null),
