@@ -100,7 +100,9 @@ export const MAX_HONORS = 5;
 
 /** 활동에 쓴 총 시간 추정 = 주당 시간 x 연간 주 수 x 참여 학년 수. */
 export function totalHours(a) {
-  const h = Number(a?.hours) || 0, w = Number(a?.weeks) || 0, g = Array.isArray(a?.grades) ? a.grades.length : 0;
+  const bounded = (v, max) => Number.isFinite(Number(v)) ? Math.max(0, Math.min(Number(v), max)) : 0;
+  const h = bounded(a?.hours, 168), w = bounded(a?.weeks, 52);
+  const g = new Set((Array.isArray(a?.grades) ? a.grades : []).filter((v) => ["9", "10", "11", "12", "PG"].includes(v))).size;
   return Math.round(h * w * Math.max(g, 1));
 }
 

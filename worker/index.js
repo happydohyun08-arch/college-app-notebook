@@ -162,8 +162,9 @@ const GR = ["9", "10", "11", "12", "PG"];
 /** 브라우저가 보낸 활동·수상을 정해진 칸과 길이로만 받아서 AI용 글을 만든다. total_hours는 코드가 계산한다. */
 export function buildOrderUser({ major, activities, honors }) {
   const acts = (Array.isArray(activities) ? activities : []).slice(0, 10).map((a, i) => {
-    const grades = (Array.isArray(a?.grades) ? a.grades : []).filter((g) => GR.includes(g));
-    const h = Math.min(Number(a?.hours) || 0, 168), w = Math.min(Number(a?.weeks) || 0, 52);
+    const grades = [...new Set((Array.isArray(a?.grades) ? a.grades : []).filter((g) => GR.includes(g)))];
+    const bounded = (v, max) => Number.isFinite(Number(v)) ? Math.max(0, Math.min(Number(v), max)) : 0;
+    const h = bounded(a?.hours, 168), w = bounded(a?.weeks, 52);
     return {
       i, type: cut(a?.type, 60), position: cut(a?.position, 50), org: cut(a?.org, 100), desc: cut(a?.desc, 150),
       grades, timing: cut(a?.timing, 10), hours_per_week: h, weeks_per_year: w,

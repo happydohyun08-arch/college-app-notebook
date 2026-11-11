@@ -171,3 +171,19 @@ console.log("fit check passed");
   assert.ok(STR.ko.r_estimated && STR.en.r_estimated);
   console.log("estimate check passed");
 }
+
+// 화면과 서버 모두 비정상 시간과 중복 학년을 같은 방식으로 처리한다.
+for (const [activity, expected] of [
+  [{ hours: -10, weeks: 40, grades: ["10"] }, 0],
+  [{ hours: 10, weeks: -40, grades: ["10"] }, 0],
+  [{ hours: "Infinity", weeks: 40, grades: ["10"] }, 0],
+  [{ hours: 10, weeks: "NaN", grades: ["10"] }, 0],
+  [{ hours: 500, weeks: 99, grades: ["9", "9", "x"] }, 168 * 52],
+  [{ hours: 10, weeks: 40, grades: ["10", "10", "11"] }, 800],
+]) {
+  assert.equal(totalHours(activity), expected);
+  const result = buildOrderUser({ activities: [activity] }).acts[0];
+  assert.equal(result.total_hours, expected);
+  assert.ok(Number.isFinite(result.total_hours));
+}
+console.log("activity hours regression check passed");
