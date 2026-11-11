@@ -1,0 +1,3355 @@
+[
+  {
+    "id": "160977",
+    "name": "Bates College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.bates.edu/research/files/2026/06/CDS_2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/160977.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 73760,
+        "where": "G1 p.29 (form fields)"
+      },
+      "required_fees": {
+        "value": 475,
+        "where": "G1 p.29 (form fields)"
+      },
+      "tuition_fees": {
+        "value": 74235,
+        "where": "G1 p.29 (form fields)"
+      },
+      "room_board": {
+        "value": 20800,
+        "where": "G1 p.29 (form fields)"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.34 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.34 blank"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 106,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 84952,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.bates.edu/admission/apply/international-students/",
+      "source_type": "official_aid_page",
+      "quote": "Is Bates College need-aware for international students? Yes. ... Bates meets 100% of demonstrated financial need for admitted students who qualify for aid, regardless of citizenship status.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "223232",
+    "name": "Baylor University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://ir.web.baylor.edu/sites/g/files/ecbvkj1621/files/2026-04/cds-pdf-2025-2026-final.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/223232.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 67756,
+        "where": "G1 p.26 (required fees blank)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.26 (required fees blank)"
+      },
+      "tuition_fees": {
+        "value": 67756,
+        "where": "G1 p.26 (required fees blank)"
+      },
+      "room_board": {
+        "value": 17222,
+        "where": "G1 p.26 (required fees blank)"
+      },
+      "merit_n": {
+        "value": 1374,
+        "where": "H2A p.31"
+      },
+      "merit_avg": {
+        "value": 22041,
+        "where": "H2A p.31"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.32"
+      },
+      "intl_n": {
+        "value": 340,
+        "where": "H6 p.32"
+      },
+      "intl_avg": {
+        "value": 36455,
+        "where": "H6 p.32"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "142115",
+    "name": "Boise State University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.boisestate.edu/ie/wp-content/uploads/sites/501/2026/04/Boise-State-University-CDS_2025-2026_PDF.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/142115.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "G1 p.29 left blank"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.29 left blank"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "G1 p.29 left blank"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.29 left blank"
+      },
+      "merit_n": {
+        "value": 371,
+        "where": "H2A p.34"
+      },
+      "merit_avg": {
+        "value": 2473,
+        "where": "H2A p.34"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35"
+      },
+      "intl_n": {
+        "value": 86,
+        "where": "H6 p.35"
+      },
+      "intl_avg": {
+        "value": 6360,
+        "where": "H6 p.35"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "164924",
+    "name": "Boston College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.bc.edu/content/dam/bc1/offices/irp/ir/cds/CDS_2025-2026-PDF_FINAL.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/164924.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 75070,
+        "where": "G1 pp.36-37"
+      },
+      "required_fees": {
+        "value": 1354,
+        "where": "G1 pp.36-37"
+      },
+      "tuition_fees": {
+        "value": 76424,
+        "where": "G1 pp.36-37"
+      },
+      "room_board": {
+        "value": 19870,
+        "where": "G1 pp.36-37"
+      },
+      "merit_n": {
+        "value": 38,
+        "where": "H2A p.44"
+      },
+      "merit_avg": {
+        "value": 26280,
+        "where": "H2A p.44"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 pp.46-47"
+      },
+      "intl_n": {
+        "value": 26,
+        "where": "H6 pp.46-47"
+      },
+      "intl_avg": {
+        "value": 40681,
+        "where": "H6 pp.46-47"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.bc.edu/bc-web/admission/apply/international.html",
+      "source_type": "official_aid_page",
+      "quote": "Boston College is unable to provide need-based financial aid to students who are not U.S. citizens or U.S. permanent residents",
+      "intl_policy": null,
+      "intl_full_need": false,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "164988",
+    "name": "Boston University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.bu.edu/asir/files/2026/07/CDS-2025-2026-updated.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/164988.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69870,
+        "where": "G1 p.17"
+      },
+      "required_fees": {
+        "value": 1502,
+        "where": "G1 p.17"
+      },
+      "tuition_fees": {
+        "value": 71372,
+        "where": "G1 p.17"
+      },
+      "room_board": {
+        "value": 19970,
+        "where": "G1 p.17"
+      },
+      "merit_n": {
+        "value": 116,
+        "where": "H2A p.19"
+      },
+      "merit_avg": {
+        "value": 42227,
+        "where": "H2A p.19"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.19"
+      },
+      "intl_n": {
+        "value": 231,
+        "where": "H6 p.19"
+      },
+      "intl_avg": {
+        "value": 56639,
+        "where": "H6 p.19"
+      }
+    },
+    "aid_page": null,
+    "note": "Full CDS file (row source is section C only)"
+  },
+  {
+    "id": "217156",
+    "name": "Brown University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://tableau.brown.edu/t/PublicContent/views/CommonDataSet/C-Admissions",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/217156-G.csv",
+      "hive/agents/god/cds-raw/aid/217156-H.csv"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "Tableau export has no G1 sheet"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "Tableau export has no G1 sheet"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "Tableau export has no G1 sheet"
+      },
+      "room_board": {
+        "value": null,
+        "where": "Tableau export has no G1 sheet"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "Tableau export has no H2A sheet"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "Tableau export has no H2A sheet"
+      },
+      "intl_aid": {
+        "value": null,
+        "where": "Tableau export has no H6 sheet"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "Tableau export has no H6 sheet"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "Tableau export has no H6 sheet"
+      }
+    },
+    "aid_page": {
+      "url": "https://admission.brown.edu/international/financial-aid",
+      "source_type": "official_aid_page",
+      "quote": "Brown will be need-blind for international students beginning with the Class of 2029 ... We meet full demonstrated need for students who are admitted provided they apply for financial aid at the time they apply for admission",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": "Brown publishes the CDS only as Tableau views; the G and H exports hold G5 and H1 only"
+  },
+  {
+    "id": "110404",
+    "name": "California Institute of Technology",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://iro.caltech.edu/documents/35129/Caltech_CDS_2025-26_August_2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/110404.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 68574,
+        "where": "G1 p.29"
+      },
+      "required_fees": {
+        "value": 3255,
+        "where": "G1 p.29"
+      },
+      "tuition_fees": {
+        "value": 71829,
+        "where": "G1 p.29"
+      },
+      "room_board": {
+        "value": 21996,
+        "where": "G1 p.29"
+      },
+      "merit_n": {
+        "value": 0,
+        "where": "H2A p.34 (row N = 0)"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.34 (row N = 0)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35"
+      },
+      "intl_n": {
+        "value": 59,
+        "where": "H6 p.35"
+      },
+      "intl_avg": {
+        "value": 85696,
+        "where": "H6 p.35"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.admissions.caltech.edu/apply/first-year-applicants/international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "We are need-aware for international students because the total amount of financial aid funds for international students is limited ... we offer need-based financial aid that meets 100% of your demonstrated financial need",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "173258",
+    "name": "Carleton College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://carleton-wp-production.s3.amazonaws.com/uploads/sites/292/2026/06/CDS-PDF-2025-2026_PDF_Carleton_06242026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/173258.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 75186,
+        "where": "G1 p.29 (form fields)"
+      },
+      "required_fees": {
+        "value": 486,
+        "where": "G1 p.29 (form fields)"
+      },
+      "tuition_fees": {
+        "value": 75672,
+        "where": "G1 p.29 (form fields)"
+      },
+      "room_board": {
+        "value": 19314,
+        "where": "G1 p.29 (form fields)"
+      },
+      "merit_n": {
+        "value": 16,
+        "where": "H2A p.34 (form fields)"
+      },
+      "merit_avg": {
+        "value": 2000,
+        "where": "H2A p.34 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 63,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 81596,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.carleton.edu/admissions/apply/steps/international/",
+      "source_type": "official_aid_page",
+      "quote": "Carleton meets 100% of your demonstrated financial need, without loans ... We have limited funding available to international students",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "211440",
+    "name": "Carnegie Mellon University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.cmu.edu/ira/CDS/pdf/cds_2025_26/cds_2025_h_financial_aid.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/211440-G.pdf",
+      "hive/agents/god/cds-raw/aid/211440-H.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69702,
+        "where": "section G file p.1"
+      },
+      "required_fees": {
+        "value": 1862,
+        "where": "section G file p.1"
+      },
+      "tuition_fees": {
+        "value": 71564,
+        "where": "section G file p.1"
+      },
+      "room_board": {
+        "value": 19560,
+        "where": "section G file p.1"
+      },
+      "merit_n": {
+        "value": 30,
+        "where": "section H file p.3"
+      },
+      "merit_avg": {
+        "value": 6287,
+        "where": "section H file p.3"
+      },
+      "intl_aid": {
+        "value": false,
+        "where": "section H file p.4 (page image: not available checked)"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "section H file p.4 (page image: not available checked)"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "section H file p.4 (page image: not available checked)"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.cmu.edu/admission/admission/international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "Carnegie Mellon doesn't offer financial aid to international students.",
+      "intl_policy": null,
+      "intl_full_need": false,
+      "merit_named": null
+    },
+    "note": "Sections G and H are separate files"
+  },
+  {
+    "id": "112260",
+    "name": "Claremont McKenna College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.cmc.edu/sites/default/files/CDS_2025-26_Annotated(Updated20260605).pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/112260.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 75300,
+        "where": "G1 p.20"
+      },
+      "required_fees": {
+        "value": 420,
+        "where": "G1 p.20"
+      },
+      "tuition_fees": {
+        "value": 75720,
+        "where": "G1 p.20"
+      },
+      "room_board": {
+        "value": 23270,
+        "where": "G1 p.20"
+      },
+      "merit_n": {
+        "value": 24,
+        "where": "H2A p.24-25"
+      },
+      "merit_avg": {
+        "value": 13011,
+        "where": "H2A p.24-25"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.26"
+      },
+      "intl_n": {
+        "value": 50,
+        "where": "H6 p.26"
+      },
+      "intl_avg": {
+        "value": 72273,
+        "where": "H6 p.26"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.cmc.edu/financial-aid/prospective-and-new-students",
+      "source_type": "official_aid_page",
+      "quote": "Claremont McKenna College (CMC) is need-aware in its admission process for all international students ... for those who are admitted, CMC is committed to meeting 100% of demonstrated financial need.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "190150",
+    "name": "Columbia University in the City of New York",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://opir.columbia.edu/sites/opir.columbia.edu/files/content/Common%20Data%20Set/2024-25_Columbia_College_and_Columbia_Engineering_CDS.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/190150.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 70170,
+        "where": "G1 p.27"
+      },
+      "required_fees": {
+        "value": 4010,
+        "where": "G1 p.27"
+      },
+      "tuition_fees": {
+        "value": 74180,
+        "where": "G1 p.27"
+      },
+      "room_board": {
+        "value": 18680,
+        "where": "G1 p.27"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.33 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.33 blank"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.34"
+      },
+      "intl_n": {
+        "value": 244,
+        "where": "H6 p.34"
+      },
+      "intl_avg": {
+        "value": 88789,
+        "where": "H6 p.34"
+      }
+    },
+    "aid_page": {
+      "url": "https://cc-seas.financialaid.columbia.edu/faq-page/prospective-students",
+      "source_type": "official_aid_page",
+      "quote": "Columbia is need-aware in its admission of international students ... Columbia meets 100% of the demonstrated financial need for international students admitted as first-years",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "190415",
+    "name": "Cornell University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2023-24",
+    "source": "https://irp.cornell.edu/wp-content/uploads/2024/08/CDS_UNL2_2023_2024-v11.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/190415.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 68380,
+        "where": "G1 p.50"
+      },
+      "required_fees": {
+        "value": 934,
+        "where": "G1 p.50"
+      },
+      "tuition_fees": {
+        "value": 69314,
+        "where": "G1 p.50"
+      },
+      "room_board": {
+        "value": 19428,
+        "where": "G1 p.50"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.59 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.59 blank"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 pp.62-63"
+      },
+      "intl_n": {
+        "value": 334,
+        "where": "H6 pp.62-63"
+      },
+      "intl_avg": {
+        "value": 83060,
+        "where": "H6 pp.62-63"
+      }
+    },
+    "aid_page": {
+      "url": "https://finaid.cornell.edu/frequently-asked-questions-about-international-financial-aid",
+      "source_type": "official_aid_page",
+      "quote": "Admissions decisions for international applicants are need-aware ... Students who are admitted and have applied for financial aid and have demonstrated financial need will receive a financial aid package that meets 100% of their demonstrated financial need.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "182670",
+    "name": "Dartmouth College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.dartmouth.edu/oir/pdfs/cds_2025-26.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/182670.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69207,
+        "where": "G1 p.18"
+      },
+      "required_fees": {
+        "value": 2318,
+        "where": "G1 p.18"
+      },
+      "tuition_fees": {
+        "value": 71525,
+        "where": "G1 p.18"
+      },
+      "room_board": {
+        "value": 20920,
+        "where": "G1 p.18"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.22 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.22 blank"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 pp.23-24"
+      },
+      "intl_n": {
+        "value": 483,
+        "where": "H6 pp.23-24"
+      },
+      "intl_avg": {
+        "value": 87562,
+        "where": "H6 pp.23-24"
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.dartmouth.edu/affordability-dartmouth",
+      "source_type": "official_aid_page",
+      "quote": "Dartmouth's admissions policy is \"need-blind\" for all applicants, regardless of citizenship ... Dartmouth meets 100% of demonstrated financial need for all admitted students, regardless of citizenship",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "198419",
+    "name": "Duke University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://ir.provost.duke.edu/sites/default/files/CDS_PDF_2025-2026-20260622-website-published-version.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/198419.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 73740,
+        "where": "G1 p.19"
+      },
+      "required_fees": {
+        "value": 2635,
+        "where": "G1 p.19"
+      },
+      "tuition_fees": {
+        "value": 76375,
+        "where": "G1 p.19"
+      },
+      "room_board": {
+        "value": 20222,
+        "where": "G1 p.19"
+      },
+      "merit_n": {
+        "value": 9,
+        "where": "H2A p.23"
+      },
+      "merit_avg": {
+        "value": 91953,
+        "where": "H2A p.23"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.24"
+      },
+      "intl_n": {
+        "value": 215,
+        "where": "H6 p.24"
+      },
+      "intl_avg": {
+        "value": 87841,
+        "where": "H6 p.24"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "198516",
+    "name": "Elon University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://eloncdn.blob.core.windows.net/eu3/sites/1807/2026/04/ElonCDS2025-2026Final.xlsx",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/198516.xlsx"
+    ],
+    "values": {
+      "tuition": {
+        "value": 50386,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "required_fees": {
+        "value": 982,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "tuition_fees": {
+        "value": 51368,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "room_board": {
+        "value": 17127,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "merit_n": {
+        "value": 622,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "merit_avg": {
+        "value": 12646,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "Answer Sheet H.601/H.602 checked; H.604/H.605 blank"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "Answer Sheet H.601/H.602 checked; H.604/H.605 blank"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "Answer Sheet H.601/H.602 checked; H.604/H.605 blank"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "139658",
+    "name": "Emory University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://provost.emory.edu/planning-administration/_includes/documents/sections/institutional-data/emory-common-date-set-2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/139658.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 70300,
+        "where": "G1 p.21"
+      },
+      "required_fees": {
+        "value": 1148,
+        "where": "G1 p.21"
+      },
+      "tuition_fees": {
+        "value": 71448,
+        "where": "G1 p.21"
+      },
+      "room_board": {
+        "value": 22406,
+        "where": "G1 p.21"
+      },
+      "merit_n": {
+        "value": 93,
+        "where": "H2A p.25"
+      },
+      "merit_avg": {
+        "value": 24314,
+        "where": "H2A p.25"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.27"
+      },
+      "intl_n": {
+        "value": 101,
+        "where": "H6 p.27"
+      },
+      "intl_avg": {
+        "value": 62950,
+        "where": "H6 p.27"
+      }
+    },
+    "aid_page": {
+      "url": "https://studentaid.emory.edu/undergraduate/apply/new-students/international.html",
+      "source_type": "official_aid_page",
+      "quote": "Each year we offer need-based financial aid packages to a select group of international students ... Emory University's Office of Undergraduate Admission offers merit-based scholarships to a limited number of international students each year ... apply through the University's Scholar programs",
+      "intl_policy": null,
+      "intl_full_need": null,
+      "merit_named": [
+        {
+          "name": "Emory University Scholar programs",
+          "note": "Merit scholarships for a limited number of international students; apply before December"
+        }
+      ]
+    },
+    "note": null
+  },
+  {
+    "id": "139755",
+    "name": "Georgia Institute of Technology-Main Campus",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://irp.gatech.edu/sites/default/files/CDS/CDS_2025-2026_FINAL_R4_03JUN2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/139755.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 35610,
+        "where": "G1 p.20 (nonresident)"
+      },
+      "required_fees": {
+        "value": 1516,
+        "where": "G1 p.20 (nonresident)"
+      },
+      "tuition_fees": {
+        "value": 37126,
+        "where": "G1 p.20 (nonresident)"
+      },
+      "room_board": {
+        "value": 14628,
+        "where": "G1 p.20 (nonresident)"
+      },
+      "merit_n": {
+        "value": 358,
+        "where": "H2A p.25"
+      },
+      "merit_avg": {
+        "value": 5332,
+        "where": "H2A p.25"
+      },
+      "intl_aid": {
+        "value": false,
+        "where": "H6 p.26 (page image: not available checked)"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.26 (page image: not available checked)"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.26 (page image: not available checked)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "153384",
+    "name": "Grinnell College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://www.grinnell.edu/doc/grinnell-college-common-data-set-2024-2025",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/153384.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 71788,
+        "where": "G1 pp.35-36 (G101/G111/G112)"
+      },
+      "required_fees": {
+        "value": 558,
+        "where": "G1 pp.35-36 (G101/G111/G112)"
+      },
+      "tuition_fees": {
+        "value": 72346,
+        "where": "G1 pp.35-36 (G101/G111/G112)"
+      },
+      "room_board": {
+        "value": 17348,
+        "where": "G1 pp.35-36 (G101/G111/G112)"
+      },
+      "merit_n": {
+        "value": 102,
+        "where": "H2A p.43"
+      },
+      "merit_avg": {
+        "value": 26154,
+        "where": "H2A p.43"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 pp.45-46"
+      },
+      "intl_n": {
+        "value": 243,
+        "where": "H6 pp.45-46"
+      },
+      "intl_avg": {
+        "value": 56853,
+        "where": "H6 pp.45-46"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.grinnell.edu/admission/apply/international",
+      "source_type": "official_aid_page",
+      "quote": "Grinnell employs a need-aware admission policy for international students ... Grinnell is committed to meeting 100% of institutionally determined need for all admitted international students who complete a financial aid application by the deadline ... Outstanding international applicants may be considered for merit scholarships, regardless of their financial need profile.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "166027",
+    "name": "Harvard University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://oira.harvard.edu/files/2026/07/CDS_2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/166027.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "G1 p.19 left blank (page image)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.19 left blank (page image)"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "G1 p.19 left blank (page image)"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.19 left blank (page image)"
+      },
+      "merit_n": {
+        "value": 4,
+        "where": "H2A p.23"
+      },
+      "merit_avg": {
+        "value": 4728,
+        "where": "H2A p.23"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.24"
+      },
+      "intl_n": {
+        "value": 805,
+        "where": "H6 p.24"
+      },
+      "intl_avg": {
+        "value": 83013,
+        "where": "H6 p.24"
+      }
+    },
+    "aid_page": {
+      "url": "https://college.harvard.edu/financial-aid/how-aid-works",
+      "source_type": "official_aid_page",
+      "quote": "International students are eligible for exactly the same aid as American students ... we follow two important principles: Need-blind admissions ... we create an individualized aid package to meet all of your demonstrated need",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "115409",
+    "name": "Harvey Mudd College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.hmc.edu/institutional-research/wp-content/uploads/sites/42/2026/03/CDS-HMC-2025.2026_shared.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/115409.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 72669,
+        "where": "G1 p.25 (form fields)"
+      },
+      "required_fees": {
+        "value": 401,
+        "where": "G1 p.25 (form fields)"
+      },
+      "tuition_fees": {
+        "value": 73070,
+        "where": "G1 p.25 (form fields)"
+      },
+      "room_board": {
+        "value": 23434,
+        "where": "G1 p.25 (form fields)"
+      },
+      "merit_n": {
+        "value": 27,
+        "where": "H2A p.30 (form fields)"
+      },
+      "merit_avg": {
+        "value": 11875,
+        "where": "H2A p.30 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.31 (form fields)"
+      },
+      "intl_n": {
+        "value": 38,
+        "where": "H6 p.31 (form fields)"
+      },
+      "intl_avg": {
+        "value": 32564,
+        "where": "H6 p.31 (form fields)"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.hmc.edu/admission/afford/international-student-financial-aid/",
+      "source_type": "official_aid_page",
+      "quote": "Harvey Mudd College does provide financial support for a limited number of full-time enrolled ... international students each year. International students are also eligible to apply for some of Harvey Mudd College's merit-based awards, including one offered exclusively to international students (So Scholarship).",
+      "intl_policy": null,
+      "intl_full_need": null,
+      "merit_named": [
+        {
+          "name": "So Scholarship",
+          "note": "Merit award offered only to international students"
+        }
+      ]
+    },
+    "note": null
+  },
+  {
+    "id": "162928",
+    "name": "Johns Hopkins University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/162928.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "file refused (HTTP 403)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "file refused (HTTP 403)"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "file refused (HTTP 403)"
+      },
+      "room_board": {
+        "value": null,
+        "where": "file refused (HTTP 403)"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "-"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "-"
+      },
+      "intl_aid": {
+        "value": null,
+        "where": "-"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "-"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "-"
+      }
+    },
+    "aid_page": {
+      "url": "https://apply.jhu.edu/tuition-aid/common-financial-aid-questions/",
+      "source_type": "official_aid_page",
+      "quote": "We're need-aware for international students ... Hopkins meets 100% of demonstrated need for all admitted students, including international students ... All applicants are automatically considered for merit scholarships when they apply to Hopkins, regardless of citizenship",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": [
+        {
+          "name": "Hopkins merit scholarships",
+          "note": "All applicants are automatically considered, regardless of citizenship; no separate application"
+        }
+      ]
+    },
+    "note": "CDS PDF returned HTTP 403 to automated download"
+  },
+  {
+    "id": "203535",
+    "name": "Kenyon College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.kenyon.edu/files/resources/cds-2025-26-kenyon.xlsx",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/203535.xlsx"
+    ],
+    "values": {
+      "tuition": {
+        "value": 72880,
+        "where": "Answer Sheet G.101/G.111/G.113+G.114 (housing 9,080 + food 10,780; combined line blank)"
+      },
+      "required_fees": {
+        "value": 350,
+        "where": "Answer Sheet G.101/G.111/G.113+G.114 (housing 9,080 + food 10,780; combined line blank)"
+      },
+      "tuition_fees": {
+        "value": 73230,
+        "where": "Answer Sheet G.101/G.111/G.113+G.114 (housing 9,080 + food 10,780; combined line blank)"
+      },
+      "room_board": {
+        "value": 19860,
+        "where": "Answer Sheet G.101/G.111/G.113+G.114 (housing 9,080 + food 10,780; combined line blank)"
+      },
+      "merit_n": {
+        "value": 131,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "merit_avg": {
+        "value": 28992,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "Answer Sheet H.601/H.602/H.604/H.605"
+      },
+      "intl_n": {
+        "value": 149,
+        "where": "Answer Sheet H.601/H.602/H.604/H.605"
+      },
+      "intl_avg": {
+        "value": 73082,
+        "where": "Answer Sheet H.601/H.602/H.604/H.605"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "213543",
+    "name": "Lehigh University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://data.lehigh.edu/sites/data.lehigh.edu/files/682026_CDS-2025-26_Revised_Published.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/213543.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69420,
+        "where": "G1 p.19"
+      },
+      "required_fees": {
+        "value": 1170,
+        "where": "G1 p.19"
+      },
+      "tuition_fees": {
+        "value": 70590,
+        "where": "G1 p.19"
+      },
+      "room_board": {
+        "value": 19230,
+        "where": "G1 p.19"
+      },
+      "merit_n": {
+        "value": 177,
+        "where": "H2A p.23"
+      },
+      "merit_avg": {
+        "value": 21666,
+        "where": "H2A p.23"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.24"
+      },
+      "intl_n": {
+        "value": 208,
+        "where": "H6 p.24"
+      },
+      "intl_avg": {
+        "value": 62165,
+        "where": "H6 p.24"
+      }
+    },
+    "aid_page": {
+      "url": "https://www2.lehigh.edu/admissions/international-students",
+      "source_type": "official_aid_page",
+      "quote": "Lehigh has limited international financial aid available and therefore practices a need-aware review of applications from non-US citizens. It is our goal to meet 100% of the demonstrated need ... for as many admitted students as possible with the limited funds available.",
+      "intl_policy": "need_aware",
+      "intl_full_need": null,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "209056",
+    "name": "Lewis & Clark College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.lclark.edu/live/files/37831-lc-cds2025-26pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/209056.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 70657,
+        "where": "G1 p.20"
+      },
+      "required_fees": {
+        "value": 434,
+        "where": "G1 p.20"
+      },
+      "tuition_fees": {
+        "value": 71091,
+        "where": "G1 p.20"
+      },
+      "room_board": {
+        "value": 16892,
+        "where": "G1 p.20"
+      },
+      "merit_n": {
+        "value": 142,
+        "where": "H2A p.24"
+      },
+      "merit_avg": {
+        "value": 35287,
+        "where": "H2A p.24"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.25"
+      },
+      "intl_n": {
+        "value": 126,
+        "where": "H6 p.25"
+      },
+      "intl_avg": {
+        "value": 53236,
+        "where": "H6 p.25"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "117946",
+    "name": "Loyola Marymount University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://academics.lmu.edu/media/lmuacademics/strategicplanningacademiceffectiveness/officeofinstitutionalresearch/documents/CDS%202025-26_20260518.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/117946.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 68042,
+        "where": "G1 p.21"
+      },
+      "required_fees": {
+        "value": 1398,
+        "where": "G1 p.21"
+      },
+      "tuition_fees": {
+        "value": 69440,
+        "where": "G1 p.21"
+      },
+      "room_board": {
+        "value": 21661,
+        "where": "G1 p.21"
+      },
+      "merit_n": {
+        "value": 845,
+        "where": "H2A p.25"
+      },
+      "merit_avg": {
+        "value": 12155,
+        "where": "H2A p.25"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.26-27"
+      },
+      "intl_n": {
+        "value": 367,
+        "where": "H6 p.26-27"
+      },
+      "intl_avg": {
+        "value": 4013,
+        "where": "H6 p.26-27"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "166683",
+    "name": "Massachusetts Institute of Technology",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/166683.html"
+    ],
+    "values": {
+      "tuition": {
+        "value": 64310,
+        "where": "G1 (web page)"
+      },
+      "required_fees": {
+        "value": 420,
+        "where": "G1 (web page)"
+      },
+      "tuition_fees": {
+        "value": 64730,
+        "where": "G1 (web page)"
+      },
+      "room_board": {
+        "value": 21264,
+        "where": "G1 (web page)"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A marked N/App"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A marked N/App"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 (web page)"
+      },
+      "intl_n": {
+        "value": 412,
+        "where": "H6 (web page)"
+      },
+      "intl_avg": {
+        "value": 77266,
+        "where": "H6 (web page)"
+      }
+    },
+    "aid_page": {
+      "url": "https://catalog.mit.edu/mit/undergraduate-education/financial-aid/",
+      "source_type": "official_aid_page",
+      "quote": "meets the full demonstrated financial need of every undergraduate, regardless of residency or citizenship status ... MIT is need blind",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "193900",
+    "name": "New York University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.nyu.edu/content/dam/nyu/institutionalResearch/documents/cds-2025-2026/CDS%202025-2026%20FINAL%20(no%20G).pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/193900.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "file published without section G"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "file published without section G"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "file published without section G"
+      },
+      "room_board": {
+        "value": null,
+        "where": "file published without section G"
+      },
+      "merit_n": {
+        "value": 126,
+        "where": "H2A p.22"
+      },
+      "merit_avg": {
+        "value": 38420,
+        "where": "H2A p.22"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.24"
+      },
+      "intl_n": {
+        "value": 342,
+        "where": "H6 p.24"
+      },
+      "intl_avg": {
+        "value": 36562,
+        "where": "H6 p.24"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "147767",
+    "name": "Northwestern University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://www.enrollment.northwestern.edu/data/2024-2025.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/147767.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69375,
+        "where": "G1 p.29"
+      },
+      "required_fees": {
+        "value": 1214,
+        "where": "G1 p.29"
+      },
+      "tuition_fees": {
+        "value": 70589,
+        "where": "G1 p.29"
+      },
+      "room_board": {
+        "value": 21975,
+        "where": "G1 p.29"
+      },
+      "merit_n": {
+        "value": 15,
+        "where": "H2A p.35"
+      },
+      "merit_avg": {
+        "value": 29000,
+        "where": "H2A p.35"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.38"
+      },
+      "intl_n": {
+        "value": 314,
+        "where": "H6 p.38"
+      },
+      "intl_avg": {
+        "value": 74103,
+        "where": "H6 p.38"
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.northwestern.edu/tuition-aid/international-student-aid/",
+      "source_type": "official_aid_page",
+      "quote": "We have a need-aware admission review for international students ... These packages: Meet 100% of a student's demonstrated financial need",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "204501",
+    "name": "Oberlin College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.oberlin.edu/index%2Ephp/media/37695/download",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/204501.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 70320,
+        "where": "G1 p.30 (form fields)"
+      },
+      "required_fees": {
+        "value": 1142,
+        "where": "G1 p.30 (form fields)"
+      },
+      "tuition_fees": {
+        "value": 71462,
+        "where": "G1 p.30 (form fields)"
+      },
+      "room_board": {
+        "value": 20096,
+        "where": "G1 p.30 (form fields)"
+      },
+      "merit_n": {
+        "value": 300,
+        "where": "H2A p.35 (form fields)"
+      },
+      "merit_avg": {
+        "value": 29230,
+        "where": "H2A p.35 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.36 (form fields)"
+      },
+      "intl_n": {
+        "value": 292,
+        "where": "H6 p.36 (form fields)"
+      },
+      "intl_avg": {
+        "value": 51631,
+        "where": "H6 p.36 (form fields)"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.oberlin.edu/admissions-and-aid/financial-aid/applying-aid-international-students",
+      "source_type": "official_aid_page",
+      "quote": "Oberlin provides grants, scholarships, loans, and on-campus employment to meet 100% of calculated financial need for all international students who apply for financial aid.",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "204909",
+    "name": "Ohio Wesleyan University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.owu.edu/files/resources/cds-2025-2026-owu.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/204909.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 55416,
+        "where": "G1 pp.37-38"
+      },
+      "required_fees": {
+        "value": 624,
+        "where": "G1 pp.37-38"
+      },
+      "tuition_fees": {
+        "value": 56040,
+        "where": "G1 pp.37-38"
+      },
+      "room_board": {
+        "value": 15882,
+        "where": "G1 pp.37-38"
+      },
+      "merit_n": {
+        "value": 115,
+        "where": "H2A p.45"
+      },
+      "merit_avg": {
+        "value": 39800,
+        "where": "H2A p.45"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.47"
+      },
+      "intl_n": {
+        "value": 76,
+        "where": "H6 p.47"
+      },
+      "intl_avg": {
+        "value": 46281,
+        "where": "H6 p.47"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "214777",
+    "name": "Pennsylvania State University-Main Campus",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://opair.psu.edu/files/2026/09/CDS_2025_2026_UniversityPark_v3.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/214777.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 44574,
+        "where": "G1 p.27 (nonresident)"
+      },
+      "required_fees": {
+        "value": 640,
+        "where": "G1 p.27 (nonresident)"
+      },
+      "tuition_fees": {
+        "value": 45214,
+        "where": "G1 p.27 (nonresident)"
+      },
+      "room_board": {
+        "value": 15968,
+        "where": "G1 p.27 (nonresident)"
+      },
+      "merit_n": {
+        "value": 552,
+        "where": "H2A p.32"
+      },
+      "merit_avg": {
+        "value": 6026,
+        "where": "H2A p.32"
+      },
+      "intl_aid": {
+        "value": false,
+        "where": "H6 p.34 (not available checked)"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.34 (not available checked)"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.34 (not available checked)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "186131",
+    "name": "Princeton University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v2.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/186131.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 68140,
+        "where": "G1 p.20"
+      },
+      "required_fees": {
+        "value": 314,
+        "where": "G1 p.20"
+      },
+      "tuition_fees": {
+        "value": 68454,
+        "where": "G1 p.20"
+      },
+      "room_board": {
+        "value": 22120,
+        "where": "G1 p.20"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.24 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.24 blank"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.25"
+      },
+      "intl_n": {
+        "value": 597,
+        "where": "H6 p.25"
+      },
+      "intl_avg": {
+        "value": 86736,
+        "where": "H6 p.25"
+      }
+    },
+    "aid_page": {
+      "url": "https://admission.princeton.edu/apply/international-students",
+      "source_type": "official_aid_page",
+      "quote": "The full need of all admitted international students is met the same as it is for students from the United States. Princeton admission is need-blind",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "227757",
+    "name": "Rice University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://ideas.rice.edu/wp-content/uploads/2026/10/CDS_2025-26_WEBSITE_Updated_10-7-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/227757.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 71140,
+        "where": "G1 p.23"
+      },
+      "required_fees": {
+        "value": 984,
+        "where": "G1 p.23"
+      },
+      "tuition_fees": {
+        "value": 72124,
+        "where": "G1 p.23"
+      },
+      "room_board": {
+        "value": 20530,
+        "where": "G1 p.23"
+      },
+      "merit_n": {
+        "value": 74,
+        "where": "H2A p.28"
+      },
+      "merit_avg": {
+        "value": 34586,
+        "where": "H2A p.28"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.29 (page image)"
+      },
+      "intl_n": {
+        "value": 164,
+        "where": "H6 p.29 (page image)"
+      },
+      "intl_avg": {
+        "value": 79444,
+        "where": "H6 p.29 (page image)"
+      }
+    },
+    "aid_page": {
+      "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "Rice considers international applicants on a need-aware basis and offers need-based financial aid to a limited number of international first-year applicants.",
+      "intl_policy": "need_aware",
+      "intl_full_need": null,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "195003",
+    "name": "Rochester Institute of Technology",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.rit.edu/institutionalresearch/sites/rit.edu.institutionalresearch/files/documents/Common%20Data%20Set%20PDFs/RIT_CDS_2025_26_FINAL_20260603.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/195003.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 63508,
+        "where": "G1 p.29"
+      },
+      "required_fees": {
+        "value": 1100,
+        "where": "G1 p.29"
+      },
+      "tuition_fees": {
+        "value": 64608,
+        "where": "G1 p.29"
+      },
+      "room_board": {
+        "value": 17370,
+        "where": "G1 p.29"
+      },
+      "merit_n": {
+        "value": 756,
+        "where": "H2A p.34 (form fields)"
+      },
+      "merit_avg": {
+        "value": 24975,
+        "where": "H2A p.34 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 437,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 25163,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "163851",
+    "name": "Salisbury University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.salisbury.edu/administration/university-analysis-reporting-and-assessment/_files/CDS-2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/163851.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 19520,
+        "where": "G1 p.17 (nonresident)"
+      },
+      "required_fees": {
+        "value": 3290,
+        "where": "G1 p.17 (nonresident)"
+      },
+      "tuition_fees": {
+        "value": 22810,
+        "where": "G1 p.17 (nonresident)"
+      },
+      "room_board": {
+        "value": 14190,
+        "where": "G1 p.17 (nonresident)"
+      },
+      "merit_n": {
+        "value": 639,
+        "where": "H2A p.21"
+      },
+      "merit_avg": {
+        "value": 3944,
+        "where": "H2A p.21"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.22"
+      },
+      "intl_n": {
+        "value": 34,
+        "where": "H6 p.22"
+      },
+      "intl_avg": {
+        "value": 5096,
+        "where": "H6 p.22"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "141060",
+    "name": "Spelman College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.spelman.edu/_1_Docs-and-Files/about/institutional-research/common-data-set/cds_2025-2026_spelman_college_1.26.2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/141060.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 29025,
+        "where": "G1 p.23"
+      },
+      "required_fees": {
+        "value": 3445,
+        "where": "G1 p.23"
+      },
+      "tuition_fees": {
+        "value": 32470,
+        "where": "G1 p.23"
+      },
+      "room_board": {
+        "value": 18924,
+        "where": "G1 p.23"
+      },
+      "merit_n": {
+        "value": 32,
+        "where": "H2A p.27"
+      },
+      "merit_avg": {
+        "value": 31474,
+        "where": "H2A p.27"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.28 (page image)"
+      },
+      "intl_n": {
+        "value": 10,
+        "where": "H6 p.28 (page image)"
+      },
+      "intl_avg": {
+        "value": 48041,
+        "where": "H6 p.28 (page image)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "243744",
+    "name": "Stanford University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://drive.google.com/file/d/1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp/view",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/243744.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 67731,
+        "where": "G1 p.26"
+      },
+      "required_fees": {
+        "value": 843,
+        "where": "G1 p.26"
+      },
+      "tuition_fees": {
+        "value": 68574,
+        "where": "G1 p.26"
+      },
+      "room_board": {
+        "value": 22944,
+        "where": "G1 p.26"
+      },
+      "merit_n": {
+        "value": 3,
+        "where": "H2A p.31"
+      },
+      "merit_avg": {
+        "value": 11890,
+        "where": "H2A p.31"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.32"
+      },
+      "intl_n": {
+        "value": 260,
+        "where": "H6 p.32"
+      },
+      "intl_avg": {
+        "value": 85424,
+        "where": "H6 p.32"
+      }
+    },
+    "aid_page": {
+      "url": "https://admission.stanford.edu/apply/international/index.html",
+      "source_type": "official_aid_page",
+      "quote": "For international citizens who indicate on their application that they will be applying for financial aid, that request will be a factor in our admission evaluation ... we will meet the full need of all admitted students regardless of citizenship",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "216287",
+    "name": "Swarthmore College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.swarthmore.edu/sites/default/files/assets/documents/institutional-effectiveness-research-assessment/Swarthmore-CDS-2025-26.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/216287.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 68766,
+        "where": "G1 p.29 (form fields)"
+      },
+      "required_fees": {
+        "value": 460,
+        "where": "G1 p.29 (form fields)"
+      },
+      "tuition_fees": {
+        "value": 69226,
+        "where": "G1 p.29 (form fields)"
+      },
+      "room_board": {
+        "value": 21466,
+        "where": "G1 p.29 (form fields)"
+      },
+      "merit_n": {
+        "value": 1,
+        "where": "H2A p.34 (form fields; average blank)"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.34 (form fields; average blank)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 75,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 87434,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.swarthmore.edu/admissions-aid/international-students",
+      "source_type": "official_aid_page",
+      "quote": "Admission to Swarthmore is need-aware for international citizens ... if Swarthmore admits you and you applied for financial aid, the College meets 100% of your institutionally-determined financial need",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "216339",
+    "name": "Temple University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://ira.temple.edu/sites/ira/files/media/document/CDS%202025-26_Temple%20University_0.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/216339.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "G1 p.23 left blank (2026-27 costs pending)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.23 left blank (2026-27 costs pending)"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "G1 p.23 left blank (2026-27 costs pending)"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.23 left blank (2026-27 costs pending)"
+      },
+      "merit_n": {
+        "value": 1077,
+        "where": "H2A p.28"
+      },
+      "merit_avg": {
+        "value": 11562,
+        "where": "H2A p.28"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.29"
+      },
+      "intl_n": {
+        "value": 624,
+        "where": "H6 p.29"
+      },
+      "intl_avg": {
+        "value": 17619,
+        "where": "H6 p.29"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "224147",
+    "name": "Texas A & M University-Corpus Christi",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.tamucc.edu/president/pir/cds_2025-2026-word_web.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/224147.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "G1 p.35: 2026-27 data not available"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.35: 2026-27 data not available"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "G1 p.35: 2026-27 data not available"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.35: 2026-27 data not available"
+      },
+      "merit_n": {
+        "value": 2314,
+        "where": "H2A p.43"
+      },
+      "merit_avg": {
+        "value": 1393,
+        "where": "H2A p.43"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 pp.44-45"
+      },
+      "intl_n": {
+        "value": 91,
+        "where": "H6 pp.44-45"
+      },
+      "intl_avg": {
+        "value": 13584,
+        "where": "H6 pp.44-45"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "229115",
+    "name": "Texas Tech University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.depts.ttu.edu/irim/CommonDataSets/TTU_CDS_2025-2026-4-30-26.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/229115.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "G1 p.30 left blank (page image)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.30 left blank (page image)"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "G1 p.30 left blank (page image)"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.30 left blank (page image)"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.35 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.35 blank"
+      },
+      "intl_aid": {
+        "value": null,
+        "where": "H6 p.36 blank"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.36 blank"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.36 blank"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "180489",
+    "name": "The University of Montana",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.umt.edu/institutional-research/documents/cds-pdf-2025-2026_pdf_template1.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/180489.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 34838,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "tuition_fees": {
+        "value": 34838,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "room_board": {
+        "value": 14120,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "section H not in the published file"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "section H not in the published file"
+      },
+      "intl_aid": {
+        "value": null,
+        "where": "section H not in the published file"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "section H not in the published file"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "section H not in the published file"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "168148",
+    "name": "Tufts University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://provost.tufts.edu/institutionalresearch/wp-content/uploads/sites/5/CDS_2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/168148.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 74862,
+        "where": "G1 p.27"
+      },
+      "required_fees": {
+        "value": 1696,
+        "where": "G1 p.27"
+      },
+      "tuition_fees": {
+        "value": 76558,
+        "where": "G1 p.27"
+      },
+      "room_board": {
+        "value": 20594,
+        "where": "G1 p.27"
+      },
+      "merit_n": {
+        "value": 52,
+        "where": "H2A p.32"
+      },
+      "merit_avg": {
+        "value": 23157,
+        "where": "H2A p.32"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.33"
+      },
+      "intl_n": {
+        "value": 214,
+        "where": "H6 p.33"
+      },
+      "intl_avg": {
+        "value": 83901,
+        "where": "H6 p.33"
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.tufts.edu/tuition-and-aid/applying-for-aid/international-student-aid/",
+      "source_type": "official_aid_page",
+      "quote": "Tufts proudly meets 100% of the demonstrated financial need of every admitted student, regardless of citizenship ... The university does not offer any merit-based scholarships to undergraduate students",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "110635",
+    "name": "University of California-Berkeley",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://docs.google.com/spreadsheets/d/1INsGFH6MhaO-MFMBZ1Dngcn84FeN-hc0BLS0-v8TL_k/edit",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/110635.xlsx"
+    ],
+    "values": {
+      "tuition": {
+        "value": 53472,
+        "where": "sheet CDS-G rows 27/30/31 (nonresident)"
+      },
+      "required_fees": {
+        "value": 4262,
+        "where": "sheet CDS-G rows 27/30/31 (nonresident)"
+      },
+      "tuition_fees": {
+        "value": 57734,
+        "where": "sheet CDS-G rows 27/30/31 (nonresident)"
+      },
+      "room_board": {
+        "value": 26028,
+        "where": "sheet CDS-G rows 27/30/31 (nonresident)"
+      },
+      "merit_n": {
+        "value": 233,
+        "where": "sheet CDS-H rows 86-87"
+      },
+      "merit_avg": {
+        "value": 16030,
+        "where": "sheet CDS-H rows 86-87"
+      },
+      "intl_aid": {
+        "value": null,
+        "where": "sheet CDS-H rows 119-127 left blank"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "sheet CDS-H rows 119-127 left blank"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "sheet CDS-H rows 119-127 left blank"
+      }
+    },
+    "aid_page": null,
+    "note": "Raw copy of the Google Sheet saved as 110635.xlsx"
+  },
+  {
+    "id": "110662",
+    "name": "University of California-Los Angeles",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://apb.ucla.edu/file/d1ab04b3-ee89-4cf2-9124-8dc0471b5e5a",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/110662.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": null,
+        "where": "G1 p.29-30 left blank in the published file"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.29-30 left blank in the published file"
+      },
+      "tuition_fees": {
+        "value": null,
+        "where": "G1 p.29-30 left blank in the published file"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.29-30 left blank in the published file"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.34 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.34 blank"
+      },
+      "intl_aid": {
+        "value": null,
+        "where": "H6 p.35 blank"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.35 blank"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.35 blank"
+      }
+    },
+    "aid_page": null,
+    "note": "UCLA left sections G and H blank"
+  },
+  {
+    "id": "144050",
+    "name": "University of Chicago",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://data.uchicago.edu/files/2026/08/CDS_2025-2026_to_publish-1.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/144050.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 75960,
+        "where": "G1 p.21"
+      },
+      "required_fees": {
+        "value": 2715,
+        "where": "G1 p.21"
+      },
+      "tuition_fees": {
+        "value": 78675,
+        "where": "G1 p.21"
+      },
+      "room_board": {
+        "value": 21414,
+        "where": "G1 p.21"
+      },
+      "merit_n": {
+        "value": 57,
+        "where": "H2A p.25"
+      },
+      "merit_avg": {
+        "value": 16333,
+        "where": "H2A p.25"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.26-27 (page image)"
+      },
+      "intl_n": {
+        "value": 269,
+        "where": "H6 p.26-27 (page image)"
+      },
+      "intl_avg": {
+        "value": 74765,
+        "where": "H6 p.26-27 (page image)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "201885",
+    "name": "University of Cincinnati-Main Campus",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://uc.edu/content/dam/refresh/provost-62/offices/ir/2026-2027-ay/CDS%202025%202026%20Main%20Campus%20updated%20faculty%20info%20and%20tuition%20and%20fees%2007062026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/201885.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 28480,
+        "where": "G1 p.29 (form field: nonresident)"
+      },
+      "required_fees": {
+        "value": 1678,
+        "where": "G1 p.29 (form field: nonresident)"
+      },
+      "tuition_fees": {
+        "value": 30158,
+        "where": "G1 p.29 (form field: nonresident)"
+      },
+      "room_board": {
+        "value": 14546,
+        "where": "G1 p.29 (form field: nonresident)"
+      },
+      "merit_n": {
+        "value": 1780,
+        "where": "H2A p.34 (form fields)"
+      },
+      "merit_avg": {
+        "value": 6387,
+        "where": "H2A p.34 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 958,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 14548,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "134130",
+    "name": "University of Florida",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://data-apps.ir.aa.ufl.edu/public/cds/CDS%202025-26_v8_08.14.2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/134130.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 31316,
+        "where": "G1 p.24 (nonresident tuition; out-of-state fees)"
+      },
+      "required_fees": {
+        "value": 3301,
+        "where": "G1 p.24 (nonresident tuition; out-of-state fees)"
+      },
+      "tuition_fees": {
+        "value": 34617,
+        "where": "G1 p.24 (nonresident tuition; out-of-state fees)"
+      },
+      "room_board": {
+        "value": 14190,
+        "where": "G1 p.24 (nonresident tuition; out-of-state fees)"
+      },
+      "merit_n": {
+        "value": 633,
+        "where": "H2A p.29"
+      },
+      "merit_avg": {
+        "value": 4033,
+        "where": "H2A p.29"
+      },
+      "intl_aid": {
+        "value": false,
+        "where": "H6 p.30 (not available checked)"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.30 (not available checked)"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.30 (not available checked)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "139959",
+    "name": "University of Georgia",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://oir.uga.edu/wp-content/uploads/UGA_CDS_2024-2025.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/139959.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 30848,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "required_fees": {
+        "value": 1406,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "tuition_fees": {
+        "value": 32254,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "room_board": {
+        "value": 11672,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "merit_n": {
+        "value": 382,
+        "where": "H2A p.34 (form fields)"
+      },
+      "merit_avg": {
+        "value": 2793,
+        "where": "H2A p.34 (form fields)"
+      },
+      "intl_aid": {
+        "value": false,
+        "where": "H6 p.35 (form field: not available)"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.35 (form field: not available)"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.35 (form field: not available)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "225432",
+    "name": "University of Houston-Downtown",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.uhd.edu/documents/provost/ie/institutional-research/common-data-set/cds-2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/225432.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 19583,
+        "where": "G1 p.20 (nonresident; on-campus housing N/A)"
+      },
+      "required_fees": {
+        "value": 1456,
+        "where": "G1 p.20 (nonresident; on-campus housing N/A)"
+      },
+      "tuition_fees": {
+        "value": 21039,
+        "where": "G1 p.20 (nonresident; on-campus housing N/A)"
+      },
+      "room_board": {
+        "value": null,
+        "where": "G1 p.20 (nonresident; on-campus housing N/A)"
+      },
+      "merit_n": {
+        "value": 4,
+        "where": "H2A p.24"
+      },
+      "merit_avg": {
+        "value": 5880,
+        "where": "H2A p.24"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.25"
+      },
+      "intl_n": {
+        "value": 66,
+        "where": "H6 p.25"
+      },
+      "intl_avg": {
+        "value": 6559,
+        "where": "H6 p.25"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "145637",
+    "name": "University of Illinois Urbana-Champaign",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://uofi.box.com/shared/static/orx4vnmzkt2drmgoiksxpfs39pr42uor.xlsx",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/145637.xlsx"
+    ],
+    "values": {
+      "tuition": {
+        "value": 34338,
+        "where": "Answer Sheet G.106/G.111/G.112 (nonresident)"
+      },
+      "required_fees": {
+        "value": 5054,
+        "where": "Answer Sheet G.106/G.111/G.112 (nonresident)"
+      },
+      "tuition_fees": {
+        "value": 39392,
+        "where": "Answer Sheet G.106/G.111/G.112 (nonresident)"
+      },
+      "room_board": {
+        "value": 15184,
+        "where": "Answer Sheet G.106/G.111/G.112 (nonresident)"
+      },
+      "merit_n": {
+        "value": 1425,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "merit_avg": {
+        "value": 6027,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "Answer Sheet H.602/H.604/H.605"
+      },
+      "intl_n": {
+        "value": 45,
+        "where": "Answer Sheet H.602/H.604/H.605"
+      },
+      "intl_avg": {
+        "value": 5176,
+        "where": "Answer Sheet H.602/H.604/H.605"
+      }
+    },
+    "aid_page": null,
+    "note": "2024-25 workbook linked from the DAIR page"
+  },
+  {
+    "id": "220862",
+    "name": "University of Memphis",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.memphis.edu/oir/oirweb/WebReports/ProfilesAndFactbooks/cds2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/220862.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 24360,
+        "where": "G1 p.29 (undergraduates column; first-year column blank)"
+      },
+      "required_fees": {
+        "value": 2016,
+        "where": "G1 p.29 (undergraduates column; first-year column blank)"
+      },
+      "tuition_fees": {
+        "value": 26376,
+        "where": "G1 p.29 (undergraduates column; first-year column blank)"
+      },
+      "room_board": {
+        "value": 12316,
+        "where": "G1 p.29 (undergraduates column; first-year column blank)"
+      },
+      "merit_n": {
+        "value": 215,
+        "where": "H2A p.34 (form fields)"
+      },
+      "merit_avg": {
+        "value": 4982,
+        "where": "H2A p.34 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 165,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 18732,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "170976",
+    "name": "University of Michigan-Ann Arbor",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://obp.umich.edu/wp-content/uploads/pubdata/cds/cds_2025-26_umaa.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/170976.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 66602,
+        "where": "G1 pp.34-35 (international/nonresident)"
+      },
+      "required_fees": {
+        "value": 494,
+        "where": "G1 pp.34-35 (international/nonresident)"
+      },
+      "tuition_fees": {
+        "value": 67096,
+        "where": "G1 pp.34-35 (international/nonresident)"
+      },
+      "room_board": {
+        "value": 17220,
+        "where": "G1 pp.34-35 (international/nonresident)"
+      },
+      "merit_n": {
+        "value": 1261,
+        "where": "H2A p.42"
+      },
+      "merit_avg": {
+        "value": 4587,
+        "where": "H2A p.42"
+      },
+      "intl_aid": {
+        "value": false,
+        "where": "H6 p.44 (not available checked)"
+      },
+      "intl_n": {
+        "value": null,
+        "where": "H6 p.44 (not available checked)"
+      },
+      "intl_avg": {
+        "value": null,
+        "where": "H6 p.44 (not available checked)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "215062",
+    "name": "University of Pennsylvania",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://upenn.box.com/s/woo7d85yxpol6j9e2o121aucjc6dc1k5",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/215062.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 65670,
+        "where": "G1 p.18 (room only 13,644 + board only 6,960)"
+      },
+      "required_fees": {
+        "value": 8308,
+        "where": "G1 p.18 (room only 13,644 + board only 6,960)"
+      },
+      "tuition_fees": {
+        "value": 73978,
+        "where": "G1 p.18 (room only 13,644 + board only 6,960)"
+      },
+      "room_board": {
+        "value": 20604,
+        "where": "G1 p.18 (room only 13,644 + board only 6,960)"
+      },
+      "merit_n": {
+        "value": null,
+        "where": "H2A p.21 blank"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.21 blank"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.22"
+      },
+      "intl_n": {
+        "value": 448,
+        "where": "H6 p.22"
+      },
+      "intl_avg": {
+        "value": 80607,
+        "where": "H6 p.22"
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.upenn.edu/affording-penn/international-aid",
+      "source_type": "official_aid_page",
+      "quote": "Penn is need-aware for international applicants ... International students admitted as financial aid recipients will receive need-based aid that covers 100% of their demonstrated need",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "217484",
+    "name": "University of Rhode Island",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://web.uri.edu/ir/wp-content/uploads/sites/276/CDS-PDF-2025-2026_fillablePDF.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/217484.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 36070,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "required_fees": {
+        "value": 2328,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "tuition_fees": {
+        "value": 38398,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "room_board": {
+        "value": 15070,
+        "where": "G1 p.29 (form field: international tuition)"
+      },
+      "merit_n": {
+        "value": 1038,
+        "where": "H2A p.34 (form fields)"
+      },
+      "merit_avg": {
+        "value": 10107,
+        "where": "H2A p.34 (form fields)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 126,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 26565,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "123961",
+    "name": "University of Southern California",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://oir.usc.edu/wp-content/uploads/sites/3/2026/10/CDS_2025-26_FINAL.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/123961.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 66640,
+        "where": "G1 p.21"
+      },
+      "required_fees": {
+        "value": 2047,
+        "where": "G1 p.21"
+      },
+      "tuition_fees": {
+        "value": 68687,
+        "where": "G1 p.21"
+      },
+      "room_board": {
+        "value": 19200,
+        "where": "G1 p.21"
+      },
+      "merit_n": {
+        "value": 637,
+        "where": "H2A p.25"
+      },
+      "merit_avg": {
+        "value": 21399,
+        "where": "H2A p.25"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.27"
+      },
+      "intl_n": {
+        "value": 931,
+        "where": "H6 p.27"
+      },
+      "intl_avg": {
+        "value": 27577,
+        "where": "H6 p.27"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.admissionblog.usc.edu/p/faqs-from-international-families",
+      "source_type": "official_aid_page",
+      "quote": "Need-based financial aid is not available for international students. USC offers a limited number of merit scholarships to international students, only through the Early Action process, through Early Decision for first-year applicants to the Marshall School of Business, or December 1 for portfolio-based programs.",
+      "intl_policy": null,
+      "intl_full_need": false,
+      "merit_named": [
+        {
+          "name": "USC merit scholarships (limited)",
+          "note": "Only via Early Action (Marshall: Early Decision; portfolio programs: Dec 1)"
+        }
+      ]
+    },
+    "note": null
+  },
+  {
+    "id": "152600",
+    "name": "Valparaiso University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.valpo.edu/wp-content/uploads/2026/11/CDS_2025-2026-PDF_surveys_v6_2026.11.02.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/152600.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 50650,
+        "where": "G1 p.29 (housing only 9,326 + food only 5,894; combined line blank)"
+      },
+      "required_fees": {
+        "value": 1630,
+        "where": "G1 p.29 (housing only 9,326 + food only 5,894; combined line blank)"
+      },
+      "tuition_fees": {
+        "value": 52280,
+        "where": "G1 p.29 (housing only 9,326 + food only 5,894; combined line blank)"
+      },
+      "room_board": {
+        "value": 15220,
+        "where": "G1 p.29 (housing only 9,326 + food only 5,894; combined line blank)"
+      },
+      "merit_n": {
+        "value": 102,
+        "where": "H2A p.34"
+      },
+      "merit_avg": {
+        "value": 28508,
+        "where": "H2A p.34"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35"
+      },
+      "intl_n": {
+        "value": 41,
+        "where": "H6 p.35"
+      },
+      "intl_avg": {
+        "value": 25380,
+        "where": "H6 p.35"
+      }
+    },
+    "aid_page": null,
+    "note": null
+  },
+  {
+    "id": "221999",
+    "name": "Vanderbilt University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://cdn.vanderbilt.edu/vu-wpfsx/wp-content/uploads/sites/70/2026/07/CDS_2025-2026.xlsx",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/221999.xlsx"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69822,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "required_fees": {
+        "value": 3384,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "tuition_fees": {
+        "value": 73206,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "room_board": {
+        "value": 23690,
+        "where": "Answer Sheet G.101/G.111/G.112"
+      },
+      "merit_n": {
+        "value": 134,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "merit_avg": {
+        "value": 32791,
+        "where": "Answer Sheet H.2A01/H.2A02"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "Answer Sheet H.604/H.605"
+      },
+      "intl_n": {
+        "value": 266,
+        "where": "Answer Sheet H.604/H.605"
+      },
+      "intl_avg": {
+        "value": 79879,
+        "where": "Answer Sheet H.604/H.605"
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.vanderbilt.edu/affordability/international-costs-and-finances/",
+      "source_type": "official_aid_page",
+      "quote": "If you indicate on your application for admission that you are seeking need-based assistance, the admission decision will be made on a need-aware basis ... Students who wish to be considered for additional merit scholarships are encouraged to complete the Cornelius Vanderbilt Scholarship application.",
+      "intl_policy": "need_aware",
+      "intl_full_need": null,
+      "merit_named": [
+        {
+          "name": "Cornelius Vanderbilt Scholarship",
+          "note": "Listed on the international costs page; separate merit application encouraged"
+        }
+      ]
+    },
+    "note": null
+  },
+  {
+    "id": "197133",
+    "name": "Vassar College",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://offices.vassar.edu/institutional-research/wp-content/uploads/sites/23/2026/03/Vassar_College_CDS_2025-2026.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/197133.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 76140,
+        "where": "G1 p.29 (form fields)"
+      },
+      "required_fees": {
+        "value": 1020,
+        "where": "G1 p.29 (form fields)"
+      },
+      "tuition_fees": {
+        "value": 77160,
+        "where": "G1 p.29 (form fields)"
+      },
+      "room_board": {
+        "value": 19800,
+        "where": "G1 p.29 (form fields)"
+      },
+      "merit_n": {
+        "value": 0,
+        "where": "H2A p.34 (row N = 0)"
+      },
+      "merit_avg": {
+        "value": null,
+        "where": "H2A p.34 (row N = 0)"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_n": {
+        "value": 57,
+        "where": "H6 p.35 (form fields)"
+      },
+      "intl_avg": {
+        "value": 88709,
+        "where": "H6 p.35 (form fields)"
+      }
+    },
+    "aid_page": {
+      "url": "https://pages.vassar.edu/international-services/faq-for-prospective-students/",
+      "source_type": "official_aid_page",
+      "quote": "Since Vassar is not need-blind in the admission of non-US citizens, financial need may be a factor in the evaluation process for admission. However, if admitted, Vassar meets 100% of the candidate's demonstrated financial need for all four years.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  },
+  {
+    "id": "234207",
+    "name": "Washington and Lee University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2025-26",
+    "source": "https://www.wlu.edu/Business%20Units%20and%20Administrative%20Offices/Accreditation%20and%20Institutional%20Research/Common%20Data%20Set/2025-common-data-set.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/234207.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 73575,
+        "where": "G1 p.23"
+      },
+      "required_fees": {
+        "value": 1285,
+        "where": "G1 p.23"
+      },
+      "tuition_fees": {
+        "value": 74860,
+        "where": "G1 p.23"
+      },
+      "room_board": {
+        "value": 20575,
+        "where": "G1 p.23"
+      },
+      "merit_n": {
+        "value": 29,
+        "where": "H2A p.27"
+      },
+      "merit_avg": {
+        "value": 62110,
+        "where": "H2A p.27"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.28"
+      },
+      "intl_n": {
+        "value": 160,
+        "where": "H6 p.28"
+      },
+      "intl_avg": {
+        "value": 90617,
+        "where": "H6 p.28"
+      }
+    },
+    "aid_page": {
+      "url": "https://www.wlu.edu/admissions/financial-aid/types-of-aid/international-student-aid",
+      "source_type": "official_aid_page",
+      "quote": "W&L is need-blind in its admissions decisions and meets 100% of demonstrated financial need without loans for every admitted student. ... Merit-Based Aid (Scholarships) All merit-based aid is awarded through the Johnson Scholarship Program.",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": [
+        {
+          "name": "Johnson Scholarship",
+          "note": "All W&L merit aid; listed on the international student aid page"
+        }
+      ]
+    },
+    "note": null
+  },
+  {
+    "id": "130794",
+    "name": "Yale University",
+    "checked_at": "2026-11-11",
+    "cds_year": "CDS 2024-25",
+    "source": "https://oir.yale.edu/sites/default/files/yale_cds_2024-25_rmd_20250612.pdf",
+    "source_type": "official_cds",
+    "raw": [
+      "hive/agents/god/cds-raw/aid/130794.pdf"
+    ],
+    "values": {
+      "tuition": {
+        "value": 69900,
+        "where": "G1 p.22-23 (required fees blank)"
+      },
+      "required_fees": {
+        "value": null,
+        "where": "G1 p.22-23 (required fees blank)"
+      },
+      "tuition_fees": {
+        "value": 69900,
+        "where": "G1 p.22-23 (required fees blank)"
+      },
+      "room_board": {
+        "value": 20650,
+        "where": "G1 p.22-23 (required fees blank)"
+      },
+      "merit_n": {
+        "value": 6,
+        "where": "H2A p.27"
+      },
+      "merit_avg": {
+        "value": 27333,
+        "where": "H2A p.27"
+      },
+      "intl_aid": {
+        "value": true,
+        "where": "H6 p.29"
+      },
+      "intl_n": {
+        "value": 489,
+        "where": "H6 p.29"
+      },
+      "intl_avg": {
+        "value": 83878,
+        "where": "H6 p.29"
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.yale.edu/financial-aid-international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "Need-blind admissions A family's ability to pay is not a factor in the admissions process—for any student, anywhere in the world ... our aid offers meet 100% of demonstrated need - regardless of a student's citizenship or immigration status",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "note": null
+  }
+]

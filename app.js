@@ -377,6 +377,23 @@ $("#mySpec").addEventListener("input", (e) => {
 $("#schoolQ").addEventListener("input", (e) => { sv.q = e.target.value.trim().toLowerCase(); schoolLimit = 50; renderSchools(); });
 $("#schoolMore").addEventListener("click", () => { schoolLimit += 100; renderSchools(); });
 
+// 유학생 장학금 (CDS G·H와 학교 공식 유학생 재정지원 페이지). 값이 없으면 줄을 빼고 '–'로 꾸미지 않는다.
+function aidBox(a) {
+  const usd = (v) => (v == null ? null : `$${v.toLocaleString("en-US")}`);
+  const yn = (v) => (v == null ? null : t(v ? "aid_yes" : "aid_no"));
+  const line = (k, v) => (v == null ? null : el("div", {}, el("b", { textContent: `${t(k)}: ` }), v));
+  const people = (n, avg) => (n == null && avg == null ? null : [n != null && t("aid_people").replace("{n}", n.toLocaleString()), avg != null && `${t("aid_avg")} ${usd(avg)}`].filter(Boolean).join(" · "));
+  return el("details", { className: "aid" }, el("summary", { textContent: t("aid_h") }),
+    line("aid_cost", [usd(a.tuition_fees) && `${t("aid_tuition")} ${usd(a.tuition_fees)}`, usd(a.room_board) && `${t("aid_rb")} ${usd(a.room_board)}`].filter(Boolean).join(" · ") || null),
+    line("aid_intl", [yn(a.intl_aid), people(a.intl_n, a.intl_avg)].filter(Boolean).join(" · ") || null),
+    line("aid_policy", a.intl_policy && t(`aid_${a.intl_policy}`)),
+    line("aid_full", yn(a.intl_full_need)),
+    line("aid_merit", people(a.merit_n, a.merit_avg)),
+    ...(a.merit_named ?? []).map((m) => line("aid_named", `${m.name} (${m.note})`)),
+    a.aid_url ? el("a", { className: "mini", href: a.aid_url, target: "_blank", rel: "noopener", textContent: t("aid_page") }) : null,
+    el("div", { className: "muted", textContent: t("aid_note").replace("{y}", a.cds_year) }));
+}
+
 async function renderSchools() {
   const body = $("#schoolRows");
   if (!schools) {
@@ -416,7 +433,8 @@ async function renderSchools() {
       el("div", { className: "muted", textContent: sc.fields?.length ? sc.fields.map((f) => t(`field_${f}`)).join(" · ") : t("field_unreviewed") }),
       ...(sc.fields_sources ?? []).map((url, i) => el("a", { className: "mini", href: url, target: "_blank", rel: "noopener", textContent: `${t("field_source")} ${i + 1} ↗ ` })),
       // 순위는 US News 상품이라 싣지 않고 링크만 건다 (구글 검색: US News 내부 주소 형식이 바뀌어도 동작)
-      el("a", { className: "mini", href: `https://www.google.com/search?q=${encodeURIComponent(`${sc.name} ${sc.state ?? ""} site:usnews.com/best-colleges`)}`, target: "_blank", rel: "noopener", textContent: t("usnews") })),
+      el("a", { className: "mini", href: `https://www.google.com/search?q=${encodeURIComponent(`${sc.name} ${sc.state ?? ""} site:usnews.com/best-colleges`)}`, target: "_blank", rel: "noopener", textContent: t("usnews") }),
+      sc.aid ? aidBox(sc.aid) : null),
     el("td", { className: "num", textContent: sc.open_admission ? t("open_adm") : pct(sc.admit_rate) }),
     el("td", { className: "num", textContent: range(sc.sat25, sc.sat75, sc.sat_approx), title: sc.sat_approx ? t("sat_approx") : "" }),
     el("td", { className: "num", textContent: range(sc.act25, sc.act75) }),

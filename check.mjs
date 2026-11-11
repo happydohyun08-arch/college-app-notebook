@@ -586,3 +586,39 @@ console.log("school field filter check passed");
   assert.ok(idx.includes('href="privacy.html"') && idx.includes('href="terms.html"'), "index.html links both pages");
   console.log("privacy/terms pages check passed");
 }
+
+// 유학생 장학금: schools.json의 aid 값은 모두 research/aid-evidence 근거 줄과 같아야 한다 (CDS G·H, 학교 공식 페이지).
+{
+  const aidEv = JSON.parse(fs.readFileSync(new URL("./research/aid-evidence-2026-11-11.json", import.meta.url), "utf8"));
+  const withAid = schools.filter((s) => s.aid);
+  assert.equal(withAid.length, 61, "aid block on every CDS row");
+  assert.equal(new Set(aidEv.map((e) => e.id)).size, aidEv.length, "one evidence row per school");
+  const money = (v, lo, hi) => v == null || (Number.isInteger(v) && v >= lo && v <= hi);
+  const count = (v) => v == null || (Number.isInteger(v) && v >= 0 && v <= 50000);
+  for (const s of withAid) {
+    const a = s.aid, e = aidEv.find((x) => x.id === s.id);
+    assert.ok(e && e.name === s.name && e.cds_year === a.cds_year && a.cds_year === s.year, `${s.name}: evidence row, same CDS year`);
+    assert.ok(/^https:\/\//.test(e.source) && e.source_type === "official_cds", `${s.name}: official CDS source`);
+    assert.ok(money(a.tuition_fees, 5000, 120000) && money(a.room_board, 3000, 40000), `${s.name}: cost range`);
+    assert.ok(count(a.merit_n) && money(a.merit_avg, 100, 120000) && count(a.intl_n) && money(a.intl_avg, 100, 120000), `${s.name}: aid ranges`);
+    assert.ok([true, false, null].includes(a.intl_aid) && [true, false, null].includes(a.intl_full_need), `${s.name}: yes/no fields`);
+    if (a.intl_aid === false) assert.ok(a.intl_n == null && a.intl_avg == null, `${s.name}: no counts when aid is not available`);
+    for (const k of ["tuition_fees", "room_board", "merit_n", "merit_avg", "intl_aid", "intl_n", "intl_avg"]) {
+      if (a[k] == null) continue;
+      assert.ok(e.values[k] && e.values[k].value === a[k] && e.values[k].where, `${s.name}: ${k} has evidence`);
+    }
+    if (a.tuition_fees != null) assert.equal(a.tuition_fees, e.values.tuition.value + (e.values.required_fees.value ?? 0), `${s.name}: tuition+fees adds up`);
+    assert.ok([null, "need_blind", "need_aware"].includes(a.intl_policy), `${s.name}: policy value`);
+    assert.ok(a.merit_named == null || (Array.isArray(a.merit_named) && a.merit_named.length && a.merit_named.every((m) => typeof m.name === "string" && m.name && typeof m.note === "string" && m.note)), `${s.name}: named merit`);
+    if (a.intl_policy != null || a.intl_full_need != null || a.merit_named != null || a.aid_url != null) {
+      const p = e.aid_page;
+      assert.ok(p && p.url === a.aid_url && /^https:\/\/[^/]*\.edu\//.test(p.url) && p.source_type === "official_aid_page" && p.quote.length > 20, `${s.name}: aid page evidence`);
+      assert.ok(p.intl_policy === a.intl_policy && p.intl_full_need === a.intl_full_need && JSON.stringify(p.merit_named) === JSON.stringify(a.merit_named), `${s.name}: aid page values match`);
+      if (a.intl_policy) assert.ok(p.quote.toLowerCase().includes(a.intl_policy.replace("_", "-")) || p.quote.toLowerCase().includes(a.intl_policy.replace("_", " ")) || (a.intl_policy === "need_aware" && /\bfactor\b/i.test(p.quote)), `${s.name}: quote states the policy`);
+    }
+  }
+  for (const k of ["aid_h", "aid_cost", "aid_tuition", "aid_rb", "aid_intl", "aid_people", "aid_avg", "aid_policy", "aid_need_blind", "aid_need_aware", "aid_full", "aid_merit", "aid_named", "aid_page", "aid_yes", "aid_no", "aid_note"]) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  assert.match(STR.en.aid_note, /Common Data Set/);
+  assert.match(STR.en.aid_note, /External scholarships are not included/);
+  console.log(`aid check passed (${withAid.length} schools)`);
+}
