@@ -53,3 +53,15 @@ python3 -m http.server 8000
 품질을 미리 아는 연습용 에세이 5편(직접 쓴 가짜 글)을 배포된 Worker로 보내 점수가 기대 범위에 드는지 확인합니다.
 `worker/rubric.md`를 고치면: `cd worker && npx wrangler deploy` → `cd .. && node calibrate.mjs` (5회 호출, IP당 하루 10회 제한에 포함).
 같은 글을 2번씩 보내 점수 흔들림을 보려면 `node calibrate.mjs 2` (10회 호출).
+
+## CDS 조사 현황 (2026-11-11)
+
+전체 2,370개 대학 중 CDS 자료를 반영한 행은 54개입니다. 전체 조사 완료를 뜻하지 않습니다.
+이번에는 Columbia, Johns Hopkins, Princeton, Florida, Emory, Tufts, Boston College 7곳의 C1·C9를 갱신했습니다. 평균 GPA는 JHU·Princeton·Florida·Emory에서 확인했습니다. Columbia·Boston College의 C12는 공란이고, Tufts의 GPA는 PDF 폼 재확인 대기입니다.
+
+- `research/cds-evidence-2026-11-11.json`: 변경 전 값, 원문 URL·연도·페이지, 검증한 값.
+- `research/cds-followup.json`: 원문 접근/표 확인이 필요한 9개 대학. 접근 실패를 미공개로 판단하지 않습니다.
+- `research/data-coverage.json`: 전체 대학의 조사 상태와 빈 항목. `node audit-data.mjs`로 다시 만듭니다.
+- `node check.mjs`: 지원자·합격자·등록자 관계, 합격률 계산, 근거 기록 일치 검사.
+
+`gpa_status`는 `reported`(확인), `not_reported`(원문 공란), `review_pending`(재확인 필요)을 구분합니다. 기존 행에 이 상태가 없으면 새 조사에서 확인한 것으로 간주하지 않습니다. GPA 공란은 0이 아니며, `logic.js`의 참고용 추정값은 학교가 발표한 값이 아닙니다. 시험 점수는 C9 총점의 25·75백분위입니다. 등록 학생 자료로, 합격선이 아닙니다.

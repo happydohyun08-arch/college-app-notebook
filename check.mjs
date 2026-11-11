@@ -107,7 +107,7 @@ for (const s of schools) {
   if (s.act25) assert.ok(s.act25 >= 1 && s.act75 <= 36 && s.act25 <= s.act75, `${s.name} ACT range`);
 }
 assert.equal(new Set(schools.map((s) => s.id)).size, schools.length, "no duplicate schools");
-assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length, 47, "CDS-verified rows kept");
+assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length >= 54, true, "CDS-verified rows kept");
 
 // 사전: 두 언어의 키가 같아야 한다
 assert.deepEqual(Object.keys(STR.ko).sort(), Object.keys(STR.en).sort());
@@ -187,3 +187,21 @@ for (const [activity, expected] of [
   assert.ok(Number.isFinite(result.total_hours));
 }
 console.log("activity hours regression check passed");
+
+// 새 CDS 조사 기록은 지원자·합격자 수와 원문 위치를 남긴다.
+const evidence = JSON.parse(fs.readFileSync(new URL("./research/cds-evidence-2026-11-11.json", import.meta.url), "utf8"));
+assert.equal(evidence.length, 7);
+for (const entry of evidence) {
+  const school = schools.find((s) => s.id === entry.id);
+  assert.ok(school && school.name === entry.name);
+  assert.equal(school.source, entry.source);
+  assert.equal(school.year, entry.year);
+  for (const [field, value] of Object.entries(entry.verified)) assert.equal(school[field], value, `${school.name}: ${field}`);
+  assert.ok(school.applicants >= school.admitted && school.admitted >= school.enrolled);
+  assert.ok(Math.abs(school.admit_rate - school.admitted / school.applicants) < 1e-10);
+  assert.ok(school.cds_sections.admit_rate && school.cds_sections.sat && school.cds_sections.act && school.cds_sections.gpa);
+  assert.ok(school.gpa_avg == null || (school.gpa_avg > 0 && school.gpa_avg <= 4));
+  if (school.gpa_status === "not_reported" || school.gpa_status === "review_pending") assert.equal(school.gpa_avg, null);
+  assert.equal(school.sat_approx, false, "this batch uses composite percentiles, not sums of section percentiles");
+}
+console.log("CDS evidence check passed");
