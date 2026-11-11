@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { registerHooks } from "node:module";
-import { classify, dday, loadData, wordCheck, totalHours, isPermutation } from "./logic.js";
+import { classify, dday, loadData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation } from "./logic.js";
 import { STR } from "./i18n.js";
 
 // Worker는 rubric.md를 글자로 불러온다. Node에서도 같게 흉내 낸다.
@@ -79,13 +79,34 @@ for (const k of [...ESSAY_TYPES.map((x) => `et_${x}`), ...RED_FLAGS.map((x) => `
 assert.match(SYSTEM, /에세이 유형별 기준/);
 
 // 단어 수 제한 (코드로 계산)
+const wordsOf = (n) => Array(n).fill("w").join(" ");
+// 종류가 없는 예전 데이터: 질문·학교가 없으면 PS(650), 있으면 Supplement(제한 없음)
 assert.deepEqual(
   [wordCheck({ text: "a b c", prompt: "Answer in 250 words or fewer.", college: "Yale" }).limit, wordCheck({ text: "a", prompt: "", college: "" }).limit, wordCheck({ text: "a", prompt: "Why us?", college: "Duke" }).limit],
-  [250, 650, null],
+  [null, 650, null],
 );
-assert.equal(wordCheck({ text: "a b c", prompt: "max 2 words", college: "" }).limit, null, "1-digit numbers are not limits");
-assert.equal(wordCheck({ text: "a b c d", prompt: "(150-word limit)", college: "" }).limit, 150);
-assert.equal(wordCheck({ text: Array(700).fill("w").join(" "), prompt: "", college: "" }).over, true);
+assert.equal(essayKind({ prompt: "", college: "" }), "ps");
+assert.equal(essayKind({ prompt: "", college: "Duke" }), "supplement");
+assert.equal(essayKind({ kind: "ps", prompt: "Why us?", college: "Duke" }), "ps", "saved kind wins");
+assert.equal(wordCheck({ text: wordsOf(700), prompt: "", college: "" }).over, true);
+// PS: 650 초과 경고
+const ps = wordCheck({ kind: "ps", text: wordsOf(651), prompt: "Some story", college: "Yale" });
+assert.deepEqual([ps.limit, ps.over], [650, true]);
+assert.equal(wordCheck({ kind: "ps", text: wordsOf(650), prompt: "", college: "" }).over, false);
+// Supplement: 질문에 'N words'가 있어도 강제 제한 없음, 단어 수는 셈
+const sup = wordCheck({ kind: "supplement", text: wordsOf(400), prompt: "(150-word limit)", college: "Yale" });
+assert.deepEqual([sup.n, sup.limit, sup.over], [400, null, false]);
+// 백업·localStorage에 종류가 없거나 이상해도 열림
+const ld = loadData(JSON.stringify({ essays: [{ text: "x" }, { kind: "supplement" }, { kind: "evil" }] }));
+assert.deepEqual(ld.essays.map((e) => e.kind), ["", "supplement", ""]);
+// 지원 목록: 대소문자·공백 무시하고 한 번만
+const apps = [{ school: "  Yale   University " }];
+assert.equal(addAppOnce(apps, "yale university"), false);
+assert.equal(addAppOnce(apps, "Duke  University"), true);
+assert.equal(addAppOnce(apps, " DUKE university"), false);
+assert.equal(addAppOnce(apps, "   "), false);
+assert.deepEqual(apps.map((a) => a.school), ["  Yale   University ", "Duke University"]);
+assert.equal(apps[1].status, "prep");
 
 // 프롬프트
 assert.match(buildUser({ essay: "one two three", prompt: "", college: "" }), /Word count .*: 3/);

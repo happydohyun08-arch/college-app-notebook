@@ -1,4 +1,4 @@
-import { SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -390,7 +390,7 @@ async function renderSchools() {
 
 // ---------- 지원 목록 ----------
 function addApp(school = "") {
-  data.apps.push({ id: crypto.randomUUID(), school, round: "RD", deadline: "", status: "prep", note: "" });
+  data.apps.push(newApp(school));
   save();
   showTab("apps");
 }
@@ -415,7 +415,7 @@ function renderEssays() {
   $("#essayList").replaceChildren(...data.essays.map(essayCard));
 }
 $("#addEssay").addEventListener("click", () => {
-  data.essays.push({ id: crypto.randomUUID(), title: "", college: "", prompt: "", text: "", lastEval: null });
+  data.essays.push({ id: crypto.randomUUID(), kind: "", title: "", college: "", prompt: "", text: "", lastEval: null });
   save();
   renderEssays();
 });
@@ -434,19 +434,28 @@ function essayCard(es) {
   refresh();
   const result = el("div");
   const field = (k, tag, props) => el(tag, { ...props, value: es[k], oninput: (e) => { es[k] = e.target.value; refresh(); save(); } });
+  const added = el("span", { className: "muted" });
+  // Supplement에 학교 이름이 있으면 지원 목록에 없을 때만 넣는다. 입력 중 글자마다가 아니라 입력을 마쳤을 때.
+  const syncApp = () => {
+    if (essayKind(es) !== "supplement" || !addAppOnce(data.apps, es.college)) return;
+    save();
+    added.textContent = t("e_app_added").replace("{s}", es.college.trim());
+  };
+  const college = field("college", "input", { onchange: syncApp });
+  const kind = select(ESSAY_KINDS, essayKind(es), (e) => { es.kind = e.target.value; refresh(); save(); syncApp(); }, (o) => t(`ek_${o}`));
   if (es.lastEval) showEval(result, es.lastEval);
   const evalBtn = el("button", { className: "btn", textContent: t("eval_btn"), onclick: () => {
     if (!WORKER_URL) return void (result.textContent = t("no_server"));
     if (es.text.trim().length < 50) return void (result.textContent = t("need_essay"));
     askConsent([
-      `${t("s_essay")} (${wordCheck(es).n} ${t("words")})`,
+      `${t("s_essay")} · ${t(`ek_${essayKind(es)}`)} (${wordCheck(es).n} ${t("words")})`,
       es.prompt.trim() ? t("s_prompt") : t("s_noprompt"),
       `${t("s_college")}: ${es.college.trim() || t("none")}`,
     ], async () => {
       evalBtn.disabled = true;
       result.textContent = t("evaluating");
       try {
-        es.lastEval = { ...(await callWorker({ kind: "essay", essay: es.text, prompt: es.prompt, college: es.college })), at: new Date().toISOString() };
+        es.lastEval = { ...(await callWorker({ kind: "essay", essay_kind: essayKind(es), essay: es.text, prompt: es.prompt, college: es.college })), at: new Date().toISOString() };
         save();
         showEval(result, es.lastEval);
       } catch (e) {
@@ -460,7 +469,8 @@ function essayCard(es) {
     title,
     el("div", { className: "grid" },
       el("div", {}, el("label", { textContent: t("e_title") }), field("title", "input", { placeholder: t("e_title_ph") })),
-      el("div", {}, el("label", { textContent: t("e_college") }), field("college", "input", {}))),
+      el("div", {}, el("label", { textContent: t("e_college") }), college)),
+    el("label", { textContent: t("e_kind") }), kind, added,
     el("label", { textContent: t("e_prompt") }), field("prompt", "textarea", { placeholder: t("e_prompt_ph"), style: "min-height:60px" }),
     el("label", { textContent: t("e_text") }), field("text", "textarea", { style: "min-height:220px", maxLength: 8000 }),
     el("div", { className: "row" }, evalBtn, count,

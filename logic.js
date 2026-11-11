@@ -84,11 +84,26 @@ export const words = (t) => (String(t ?? "").trim() ? String(t).trim().split(/\s
  * 단어 수 제한 확인 (AI 없이 코드로). 질문에 "250 words" 같은 숫자가 있으면 그걸 쓰고,
  * 질문도 학교도 없으면 Common App Personal Statement 650단어로 본다.
  */
-export function wordCheck({ text, prompt, college }) {
-  const m = /(\d{2,4})\s*(?:-\s*)?words?/i.exec(prompt ?? "");
-  const limit = m ? Number(m[1]) : !String(prompt ?? "").trim() && !String(college ?? "").trim() ? 650 : null;
-  const n = words(text);
-  return { n, limit, over: limit != null && n > limit, src: m ? "wc_prompt" : "wc_common" };
+/** 에세이 종류: 저장된 값이 없으면 예전 규칙(질문과 학교가 모두 비면 Personal Statement). */
+export const ESSAY_KINDS = ["ps", "supplement"];
+export const essayKind = (e) =>
+  ESSAY_KINDS.includes(e?.kind) ? e.kind : !String(e?.prompt ?? "").trim() && !String(e?.college ?? "").trim() ? "ps" : "supplement";
+
+/** PS는 Common App 650단어 제한. Supplement는 질문에 'N words'가 있어도 제한하지 않고 단어 수만 센다. */
+export function wordCheck(e) {
+  const limit = essayKind(e) === "ps" ? 650 : null;
+  const n = words(e?.text);
+  return { n, limit, over: limit != null && n > limit, src: "wc_common" };
+}
+
+export const newApp = (school = "") => ({ id: crypto.randomUUID(), school, round: "RD", deadline: "", status: "prep", note: "" });
+/** 지원 목록에 학교가 없을 때만 추가한다 (대소문자·공백 무시). 추가했으면 true. */
+export function addAppOnce(apps, school) {
+  const key = (v) => String(v ?? "").trim().replace(/\s+/g, " ").toLowerCase();
+  const name = String(school ?? "").trim().replace(/\s+/g, " ");
+  if (!name || apps.some((a) => key(a.school) === key(name))) return false;
+  apps.push(newApp(name));
+  return true;
 }
 
 /** 약관을 바꾸면 날짜를 올린다. 예전 버전에 동의한 사람은 다시 동의해야 한다. */
@@ -140,7 +155,7 @@ export function loadData(raw) {
       id: id(a?.id), school: s(a?.school, 200), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: s(a?.status, 20), note: s(a?.note, 2000),
     })),
     essays: arr(o.essays).map((e) => ({
-      id: id(e?.id), title: s(e?.title, 200), college: s(e?.college, 200), prompt: s(e?.prompt, 2000), text: s(e?.text, 8000),
+      id: id(e?.id), kind: ESSAY_KINDS.includes(e?.kind) ? e.kind : "", title: s(e?.title, 200), college: s(e?.college, 200), prompt: s(e?.prompt, 2000), text: s(e?.text, 8000),
       lastEval: e?.lastEval && typeof e.lastEval === "object" ? e.lastEval : null,
     })),
   };
