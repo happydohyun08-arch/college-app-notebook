@@ -2,9 +2,13 @@
 // 품질을 미리 알고 있는 연습용 에세이(직접 쓴 가짜 글)를 배포된 Worker로 보내
 // 점수가 기대 범위 안에 드는지, 같은 글을 여러 번 보내면 점수가 얼마나 흔들리는지 본다.
 // rubric.md를 고친 뒤 `npx wrangler deploy` → 이 검사 → 결과 비교.
-// 주의: 한 번 실행에 (에세이 수 x 반복) 번 호출한다. 연습 에세이 10편 = IP당 하루 10회 제한을 다 쓴다.
+// 주의: 한 번 실행에 (에세이 수 x 반복) 번 호출한다. 연습 에세이 10편 = 계정당 하루 10회 제한을 다 쓴다.
 // 일부만: node calibrate.mjs 1 strong-why-us,thesaurus
 const WORKER = "https://college-essay-eval.personalcollegemanager.workers.dev";
+// Worker는 Google 로그인한 사람만 받는다. 사이트에서 AI를 한 번 쓴 뒤 개발자 도구 Network 탭의 Worker 요청에서
+// Authorization 헤더의 토큰을 복사해 GOOGLE_ID_TOKEN=... node calibrate.mjs 로 실행 (토큰은 1시간 유효).
+const TOKEN = process.env.GOOGLE_ID_TOKEN;
+if (!TOKEN) { console.log("GOOGLE_ID_TOKEN 환경 변수가 필요합니다 (calibrate.mjs 위쪽 주석 참고)."); process.exit(1); }
 const ORIGIN = "http://localhost:8000"; // wrangler.toml의 ALLOWED_ORIGIN과 같아야 한다
 
 const CASES = [
@@ -81,7 +85,7 @@ for (const c of CASES.filter((x) => !only || only.includes(x.id))) {
   for (let r = 0; r < runs; r++) {
     const res = await fetch(WORKER, {
       method: "POST",
-      headers: { "content-type": "application/json", origin: ORIGIN },
+      headers: { "content-type": "application/json", origin: ORIGIN, authorization: `Bearer ${TOKEN}` },
       body: JSON.stringify({ kind: "essay", consent: true, lang: "ko", essay: c.essay, prompt: c.prompt, college: c.college ?? "", essay_kind: c.kind }),
     });
     const ev = await res.json().catch(() => ({}));

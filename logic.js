@@ -107,7 +107,7 @@ export function addAppOnce(apps, school) {
 }
 
 /** 약관을 바꾸면 날짜를 올린다. 예전 버전에 동의한 사람은 다시 동의해야 한다. */
-export const TERMS_VERSION = "2026-11-10";
+export const TERMS_VERSION = "2026-11-11"; // 2026-11-11: AI는 Google 로그인, 계정 해시로 횟수 셈
 export const signedUp = (d) => d.ageOk === true && d.consent?.version === TERMS_VERSION;
 
 const PROFILE_KEYS = ["major", "gpa", "sat", "act", "toefl", "ap", "otherTests", "legacy"];

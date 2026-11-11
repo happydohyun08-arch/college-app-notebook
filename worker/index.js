@@ -3,14 +3,16 @@
 //   kind "order": 희망 전공에 맞춘 활동·수상 순서 추천
 // - Anthropic 키는 여기에만 있다 (wrangler secret). 브라우저에는 없다.
 // - 받은 내용을 저장하거나 로그로 남기지 않는다. Claude에 넘기고 결과만 돌려준다.
-// - 하루 횟수 제한: IP별 + 전체 (두 기능 합산). 진짜 비용 상한은 Anthropic 콘솔의 월 지출 한도다.
+// - Google 로그인한 사람만 쓴다. 하루 횟수 제한: 계정별 + IP별(공유 와이파이 남용 방지) + 전체 (두 기능 합산).
+//   진짜 비용 상한은 Anthropic 콘솔의 월 지출 한도다.
 // 방식은 indie-guild/scripts/evaluate.mjs에서 가져왔다 (주입 방어, JSON 검증).
 import RUBRIC from "./rubric.md";
 
 export const MODEL = "claude-sonnet-5-5"; // 모델 바꾸기: 이 한 줄
 const MAX_TOKENS = 16000; // 응답 상한(생각 토큰 포함) = 1회 출력 비용 상한 약 $0.16. ko·en 두 벌 + line_notes 5개로 보이는 출력만 약 5,500토큰이라 8000에서 올렸다.
-const PER_IP_DAILY = 10;
-const GLOBAL_DAILY = 300; // 하루 최대 약 300 x $0.06 = $18 (두 언어 + line_notes, Sonnet 5.5 $2/$10 per MTok 기준 추정)
+export const PER_USER_DAILY = 10; // 로그인한 Google 계정 하나당
+export const PER_IP_DAILY = 60; // 학교 와이파이처럼 여럿이 한 IP를 쓰는 경우를 넉넉히. 한 IP에서 계정을 많이 만드는 남용만 막는다.
+export const GLOBAL_DAILY = 300; // 하루 최대 약 300 x $0.06 = $18 (두 언어 + line_notes, Sonnet 5.5 $2/$10 per MTok 기준 추정)
 const MAX_ESSAY = 8000; // 글자 수 (약 1,300 단어)
 const MAX_PROMPT = 2000;
 
@@ -272,6 +274,48 @@ async function sha(text) {
   return [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 
+// ---------- Google 로그인(ID 토큰) 검사 ----------
+// 의존성 없이 Web Crypto로 RS256 서명, iss, aud(=GOOGLE_CLIENT_ID), exp를 확인한다.
+// 쓰는 값은 sub(계정 번호) 하나뿐이고 그것도 해시로만 저장한다. 이메일·이름은 읽지도 저장하지도 않는다.
+const GOOGLE_CERTS = "https://www.googleapis.com/oauth2/v3/certs";
+const GOOGLE_ISS = ["accounts.google.com", "https://accounts.google.com"];
+const b64u = (s) => Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0));
+let certs = { keys: [], until: 0, at: 0 };
+async function googleKeys(kid) {
+  const now = Date.now();
+  // 캐시가 만료됐거나, 모르는 kid인데 마지막으로 받은 지 1분이 지났으면(구글 키 교체) 다시 받는다.
+  if (now > certs.until || (!certs.keys.some((k) => k.kid === kid) && now - certs.at > 60000)) {
+    const r = await fetch(GOOGLE_CERTS);
+    if (!r.ok) throw new Error(`certs ${r.status}`);
+    const age = Number(/max-age=(\d+)/.exec(r.headers.get("cache-control") ?? "")?.[1] ?? 3600);
+    certs = { keys: (await r.json()).keys ?? [], until: now + age * 1000, at: now };
+  }
+  return certs.keys.find((k) => k.kid === kid);
+}
+// 맞으면 sub, 아니면 null. 구글 키 서버에 못 닿으면 throw (로그인 문제가 아니라 서버 문제라서).
+export async function verifyGoogleIdToken(token, clientId, now = Date.now()) {
+  const parts = String(token ?? "").split(".");
+  if (parts.length !== 3 || !clientId) return null;
+  let head, body, sig;
+  try {
+    const dec = (x) => JSON.parse(new TextDecoder().decode(b64u(x)));
+    [head, body, sig] = [dec(parts[0]), dec(parts[1]), b64u(parts[2])];
+  } catch {
+    return null;
+  }
+  if (head?.alg !== "RS256" || typeof head.kid !== "string") return null;
+  const jwk = await googleKeys(head.kid);
+  if (!jwk) return null;
+  try {
+    const key = await crypto.subtle.importKey("jwk", { kty: jwk.kty, n: jwk.n, e: jwk.e }, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
+    if (!(await crypto.subtle.verify("RSASSA-PKCS1-v1_5", key, sig, new TextEncoder().encode(`${parts[0]}.${parts[1]}`)))) return null;
+  } catch {
+    return null;
+  }
+  if (!GOOGLE_ISS.includes(body?.iss) || body.aud !== clientId || !(body.exp > now / 1000)) return null;
+  return typeof body.sub === "string" && body.sub ? body.sub : null;
+}
+
 async function callClaude(env, system, user) {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -298,7 +342,7 @@ export default {
     const cors = {
       "access-control-allow-origin": allowed ? origin : "null",
       "access-control-allow-methods": "POST",
-      "access-control-allow-headers": "content-type",
+      "access-control-allow-headers": "content-type, authorization",
       vary: "origin",
     };
     if (req.method === "OPTIONS") return new Response(null, { headers: cors });
@@ -306,8 +350,8 @@ export default {
     let body = null;
     if (req.method === "POST") body = await req.json().catch(() => null);
     const en = body?.lang === "en";
-    const fail = (status, ko, eng) => json({ error: en ? eng : ko }, status, cors);
-    // Origin 검사는 다른 웹사이트가 이 서버를 쓰는 것만 막는다. 직접 호출은 아래 횟수 제한이 막는다.
+    const fail = (status, ko, eng, extra) => json({ error: en ? eng : ko, ...extra }, status, cors);
+    // Origin 검사는 다른 웹사이트가 이 서버를 쓰는 것만 막는다. 직접 호출은 아래 Google 로그인 검사와 횟수 제한이 막는다.
     if (req.method !== "POST" || !allowed) return fail(403, "허용되지 않은 요청입니다.", "Request not allowed.");
     if (!body) return fail(400, "요청 형식이 잘못되었습니다.", "Malformed request.");
     if (body.consent !== true) return fail(400, "보내기 동의가 필요합니다.", "Consent is required.");
@@ -329,25 +373,34 @@ export default {
       job = { system: essaySystem(), user: buildUser({ essay, prompt, college, essay_kind: body.essay_kind }), parse: (t) => parseEval(t, essay, body.lang) };
     }
 
+    // 로그인 확인. Authorization: Bearer <Google ID 토큰> (Drive 백업용 access token과는 다른 것).
+    let sub;
+    try {
+      sub = await verifyGoogleIdToken((req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, ""), env.GOOGLE_CLIENT_ID);
+    } catch {
+      return fail(502, "로그인 확인에 실패했어요. 잠시 뒤 다시 해 주세요.", "Could not check your sign-in. Please try again shortly.");
+    }
+    if (!sub) return fail(401, `AI 기능은 Google 로그인 후 하루 ${PER_USER_DAILY}회 쓸 수 있어요.`, `Sign in with Google to use AI (${PER_USER_DAILY} times a day).`, { code: "login_required" });
+
     // ponytail: KV 카운터는 동시에 몰리면 몇 회 넘칠 수 있다. 정확한 제한이 필요하면 Durable Object로.
-    // IP는 해시로만 저장하고 이틀 뒤 자동 삭제된다.
+    // 계정 번호(sub)와 IP는 날짜를 붙인 해시로만 저장하고 이틀 뒤 자동 삭제된다.
     const day = new Date().toISOString().slice(0, 10);
+    const userKey = `u:${day}:${await sha(day + sub)}`;
     const ipKey = `ip:${day}:${await sha(day + (req.headers.get("cf-connecting-ip") ?? "?"))}`;
     const allKey = `all:${day}`;
-    const [ipN, allN] = (await Promise.all([env.LIMITS.get(ipKey), env.LIMITS.get(allKey)])).map((v) => Number(v ?? 0));
-    if (ipN >= PER_IP_DAILY) return fail(429, `오늘 AI 사용 횟수(${PER_IP_DAILY}회)를 다 썼어요. 내일 다시 해 주세요.`, `You've used today's ${PER_IP_DAILY} AI requests. Try again tomorrow.`);
+    const [userN, ipN, allN] = (await Promise.all([userKey, ipKey, allKey].map((k) => env.LIMITS.get(k)))).map((v) => Number(v ?? 0));
+    if (userN >= PER_USER_DAILY) return fail(429, `오늘 AI 사용 횟수(${PER_USER_DAILY}회)를 다 썼어요. 내일 다시 해 주세요.`, `You've used today's ${PER_USER_DAILY} AI requests. Try again tomorrow.`, { remaining: 0 });
+    if (ipN >= PER_IP_DAILY) return fail(429, "이 네트워크에서 오늘 쓸 수 있는 AI 횟수를 다 썼어요. 내일 다시 해 주세요.", "This network has used today's AI limit. Try again tomorrow.");
     if (allN >= GLOBAL_DAILY) return fail(429, "오늘 전체 AI 사용 한도에 도달했어요. 내일 다시 해 주세요.", "The site reached today's AI limit. Try again tomorrow.");
-    await Promise.all([
-      env.LIMITS.put(ipKey, String(ipN + 1), { expirationTtl: 172800 }),
-      env.LIMITS.put(allKey, String(allN + 1), { expirationTtl: 172800 }),
-    ]);
+    await Promise.all([[userKey, userN], [ipKey, ipN], [allKey, allN]].map(([k, n]) => env.LIMITS.put(k, String(n + 1), { expirationTtl: 172800 })));
+    const remaining = PER_USER_DAILY - userN - 1;
 
     try {
       const { text, model } = await callClaude(env, job.system, job.user);
-      return json({ ...job.parse(text), model }, 200, cors);
+      return json({ ...job.parse(text), model, remaining }, 200, cors);
     } catch (e) {
       // 학생 글·키는 응답에 넣지 않는다. 오류 종류만 알린다.
-      return fail(502, `AI 처리에 실패했어요 (${e.message}). 잠시 뒤 다시 해 주세요.`, `The AI request failed (${e.message}). Please try again shortly.`);
+      return fail(502, `AI 처리에 실패했어요 (${e.message}). 잠시 뒤 다시 해 주세요.`, `The AI request failed (${e.message}). Please try again shortly.`, { remaining });
     }
   },
 };

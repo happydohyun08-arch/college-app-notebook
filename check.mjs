@@ -434,3 +434,110 @@ assert.ok(matchesSchoolField({}, "unreviewed") && matchesSchoolField({}, ""));
 assert.ok(!matchesSchoolField({}, "music") && !matchesSchoolField(cmu, "invalid"));
 assert.ok(!matchesSchoolField(schools.find((s) => s.id === "192110"), "engineering"));
 console.log("school field filter check passed");
+
+// ---------- Google 로그인(ID 토큰) 검사와 계정별·IP별·전체 한도 ----------
+// 테스트용 RSA 키를 만들어 구글 키 목록(JWKS)인 척하고, fetch를 바꿔 끼워 Anthropic 응답도 흉내 낸다. 네트워크는 안 쓴다.
+{
+  const { default: worker, verifyGoogleIdToken, PER_USER_DAILY, PER_IP_DAILY, GLOBAL_DAILY } = await import("./worker/index.js");
+  const CID = "test-client.apps.googleusercontent.com";
+  const alg = { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" };
+  const mk = async () => crypto.subtle.generateKey({ ...alg, modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]) }, true, ["sign", "verify"]);
+  const [good, evil] = [await mk(), await mk()];
+  const pub = { ...(await crypto.subtle.exportKey("jwk", good.publicKey)), kid: "k1", alg: "RS256", use: "sig" };
+  const b64 = (b) => Buffer.from(b).toString("base64url");
+  const now = Math.floor(Date.now() / 1000);
+  const sign = async (claims = {}, { key = good.privateKey, kid = "k1", head = {} } = {}) => {
+    const h = b64(JSON.stringify({ alg: "RS256", kid, typ: "JWT", ...head }));
+    const p = b64(JSON.stringify({ iss: "https://accounts.google.com", aud: CID, sub: "1001", exp: now + 3600, iat: now, email: "x@example.com", name: "김학생", ...claims }));
+    return `${h}.${p}.${b64(await crypto.subtle.sign(alg, key, new TextEncoder().encode(`${h}.${p}`)))}`;
+  };
+  let certFetches = 0, claudeCalls = 0;
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    if (String(url) === "https://www.googleapis.com/oauth2/v3/certs") { certFetches++; return new Response(JSON.stringify({ keys: [pub] }), { headers: { "cache-control": "public, max-age=3600" } }); }
+    if (String(url).startsWith("https://api.anthropic.com/")) { claudeCalls++; return new Response(JSON.stringify({ stop_reason: "end_turn", model: "m", content: [{ type: "text", text: JSON.stringify({ summary: { ko: "좋아요", en: "ok" }, activity_order: [0], honor_order: [], notes: [] }) }] })); }
+    throw new Error(`unexpected fetch ${url}`);
+  };
+  try {
+    // 토큰 검증
+    assert.equal(await verifyGoogleIdToken(await sign(), CID), "1001", "valid token passes");
+    assert.equal(await verifyGoogleIdToken(await sign({ iss: "accounts.google.com" }), CID), "1001", "both Google issuers accepted");
+    assert.equal(await verifyGoogleIdToken(await sign({}, { key: evil.privateKey }), CID), null, "wrong signature");
+    assert.equal(await verifyGoogleIdToken(await sign({ aud: "other.apps.googleusercontent.com" }), CID), null, "wrong aud");
+    assert.equal(await verifyGoogleIdToken(await sign({ iss: "https://evil.example" }), CID), null, "wrong iss");
+    assert.equal(await verifyGoogleIdToken(await sign({ exp: now - 10 }), CID), null, "expired");
+    assert.equal(await verifyGoogleIdToken(await sign({}, { head: { alg: "none" } }), CID), null, "alg none");
+    assert.equal(await verifyGoogleIdToken(await sign({}, { head: { alg: "HS256" } }), CID), null, "alg HS256");
+    assert.equal(await verifyGoogleIdToken(await sign({ sub: "" }), CID), null, "empty sub");
+    assert.equal(await verifyGoogleIdToken(await sign(), ""), null, "no client id configured");
+    assert.equal(await verifyGoogleIdToken("abc", CID), null, "garbage");
+    assert.equal(await verifyGoogleIdToken(undefined, CID), null, "missing");
+    const t = await sign();
+    assert.equal(await verifyGoogleIdToken(t.slice(0, t.lastIndexOf(".") + 1) + b64("x"), CID), null, "tampered signature");
+    const [h, , s] = t.split(".");
+    assert.equal(await verifyGoogleIdToken(`${h}.${b64(JSON.stringify({ iss: "accounts.google.com", aud: CID, sub: "2002", exp: now + 3600 }))}.${s}`, CID), null, "tampered payload");
+    const before = certFetches;
+    assert.equal(await verifyGoogleIdToken(await sign({}, { kid: "unknown" }), CID), null, "unknown kid");
+    assert.equal(await verifyGoogleIdToken(await sign({}, { kid: "unknown" }), CID), null);
+    assert.ok(certFetches - before <= 1, "unknown kid refetches certs at most once a minute");
+    assert.ok(certFetches <= 2, "certs are cached");
+
+    // 핸들러: 로그인 필요, 계정별·IP별·전체 한도
+    const store = new Map();
+    const env = { ALLOWED_ORIGIN: "http://localhost:8000", GOOGLE_CLIENT_ID: CID, ANTHROPIC_API_KEY: "test", LIMITS: { get: async (k) => store.get(k) ?? null, put: async (k, v) => void store.set(k, v) } };
+    const call = async (token, ip = "1.1.1.1", lang = "ko") => {
+      const headers = { origin: "http://localhost:8000", "content-type": "application/json", "cf-connecting-ip": ip };
+      if (token) headers.authorization = `Bearer ${token}`;
+      const res = await worker.fetch(new Request("https://w.example/", { method: "POST", headers, body: JSON.stringify({ kind: "order", consent: true, lang, major: "CS", activities: [{ position: "p" }], honors: [] }) }), env);
+      return { status: res.status, body: await res.json() };
+    };
+    const opt = await worker.fetch(new Request("https://w.example/", { method: "OPTIONS", headers: { origin: "http://localhost:8000" } }), env);
+    assert.match(opt.headers.get("access-control-allow-headers"), /authorization/, "CORS allows Authorization");
+    for (const [tok, why] of [[null, "no token"], [await sign({ aud: "x" }), "bad aud"], [await sign({ exp: now - 1 }), "expired"]]) {
+      const r = await call(tok);
+      assert.equal(r.status, 401, why);
+      assert.equal(r.body.code, "login_required");
+      assert.match(r.body.error, /Google 로그인 후 하루 10회/);
+    }
+    assert.match((await call(null, "1.1.1.1", "en")).body.error, /Sign in with Google.*10 times a day/);
+    assert.equal(claudeCalls, 0, "anonymous requests never reach Claude");
+    assert.equal(store.size, 0, "anonymous requests are not counted");
+
+    const userA = await sign({ sub: "A" });
+    for (let i = 1; i <= PER_USER_DAILY; i++) {
+      const r = await call(userA);
+      assert.equal(r.status, 200);
+      assert.equal(r.body.remaining, PER_USER_DAILY - i);
+    }
+    const over = await call(userA);
+    assert.equal(over.status, 429, "per-user limit");
+    assert.equal(over.body.remaining, 0);
+    assert.equal((await call(await sign({ sub: "B" }))).status, 200, "another student on the same school IP still works");
+    assert.ok([...store.keys()].every((k) => !k.includes("A") || /^u:\d{4}-\d{2}-\d{2}:[0-9a-f]{64}$/.test(k)), "sub is stored only as a hash");
+    assert.ok(![...store.keys()].some((k) => k.includes("1.1.1.1") || k.includes("@")), "no raw IP or email in keys");
+
+    // IP 한도: 같은 IP에서 계정 여러 개
+    const day = new Date().toISOString().slice(0, 10);
+    store.clear();
+    assert.equal((await call(await sign({ sub: "C" }), "2.2.2.2")).status, 200);
+    const ipKey = [...store.keys()].find((k) => k.startsWith("ip:"));
+    store.set(ipKey, String(PER_IP_DAILY));
+    const ipOver = await call(await sign({ sub: "D" }), "2.2.2.2");
+    assert.equal(ipOver.status, 429, "per-IP limit");
+    assert.match(ipOver.body.error, /네트워크/);
+    assert.equal((await call(await sign({ sub: "D" }), "3.3.3.3")).status, 200, "other IP unaffected");
+
+    // 전체 한도
+    store.set(`all:${day}`, String(GLOBAL_DAILY));
+    const allOver = await call(await sign({ sub: "E" }), "4.4.4.4");
+    assert.equal(allOver.status, 429, "global limit");
+    assert.match(allOver.body.error, /전체/);
+    assert.ok(PER_IP_DAILY > PER_USER_DAILY && GLOBAL_DAILY === 300);
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+  for (const k of ["ai_login", "ai_daily", "ai_left"]) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  assert.match(STR.ko.terms_html, /Google 계정 식별자의 해시/);
+  assert.match(STR.en.about2_html, /hashes of your Google account identifier/);
+  console.log("google sign-in + per-user limit check passed");
+}

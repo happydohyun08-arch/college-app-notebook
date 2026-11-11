@@ -12,6 +12,8 @@ enabled = false
 [vars]
 # 허용할 사이트 주소들. 쉼표로 구분, 끝에 / 없이, 경로 없이
 ALLOWED_ORIGIN = "http://localhost:8000,https://happydohyun08-arch.github.io"
+# Google 로그인 ID 토큰의 aud 검사용. app.js의 GOOGLE_CLIENT_ID와 같아야 한다 (공개 값, 비밀 아님).
+GOOGLE_CLIENT_ID = "401240295166-diputek84ej3rfmap47n040jfmvoc6gn.apps.googleusercontent.com"
 
 # 하루 횟수 세기용 저장소. `npx wrangler kv namespace create LIMITS`가 알려 주는 id를 넣는다.
 [[kv_namespaces]]

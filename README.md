@@ -31,7 +31,14 @@ python3 -m http.server 8000
 4. `wrangler.toml`의 `ALLOWED_ORIGIN`을 내 GitHub Pages 주소로 바꾼다 (예: `https://내아이디.github.io`).
 5. `npx wrangler deploy` → 나온 주소를 `app.js`의 `WORKER_URL`에 넣는다.
 
-하루 제한: IP당 10회, 전체 300회 (`worker/index.js` 맨 위에서 바꿈). 에세이 1편 약 $0.02.
+하루 제한: Google 로그인 계정당 10회, IP당 60회(학교 와이파이 공유 대비, 계정 여러 개 남용 방지), 전체 300회 (`worker/index.js` 맨 위에서 바꿈). 에세이 1편 약 $0.02.
+
+### AI는 Google 로그인한 사람만
+- 사이트는 AI 보내기 창에서 'Sign in with Google' 버튼으로 ID 토큰(JWT)을 받아 `Authorization: Bearer`로 보낸다. 토큰은 메모리에만 있고 1시간 유효. Drive 백업용 access token과는 별개다.
+- Worker는 의존성 없이 Web Crypto로 Google 키 목록(`https://www.googleapis.com/oauth2/v3/certs`, cache-control 만큼 캐시)으로 RS256 서명, `iss`, `aud`(= `wrangler.toml`의 `GOOGLE_CLIENT_ID`), `exp`를 확인하고 `sub`의 해시(날짜 포함)만 횟수 키로 쓴다. 이메일·이름은 저장·로그하지 않는다.
+- 로그인 안 한 요청은 401 `code: "login_required"`로 거부(Claude 호출·횟수 차감 없음). 성공·실패 응답에 `remaining`(오늘 남은 계정 횟수)을 넣고, 사이트는 보내기 창에 표시한다.
+- Google Cloud Console → API 및 서비스 → 사용자 인증 정보 → 이 OAuth 클라이언트(웹)의 '승인된 JavaScript 원본'에 `http://localhost:8000`, `http://localhost`, `https://happydohyun08-arch.github.io`가 있어야 한다 (GIS 버튼은 `http://localhost`도 함께 요구). 리디렉션 URI는 필요 없다. 동의 화면이 '테스트' 상태면 테스트 사용자만 로그인되므로 공개 전 '프로덕션'으로 게시한다 (openid/email/profile만 쓰면 검수 불필요, drive.appdata는 민감하지 않은 범위).
+- 약관(`TERMS_VERSION` 2026-11-11)이 바뀌어 기존 이용자는 다음 방문 때 시작 페이지에서 다시 동의한다 (자료는 그대로).
 
 ## GitHub Pages에 올리기
 새 GitHub 저장소에 `college-app` 안의 파일을 올리고 → Settings → Pages → Branch `main` / root.
@@ -51,7 +58,7 @@ python3 -m http.server 8000
 
 ## 채점 보정 검사 (calibrate.mjs)
 품질을 미리 아는 연습용 에세이 10편(직접 쓴 가짜 글: 강/중/약 personal, 일반·구체 why us, 전공 동기, 짧은 답, 이력서 나열, 사전 단어, 주입 시도)을 배포된 Worker로 보내 점수·유형·경고 신호가 기대 범위에 드는지, 인용과 line_notes 인용이 원문에 있는지 확인합니다.
-`worker/rubric.md`를 고치면: `cd worker && npx wrangler deploy` → `cd .. && node calibrate.mjs` (10회 호출 = IP당 하루 10회 제한 전부).
+`worker/rubric.md`를 고치면: `cd worker && npx wrangler deploy` → `cd .. && node calibrate.mjs` (10회 호출 = 계정당 하루 10회 제한 전부). Google ID 토큰이 필요하다: 사이트에서 AI를 한 번 쓴 뒤 개발자 도구 Network 탭의 Worker 요청에서 Authorization 헤더 토큰을 복사해 `GOOGLE_ID_TOKEN=<토큰> node calibrate.mjs`.
 일부만: `node calibrate.mjs 1 strong-why-us,thesaurus`. 흔들림을 보려면 `node calibrate.mjs 2 <id들>` (id 수 x 2회 호출, 하루 10회 안에서).
 채점 근거 조사: `research/essay-patterns-2026-11-11.md` (공개 합격 에세이·사정관 해설 패턴, 원문은 복사하지 않음).
 

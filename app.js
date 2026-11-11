@@ -233,9 +233,12 @@ function askConsent(lines, go) {
   $("#sendOk").checked = false;
   $("#sendGo").disabled = true;
   pending = go;
+  showLogin();
   $("#send").showModal();
 }
-$("#sendOk").addEventListener("change", (e) => ($("#sendGo").disabled = !e.target.checked));
+// 보내기는 동의 체크 + Google 로그인 둘 다 있어야 켜진다.
+const sendState = () => ($("#sendGo").disabled = !($("#sendOk").checked && signedIn()));
+$("#sendOk").addEventListener("change", sendState);
 $("#sendCancel").addEventListener("click", () => { pending = null; $("#send").close(); });
 $("#sendGo").addEventListener("click", () => {
   const go = pending;
@@ -243,13 +246,37 @@ $("#sendGo").addEventListener("click", () => {
   $("#send").close();
   go?.();
 });
+// ---------- AI용 Google 로그인 ----------
+// Drive 백업용 access token과 별개로 'Sign in with Google' ID 토큰을 받아 Worker에 보낸다. 메모리에만 둔다.
+// Worker는 서명을 확인하고 계정 번호(sub)의 해시로만 하루 횟수를 센다.
+let idToken = null, aiLeft = null, gsiInit = false;
+const tokenExp = (tok) => { try { return JSON.parse(atob(tok.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).exp * 1000; } catch { return 0; } };
+const signedIn = () => !!idToken && tokenExp(idToken) > Date.now() + 60000;
+async function showLogin() {
+  const box = $("#sendLogin");
+  if (signedIn()) return void box.replaceChildren(el("p", { className: "muted", textContent: aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft) }));
+  const btn = el("div");
+  box.replaceChildren(el("p", { textContent: t("ai_login") }), btn);
+  try {
+    await gdScript();
+    if (!gsiInit) {
+      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: (r) => { idToken = r.credential; aiLeft = null; showLogin(); sendState(); } });
+      gsiInit = true;
+    }
+    google.accounts.id.renderButton(btn, { theme: "outline", text: "signin_with", locale: lang });
+  } catch (e) {
+    box.append(el("p", { className: "muted", textContent: e.message }));
+  }
+}
 async function callWorker(body) {
   const res = await fetch(WORKER_URL, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", Authorization: `Bearer ${idToken}` },
     body: JSON.stringify({ ...body, lang, consent: true }),
   });
-  const out = await res.json().catch(() => ({ error: `${t("server_err")} (${res.status})` }));
+  const { remaining, ...out } = await res.json().catch(() => ({ error: `${t("server_err")} (${res.status})` }));
+  if (typeof remaining === "number") aiLeft = remaining;
+  if (out.code === "login_required") idToken = null; // 다음에 누르면 로그인 버튼이 다시 나온다
   if (!res.ok || out.error) throw new Error(out.error ?? `${t("server_err")} (${res.status})`);
   return out;
 }
