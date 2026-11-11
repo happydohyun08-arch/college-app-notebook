@@ -1,4 +1,4 @@
-import { SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -257,6 +257,7 @@ async function callWorker(body) {
 // ---------- 활동 순서 추천 ----------
 $("#orderBtn").addEventListener("click", () => {
   const box = $("#orderResult");
+  lastOrder = null;
   if (!WORKER_URL) return void (box.textContent = t("no_server"));
   if (!data.profile.major?.trim()) return void (box.textContent = t("order_need_major"));
   if (!data.activities.length && !data.honors.length) return void (box.textContent = t("order_need_items"));
@@ -267,6 +268,7 @@ $("#orderBtn").addEventListener("click", () => {
     box.textContent = t("ordering");
     try {
       const out = await callWorker({ kind: "order", major: data.profile.major, activities: data.activities, honors: data.honors });
+      lastOrder = { box, out, actIds, honIds };
       showOrder(box, out, actIds, honIds);
     } catch (e) {
       box.textContent = e.message;
@@ -275,12 +277,18 @@ $("#orderBtn").addEventListener("click", () => {
     }
   });
 });
-function showOrder(box, out, actIds, honIds) {
+// 예전(한 언어) 결과면 다른 언어 화면에서 그대로 보여 주고 그렇다고 알린다.
+const oneLang = (raw) => (raw?.tr?.[lang] ? null : el("p", { className: "muted", textContent: t("ai_one_lang") }));
+// 마지막 추천 결과는 메모리에만 둔다. 언어를 바꾸면 renderAll이 다시 그린다 (서버를 다시 부르지 않는다).
+let lastOrder = null;
+function showOrder(box, raw, actIds, honIds) {
+  const out = localizeOrder(raw, lang);
   const note = (kind, i) => out.notes.find((n) => n.kind === kind && n.i === i)?.why ?? "";
   const byId = (list, id) => list.find((x) => x.id === id);
   const line = (n, title, sub, why) => el("div", { className: "crit" }, el("b", { textContent: `${n}. ${title}` }), sub ? el("span", { className: "muted", textContent: `  ${sub}` }) : null, el("div", { className: "muted", textContent: why }));
   box.replaceChildren(el("div", { className: "card" },
     el("p", { textContent: String(out.summary ?? "") }),
+    oneLang(raw),
     out.injection_flags?.length ? el("div", { className: "note", textContent: t("injection") }) : null,
     out.activity_order.length ? el("h3", { textContent: `${t("act_sec")} · ${t("order_now")}` }) : null,
     ...out.activity_order.map((i, n) => {
@@ -303,6 +311,7 @@ function showOrder(box, out, actIds, honIds) {
       save();
       renderActivities();
       renderHonors();
+      lastOrder = null;
       box.replaceChildren(el("div", { className: "note", textContent: t("order_applied") }));
     } })),
     el("p", { className: "muted", textContent: t("ai_caution") })));
@@ -478,14 +487,16 @@ function essayCard(es) {
     result);
 }
 
-function showEval(box, ev) {
+function showEval(box, raw) {
+  const ev = localizeEval(raw, lang);
   const crit = Array.isArray(ev.criteria) ? ev.criteria : [];
   box.replaceChildren(
     el("div", { className: "crit" },
       el("div", { className: "score" },
         el("b", { textContent: `${Number(ev.total) || 0}` }),
         el("span", { className: "muted", textContent: `/ 100${ev.at ? `  ·  ${String(ev.at).slice(0, 10)} ${t("evaluated")}` : ""}` })),
-      el("p", { textContent: String(ev.summary ?? ev.summary_ko ?? "") })),
+      el("p", { textContent: String(ev.summary ?? ev.summary_ko ?? "") }),
+      oneLang(raw)),
     Array.isArray(ev.prompt_parts) && ev.prompt_parts.length
       ? el("div", { className: "crit" }, el("b", { textContent: t("prompt_check") }),
           ...ev.prompt_parts.map((p) => el("div", { textContent: `${p.answered === true ? "✓" : t("not_answered")} ${String(p.part ?? "")}` })))
@@ -527,6 +538,7 @@ function applyBackup(text) {
   const next = loadData(text);
   if (!confirm(t("import_q"))) return false;
   data = { ...next, ageOk: true, consent: data.consent, lang };
+  lastOrder = null;
   for (const a of data.apps) a.status = OLD_STATUS[a.status] ?? (STATUSES.includes(a.status) ? a.status : "prep");
   save();
   renderAll();
@@ -653,6 +665,7 @@ function renderAll() {
   renderHonors();
   renderEssays();
   renderApps();
+  if (lastOrder) showOrder(lastOrder.box, lastOrder.out, lastOrder.actIds, lastOrder.honIds);
   showTab(tab);
 }
 // ---------- 3D 모션 (시작 페이지) ----------

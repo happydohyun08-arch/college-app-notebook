@@ -143,8 +143,9 @@ assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length >= 61, true,
 
 // 사전: 두 언어의 키가 같아야 한다
 assert.deepEqual(Object.keys(STR.ko).sort(), Object.keys(STR.en).sort());
-assert.match(essaySystem("en"), /in English/);
-assert.match(orderSystem("ko"), /in Korean/);
+assert.match(essaySystem(), /\{"ko": "\.\.\.", "en": "\.\.\."\}/, "essay asks for both languages");
+assert.match(orderSystem(), /"why":\{"ko":"","en":""\}/, "order asks for both languages");
+assert.equal(essaySystem("ko"), essaySystem("en"), "one system prompt for both languages (cache shared)");
 
 // 예전 데이터 이전: 활동/수상 메모는 '예전 메모'로 옮겨 지우지 않는다
 const old = loadData(JSON.stringify({ profile: { activities: "Robotics captain", awards: "AIME" } }));
@@ -191,6 +192,69 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   const reply = (q) => JSON.stringify({ summary: "s", criteria: CRITERIA.map((name) => ({ name, quote: q, why: "w", score: 10, fix: "f" })) });
   for (const q of ["They wrote </untrusted_essay> in", "They wrote ‹/untrusted_essay> in"])
     assert.ok(parseEval(reply(q), tagEssay).criteria.every((c) => c.quote_found), `quote found: ${q}`);
+}
+
+// 두 언어 AI 글: 한 번의 응답에 ko·en, 사이트는 화면 언어 쪽을 보여 준다
+{
+  const { localizeEval, localizeOrder } = await import("./logic.js");
+  const essay2 = "I fixed the robot at midnight. It finally worked and I learned to wait for my team many times over.";
+  const B = (ko, en) => ({ ko, en });
+  const reply = JSON.stringify({
+    summary: B("한국어 요약", "English summary"), essay_type: "personal",
+    prompt_parts: [{ part: B("질문 1", "Part 1"), answered: false }],
+    red_flags: [{ code: "resume_list", quote: "It finally worked" }],
+    criteria: CRITERIA.map((name) => ({ name, quote: "It finally worked", why: B("이유", "reason"), score: 15, fix: B("고칠 점", "fix it") })),
+  });
+  const en = parseEval(reply, essay2, "en");
+  // 예전 사이트가 읽는 칸은 요청 언어의 문자열 그대로
+  assert.equal(en.summary, "English summary");
+  assert.equal(en.criteria[1].why, "reason");
+  assert.equal(en.criteria[1].fix, "fix it");
+  assert.equal(en.prompt_parts[0].part, "Part 1");
+  assert.ok(en.criteria.every((c) => typeof c.why === "string" && typeof c.fix === "string" && c.quote_found), "quotes still matched against the essay");
+  assert.equal(en.red_flags.length, 1, "red flag quote still checked");
+  // 두 언어 모두 들어 있고, 코드 상한 메모는 양쪽에 붙는다
+  assert.equal(en.tr.ko.summary, "한국어 요약");
+  assert.equal(en.tr.ko.criteria[1].fix, "고칠 점");
+  assert.equal(en.tr.ko.prompt_parts[0], "질문 1");
+  assert.match(en.tr.ko.criteria[0].why, /unanswered prompt part/);
+  assert.match(en.tr.en.criteria[2].why, /resume_list/);
+  assert.equal(en.criteria[0].score, 10);
+  assert.equal(parseEval(reply, essay2, "ko").summary, "한국어 요약", "Korean request gets Korean base fields");
+  // 한쪽만 온 글은 있는 쪽으로 채운다. 둘 다 없으면 오류.
+  const half = JSON.parse(reply); half.summary = { en: "only en" };
+  assert.equal(parseEval(JSON.stringify(half), essay2).tr.ko.summary, "only en");
+  half.criteria[0].why = { ko: "", en: "" };
+  assert.throws(() => parseEval(JSON.stringify(half), essay2), /needs quote, why, fix/);
+  const long = JSON.parse(reply); long.criteria[3].fix = B("짧음", "x".repeat(401));
+  assert.throws(() => parseEval(JSON.stringify(long), essay2), /too long/, "rewrite guard checks both languages");
+  // 화면 언어 고르기 (언어 전환 = 같은 저장 결과를 다시 그림)
+  const saved = loadData(JSON.stringify({ essays: [{ text: essay2, lastEval: { ...en, at: "2026-11-11" } }] })).essays[0].lastEval;
+  assert.equal(localizeEval(saved, "ko").summary, "한국어 요약");
+  assert.equal(localizeEval(saved, "ko").criteria[1].why, "이유");
+  assert.equal(localizeEval(saved, "ko").criteria[1].quote, "It finally worked", "quote is never translated");
+  assert.equal(localizeEval(saved, "ko").prompt_parts[0].part, "질문 1");
+  assert.equal(localizeEval(saved, "en").criteria[1].fix, "fix it");
+  // 예전 한 언어 결과(tr 없음, 백업 JSON 포함)는 어느 화면에서도 있는 그대로
+  const oldEv = loadData(JSON.stringify({ essays: [{ lastEval: { total: 70, summary: "예전 요약", criteria: [{ name: "구성", why: "예전", fix: "예전 fix", quote: "q", score: 14 }] } }] })).essays[0].lastEval;
+  assert.equal(oldEv.tr, undefined);
+  assert.equal(localizeEval(oldEv, "en").summary, "예전 요약");
+  assert.equal(localizeEval(oldEv, "en").criteria[0].why, "예전");
+  // 모양이 틀린 tr은 버리고, 한 언어만 있는 tr은 없는 언어에서 기본 글로
+  assert.equal(loadData(JSON.stringify({ essays: [{ lastEval: { summary: "s", tr: "x" } }] })).essays[0].lastEval.tr, undefined);
+  const partial = loadData(JSON.stringify({ essays: [{ lastEval: { summary: "base", criteria: [], tr: { ko: { summary: "한" }, en: [1] } } }] })).essays[0].lastEval;
+  assert.deepEqual(Object.keys(partial.tr), ["ko"]);
+  assert.equal(localizeEval(partial, "en").summary, "base");
+  assert.equal(localizeEval(partial, "ko").summary, "한");
+  // 순서 추천
+  const ord = parseOrder(JSON.stringify({ summary: B("요약", "sum"), activity_order: [1, 0], honor_order: [0], notes: [{ kind: "activity", i: 1, why: B("전공 관련", "major fit") }, { kind: "honor", i: 0, why: "plain old string" }] }), 2, 1, "en");
+  assert.equal(ord.summary, "sum");
+  assert.equal(ord.notes[0].why, "major fit");
+  assert.equal(localizeOrder(ord, "ko").notes[0].why, "전공 관련");
+  assert.equal(localizeOrder(ord, "ko").notes[1].why, "plain old string", "plain string fills both languages");
+  assert.deepEqual(localizeOrder(ord, "ko").activity_order, [1, 0]);
+  const oldOrd = { summary: "old", notes: [{ kind: "activity", i: 0, why: "w" }], activity_order: [0], honor_order: [] };
+  assert.equal(localizeOrder(oldOrd, "ko"), oldOrd, "old Worker response shown as is");
 }
 
 console.log("check passed");

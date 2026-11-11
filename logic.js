@@ -156,9 +156,36 @@ export function loadData(raw) {
     })),
     essays: arr(o.essays).map((e) => ({
       id: id(e?.id), kind: ESSAY_KINDS.includes(e?.kind) ? e.kind : "", title: s(e?.title, 200), college: s(e?.college, 200), prompt: s(e?.prompt, 2000), text: s(e?.text, 8000),
-      lastEval: e?.lastEval && typeof e.lastEval === "object" ? e.lastEval : null,
+      lastEval: e?.lastEval && typeof e.lastEval === "object" && !Array.isArray(e.lastEval) ? { ...e.lastEval, tr: cleanTr(e.lastEval.tr) } : null,
     })),
   };
+}
+
+// AI 결과의 두 언어 글(tr = {ko:{…}, en:{…}}). 모양이 틀린 쪽은 버린다. 예전(한 언어) 결과는 tr이 없다.
+const obj = (v) => (v && typeof v === "object" && !Array.isArray(v) ? v : null);
+function cleanTr(tr) {
+  const out = {};
+  for (const l of ["ko", "en"]) if (obj(obj(tr)?.[l])) out[l] = tr[l];
+  return Object.keys(out).length ? out : undefined;
+}
+const pickStr = (v, d) => (typeof v === "string" && v.trim() ? v : d);
+const arrOf = (v) => (Array.isArray(v) ? v : []);
+/** 에세이 평가를 화면 언어로. 그 언어 글이 없으면 저장된(요청 때 언어) 글을 그대로 쓴다. 인용은 바꾸지 않는다. */
+export function localizeEval(ev, lang) {
+  const x = obj(obj(ev?.tr)?.[lang]);
+  if (!x) return ev;
+  return {
+    ...ev,
+    summary: pickStr(x.summary, ev.summary),
+    criteria: arrOf(ev.criteria).map((c, i) => ({ ...c, why: pickStr(arrOf(x.criteria)[i]?.why, c?.why), fix: pickStr(arrOf(x.criteria)[i]?.fix, c?.fix) })),
+    prompt_parts: arrOf(ev.prompt_parts).map((p, i) => ({ ...p, part: pickStr(arrOf(x.prompt_parts)[i], p?.part) })),
+  };
+}
+/** 순서 추천 결과를 화면 언어로. 순서(번호)는 그대로, 글만 바꾼다. */
+export function localizeOrder(out, lang) {
+  const x = obj(obj(out?.tr)?.[lang]);
+  if (!x) return out;
+  return { ...out, summary: pickStr(x.summary, out.summary), notes: arrOf(out.notes).map((n, i) => ({ ...n, why: pickStr(arrOf(x.notes)[i], n?.why) })) };
 }
 
 /** AI가 준 순서가 0..n-1을 한 번씩 쓴 올바른 순서인지. */
