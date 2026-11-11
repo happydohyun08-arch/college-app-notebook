@@ -96,15 +96,52 @@ export function wordCheck(e) {
   return { n, limit, over: limit != null && n > limit, src: "wc_common" };
 }
 
-export const newApp = (school = "") => ({ id: crypto.randomUUID(), school, round: "RD", deadline: "", status: "prep", note: "" });
+// 지원 서류 체크리스트. opt = 학교에 따라 필요 없을 수 있음(화면에 '선택'으로 표시).
+export const CHECK_ITEMS = [
+  { k: "form" }, { k: "fee" }, { k: "transcript" }, { k: "counselor" }, { k: "teacher1" }, { k: "teacher2" },
+  { k: "tests", opt: true }, { k: "english" }, { k: "aid", opt: true },
+];
+export const CHECK_STATES = ["todo", "done", "na"]; // 할 일 / 완료 / 해당 없음
+const freshChecks = (v = "todo") => Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, v]));
+export const STATUSES = ["prep", "submitted", "waiting", "admitted", "denied", "waitlist"];
+const OLD_STATUS = { "준비 중": "prep", "제출 완료": "submitted", "결과 대기": "waiting", 합격: "admitted", 불합격: "denied", 대기자: "waitlist" };
+/**
+ * 예전 저장본을 지금 모양으로. 한글 상태값 → 코드, 체크리스트가 없던 학교는 새로 만든다.
+ * 이미 제출한(상태가 '준비 중'이 아닌) 학교는 서류를 다 낸 것으로 본다.
+ */
+export function migrateApp(a) {
+  a.status = OLD_STATUS[a.status] ?? (STATUSES.includes(a.status) ? a.status : "prep");
+  const c = a.checks && typeof a.checks === "object" && !Array.isArray(a.checks) ? a.checks : null;
+  a.checks = c ? Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, CHECK_STATES.includes(c[k]) ? c[k] : "todo"])) : freshChecks(a.status === "prep" ? "todo" : "done");
+  return a;
+}
+
+export const newApp = (school = "") => ({ id: crypto.randomUUID(), school, round: "RD", deadline: "", status: "prep", note: "", checks: freshChecks() });
+export const schoolKey = (v) => String(v ?? "").trim().replace(/\s+/g, " ").toLowerCase();
 /** 지원 목록에 학교가 없을 때만 추가한다 (대소문자·공백 무시). 추가했으면 true. */
 export function addAppOnce(apps, school) {
-  const key = (v) => String(v ?? "").trim().replace(/\s+/g, " ").toLowerCase();
+  const key = schoolKey;
   const name = String(school ?? "").trim().replace(/\s+/g, " ");
   if (!name || apps.some((a) => key(a.school) === key(name))) return false;
   apps.push(newApp(name));
   return true;
 }
+
+/**
+ * 학교 하나의 준비 현황. 보충 에세이는 따로 입력받지 않고 에세이 탭에서 학교 이름이 같은 Supplement를 센다.
+ * 서류 중 '해당 없음'은 빼고, 보충 에세이는 '완료' 표시한 것만 끝난 것으로 본다.
+ */
+export function appProgress(app, essays) {
+  const supps = (essays ?? []).filter((e) => essayKind(e) === "supplement" && schoolKey(e.college) && schoolKey(e.college) === schoolKey(app.school));
+  const items = CHECK_ITEMS.filter(({ k }) => app.checks?.[k] !== "na").map(({ k }) => k);
+  const missing = items.filter((k) => app.checks?.[k] !== "done");
+  const suppLeft = supps.filter((e) => !e.done);
+  const total = items.length + supps.length;
+  const done = total - missing.length - suppLeft.length;
+  return { done, total, missing, supps, suppLeft, ready: done === total };
+}
+/** 전체 요약: 서류와 보충 에세이가 모두 끝난 학교 수. */
+export const readyCount = (apps, essays) => ({ ready: apps.filter((a) => appProgress(a, essays).ready).length, total: apps.length });
 
 /** 약관을 바꾸면 날짜를 올린다. 예전 버전에 동의한 사람은 다시 동의해야 한다. */
 export const TERMS_VERSION = "2026-11-11"; // 2026-11-11: AI는 Google 로그인, 계정 해시로 횟수 셈
@@ -153,9 +190,10 @@ export function loadData(raw) {
     })),
     apps: arr(o.apps).map((a) => ({
       id: id(a?.id), school: s(a?.school, 200), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: s(a?.status, 20), note: s(a?.note, 2000),
-    })),
+      ...(a?.checks && typeof a.checks === "object" && !Array.isArray(a.checks) ? { checks: Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, s(a.checks[k], 4)])) } : {}),
+    })).map(migrateApp),
     essays: arr(o.essays).map((e) => ({
-      id: id(e?.id), kind: ESSAY_KINDS.includes(e?.kind) ? e.kind : "", title: s(e?.title, 200), college: s(e?.college, 200), prompt: s(e?.prompt, 2000), text: s(e?.text, 8000),
+      id: id(e?.id), kind: ESSAY_KINDS.includes(e?.kind) ? e.kind : "", title: s(e?.title, 200), college: s(e?.college, 200), prompt: s(e?.prompt, 2000), text: s(e?.text, 8000), done: e?.done === true,
       lastEval: e?.lastEval && typeof e.lastEval === "object" && !Array.isArray(e.lastEval) ? { ...e.lastEval, tr: cleanTr(e.lastEval.tr) } : null,
     })),
   };

@@ -1,12 +1,10 @@
-import { localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
 const WORKER_URL = "https://college-essay-eval.personalcollegemanager.workers.dev";
 const KEY = "college-app.v1";
 const ROUNDS = ["ED", "ED2", "EA", "REA", "RD", "UC", "other"];
-const STATUSES = ["prep", "submitted", "waiting", "admitted", "denied", "waitlist"];
-const OLD_STATUS = { "준비 중": "prep", "제출 완료": "submitted", "결과 대기": "waiting", 합격: "admitted", 불합격: "denied", 대기자: "waitlist" };
 const CRIT_KEY = { "질문 적합성": "c_fit", 구체성: "c_specific", "자기 성찰": "c_reflect", 구성: "c_structure", "문장·목소리": "c_voice" };
 
 const $ = (s) => document.querySelector(s);
@@ -24,7 +22,6 @@ try {
 } catch {
   data = loadData(null);
 }
-for (const a of data.apps) a.status = OLD_STATUS[a.status] ?? (STATUSES.includes(a.status) ? a.status : "prep");
 let lang = data.lang || (navigator.language?.startsWith("ko") ? "ko" : "en");
 const t = (k) => STR[lang][k] ?? k;
 
@@ -440,7 +437,7 @@ $("#addApp").addEventListener("click", () => addApp());
 function renderApps() {
   const sorted = [...data.apps].sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
   $("#appRows").replaceChildren(...sorted.map((a) => {
-    const set = (k, rerender) => (e) => { a[k] = e.target.value; save(); if (rerender) renderApps(); };
+    const set = (k, rerender) => (e) => { a[k] = e.target.value; save(); rerender ? renderApps() : renderTracker(); };
     return el("tr", {},
       el("td", {}, el("input", { value: a.school, placeholder: t("school_ph"), oninput: set("school") })),
       el("td", {}, select(ROUNDS, a.round, set("round"), (o) => (o === "other" ? t("round_other") : o))),
@@ -449,6 +446,40 @@ function renderApps() {
       el("td", {}, select(STATUSES, a.status, set("status", true), (o) => t(`st_${o}`))),
       el("td", {}, el("button", { className: "btn ghost mini", textContent: t("del"), onclick: () => { data.apps = data.apps.filter((x) => x !== a); save(); renderApps(); } })));
   }));
+  renderTracker();
+}
+
+// 준비 현황: 학교마다 서류 체크리스트 + 그 학교 보충 에세이(에세이 탭과 같은 자료).
+function renderTracker() {
+  const sorted = [...data.apps].sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
+  const { ready, total } = readyCount(data.apps, data.essays);
+  $("#trackTotal").textContent = t("tr_total").replace("{r}", ready).replace("{n}", total);
+  const name = (e, n) => e.title || e.prompt.slice(0, n) || t("new_essay");
+  $("#trackList").replaceChildren(...sorted.map((a) => {
+    const p = appProgress(a, data.essays);
+    const left = [...p.missing.map((k) => t(`ck_${k}`)), ...p.suppLeft.map((e) => `${t("tr_supp")}: ${name(e, 40)}`)];
+    const checks = CHECK_ITEMS.map(({ k, opt }) => el("div", { className: "ckrow" },
+      el("span", { textContent: t(`ck_${k}`) + (opt ? ` (${t("ck_opt")})` : "") }),
+      select(CHECK_STATES, a.checks[k], (e) => { a.checks[k] = e.target.value; save(); renderTracker(); }, (o) => t(`cs_${o}`))));
+    const supps = p.supps.map((e) => el("label", { className: "check" },
+      el("input", { type: "checkbox", checked: e.done, onchange: (ev) => { e.done = ev.target.checked; save(); renderEssays(); renderTracker(); } }),
+      el("span", { textContent: `${name(e, 60)} · ${t(e.done ? "es_done" : e.text.trim() ? "es_draft" : "es_planned")}` })));
+    const addSupp = el("button", { className: "btn ghost mini", textContent: t("tr_add_supp"), disabled: !a.school.trim(), onclick: () => {
+      data.essays.push({ id: crypto.randomUUID(), kind: "supplement", title: "", college: a.school.trim(), prompt: "", text: "", done: false, lastEval: null });
+      save(); renderEssays(); renderTracker();
+    } });
+    return el("div", { className: "track" },
+      el("div", { className: "row tr-head" },
+        el("b", { textContent: a.school || t("school_ph") }),
+        el("span", { className: "tag", textContent: a.status === "prep" ? dday(a.deadline) : t(`st_${a.status}`) }),
+        el("span", { className: "num muted", textContent: `${p.done} / ${p.total}` })),
+      el("div", { className: "meter" }, el("i", { style: `width:${p.total ? Math.round((p.done / p.total) * 100) : 100}%` })),
+      el("div", { className: "muted", textContent: p.ready ? t("tr_ready") : `${t("tr_left")}: ${left.join(", ")}` }),
+      el("details", {}, el("summary", { textContent: t("tr_edit") }),
+        el("div", { className: "ckgrid" }, ...checks),
+        el("p", { className: "muted", textContent: p.supps.length ? t("tr_supp_h") : t("tr_no_supp") }),
+        ...supps, addSupp));
+  }));
 }
 
 // ---------- 에세이 ----------
@@ -456,7 +487,7 @@ function renderEssays() {
   $("#essayList").replaceChildren(...data.essays.map(essayCard));
 }
 $("#addEssay").addEventListener("click", () => {
-  data.essays.push({ id: crypto.randomUUID(), kind: "", title: "", college: "", prompt: "", text: "", lastEval: null });
+  data.essays.push({ id: crypto.randomUUID(), kind: "", title: "", college: "", prompt: "", text: "", done: false, lastEval: null });
   save();
   renderEssays();
 });
@@ -512,6 +543,7 @@ function essayCard(es) {
       el("div", {}, el("label", { textContent: t("e_title") }), field("title", "input", { placeholder: t("e_title_ph") })),
       el("div", {}, el("label", { textContent: t("e_college") }), college)),
     el("label", { textContent: t("e_kind") }), kind, added,
+    el("label", { className: "check" }, el("input", { type: "checkbox", checked: es.done === true, onchange: (e) => { es.done = e.target.checked; save(); } }), el("span", { textContent: t("e_done") })),
     el("label", { textContent: t("e_prompt") }), field("prompt", "textarea", { placeholder: t("e_prompt_ph"), style: "min-height:60px" }),
     el("label", { textContent: t("e_text") }), field("text", "textarea", { style: "min-height:220px", maxLength: 8000 }),
     el("div", { className: "row" }, evalBtn, count,
@@ -581,7 +613,6 @@ function applyBackup(text) {
   if (!confirm(t("import_q"))) return false;
   data = { ...next, ageOk: true, consent: data.consent, lang };
   lastOrder = null;
-  for (const a of data.apps) a.status = OLD_STATUS[a.status] ?? (STATUSES.includes(a.status) ? a.status : "prep");
   save();
   renderAll();
   return true;

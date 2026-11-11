@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { registerHooks } from "node:module";
-import { classify, dday, loadData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation } from "./logic.js";
+import { classify, dday, loadData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES } from "./logic.js";
 import { STR } from "./i18n.js";
 
 // Worker는 rubric.md를 글자로 불러온다. Node에서도 같게 흉내 낸다.
@@ -327,6 +327,36 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   assert.match(SYSTEM, /줄별 메모/);
   assert.match(SYSTEM, /"line_notes" is REQUIRED/);
   for (const k of ["line_notes", "issue", "direction", "para"]) assert.ok(STR.ko[k] && STR.en[k], k);
+}
+
+// 지원 준비 현황: 예전 저장본 이전 + 진행 계산
+{
+  const raw = { apps: [{ id: "a1", school: "Yale", round: "EA", deadline: "2026-11-01", status: "제출 완료", note: "n" }, { id: "a2", school: "Duke", deadline: "2027-01-02", status: "prep" }, { school: "MIT", status: "evil", checks: { form: "done", fee: "bogus", teacher2: "na" } }],
+    essays: [{ kind: "supplement", college: " duke ", text: "x", done: true }, { college: "DUKE", prompt: "Why Duke?" }, { kind: "ps", college: "Duke", text: "y" }, { text: "z" }] };
+  const d = loadData(JSON.stringify(raw));
+  const [yale, duke, mit] = d.apps;
+  assert.deepEqual([yale.id, yale.school, yale.round, yale.deadline, yale.note], ["a1", "Yale", "EA", "2026-11-01", "n"], "old fields load unchanged");
+  assert.deepEqual(d.apps.map((a) => a.status), ["submitted", "prep", "prep"], "old Korean status migrates");
+  assert.ok(Object.values(yale.checks).every((v) => v === "done"), "already-submitted old app counts as ready");
+  assert.ok(Object.values(duke.checks).every((v) => v === "todo"), "old prep app starts with an empty checklist");
+  assert.deepEqual([mit.checks.form, mit.checks.fee, mit.checks.teacher2], ["done", "todo", "na"], "bad check values reset");
+  assert.deepEqual(Object.keys(mit.checks), CHECK_ITEMS.map((c) => c.k));
+  assert.deepEqual(d.essays.map((e) => e.done), [true, false, false, false], "essay done flag");
+  assert.deepEqual(loadData(JSON.stringify(d)), d, "saved data round-trips (localStorage / Drive backup)");
+  assert.deepEqual(Object.keys(newApp("X").checks), CHECK_ITEMS.map((c) => c.k));
+  // Duke: 서류 9개 + 보충 2개(PS·다른 학교 글은 제외), 완료 1개
+  let p = appProgress(duke, d.essays);
+  assert.deepEqual([p.done, p.total, p.supps.length, p.suppLeft.length, p.ready], [1, 11, 2, 1, false]);
+  duke.checks = Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, k === "aid" ? "na" : "done"]));
+  p = appProgress(duke, d.essays);
+  assert.deepEqual([p.done, p.total, p.missing], [9, 10, []], "na is not counted");
+  assert.deepEqual(readyCount(d.apps, d.essays), { ready: 1, total: 3 });
+  d.essays[1].done = true;
+  assert.deepEqual(readyCount(d.apps, d.essays), { ready: 2, total: 3 }, "finishing the last supplement makes Duke ready");
+  assert.equal(appProgress({ school: "", checks: {} }, [{ kind: "supplement", college: "" }]).supps.length, 0, "blank college never matches");
+  const keys = ["tr_h", "tr_lead", "tr_total", "tr_left", "tr_ready", "tr_edit", "tr_supp", "tr_supp_h", "tr_no_supp", "tr_add_supp", "ck_opt", "es_done", "es_draft", "es_planned", "e_done",
+    ...CHECK_ITEMS.map((c) => `ck_${c.k}`), ...CHECK_STATES.map((c) => `cs_${c}`)];
+  for (const k of keys) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
 }
 
 console.log("check passed");
