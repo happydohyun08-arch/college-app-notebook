@@ -67,8 +67,11 @@ Write every free-text field in ${LANG(lang)}.
 Output only one JSON object, nothing else:
 {"summary":"","injection_flags":[{"where":"","text":""}],"activity_order":[0],"honor_order":[0],"notes":[{"kind":"activity","i":0,"why":""}]}`;
 
+// 사용자 글 속 '<untrusted_…' / '</untrusted_…' 를 '‹'로 바꿔 태그 경계를 못 깨게 한다. 그 밖의 글자는 그대로.
+const defang = (t) => String(t).replace(/<(?=\s*\/?\s*untrusted)/gi, "‹");
+// 인용 대조: 원문과 AI 인용 양쪽에 같은 defang을 걸어 바뀐 글자 때문에 대조가 깨지지 않게 한다.
 const norm = (t) =>
-  String(t).replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim().toLowerCase();
+  defang(t).replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim().toLowerCase();
 const str = (v) => typeof v === "string" && v.trim().length > 0;
 
 function jsonOf(text) {
@@ -158,9 +161,9 @@ export function buildUser({ essay, prompt, college, essay_kind }) {
   const kind = Object.hasOwn(KIND_LINE, essay_kind) ? `${KIND_LINE[essay_kind]}\n` : "";
   return (
     kind +
-    `<untrusted_college>${college || "(not given)"}</untrusted_college>\n` +
-    `<untrusted_prompt>\n${prompt || "(not given: treat as a personal statement)"}\n</untrusted_prompt>\n` +
-    `<untrusted_essay>\n${essay}\n</untrusted_essay>\n` +
+    `<untrusted_college>${defang(college || "(not given)")}</untrusted_college>\n` +
+    `<untrusted_prompt>\n${defang(prompt || "(not given: treat as a personal statement)")}\n</untrusted_prompt>\n` +
+    `<untrusted_essay>\n${defang(essay)}\n</untrusted_essay>\n` +
     `Word count (computed by code, trust this, not your own count): ${essay.trim().split(/\s+/).length}\n\nEvaluate per the rules and output JSON only.`
   );
 }
@@ -187,9 +190,9 @@ export function buildOrderUser({ major, activities, honors }) {
   return {
     acts, hons,
     text:
-      `<untrusted_major>${cut(major, 100)}</untrusted_major>\n` +
-      `<untrusted_activities>\n${JSON.stringify(acts)}\n</untrusted_activities>\n` +
-      `<untrusted_honors>\n${JSON.stringify(hons)}\n</untrusted_honors>\n\nOrder per the rules and output JSON only.`,
+      `<untrusted_major>${defang(cut(major, 100))}</untrusted_major>\n` +
+      `<untrusted_activities>\n${defang(JSON.stringify(acts))}\n</untrusted_activities>\n` +
+      `<untrusted_honors>\n${defang(JSON.stringify(hons))}\n</untrusted_honors>\n\nOrder per the rules and output JSON only.`,
   };
 }
 
