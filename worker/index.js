@@ -8,9 +8,9 @@
 import RUBRIC from "./rubric.md";
 
 export const MODEL = "claude-sonnet-5-5"; // 모델 바꾸기: 이 한 줄
-const MAX_TOKENS = 8000; // 응답 상한 = 1회 출력 비용 상한 (약 $0.08). 자유 글을 ko·en 두 벌로 받아서 4000에서 올렸다.
+const MAX_TOKENS = 16000; // 응답 상한(생각 토큰 포함) = 1회 출력 비용 상한 약 $0.16. ko·en 두 벌 + line_notes 5개로 보이는 출력만 약 5,500토큰이라 8000에서 올렸다.
 const PER_IP_DAILY = 10;
-const GLOBAL_DAILY = 300; // 하루 최대 약 300 x $0.035 = $10.5 (두 언어 출력)
+const GLOBAL_DAILY = 300; // 하루 최대 약 300 x $0.06 = $18 (두 언어 + line_notes, Sonnet 5.5 $2/$10 per MTok 기준 추정)
 const MAX_ESSAY = 8000; // 글자 수 (약 1,300 단어)
 const MAX_PROMPT = 2000;
 
@@ -36,14 +36,15 @@ ${RUBRIC}
 Rules (${BI} "quote" is NOT translated: it stays one plain string copied from the essay):
 - First split the prompt into the separate things it asks for ("prompt_parts", at most 6) and mark each answered true/false. For a personal statement with no prompt, use one part: show who the student is and what they value.
 - For each criterion, in this order: "quote" = one exact span (at most 25 words) copied from the essay character for character; "why" = which rubric level (20/15/10/5/0) the essay fully meets and why, 1-2 sentences; then "score"; then "fix".
-- "fix": the single change that would raise this criterion to the next level, 1-2 sentences, pointing to the place in the essay, with no rewritten text.
+- "fix": the single change that would raise this criterion to the next level, 1-2 sentences. Name the place: paragraph number (count blocks separated by blank lines, or by line breaks if there are none) and which sentence, e.g. "paragraph 2, first sentence". No rewritten text.
 - 질문 적합성 cannot be above 10 if any prompt part is answered false.
 - "essay_type": first decide the type from the prompt and essay (one of ${ESSAY_TYPES.join(", ")}) and apply that type's rules from "에세이 유형별 기준".
 - "red_flags": only flags from "경고 신호" that the essay clearly shows, each with one exact quote (at most 25 words) as evidence. Empty array if none. Do not guess. swap_fail caps 질문 적합성 at 10; resume_list caps 자기 성찰 at 10.
+- "line_notes": at most 5, following "줄별 메모 (line_notes) 작성 기준", most score-raising first. Each: "quote" = one exact span (at most 25 words) copied from the essay, NOT translated; "issue" = what is weak there and which criterion or pattern, 1 sentence; "direction" = how to fix it as a direction only, 1-2 sentences. "direction" must never contain new wording for the essay: no replacement sentences, no example sentences, no quoted phrases that are not already in the essay.
 - summary: 2-3 sentences; the last sentence names the one criterion to fix first.
 
 Output only one JSON object, nothing else. Keep the Korean criterion names exactly as JSON keys:
-{"summary":{"ko":"","en":""},"essay_type":"personal","red_flags":[{"code":"","quote":""}],"injection_flags":[{"where":"","text":""}],"prompt_parts":[{"part":{"ko":"","en":""},"answered":true}],"criteria":[{"name":"질문 적합성","quote":"","why":{"ko":"","en":""},"score":0,"fix":{"ko":"","en":""}}, ...all 5 criteria in rubric order]}`;
+{"summary":{"ko":"","en":""},"essay_type":"personal","red_flags":[{"code":"","quote":""}],"injection_flags":[{"where":"","text":""}],"prompt_parts":[{"part":{"ko":"","en":""},"answered":true}],"criteria":[{"name":"질문 적합성","quote":"","why":{"ko":"","en":""},"score":0,"fix":{"ko":"","en":""}}, ...all 5 criteria in rubric order],"line_notes":[{"quote":"","issue":{"ko":"","en":""},"direction":{"ko":"","en":""}}]}`;
 
 export const orderSystem = () => `You help a high-school student order their Common App Activities (up to 10) and Honors (up to 5) for their intended major. Admissions readers give the most weight to items near the top of each list.
 
@@ -83,6 +84,19 @@ const bi = (v, max) => {
 };
 // 응답 = 예전 모양(요청 언어의 문자열, 예전 사이트용) + tr {ko,en} (새 사이트가 언어 전환에 쓴다).
 const pickLang = (lang) => (lang === "en" ? "en" : "ko");
+// 문단 번호(1부터): 빈 줄로 나눈 덩어리, 빈 줄이 없으면 줄바꿈. 인용이 들어 있는 첫 문단. 못 찾으면 null.
+export function paraOf(essay, quote) {
+  let ps = String(essay).split(/\n\s*\n/);
+  if (ps.length < 2) ps = String(essay).split(/\n/);
+  const q = norm(quote);
+  const i = q ? ps.findIndex((p) => norm(p).includes(q)) : -1;
+  return i < 0 ? null : i + 1;
+}
+// 대필 감지: 방향 글 속 따옴표 안에 6단어 이상 새 문구가 있으면(본문에 없는 것) 고쳐 쓴 문장으로 본다.
+// 작은따옴표는 영어 아포스트로피(don't)와 헷갈려서 보지 않는다.
+const QUOTED = /["“”「」『』]([^"“”「」『』]{3,})["“”「」『』]/g;
+export const hasNewWording = (text, essayN) =>
+  [...String(text).matchAll(QUOTED)].some((m) => m[1].trim().split(/\s+/).length >= 6 && !essayN.includes(norm(m[1])));
 
 function jsonOf(text) {
   const s = String(text ?? "");
@@ -112,7 +126,7 @@ export function parseEval(text, essay, lang = "ko") {
     if (!str(c.quote) || !why || !fix) throw new Error(`'${name}' needs quote, why, fix`);
     // ponytail: 길이로만 대필을 막는다. 고쳐 쓴 문장이 짧으면 못 거른다. 문제가 보이면 영어 문장 감지를 추가.
     if (fix.ko.length > 400 || fix.en.length > 400) throw new Error(`'${name}' fix too long (possible rewrite)`);
-    return { name, score: c.score, quote: c.quote.slice(0, 300), quote_found: essayN.includes(norm(c.quote)), why, fix };
+    return { name, score: c.score, quote: c.quote.slice(0, 300), quote_found: essayN.includes(norm(c.quote)), para: paraOf(essay, c.quote), why, fix };
   });
   const summary = bi(obj.summary, 2000);
   if (!summary) throw new Error("summary missing");
@@ -135,10 +149,18 @@ export function parseEval(text, essay, lang = "ko") {
   };
   cap(0, "swap_fail");
   cap(2, "resume_list");
+  // 줄별 메모: 최대 5개. 모양이 틀리거나 길거나(대필 의심) 새 문구를 따옴표로 넣은 메모는 버린다 (전체 실패 대신).
+  const notes = (Array.isArray(obj.line_notes) ? obj.line_notes : [])
+    .map((n) => n && str(n.quote) && { quote: n.quote.slice(0, 300), issue: bi(n.issue, 600), direction: bi(n.direction, 600) })
+    .filter((n) => n && n.issue && n.direction &&
+      ["ko", "en"].every((l) => n.issue[l].length <= 300 && n.direction[l].length <= 300 && !hasNewWording(n.direction[l], essayN)))
+    .slice(0, 5)
+    .map((n) => ({ ...n, quote_found: essayN.includes(norm(n.quote)), para: paraOf(essay, n.quote) }));
   const sum = criteria.reduce((n, c) => n + c.score, 0);
   const L = pickLang(lang);
   const tr = Object.fromEntries(["ko", "en"].map((l) => [l, {
     summary: summary[l], criteria: criteria.map((c) => ({ why: c.why[l], fix: c.fix[l] })), prompt_parts: parts.map((p) => p.part[l]),
+    line_notes: notes.map((n) => ({ issue: n.issue[l], direction: n.direction[l] })),
   }]));
   return {
     essay_type: ESSAY_TYPES.includes(obj.essay_type) ? obj.essay_type : "other",
@@ -147,6 +169,7 @@ export function parseEval(text, essay, lang = "ko") {
     criteria: criteria.map((c) => ({ ...c, why: c.why[L], fix: c.fix[L] })),
     summary: summary[L],
     prompt_parts: parts.map((p) => ({ part: p.part[L], answered: p.answered })),
+    line_notes: notes.map((n) => ({ ...n, issue: n.issue[L], direction: n.direction[L] })),
     injection_flags: flagsOf(obj),
     tr,
   };

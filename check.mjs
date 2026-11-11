@@ -12,7 +12,7 @@ registerHooks({
     return { format: "module", shortCircuit: true, source: `export default ${JSON.stringify(fs.readFileSync(new URL(url), "utf8"))};` };
   },
 });
-const { parseEval, parseOrder, buildOrderUser, CRITERIA, ESSAY_TYPES, RED_FLAGS, essaySystem, orderSystem, buildUser } = await import("./worker/index.js");
+const { parseEval, parseOrder, buildOrderUser, CRITERIA, ESSAY_TYPES, RED_FLAGS, essaySystem, orderSystem, buildUser, paraOf, hasNewWording } = await import("./worker/index.js");
 const SYSTEM = essaySystem("ko");
 
 // 분류
@@ -255,6 +255,57 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   assert.deepEqual(localizeOrder(ord, "ko").activity_order, [1, 0]);
   const oldOrd = { summary: "old", notes: [{ kind: "activity", i: 0, why: "w" }], activity_order: [0], honor_order: [] };
   assert.equal(localizeOrder(oldOrd, "ko"), oldOrd, "old Worker response shown as is");
+}
+
+// 줄별 메모 (line_notes): 원문 대조, 문단 번호, 대필 차단, 예전 응답 호환
+{
+  const { localizeEval } = await import("./logic.js");
+  const B = (ko, en) => ({ ko, en });
+  const ess = "I counted forty-one dumplings before the dough dried.\n\nI learned a lot and grew as a person.\n\nNow I slow down at the seam of a proof.";
+  assert.equal(paraOf(ess, "grew as a person"), 2);
+  assert.equal(paraOf(ess, "not there"), null);
+  assert.equal(paraOf("line one here\nline two here", "two"), 2, "no blank lines: count line breaks");
+  const note = (quote, issue, direction) => ({ quote, issue, direction });
+  const base = {
+    summary: B("요약", "sum"),
+    criteria: CRITERIA.map((name) => ({ name, quote: "slow down at the seam", why: B("이유", "why"), score: 14, fix: B("3문단 첫 문장", "paragraph 3") })),
+  };
+  const ln = [
+    note("I learned a lot and grew as a person.", B("말로만 성장", "tells growth"), B("2문단에 실제로 달라진 행동 하나를 장면으로 넣어 보세요.", "In paragraph 2, show one thing you now do differently.")),
+    note("I won the Nobel prize", B("없는 인용", "made up"), B("방향", "direction")),
+    note("forty-one dumplings", B("좋음", "fine"), B("x".repeat(301), "ok")),
+    note("forty-one dumplings", B("문제", "issue"), B("이렇게 바꿔 보세요: \"I realized that patience is the seam of every proof\"", "Try: \"I realized that patience is the seam of every proof\"")),
+    note("dough dried", B("문제", "issue"), B("\"forty-one dumplings before the dough dried\" 부분을 더 앞으로", "Move \"forty-one dumplings before the dough dried\" earlier; don't summarize, it's your scene's start.")),
+    note("Now I slow down", "plain string issue", B("방향", "dir")),
+    note("seam of a proof", B("6번째", "sixth"), B("방향", "dir")),
+    note("seam", B("7번째", "seventh"), B("방향", "dir")),
+  ];
+  const r = parseEval(JSON.stringify({ ...base, line_notes: ln }), ess, "en");
+  assert.equal(r.criteria[0].para, 3, "criterion quote located in paragraph 3");
+  assert.deepEqual(r.line_notes.map((n) => n.quote), ["I learned a lot and grew as a person.", "I won the Nobel prize", "dough dried", "Now I slow down", "seam of a proof"],
+    "too-long and new-wording directions dropped, essay quotes and apostrophes allowed, max 5");
+  assert.deepEqual(r.line_notes.map((n) => n.quote_found), [true, false, true, true, true]);
+  assert.deepEqual(r.line_notes.map((n) => n.para), [2, null, 1, 3, 3]);
+  assert.equal(r.line_notes[0].direction, "In paragraph 2, show one thing you now do differently.");
+  assert.equal(r.tr.ko.line_notes[0].issue, "말로만 성장");
+  assert.equal(r.tr.ko.line_notes[3].issue, "plain string issue", "plain string fills both languages");
+  assert.ok(hasNewWording("Write \"my grandmother taught me how to wait patiently\" instead", "") && !hasNewWording("don't add a summary; it's weak and the student's voice is lost", ""));
+  assert.ok(!hasNewWording("“짧은 말”", ""), "short quoted labels are fine");
+  // 화면 언어 전환
+  const saved = loadData(JSON.stringify({ essays: [{ text: ess, lastEval: r }] })).essays[0].lastEval;
+  assert.equal(localizeEval(saved, "ko").line_notes[0].direction, "2문단에 실제로 달라진 행동 하나를 장면으로 넣어 보세요.");
+  assert.equal(localizeEval(saved, "ko").line_notes[0].quote, "I learned a lot and grew as a person.", "quote never translated");
+  assert.equal(localizeEval(saved, "en").line_notes[1].quote_found, false);
+  // 예전 Worker 응답(line_notes 없음)과 예전 저장 결과
+  const old = parseEval(JSON.stringify(base), ess);
+  assert.deepEqual(old.line_notes, []);
+  assert.deepEqual(old.tr.en.line_notes, []);
+  assert.equal(parseEval(JSON.stringify({ ...base, line_notes: "bad" }), ess).line_notes.length, 0, "wrong shape ignored, not fatal");
+  const oldSaved = loadData(JSON.stringify({ essays: [{ lastEval: { total: 60, summary: "s", criteria: [] } }] })).essays[0].lastEval;
+  assert.deepEqual(localizeEval(oldSaved, "en").line_notes ?? [], []);
+  assert.match(SYSTEM, /line_notes/);
+  assert.match(SYSTEM, /줄별 메모/);
+  for (const k of ["line_notes", "issue", "direction", "para"]) assert.ok(STR.ko[k] && STR.en[k], k);
 }
 
 console.log("check passed");

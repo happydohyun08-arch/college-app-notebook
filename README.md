@@ -50,9 +50,10 @@ python3 -m http.server 8000
 - 개인정보 문의처: dlehgus080310@gmail.com (`i18n.js`의 `contact_value`).
 
 ## 채점 보정 검사 (calibrate.mjs)
-품질을 미리 아는 연습용 에세이 5편(직접 쓴 가짜 글)을 배포된 Worker로 보내 점수가 기대 범위에 드는지 확인합니다.
-`worker/rubric.md`를 고치면: `cd worker && npx wrangler deploy` → `cd .. && node calibrate.mjs` (5회 호출, IP당 하루 10회 제한에 포함).
-같은 글을 2번씩 보내 점수 흔들림을 보려면 `node calibrate.mjs 2` (10회 호출).
+품질을 미리 아는 연습용 에세이 10편(직접 쓴 가짜 글: 강/중/약 personal, 일반·구체 why us, 전공 동기, 짧은 답, 이력서 나열, 사전 단어, 주입 시도)을 배포된 Worker로 보내 점수·유형·경고 신호가 기대 범위에 드는지, 인용과 line_notes 인용이 원문에 있는지 확인합니다.
+`worker/rubric.md`를 고치면: `cd worker && npx wrangler deploy` → `cd .. && node calibrate.mjs` (10회 호출 = IP당 하루 10회 제한 전부).
+일부만: `node calibrate.mjs 1 strong-why-us,thesaurus`. 흔들림을 보려면 `node calibrate.mjs 2 <id들>` (id 수 x 2회 호출, 하루 10회 안에서).
+채점 근거 조사: `research/essay-patterns-2026-11-11.md` (공개 합격 에세이·사정관 해설 패턴, 원문은 복사하지 않음).
 
 ## CDS 조사 현황 (2026-11-11)
 

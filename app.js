@@ -487,6 +487,11 @@ function essayCard(es) {
     result);
 }
 
+// 인용 + 몇 번째 문단인지(서버가 원문에서 찾은 위치) + 원문에 없으면 경고.
+const quoteBox = (q) => [
+  el("blockquote", { textContent: `${Number.isInteger(q.para) ? `[${t("para")} ${q.para}] ` : ""}"${String(q.quote ?? "")}"` }),
+  q.quote_found === false ? el("div", { className: "muted", textContent: t("quote_missing") }) : null,
+];
 function showEval(box, raw) {
   const ev = localizeEval(raw, lang);
   const crit = Array.isArray(ev.criteria) ? ev.criteria : [];
@@ -510,10 +515,15 @@ function showEval(box, raw) {
     ...crit.map((c) => el("div", { className: "crit" },
       el("b", { textContent: `${t(CRIT_KEY[c.name] ?? String(c.name))}  ${Number(c.score) || 0} / 20` }),
       el("div", { className: "meter" }, el("i", { style: `width:${Math.min(100, Math.max(0, (Number(c.score) || 0) * 5))}%` })),
-      el("blockquote", { textContent: `"${String(c.quote ?? "")}"` }),
-      c.quote_found === false ? el("div", { className: "muted", textContent: t("quote_missing") }) : null,
+      ...quoteBox(c),
       el("div", { textContent: `${t("why")}: ${String(c.why ?? "")}` }),
       el("div", { textContent: `${t("fix")}: ${String(c.fix ?? "")}` }))),
+    Array.isArray(ev.line_notes) && ev.line_notes.length
+      ? el("div", { className: "crit" }, el("b", { textContent: t("line_notes") }),
+          ...ev.line_notes.map((n) => el("div", {}, ...quoteBox(n),
+            el("div", { textContent: `${t("issue")}: ${String(n.issue ?? "")}` }),
+            el("div", { textContent: `${t("direction")}: ${String(n.direction ?? "")}` }))))
+      : null,
     el("p", { className: "muted", textContent: t("ai_caution") }));
 }
 

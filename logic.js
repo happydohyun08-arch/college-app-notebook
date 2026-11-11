@@ -179,6 +179,7 @@ export function localizeEval(ev, lang) {
     summary: pickStr(x.summary, ev.summary),
     criteria: arrOf(ev.criteria).map((c, i) => ({ ...c, why: pickStr(arrOf(x.criteria)[i]?.why, c?.why), fix: pickStr(arrOf(x.criteria)[i]?.fix, c?.fix) })),
     prompt_parts: arrOf(ev.prompt_parts).map((p, i) => ({ ...p, part: pickStr(arrOf(x.prompt_parts)[i], p?.part) })),
+    line_notes: arrOf(ev.line_notes).map((n, i) => ({ ...n, issue: pickStr(arrOf(x.line_notes)[i]?.issue, n?.issue), direction: pickStr(arrOf(x.line_notes)[i]?.direction, n?.direction) })),
   };
 }
 /** 순서 추천 결과를 화면 언어로. 순서(번호)는 그대로, 글만 바꾼다. */
