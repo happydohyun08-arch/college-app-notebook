@@ -1,75 +1,12 @@
 [
   {
-    "id": "243744",
-    "name": "Stanford University",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://irds.stanford.edu/data-findings/cds",
-    "document": "https://drive.google.com/file/d/1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp/view",
-    "note": "PDF 다운로드 불가; 2025-26 링크 확인, 수치 미검증"
-  },
-  {
-    "id": "215062",
-    "name": "University of Pennsylvania",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://ira.upenn.edu/penn-numbers/common-data-set",
-    "document": "https://upenn.box.com/s/woo7d85yxpol6j9e2o121aucjc6dc1k5",
-    "note": "Box 원문 접근 불가; 2025-26 링크 확인, 수치 미검증"
-  },
-  {
-    "id": "110635",
-    "name": "University of California-Berkeley",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://opa.berkeley.edu/campus-data/common-data-set",
-    "document": "https://docs.google.com/spreadsheets/d/1INsGFH6MhaO-MFMBZ1Dngcn84FeN-hc0BLS0-v8TL_k/edit",
-    "note": "Google Sheets C 시트 접근 필요; 입학처 공식 프로필은 별도 검증·반영 완료(research/admissions-evidence-2026-11-11.json). CDS 원문 검증은 여전히 대기."
-  },
-  {
-    "id": "110662",
-    "name": "University of California-Los Angeles",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://apb.ucla.edu/campus-statistics/common-data-set-undergraduate-profile",
-    "document": "https://apb.ucla.edu/file/d1ab04b3-ee89-4cf2-9124-8dc0471b5e5a",
-    "note": "PDF 폼 값이 텍스트 추출에서 누락; 실제 페이지/AcroForm 검증 필요; 입학처 공식 프로필은 별도 검증·반영 완료(research/admissions-evidence-2026-11-11.json). CDS 원문 검증은 여전히 대기."
-  },
-  {
-    "id": "193900",
-    "name": "New York University",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://www.nyu.edu/",
-    "document": "https://www.nyu.edu/content/dam/nyu/institutionalResearch/documents/cds-2025-2026/CDS%202025-2026%20FINAL%20(no%20G).pdf",
-    "note": "후보 PDF URL 접근 405; 수치 미검증"
-  },
-  {
     "id": "243780",
     "name": "Purdue University-Main Campus",
-    "status": "source_access_pending",
+    "status": "not_applied_campus_combined",
     "checked_at": "2026-11-11",
     "landing": "https://www.purdue.edu/idata/products-services/common-data-set/",
     "document": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
-    "note": "XLSX 도구 미지원; West Lafayette/Indianapolis/Polytechnic Statewide 합산임을 공식 안내에서 확인"
-  },
-  {
-    "id": "144050",
-    "name": "University of Chicago",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://data.uchicago.edu/",
-    "document": "https://data.uchicago.edu/files/2026/08/CDS_2025-2026_to_publish-1.pdf",
-    "note": "기존 CDS 행 합격률은 IPEDS 2023; 원문 접근 실패로 아직 혼합 연도"
-  },
-  {
-    "id": "110404",
-    "name": "California Institute of Technology",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://iro.caltech.edu/",
-    "document": "https://iro.caltech.edu/documents/35129/Caltech_CDS_2025-26_August_2026.pdf",
-    "note": "PDF 텍스트 문자/열 깨짐; C1/C9/C12 실제 페이지 검증 필요"
+    "note": "god 제공 XLSX(purdue.xlsx) 확인: CDS-C C1은 87,220 지원/37,881 합격/9,656 등록, C9 SAT 1220–1470·ACT 28–34. CDS-G가 PWL/PIN/PSW로 나뉘고 공식 안내상 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라 Main Campus 행에 반영하지 않음."
   },
   {
     "id": "217156",

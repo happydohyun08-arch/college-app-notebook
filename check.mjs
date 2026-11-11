@@ -107,7 +107,7 @@ for (const s of schools) {
   if (s.act25) assert.ok(s.act25 >= 1 && s.act75 <= 36 && s.act25 <= s.act75, `${s.name} ACT range`);
 }
 assert.equal(new Set(schools.map((s) => s.id)).size, schools.length, "no duplicate schools");
-assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length >= 54, true, "CDS-verified rows kept");
+assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length >= 60, true, "CDS-verified rows kept");
 
 // 사전: 두 언어의 키가 같아야 한다
 assert.deepEqual(Object.keys(STR.ko).sort(), Object.keys(STR.en).sort());
@@ -189,8 +189,12 @@ for (const [activity, expected] of [
 console.log("activity hours regression check passed");
 
 // 새 CDS 조사 기록은 지원자·합격자 수와 원문 위치를 남긴다.
-const evidence = JSON.parse(fs.readFileSync(new URL("./research/cds-evidence-2026-11-11.json", import.meta.url), "utf8"));
-assert.equal(evidence.length, 7);
+const evidence = ["cds-evidence-2026-11-11.json", "cds-evidence-2026-11-11-followup.json"].flatMap((f) => JSON.parse(fs.readFileSync(new URL(`./research/${f}`, import.meta.url), "utf8")));
+assert.equal(evidence.length, 14);
+assert.equal(new Set(evidence.map((e) => e.id)).size, 14);
+const followup = JSON.parse(fs.readFileSync(new URL("./research/cds-followup.json", import.meta.url), "utf8"));
+assert.deepEqual(followup.map((f) => f.id).sort(), ["217156", "243780"], "only Brown and Purdue stay pending");
+for (const f of followup) assert.ok(!evidence.some((e) => e.id === f.id), `${f.name} is pending, not verified`);
 for (const entry of evidence) {
   const school = schools.find((s) => s.id === entry.id);
   assert.ok(school && school.name === entry.name);
@@ -217,8 +221,10 @@ for (const school of ucSchools) {
 for (const key of ["r_test_blind", "r_need_gpa_test_blind"]) assert.ok(STR.ko[key] && STR.en[key]);
 for (const entry of JSON.parse(fs.readFileSync(new URL("./research/admissions-evidence-2026-11-11.json", import.meta.url), "utf8"))) {
   const school = schools.find((s) => s.id === entry.id);
-  for (const [key, value] of Object.entries(entry.verified)) assert.equal(school[key] ?? null, value);
-  assert.equal(school.gpa_avg, null, "admitted median/percentiles are not enrolled mean GPA");
+  // CDS로 갱신된 행은 지원·합격 수와 평균 GPA를 CDS에서 가져오고, 입학처 합격자 GPA 범위만 남긴다.
+  const cds = evidence.some((e) => e.id === entry.id);
+  for (const [key, value] of Object.entries(entry.verified)) if (!cds || key.startsWith("admitted_gpa")) assert.equal(school[key] ?? null, value);
+  if (!cds) assert.equal(school.gpa_avg, null, "admitted median/percentiles are not enrolled mean GPA");
   assert.ok(Math.abs(school.admit_rate - school.admitted / school.applicants) < 1e-10);
 }
 console.log("UC test policy and admission profile check passed");

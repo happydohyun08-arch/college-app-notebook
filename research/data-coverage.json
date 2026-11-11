@@ -1,17 +1,17 @@
 {
   "summary": {
     "total": 2370,
-    "cds_records": 54,
-    "reviewed_this_batch": 7,
-    "source_access_pending": 9,
+    "cds_records": 60,
+    "reviewed_this_batch": 14,
+    "source_access_pending": 2,
     "cds_review_pending": 2308,
     "missing_fields": {
       "admit_rate": 638,
-      "sat25": 1386,
-      "sat75": 1386,
-      "act25": 1404,
-      "act75": 1404,
-      "gpa_avg": 2346
+      "sat25": 1387,
+      "sat75": 1387,
+      "act25": 1403,
+      "act75": 1403,
+      "gpa_avg": 2341
     }
   },
   "schools": [
@@ -4267,17 +4267,15 @@
     {
       "id": "110404",
       "name": "California Institute of Technology",
-      "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=110404",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://iro.caltech.edu/documents/35129/Caltech_CDS_2025-26_August_2026.pdf",
       "missing_fields": [
         "sat25",
         "sat75",
-        "act25",
-        "act75",
         "gpa_avg"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "not_reported",
       "open_admission": false
     },
     {
@@ -18234,13 +18232,11 @@
     {
       "id": "193900",
       "name": "New York University",
-      "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=193900",
-      "missing_fields": [
-        "gpa_avg"
-      ],
-      "gpa_status": "not_reviewed",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://www.nyu.edu/content/dam/nyu/institutionalResearch/documents/cds-2025-2026/CDS%202025-2026%20FINAL%20(no%20G).pdf",
+      "missing_fields": [],
+      "gpa_status": "reported",
       "open_admission": false
     },
     {
@@ -25600,13 +25596,11 @@
     {
       "id": "243744",
       "name": "Stanford University",
-      "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=243744",
-      "missing_fields": [
-        "gpa_avg"
-      ],
-      "gpa_status": "not_reviewed",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://drive.google.com/file/d/1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp/view",
+      "missing_fields": [],
+      "gpa_status": "reported",
       "open_admission": false
     },
     {
@@ -28641,17 +28635,16 @@
     {
       "id": "110635",
       "name": "University of California-Berkeley",
-      "status": "source_access_pending",
-      "year": "Admissions Fall 2026 (preliminary)",
-      "source": "https://admissions.berkeley.edu/apply-to-berkeley/student-profile/",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://docs.google.com/spreadsheets/d/1INsGFH6MhaO-MFMBZ1Dngcn84FeN-hc0BLS0-v8TL_k/edit",
       "missing_fields": [
         "sat25",
         "sat75",
         "act25",
-        "act75",
-        "gpa_avg"
+        "act75"
       ],
-      "gpa_status": "review_pending",
+      "gpa_status": "reported",
       "open_admission": false
     },
     {
@@ -28689,17 +28682,16 @@
     {
       "id": "110662",
       "name": "University of California-Los Angeles",
-      "status": "source_access_pending",
-      "year": "Admissions Fall 2025",
-      "source": "https://admission.ucla.edu/apply/first-year/first-year-profile/2025",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://apb.ucla.edu/file/d1ab04b3-ee89-4cf2-9124-8dc0471b5e5a",
       "missing_fields": [
         "sat25",
         "sat75",
         "act25",
-        "act75",
-        "gpa_avg"
+        "act75"
       ],
-      "gpa_status": "review_pending",
+      "gpa_status": "reported",
       "open_admission": false
     },
     {
@@ -28853,13 +28845,13 @@
     {
       "id": "144050",
       "name": "University of Chicago",
-      "status": "source_access_pending",
+      "status": "reviewed_this_batch",
       "year": "CDS 2025-26",
       "source": "https://data.uchicago.edu/files/2026/08/CDS_2025-2026_to_publish-1.pdf",
       "missing_fields": [
         "gpa_avg"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "review_pending",
       "open_admission": false
     },
     {
@@ -30404,13 +30396,14 @@
     {
       "id": "215062",
       "name": "University of Pennsylvania",
-      "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=215062",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://upenn.box.com/s/woo7d85yxpol6j9e2o121aucjc6dc1k5",
       "missing_fields": [
-        "gpa_avg"
+        "sat25",
+        "sat75"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "reported",
       "open_admission": false
     },
     {
