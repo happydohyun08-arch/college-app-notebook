@@ -162,9 +162,9 @@ console.log("fit check passed");
   const list = addEstimates(JSON.parse(fs.readFileSync(new URL("./schools.json", import.meta.url), "utf8")));
   const unknown = (p) => list.filter((s) => classify(p, s).label === "Unknown").length;
   assert.equal(unknown({ gpa: "3.8" }), 0, "GPA only classifies every school");
-  assert.equal(unknown({ sat: "1450" }), 0, "SAT only classifies every school");
-  assert.equal(unknown({ act: "30" }), 0, "ACT only classifies every school");
-  const noTest = list.find((s) => s.admit_rate > 0.5 && !s.sat25 && !s.act25);
+  assert.equal(unknown({ sat: "1450" }), 9, "SAT alone cannot classify test-blind UC campuses");
+  assert.equal(unknown({ act: "30" }), 9, "ACT alone cannot classify test-blind UC campuses");
+  const noTest = list.find((s) => s.admit_rate > 0.5 && !s.sat25 && !s.act25 && s.test_policy !== "not_considered");
   assert.ok(classify({ sat: "1450" }, noTest).reasons.includes("r_estimated"));
   assert.ok(!classify({ sat: "1450" }, list.find((s) => s.name === "Swarthmore College")).reasons.includes("r_estimated"));
   assert.equal(classify({ gpa: "3.2" }, noTest).label, "Reach", "low GPA vs estimate");
@@ -205,3 +205,20 @@ for (const entry of evidence) {
   assert.equal(school.sat_approx, false, "this batch uses composite percentiles, not sums of section percentiles");
 }
 console.log("CDS evidence check passed");
+
+const ucSchools = schools.filter((s) => s.test_policy === "not_considered");
+assert.equal(ucSchools.length, 9);
+for (const school of ucSchools) {
+  const sc = { ...school, gpa_avg: 3.8, sat25: 1000, sat75: 1200, act25: 20, act75: 25, est: { sat25: 1000, sat75: 1200 } };
+  assert.equal(classify({ sat: 1600, act: 36 }, sc).label, "Unknown");
+  assert.deepEqual(classify({ gpa: 3.9, sat: 1600, act: 36 }, sc), classify({ gpa: 3.9, sat: 400, act: 1 }, sc));
+  assert.ok(school.test_policy_source && school.test_policy_checked);
+}
+for (const key of ["r_test_blind", "r_need_gpa_test_blind"]) assert.ok(STR.ko[key] && STR.en[key]);
+for (const entry of JSON.parse(fs.readFileSync(new URL("./research/admissions-evidence-2026-11-11.json", import.meta.url), "utf8"))) {
+  const school = schools.find((s) => s.id === entry.id);
+  for (const [key, value] of Object.entries(entry.verified)) assert.equal(school[key] ?? null, value);
+  assert.equal(school.gpa_avg, null, "admitted median/percentiles are not enrolled mean GPA");
+  assert.ok(Math.abs(school.admit_rate - school.admitted / school.applicants) < 1e-10);
+}
+console.log("UC test policy and admission profile check passed");

@@ -24,7 +24,7 @@
     "checked_at": "2026-11-11",
     "landing": "https://opa.berkeley.edu/campus-data/common-data-set",
     "document": "https://docs.google.com/spreadsheets/d/1INsGFH6MhaO-MFMBZ1Dngcn84FeN-hc0BLS0-v8TL_k/edit",
-    "note": "Google Sheets C 시트 접근 필요"
+    "note": "Google Sheets C 시트 접근 필요; 입학처 공식 프로필은 별도 검증·반영 완료(research/admissions-evidence-2026-11-11.json). CDS 원문 검증은 여전히 대기."
   },
   {
     "id": "110662",
@@ -33,7 +33,7 @@
     "checked_at": "2026-11-11",
     "landing": "https://apb.ucla.edu/campus-statistics/common-data-set-undergraduate-profile",
     "document": "https://apb.ucla.edu/file/d1ab04b3-ee89-4cf2-9124-8dc0471b5e5a",
-    "note": "PDF 폼 값이 텍스트 추출에서 누락; 실제 페이지/AcroForm 검증 필요"
+    "note": "PDF 폼 값이 텍스트 추출에서 누락; 실제 페이지/AcroForm 검증 필요; 입학처 공식 프로필은 별도 검증·반영 완료(research/admissions-evidence-2026-11-11.json). CDS 원문 검증은 여전히 대기."
   },
   {
     "id": "193900",

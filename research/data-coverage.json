@@ -28642,8 +28642,8 @@
       "id": "110635",
       "name": "University of California-Berkeley",
       "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=110635",
+      "year": "Admissions Fall 2026 (preliminary)",
+      "source": "https://admissions.berkeley.edu/apply-to-berkeley/student-profile/",
       "missing_fields": [
         "sat25",
         "sat75",
@@ -28651,7 +28651,7 @@
         "act75",
         "gpa_avg"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "review_pending",
       "open_admission": false
     },
     {
@@ -28690,8 +28690,8 @@
       "id": "110662",
       "name": "University of California-Los Angeles",
       "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=110662",
+      "year": "Admissions Fall 2025",
+      "source": "https://admission.ucla.edu/apply/first-year/first-year-profile/2025",
       "missing_fields": [
         "sat25",
         "sat75",
@@ -28699,7 +28699,7 @@
         "act75",
         "gpa_avg"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "review_pending",
       "open_admission": false
     },
     {

@@ -65,3 +65,9 @@ python3 -m http.server 8000
 - `node check.mjs`: 지원자·합격자·등록자 관계, 합격률 계산, 근거 기록 일치 검사.
 
 `gpa_status`는 `reported`(확인), `not_reported`(원문 공란), `review_pending`(재확인 필요)을 구분합니다. 기존 행에 이 상태가 없으면 새 조사에서 확인한 것으로 간주하지 않습니다. GPA 공란은 0이 아니며, `logic.js`의 참고용 추정값은 학교가 발표한 값이 아닙니다. 시험 점수는 C9 총점의 25·75백분위입니다. 등록 학생 자료로, 합격선이 아닙니다.
+
+### UC 입학 정책 및 프로필 보완
+
+UC 9개 캠퍼스는 공식 정책에 따라 `test_policy=not_considered`를 기록하며, 분류 계산에서 실제·추정 SAT/ACT를 모두 제외합니다. 시험 점수만 입력하면 GPA 입력을 안내합니다. GPA 추정값을 사용하는 경우 기존 추정 안내는 유지합니다.
+
+UCLA Fall 2025 및 Berkeley Fall 2026 입학처 프로필도 반영했습니다. Berkeley는 2026년 8월 잠정 집계입니다. 합격자 GPA 중간 50%를 등록자 평균 GPA로 대체하지 않았습니다. 이 두 행은 CDS 확인 수에 포함하지 않습니다. 근거는 `research/admissions-evidence-2026-11-11.json`에 있습니다.

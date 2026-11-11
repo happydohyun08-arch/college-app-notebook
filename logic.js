@@ -48,15 +48,16 @@ export function classify(st, sc) {
   // 학교 자료가 없으면 추정값을 쓰고, 그렇게 했다고 이유에 적는다.
   const est = sc.est ?? {};
   let estimated = false;
-  let test = testPosition(st, sc);
-  if (test == null && (num(st.sat) || num(st.act))) { test = testPosition(st, est); estimated ||= test != null; }
+  const ignoreTests = sc.test_policy === "not_considered";
+  let test = ignoreTests ? null : testPosition(st, sc);
+  if (!ignoreTests && test == null && (num(st.sat) || num(st.act))) { test = testPosition(st, est); estimated ||= test != null; }
   const gpa = num(st.gpa);
   const avg = sc.gpa_avg || (gpa ? est.gpa_avg : null);
   if (gpa && !sc.gpa_avg && avg) estimated = true;
   const g = gpa && avg ? (gpa >= avg ? "ok" : gpa >= avg - 0.15 ? "near" : "below") : null;
-  if (test == null && g == null) return { label: "Unknown", reasons: ["r_need_scores"] };
+  if (test == null && g == null) return { label: "Unknown", reasons: [ignoreTests ? "r_need_gpa_test_blind" : "r_need_scores"] };
 
-  const reasons = [];
+  const reasons = ignoreTests ? ["r_test_blind"] : [];
   if (test) reasons.push(`r_test_${test}`);
   if (g) reasons.push(`r_gpa_${g}`);
   if (estimated) reasons.push("r_estimated");

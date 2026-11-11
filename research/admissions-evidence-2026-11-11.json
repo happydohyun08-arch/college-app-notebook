@@ -1,0 +1,80 @@
+[
+  {
+    "id": "110635",
+    "name": "University of California-Berkeley",
+    "source": "https://admissions.berkeley.edu/apply-to-berkeley/student-profile/",
+    "year": "Admissions Fall 2026 (preliminary)",
+    "previous": {
+      "id": "110635",
+      "name": "University of California-Berkeley",
+      "state": "CA",
+      "city": "Berkeley",
+      "web": "https://www.berkeley.edu/",
+      "control": "public",
+      "admit_rate": 0.117,
+      "sat25": null,
+      "sat75": null,
+      "sat_approx": false,
+      "act25": null,
+      "act75": null,
+      "gpa_avg": null,
+      "year": "IPEDS Fall 2023",
+      "source": "https://nces.ed.gov/collegenavigator/?id=110635",
+      "note": "",
+      "kind": "research",
+      "test_policy": "not_considered",
+      "test_policy_source": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/filling-out-the-application.html",
+      "test_policy_checked": "2026-11-11"
+    },
+    "verified": {
+      "applicants": 133157,
+      "admitted": 13992,
+      "enrolled": null,
+      "admit_rate": 0.1050789669337699,
+      "admitted_gpa25": 3.9,
+      "admitted_gpa75": 4.0,
+      "admitted_gpa_median": null,
+      "profile_preliminary": true
+    },
+    "caution": "Admission-office profile, not a CDS replacement; admitted GPA percentiles must not be stored as enrolled mean GPA."
+  },
+  {
+    "id": "110662",
+    "name": "University of California-Los Angeles",
+    "source": "https://admission.ucla.edu/apply/first-year/first-year-profile/2025",
+    "year": "Admissions Fall 2025",
+    "previous": {
+      "id": "110662",
+      "name": "University of California-Los Angeles",
+      "state": "CA",
+      "city": "Los Angeles",
+      "web": "https://www.ucla.edu/",
+      "control": "public",
+      "admit_rate": 0.087,
+      "sat25": null,
+      "sat75": null,
+      "sat_approx": false,
+      "act25": null,
+      "act75": null,
+      "gpa_avg": null,
+      "year": "IPEDS Fall 2023",
+      "source": "https://nces.ed.gov/collegenavigator/?id=110662",
+      "note": "",
+      "kind": "research",
+      "test_policy": "not_considered",
+      "test_policy_source": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/filling-out-the-application.html",
+      "test_policy_checked": "2026-11-11"
+    },
+    "verified": {
+      "applicants": 145085,
+      "admitted": 13659,
+      "enrolled": 6553,
+      "admit_rate": 0.0941448116621291,
+      "admitted_gpa25": 3.95,
+      "admitted_gpa75": 4.0,
+      "admitted_gpa_median": 4.0,
+      "profile_preliminary": false
+    },
+    "caution": "Admission-office profile, not a CDS replacement; admitted GPA percentiles must not be stored as enrolled mean GPA."
+  }
+]
