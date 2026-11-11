@@ -40,7 +40,7 @@ Rules (${BI} "quote" is NOT translated: it stays one plain string copied from th
 - 질문 적합성 cannot be above 10 if any prompt part is answered false.
 - "essay_type": first decide the type from the prompt and essay (one of ${ESSAY_TYPES.join(", ")}) and apply that type's rules from "에세이 유형별 기준".
 - "red_flags": only flags from "경고 신호" that the essay clearly shows, each with one exact quote (at most 25 words) as evidence. Empty array if none. Do not guess. swap_fail caps 질문 적합성 at 10; resume_list caps 자기 성찰 at 10.
-- "line_notes": at most 5, following "줄별 메모 (line_notes) 작성 기준", most score-raising first. Each: "quote" = one exact span (at most 25 words) copied from the essay, NOT translated; "issue" = what is weak there and which criterion or pattern, 1 sentence; "direction" = how to fix it as a direction only, 1-2 sentences. "direction" must never contain new wording for the essay: no replacement sentences, no example sentences, no quoted phrases that are not already in the essay.
+- "line_notes" is REQUIRED, not optional: if any criterion scored below 20, give at least 3 and at most 5 notes, following "줄별 메모 (line_notes) 작성 기준", most score-raising first. An empty array is allowed only when every criterion is 20. Each: "quote" = one exact span (at most 25 words) copied from the essay, NOT translated; "issue" = what is weak there and which criterion or pattern, 1 sentence; "direction" = how to fix it as a direction only, 1-2 sentences. Keep "issue" and "direction" under 250 characters each, in each language. "direction" must never contain new wording for the essay: no replacement sentences, no example sentences, no quoted phrases that are not already in the essay. To point at essay words inside "direction", copy them exactly in the essay's original language (do not translate them), or better, refer to them by paragraph and sentence.
 - summary: 2-3 sentences; the last sentence names the one criterion to fix first.
 
 Output only one JSON object, nothing else. Keep the Korean criterion names exactly as JSON keys:
@@ -94,9 +94,27 @@ export function paraOf(essay, quote) {
 }
 // 대필 감지: 방향 글 속 따옴표 안에 6단어 이상 새 문구가 있으면(본문에 없는 것) 고쳐 쓴 문장으로 본다.
 // 작은따옴표는 영어 아포스트로피(don't)와 헷갈려서 보지 않는다.
+// 원문 인용은 허용: 줄임표(...)로 나눈 조각마다 본문과 대조하고, 따옴표 안 끝 문장부호("..., anything,")는 뗀다.
+// 본문과 다른 글자(한글/영문)로 된 인용은 번역 언급이라 본문에 넣을 문장이 아니다. 진짜 대필은 같은 메모의 다른 언어 쪽에서 걸린다.
 const QUOTED = /["“”「」『』]([^"“”「」『』]{3,})["“”「」『』]/g;
+const HANGUL = /[\uac00-\ud7a3]/;
+const EDGE = /^[\s.,;:!?'‘’()-]+|[\s.,;:!?'‘’()-]+$/g;
 export const hasNewWording = (text, essayN) =>
-  [...String(text).matchAll(QUOTED)].some((m) => m[1].trim().split(/\s+/).length >= 6 && !essayN.includes(norm(m[1])));
+  [...String(text).matchAll(QUOTED)].some((m) =>
+    m[1].split(/\.{3}|…/).some((piece) => {
+      const p = piece.replace(EDGE, "");
+      return p.split(/\s+/).length >= 6 && HANGUL.test(p) === HANGUL.test(essayN) && !essayN.includes(norm(p));
+    }));
+const NOTE_MAX = 400; // issue·direction 글자 상한 (언어마다). 넘으면 대필 의심으로 버린다. fix 상한과 같다.
+// 버리는 이유 (없으면 null). 사이트에는 보이지 않고 calibrate.mjs가 출력한다.
+const noteDrop = (n, essayN) => {
+  if (!n || !n.issue || !n.direction) return "shape";
+  for (const l of ["ko", "en"]) {
+    if (n.issue[l].length > NOTE_MAX || n.direction[l].length > NOTE_MAX) return `too_long_${l}`;
+    if (hasNewWording(n.direction[l], essayN)) return `new_wording_${l}`;
+  }
+  return null;
+};
 
 function jsonOf(text) {
   const s = String(text ?? "");
@@ -150,12 +168,16 @@ export function parseEval(text, essay, lang = "ko") {
   cap(0, "swap_fail");
   cap(2, "resume_list");
   // 줄별 메모: 최대 5개. 모양이 틀리거나 길거나(대필 의심) 새 문구를 따옴표로 넣은 메모는 버린다 (전체 실패 대신).
-  const notes = (Array.isArray(obj.line_notes) ? obj.line_notes : [])
-    .map((n) => n && str(n.quote) && { quote: n.quote.slice(0, 300), issue: bi(n.issue, 600), direction: bi(n.direction, 600) })
-    .filter((n) => n && n.issue && n.direction &&
-      ["ko", "en"].every((l) => n.issue[l].length <= 300 && n.direction[l].length <= 300 && !hasNewWording(n.direction[l], essayN)))
-    .slice(0, 5)
-    .map((n) => ({ ...n, quote_found: essayN.includes(norm(n.quote)), para: paraOf(essay, n.quote) }));
+  // 버린 메모는 이유만 line_notes_dropped에 남긴다 (진단용, 글 내용은 넣지 않는다).
+  const dropped = [];
+  const kept = [];
+  for (const raw of Array.isArray(obj.line_notes) ? obj.line_notes : []) {
+    const n = raw && str(raw.quote) && { quote: raw.quote.slice(0, 300), issue: bi(raw.issue, 600), direction: bi(raw.direction, 600) };
+    const reason = noteDrop(n, essayN) ?? (kept.length >= 5 ? "over_5" : null);
+    if (reason) dropped.push({ reason });
+    else kept.push(n);
+  }
+  const notes = kept.map((n) => ({ ...n, quote_found: essayN.includes(norm(n.quote)), para: paraOf(essay, n.quote) }));
   const sum = criteria.reduce((n, c) => n + c.score, 0);
   const L = pickLang(lang);
   const tr = Object.fromEntries(["ko", "en"].map((l) => [l, {
@@ -170,6 +192,7 @@ export function parseEval(text, essay, lang = "ko") {
     summary: summary[L],
     prompt_parts: parts.map((p) => ({ part: p.part[L], answered: p.answered })),
     line_notes: notes.map((n) => ({ ...n, issue: n.issue[L], direction: n.direction[L] })),
+    line_notes_dropped: dropped,
     injection_flags: flagsOf(obj),
     tr,
   };

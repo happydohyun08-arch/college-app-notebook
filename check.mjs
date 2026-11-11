@@ -273,7 +273,7 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   const ln = [
     note("I learned a lot and grew as a person.", B("말로만 성장", "tells growth"), B("2문단에 실제로 달라진 행동 하나를 장면으로 넣어 보세요.", "In paragraph 2, show one thing you now do differently.")),
     note("I won the Nobel prize", B("없는 인용", "made up"), B("방향", "direction")),
-    note("forty-one dumplings", B("좋음", "fine"), B("x".repeat(301), "ok")),
+    note("forty-one dumplings", B("좋음", "fine"), B("x".repeat(401), "ok")),
     note("forty-one dumplings", B("문제", "issue"), B("이렇게 바꿔 보세요: \"I realized that patience is the seam of every proof\"", "Try: \"I realized that patience is the seam of every proof\"")),
     note("dough dried", B("문제", "issue"), B("\"forty-one dumplings before the dough dried\" 부분을 더 앞으로", "Move \"forty-one dumplings before the dough dried\" earlier; don't summarize, it's your scene's start.")),
     note("Now I slow down", "plain string issue", B("방향", "dir")),
@@ -291,6 +291,26 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   assert.equal(r.tr.ko.line_notes[3].issue, "plain string issue", "plain string fills both languages");
   assert.ok(hasNewWording("Write \"my grandmother taught me how to wait patiently\" instead", "") && !hasNewWording("don't add a summary; it's weak and the student's voice is lost", ""));
   assert.ok(!hasNewWording("“짧은 말”", ""), "short quoted labels are fine");
+  assert.deepEqual(r.line_notes_dropped, [{ reason: "too_long_ko" }, { reason: "new_wording_ko" }, { reason: "over_5" }], "drop reasons reported");
+  // 실제 모델이 쓸 법한 응답: 원문 구절을 따옴표로 인용(쉼표 안쪽, 줄임표, 한국어 번역 인용)한 메모는 살리고 진짜 대필만 버린다.
+  const gen = "Ever since I was young, I have always been passionate about helping others. I believe that I am a hardworking, dedicated, and responsible person. I learned that if you never give up, you can achieve anything. I am excited to continue my journey and become the best version of myself.";
+  const real = [
+    note("I believe that I am a hardworking, dedicated, and responsible person.", B("형용사 나열", "adjective list"),
+      B("1문단 둘째 문장 “나는 성실하고 헌신적이며 책임감 있는 사람이라고 믿는다”는 나열입니다. 이 자리에 그 성질을 보여 준 장면 하나를 넣어 보세요.",
+        "Instead of \"I believe that I am a hardworking, dedicated, and responsible person,\" show one moment where those traits appeared.")),
+    note("I learned that if you never give up, you can achieve anything.", B("상투적 교훈", "cliche"),
+      B("“I learned that if you never give up, you can achieve anything”라는 결론을 지우고 실제 겪은 일로 대신하세요.", "Cut \"I learned that if you never give up, you can achieve anything\" and put a real event there.")),
+    note("become the best version of myself", B("막연함", "vague"),
+      B("“I am excited to continue my journey ... become the best version of myself” 대신 구체적 계획 하나를 쓰세요.", "The line \"I am excited to continue my journey... become the best version of myself.\" is generic; name one concrete plan.")),
+    note("passionate about helping others", B("말로만", "tells"),
+      B("‘helping others’를 실제로 도운 사람 한 명으로 바꿔 보세요.", "Name one person you actually helped instead of the abstract claim; describe what you did for them that week and what changed afterwards, since readers need to see the action rather than a label.")),
+    note("helping others", B("말로만", "tells"), B("이렇게 써 보세요: “토요일마다 이웃집 아이에게 글을 가르쳤다는 이야기”", "Try: \"I spent every Saturday teaching my neighbor's son to read\" instead.")),
+    note("helping others", B("말로만", "tells"), B("Try: \"I spent every Saturday teaching my neighbor's son to read\" instead.", "Write it in paragraph 1.")),
+  ];
+  const rr = parseEval(JSON.stringify({ ...base, line_notes: real }), gen);
+  assert.equal(rr.line_notes.length, 4, "quoted essay phrases are allowed");
+  assert.deepEqual(rr.line_notes_dropped, [{ reason: "new_wording_en" }, { reason: "new_wording_ko" }], "only real rewrites dropped");
+  assert.ok(hasNewWording("“토요일마다 이웃집 아이에게 글을 가르쳤다는 이야기를 길게 써라”", "나는 남을 돕는 것을 좋아했다."), "Korean rewrite of a Korean essay is caught");
   // 화면 언어 전환
   const saved = loadData(JSON.stringify({ essays: [{ text: ess, lastEval: r }] })).essays[0].lastEval;
   assert.equal(localizeEval(saved, "ko").line_notes[0].direction, "2문단에 실제로 달라진 행동 하나를 장면으로 넣어 보세요.");
@@ -305,6 +325,7 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   assert.deepEqual(localizeEval(oldSaved, "en").line_notes ?? [], []);
   assert.match(SYSTEM, /line_notes/);
   assert.match(SYSTEM, /줄별 메모/);
+  assert.match(SYSTEM, /"line_notes" is REQUIRED/);
   for (const k of ["line_notes", "issue", "direction", "para"]) assert.ok(STR.ko[k] && STR.en[k], k);
 }
 

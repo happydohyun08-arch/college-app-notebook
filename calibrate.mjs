@@ -101,8 +101,9 @@ for (const c of CASES.filter((x) => !only || only.includes(x.id))) {
     if (c.expect.type && ev.essay_type !== c.expect.type) bad.push(`type ${ev.essay_type} != ${c.expect.type}`);
     const missing = ev.criteria.filter((x) => !x.quote_found).length + (ev.line_notes ?? []).filter((x) => !x.quote_found).length;
     if (missing) bad.push(`${missing} quote(s) not found in essay`);
-    if (!(ev.line_notes ?? []).length && ev.total < 85) bad.push("no line_notes");
-    console.log(`${bad.length ? "FAIL" : "ok  "} ${c.id} run ${r + 1}: ${ev.total} [${ev.criteria.map((x) => x.score).join(",")}] type=${ev.essay_type} flags=[${codes}]${bad.length ? "  <- " + bad.join("; ") : ""}`);
+    const dropped = ev.line_notes_dropped ?? [];
+    if (!(ev.line_notes ?? []).length && ev.total < 85) bad.push(`no line_notes (model sent ${dropped.length}, dropped: ${dropped.map((d) => d.reason).join(",") || "none"})`);
+    console.log(`${bad.length ? "FAIL" : "ok  "} ${c.id} run ${r + 1}: ${ev.total} [${ev.criteria.map((x) => x.score).join(",")}] type=${ev.essay_type} flags=[${codes}] notes=${(ev.line_notes ?? []).length}${dropped.length ? ` dropped=[${dropped.map((d) => d.reason)}]` : ""}${bad.length ? "  <- " + bad.join("; ") : ""}`);
     if (bad.length) fails++;
   }
   if (totals.length > 1) console.log(`     spread ${Math.min(...totals)}-${Math.max(...totals)}`);
