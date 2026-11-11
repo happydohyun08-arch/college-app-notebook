@@ -45,14 +45,14 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li>로그인 토큰은 열려 있는 페이지의 메모리에만 있고, 페이지를 새로 고치면 사라져요.</li>
 </ul>
 
-<h3>4. Google 드라이브 백업 (선택)</h3>
-<p>원하면 내 Google 드라이브에 백업할 수 있어요. 이때 요청하는 권한은 <code>https://www.googleapis.com/auth/drive.appdata</code> 하나뿐이에요.</p>
+<h3>4. Google 드라이브 동기화 (선택)</h3>
+<p>Google로 로그인하면 내 자료를 내 Google 드라이브에서 불러오고, 고칠 때마다 다시 저장해요. 그래서 어느 기기에서 로그인해도 같은 자료가 보여요. 자료는 운영자 서버에 저장하지 않아요. 이때 요청하는 권한은 <code>https://www.googleapis.com/auth/drive.appdata</code> 하나뿐이에요.</p>
 <ul>
 <li><b>접근 범위:</b> 내 드라이브의 앱 전용 숨김 폴더(appDataFolder)만 볼 수 있어요. 드라이브의 다른 파일은 보거나 읽거나 바꿀 수 없어요.</li>
-<li><b>하는 일:</b> 그 폴더에 <code>college-app-backup.json</code> 백업 파일 하나를 저장하고, '드라이브에서 불러오기'를 누르면 그 파일을 읽어 이 브라우저로 가져와요. 자동 동기화를 켜면 바뀔 때마다 같은 파일에 저장해요.</li>
+<li><b>하는 일:</b> 그 폴더에 <code>college-app-backup.json</code> 백업 파일 하나를 둬요. 로그인하면 그 파일을 읽어요. 이 기기가 비어 있으면 드라이브 자료를 불러오고, 드라이브가 비어 있으면 이 기기 자료를 올려요. 둘 다 있고 내용이 다르면 묻지 않고 덮어쓰지 않아요: 양쪽의 저장 시각과 개수를 보여 주고 내가 고르게 해요. 연결된 동안은 자동 동기화가 켜져서 고칠 때마다(약 4초 묶어서) 같은 파일에 저장해요. 다른 Google 계정으로 로그인하면 자료를 섞지 않고 그 계정 자료로 바꿀지 따로 둘지 물어요. '드라이브에서 불러오기'·'드라이브에 저장'으로 직접 할 수도 있어요.</li>
 <li><b>전달:</b> 백업은 브라우저에서 Google로 바로 가요. 운영자 서버를 거치지 않고, 운영자는 볼 수 없어요. 드라이브 데이터를 Anthropic이나 다른 곳으로 자동으로 보내지 않아요. 불러온 자료는 1번처럼 내 브라우저에만 있고, 내가 'AI 평가'를 눌러 동의한 글만 2번처럼 전달돼요.</li>
-<li><b>브라우저에 남는 것:</b> 드라이브 접근 토큰은 페이지 메모리에만 있고(약 1시간 유효) 저장하지 않아요. 브라우저에는 자동 동기화 켜짐 여부와 마지막 동기화 시각만 저장해요.</li>
-<li><b>삭제와 연결 해제:</b> '백업' 화면의 '구글 연결 끊기'를 누르면 접근 권한을 취소해요. 드라이브 백업을 지우려면 Google 드라이브 → 설정 → 앱 관리에서 이 앱의 '숨겨진 앱 데이터 삭제'를 누르세요. <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 권한 페이지</a>에서도 언제든 접근을 취소할 수 있어요.</li>
+<li><b>브라우저에 남는 것:</b> 로그인 토큰과 드라이브 접근 토큰은 페이지 메모리에만 있고(약 1시간 유효) 저장하지 않아요. 브라우저에는 '로그인했었음' 표시, 자동 동기화 켜짐 여부, 마지막 동기화 시각, 이 기기 자료를 마지막으로 맞춘 Google 계정 번호(sub, 이메일 아님)만 저장해요. 드라이브가 로그인한 계정과 같은 계정인지 확인하려고 두 이메일을 페이지 안에서 비교하지만 저장하지 않아요. 다음에 열면 Google의 자동 로그인으로 다시 연결해요. 브라우저가 Google 창을 막으면 'Drive 연결'을 한 번 누르면 돼요.</li>
+<li><b>삭제와 연결 해제:</b> 위쪽의 '로그아웃'은 토큰을 지우고 동기화를 멈추며, 공용 컴퓨터라면 이 기기의 자료도 지울 수 있게 해요(드라이브 백업은 남아요). '백업' 화면의 '구글 연결 끊기'를 누르면 접근 권한을 취소해요. 드라이브 백업을 지우려면 Google 드라이브 → 설정 → 앱 관리에서 이 앱의 '숨겨진 앱 데이터 삭제'를 누르세요. <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 권한 페이지</a>에서도 언제든 접근을 취소할 수 있어요.</li>
 </ul>
 
 <h3>5. Google 사용자 데이터 정책 준수 (Limited Use)</h3>
@@ -87,14 +87,14 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li>The sign-in token stays only in the open page's memory and is gone when you reload.</li>
 </ul>
 
-<h3>4. Google Drive backup (optional)</h3>
-<p>You can choose to back up to your own Google Drive. The only permission requested is <code>https://www.googleapis.com/auth/drive.appdata</code>.</p>
+<h3>4. Google Drive sync (optional)</h3>
+<p>When you sign in with Google, your data loads from your own Google Drive and is saved back on every change, so the same data appears on any device where you sign in. Your data is never stored on the operator's server. The only permission requested is <code>https://www.googleapis.com/auth/drive.appdata</code>.</p>
 <ul>
 <li><b>Access:</b> only the hidden app-only folder in your Drive (appDataFolder). The site cannot see, read or change any other file in your Drive.</li>
-<li><b>What it does:</b> saves one backup file, <code>college-app-backup.json</code>, in that folder, and reads it back into this browser when you press 'Load from Drive'. With auto-sync on, it saves to the same file on every change.</li>
+<li><b>What it does:</b> keeps one backup file, <code>college-app-backup.json</code>, in that folder and reads it when you sign in. If this device is empty, it loads the Drive data; if Drive is empty, it uploads this device's data. If both have data and they differ, nothing is overwritten silently: you see the last-saved time and item counts for each and choose. While connected, auto-sync is on and saves to the same file on every change (batched about 4 seconds). If a different Google account signs in, the data is not mixed: you choose whether to switch to that account's data or keep it separate. You can also use 'Load from Drive' and 'Save to Drive' by hand.</li>
 <li><b>Sharing:</b> the backup goes straight from your browser to Google. It never passes through the operator's server, and the operator cannot see it. Drive data is never sent automatically to Anthropic or anywhere else. Loaded data stays only in your browser (section 1); only text you choose to send with 'AI feedback' and agree to is shared (section 2).</li>
-<li><b>What stays in the browser:</b> the Drive access token is kept only in page memory (valid about one hour) and is not saved. The browser stores only whether auto-sync is on and the time of the last sync.</li>
-<li><b>Deletion and disconnect:</b> press 'Disconnect Google' on the Backup screen to revoke access. To delete the Drive backup, open Google Drive → Settings → Manage apps and choose 'Delete hidden app data' for this app. You can also revoke access at any time on your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>.</li>
+<li><b>What stays in the browser:</b> the sign-in token and the Drive access token are kept only in page memory (valid about one hour) and are not saved. The browser stores only a 'was signed in' flag, whether auto-sync is on, the time of the last sync, and the Google account number (sub, not your email) this device's data was last synced with. To make sure Drive belongs to the account you signed in with, the page compares the two email addresses in memory; neither is saved. Next time you open the site, Google's automatic sign-in reconnects you; if the browser blocks the Google window, press 'Connect Drive' once.</li>
+<li><b>Deletion and disconnect:</b> 'Sign out' at the top clears the tokens, stops sync and, for shared computers, offers to remove your data from this device (the Drive backup stays). Press 'Disconnect Google' on the Backup screen to revoke access. To delete the Drive backup, open Google Drive → Settings → Manage apps and choose 'Delete hidden app data' for this app. You can also revoke access at any time on your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>.</li>
 </ul>
 
 <h3>5. Google API Services User Data Policy (Limited Use)</h3>

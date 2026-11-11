@@ -1,4 +1,4 @@
-import { localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -25,11 +25,13 @@ try {
 let lang = data.lang || (navigator.language?.startsWith("ko") ? "ko" : "en");
 const t = (k) => STR[lang][k] ?? k;
 
-function save() {
+// stamp=false: 드라이브에서 받은 자료를 그대로 적을 때 (저장 시각을 바꾸지 않고 다시 올리지 않는다)
+function save(stamp = true) {
   try {
+    if (stamp) data.savedAt = new Date().toISOString();
     localStorage.setItem(KEY, JSON.stringify(data));
     $("#storeWarn").hidden = true;
-    gdQueue();
+    if (stamp) gdQueue();
   } catch {
     $("#storeWarn").hidden = false;
   }
@@ -249,20 +251,43 @@ $("#sendGo").addEventListener("click", () => {
 // Drive 백업용 access token과 별개로 'Sign in with Google' ID 토큰을 받아 Worker에 보낸다. 메모리에만 둔다.
 // Worker는 서명을 확인하고 계정 번호(sub)의 해시로만 하루 횟수를 센다.
 let idToken = null, aiLeft = null, gsiInit = false;
-const tokenExp = (tok) => { try { return JSON.parse(atob(tok.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).exp * 1000; } catch { return 0; } };
+const tokenExp = (tok) => (jwt(tok).exp ?? 0) * 1000;
 const signedIn = () => !!idToken && tokenExp(idToken) > Date.now() + 60000;
 // 같은 로그인을 동의 창(#sendLogin)과 상단 바(#headLogin, compact) 두 곳에 그린다.
 const showLogin = () => renderLogin($("#sendLogin"));
 const headLogin = () => renderLogin($("#headLogin"), true);
+// 새로고침해도 로그인 상태를 잇기 위해 '로그인했었다' 표시만 저장한다 (토큰은 저장하지 않는다).
+const GSI_KEY = "college-app.gsi";
+const wasIn = () => { try { return localStorage.getItem(GSI_KEY) === "1"; } catch { return false; } };
+const jwt = (tok) => { try { return JSON.parse(atob(tok.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))); } catch { return {}; } };
+function onCredential(r) {
+  idToken = r.credential;
+  aiLeft = null;
+  try { localStorage.setItem(GSI_KEY, "1"); } catch {}
+  const { sub, email } = jwt(idToken);
+  gdHint = email;
+  if (signedUp(data) && sub && !(sub === gdSub && gdLive())) driveConnect(sub); // 로그인 = 드라이브 연결까지 한 번에
+  headLogin();
+  if ($("#send").open) showLogin();
+  sendState();
+}
 async function renderLogin(box, compact = false) {
-  if (signedIn()) return void box.replaceChildren(el(compact ? "span" : "p", { className: "muted", textContent: aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft) }));
+  if (signedIn()) {
+    const status = el(compact ? "span" : "p", { className: "muted", textContent: (aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft)) + (compact && gdSub && gdLive() ? ` · ${t("gd_on")}` : "") });
+    if (!compact) return void box.replaceChildren(status);
+    return void box.replaceChildren(...[status,
+      needClick && el("button", { className: "btn ghost", textContent: t("gd_connect"), onclick: () => driveConnect(jwt(idToken).sub) }),
+      el("button", { className: "btn ghost", textContent: t("sign_out"), onclick: signOut })].filter(Boolean));
+  }
   const btn = el("div");
   box.replaceChildren(...(compact ? [] : [el("p", { textContent: t("ai_login") })]), btn);
   try {
     await gdScript();
     if (!gsiInit) {
-      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: (r) => { idToken = r.credential; aiLeft = null; headLogin(); if ($("#send").open) showLogin(); sendState(); } });
+      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: onCredential, auto_select: true });
       gsiInit = true;
+      // ponytail: 페이지를 열 때 한 번만 조용히 다시 로그인한다. 1시간 뒤 토큰이 끝나면 버튼을 한 번 누른다.
+      if (wasIn() && signedUp(data)) google.accounts.id.prompt();
     }
     google.accounts.id.renderButton(btn, { theme: "outline", text: "signin_with", locale: lang, ...(compact && { size: "small" }) });
   } catch (e) {
@@ -642,7 +667,8 @@ function applyBackup(text) {
 const GOOGLE_CLIENT_ID = "401240295166-diputek84ej3rfmap47n040jfmvoc6gn.apps.googleusercontent.com";
 const GD_FILE = "college-app-backup.json";
 const GD_API = "https://www.googleapis.com";
-let gdToken = null, gdLoading = null;
+let gdToken = null, gdLoading = null, gdHint;
+const gdLive = () => !!gdToken && gdToken.exp > Date.now();
 const gdScript = () => (gdLoading ??= new Promise((ok, no) => {
   document.head.append(el("script", { src: "https://accounts.google.com/gsi/client", onload: ok, onerror: () => { gdLoading = null; no(new Error(t("gd_noscript"))); } }));
 }));
@@ -650,20 +676,21 @@ const gdMsg = (m) => ($("#gdMsg").textContent = m);
 // 무엇이 저장/로드됐는지 보이게: 활동·수상·지원 학교·에세이 개수
 const gdCount = (d) => t("gd_n").replace("{a}", d.activities.length).replace("{h}", d.honors.length).replace("{p}", d.apps.length).replace("{e}", d.essays.length);
 async function gdAuth() {
-  if (gdToken && gdToken.exp > Date.now()) return gdToken.v;
+  if (gdLive()) return gdToken.v;
   await gdScript();
   return new Promise((ok, no) => {
     google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
       scope: `${GD_API}/auth/drive.appdata`,
+      ...(gdHint && { login_hint: gdHint }),
       callback: (r) => {
         if (r.error) return no(new Error(r.error));
         gdToken = { v: r.access_token, exp: Date.now() + (r.expires_in - 60) * 1000 };
         $("#gdOut").hidden = false;
         ok(gdToken.v);
       },
-      error_callback: (e) => no(new Error(e.type === "popup_closed" ? t("gd_cancel") : e.message || e.type)),
-    }).requestAccessToken();
+      error_callback: (e) => no(new Error(e.type === "popup_closed" ? t("gd_cancel") : e.type === "popup_failed_to_open" ? t("gd_blocked") : e.message || e.type)),
+    }).requestAccessToken({ prompt: "" }); // 처음 한 번만 동의 창, 그다음은 바로 닫힌다
   });
 }
 async function gdFetch(url, opt = {}) {
@@ -680,13 +707,15 @@ async function gdRun(fn) {
 }
 // 자동 동기화 설정과 마지막으로 맞춘 드라이브 파일 시각. 백업 파일에는 넣지 않는다.
 const SYNC_KEY = "college-app.gdsync";
-let sync = { auto: false, last: "" };
+// sub = 이 브라우저 자료를 마지막으로 맞춘 Google 계정 번호, savedAt = 그때 자료의 저장 시각
+let sync = { auto: false, last: "", sub: "", savedAt: "" };
 try { sync = { ...sync, ...JSON.parse(localStorage.getItem(SYNC_KEY)) }; } catch {}
 const saveSync = () => { try { localStorage.setItem(SYNC_KEY, JSON.stringify(sync)); } catch {} };
 $("#gdAuto").checked = sync.auto;
 
 async function gdPush(auto) {
   gdMsg(t("gd_working"));
+  if (!data.savedAt) { data.savedAt = new Date().toISOString(); save(false); }
   const body = JSON.stringify(data);
   const f = await gdFind();
   // 다른 기기가 더 나중에 저장했으면 자동으로 덮어쓰지 않는다 (자료 손실 방지)
@@ -704,17 +733,21 @@ async function gdPush(auto) {
     r = await gdFetch("/upload/drive/v3/files?uploadType=multipart&fields=modifiedTime", { method: "POST", body: form });
   }
   sync.last = (await r.json()).modifiedTime;
+  sync.savedAt = data.savedAt;
   saveSync();
   gdMsg(`${t(auto ? "gd_auto_saved" : "gd_saved")}: ${gdCount(data)} (${new Date().toLocaleString(lang)})`);
 }
 // ponytail: 4초 묶음 전송. 마지막 수정 후 4초 안에 탭을 닫으면 그 수정은 브라우저에만 남고 다음 저장 때 올라간다.
-let gdTimer, gdBusy = false;
+let gdTimer, gdBusy = false, gdPending = false;
 function gdQueue() {
   if (!sync.auto) return;
   clearTimeout(gdTimer);
+  gdPending = true;
   gdTimer = setTimeout(async () => {
+    gdPending = false;
+    if (connecting) return gdQueue(); // 연결하며 무엇을 남길지 정하는 중에는 올리지 않는다
     // 로그인은 클릭 없이 다시 할 수 없다 (팝업 차단). 토큰이 끝나면 멈추고 알린다.
-    if (!(gdToken && gdToken.exp > Date.now())) return gdMsg(t("gd_auto_paused"));
+    if (!gdLive()) return gdMsg(t("gd_auto_paused"));
     if (gdBusy) return gdQueue();
     gdBusy = true;
     try { await gdPush(true); } catch (err) { gdMsg(`${t("gd_fail")}: ${err.message}`); }
@@ -734,15 +767,104 @@ $("#gdLoad").addEventListener("click", () => gdRun(async () => {
   if (!f) return gdMsg(t("gd_none"));
   const text = await (await gdFetch(`/drive/v3/files/${f.id}?alt=media`)).text();
   const ok = applyBackup(text);
-  if (ok) { sync.last = f.modifiedTime; saveSync(); }
+  if (ok) { sync.last = f.modifiedTime; sync.savedAt = data.savedAt; saveSync(); }
   gdMsg(ok ? `${t("imported").replace(/\.$/, "")}: ${gdCount(data)} (${t("gd_when")} ${new Date(f.modifiedTime).toLocaleString(lang)})` : t("gd_kept"));
 }));
 $("#gdOut").addEventListener("click", () => {
   if (gdToken) google.accounts.oauth2.revoke(gdToken.v, () => {});
   gdToken = null;
+  gdSub = "";
+  needClick = signedIn(); // 상단 바에 'Drive 연결' 버튼을 다시 보인다
   $("#gdOut").hidden = true;
   gdMsg(t("gd_outed"));
+  headLogin();
 });
+
+// ---------- 로그인하면 드라이브와 맞추기 ----------
+let gdSub = "", connecting = false, needClick = false;
+const when = (iso) => (iso ? new Date(iso).toLocaleString(lang) : t("sync_unknown"));
+// 두 버튼 중 하나를 고르게 한다. 0 / 1, 닫으면 null.
+function choose(q, lines, a, b) {
+  const d = $("#syncAsk");
+  $("#syncQ").textContent = q;
+  $("#syncWhat").replaceChildren(...lines.map((l) => el("li", { textContent: l })));
+  $("#syncA").textContent = a;
+  $("#syncB").textContent = b;
+  return new Promise((ok) => {
+    const pick = (v) => () => { d.onclose = null; d.close(); ok(v); };
+    $("#syncA").onclick = pick(0);
+    $("#syncB").onclick = pick(1);
+    d.onclose = () => ok(null);
+    d.showModal();
+  });
+}
+function takeDrive(next) {
+  data = { ...next, ageOk: true, consent: data.consent, lang };
+  lastOrder = null;
+  save(false);
+  renderAll();
+}
+async function driveConnect(sub) {
+  if (connecting) return;
+  connecting = true;
+  needClick = false;
+  headLogin();
+  try {
+    await gdAuth();
+    gdMsg(t("gd_working"));
+    // 드라이브 토큰이 로그인한 계정과 같은 계정인지 확인한다 (다른 계정의 드라이브에 섞이지 않게)
+    const me = await gdFetch("/drive/v3/about?fields=user(emailAddress)").then((r) => r.json()).catch(() => ({}));
+    if (gdHint && me.user?.emailAddress && me.user.emailAddress.toLowerCase() !== gdHint.toLowerCase()) throw new Error(t("gd_wrong_acct"));
+    const f = await gdFind();
+    const drive = f ? loadData(await (await gdFetch(`/drive/v3/files/${f.id}?alt=media`)).text()) : null;
+    let plan = syncPlan({ local: data, drive, localSub: sync.sub, sub, syncedAt: sync.savedAt });
+    const here = `${t("sync_here")}: ${gdCount(data)} · ${when(data.savedAt)}`;
+    const there = drive && `${t("sync_drive")}: ${gdCount(drive)} · ${when(drive.savedAt || f.modifiedTime)}`;
+    if (plan === "switch") {
+      const c = await choose(t("sync_switch_q"), [here, there ?? `${t("sync_drive")}: ${t("gd_none")}`], t("sync_switch_load"), t("sync_switch_keep"));
+      if (c !== 0) { gdToken = null; needClick = true; return gdMsg(t("sync_kept_sep")); }
+      plan = drive ? "load" : "fresh";
+    }
+    if (plan === "ask") {
+      const c = await choose(t("sync_ask_q"), [here, there], t("sync_keep_drive"), t("sync_keep_here"));
+      if (c === null) { gdToken = null; needClick = true; return gdMsg(t("sync_later")); }
+      plan = c === 0 ? "load" : "upload";
+    }
+    if (plan === "load" || plan === "same") { takeDrive(drive); sync.last = f.modifiedTime; sync.savedAt = data.savedAt; }
+    if (plan === "fresh") { takeDrive(loadData(null)); sync.last = ""; sync.savedAt = ""; }
+    sync.sub = gdSub = sub;
+    sync.auto = $("#gdAuto").checked = true;
+    saveSync();
+    if (plan === "upload") await gdPush(false);
+    gdMsg(`${t(plan === "upload" ? "gd_saved" : plan === "load" ? "sync_loaded" : "sync_on")}: ${gdCount(data)}`);
+  } catch (err) {
+    needClick = true; // 팝업이 막혔거나 실패: 한 번 눌러 다시 연결하는 버튼을 보인다
+    gdMsg(`${t("gd_fail")}: ${err.message}`);
+  } finally {
+    connecting = false;
+    headLogin();
+  }
+}
+async function signOut() {
+  if (gdPending && gdLive()) { clearTimeout(gdTimer); gdPending = false; try { await gdPush(true); } catch {} } // 아직 안 올라간 수정을 먼저 올린다
+  clearTimeout(gdTimer);
+  idToken = gdToken = null;
+  gdSub = "";
+  aiLeft = null;
+  needClick = false;
+  sync.auto = $("#gdAuto").checked = false;
+  saveSync();
+  $("#gdOut").hidden = true;
+  try { localStorage.removeItem(GSI_KEY); } catch {}
+  try { google.accounts.id.disableAutoSelect(); } catch {}
+  if (confirm(t("out_wipe_q"))) {
+    try { for (const k of [KEY, SYNC_KEY, THEME_KEY]) localStorage.removeItem(k); } catch {}
+    return location.reload();
+  }
+  gdMsg(t("signed_out"));
+  headLogin();
+  sendState();
+}
 
 $("#wipeBtn").addEventListener("click", () => {
   if (!confirm(t("wipe_q"))) return;

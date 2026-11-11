@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { registerHooks } from "node:module";
-import { classify, dday, loadData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES } from "./logic.js";
+import { classify, dday, loadData, syncPlan, isEmptyData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES } from "./logic.js";
 import { STR } from "./i18n.js";
 
 // Worker는 rubric.md를 글자로 불러온다. Node에서도 같게 흉내 낸다.
@@ -621,4 +621,34 @@ console.log("school field filter check passed");
   assert.match(STR.en.aid_note, /Common Data Set/);
   assert.match(STR.en.aid_note, /External scholarships are not included/);
   console.log(`aid check passed (${withAid.length} schools)`);
+}
+
+// 로그인 시 드라이브와 맞추기: 묻지 않고 덮어쓰지 않는다
+{
+  const mk = (o = {}) => loadData(JSON.stringify({ ageOk: true, ...o }));
+  const empty = mk(), a = mk({ activities: [{ id: "x", type: "Art" }], savedAt: "2026-11-10T00:00:00Z" });
+  const b = mk({ essays: [{ id: "e", text: "hi" }], savedAt: "2026-11-11T00:00:00Z" });
+  assert.ok(isEmptyData(empty) && !isEmptyData(a) && !isEmptyData(mk({ profile: { major: "CS" } })));
+  assert.equal(a.savedAt, "2026-11-10T00:00:00Z", "savedAt survives loadData");
+  assert.equal(loadData(null).savedAt, "");
+  assert.equal(syncPlan({ local: empty, drive: null, sub: "A" }), "none");
+  assert.equal(syncPlan({ local: empty, drive: b, sub: "A" }), "load", "empty local loads Drive");
+  assert.equal(syncPlan({ local: a, drive: null, sub: "A" }), "upload", "empty Drive gets local");
+  assert.equal(syncPlan({ local: a, drive: empty, sub: "A" }), "upload");
+  assert.equal(syncPlan({ local: a, drive: b, sub: "A" }), "ask", "both differ, never synced: ask");
+  assert.equal(syncPlan({ local: a, drive: { ...a, lang: "en", savedAt: "x" }, sub: "A" }), "same", "same content");
+  assert.equal(syncPlan({ local: a, drive: b, localSub: "A", sub: "A", syncedAt: a.savedAt }), "load", "local untouched since sync");
+  assert.equal(syncPlan({ local: b, drive: a, localSub: "A", sub: "A", syncedAt: a.savedAt }), "upload", "Drive untouched since sync");
+  assert.equal(syncPlan({ local: a, drive: b, localSub: "A", sub: "A", syncedAt: "2026-01-01" }), "ask", "both changed: ask");
+  assert.equal(syncPlan({ local: a, drive: b, localSub: "A", sub: "A" }), "ask", "no sync record: ask");
+  assert.equal(syncPlan({ local: a, drive: b, localSub: "A", sub: "B", syncedAt: a.savedAt }), "switch", "account switch never merges");
+  assert.equal(syncPlan({ local: a, drive: null, localSub: "A", sub: "B" }), "switch", "switch even if new account has no Drive data");
+  assert.equal(syncPlan({ local: empty, drive: b, localSub: "A", sub: "B" }), "load", "empty device: just load new account");
+  for (const k of ["gd_on", "gd_connect", "sign_out", "gd_blocked", "gd_wrong_acct", "sync_h", "sync_unknown", "sync_here", "sync_drive", "sync_ask_q", "sync_keep_drive", "sync_keep_here", "sync_switch_q", "sync_switch_load", "sync_switch_keep", "sync_kept_sep", "sync_later", "sync_loaded", "sync_on", "out_wipe_q", "signed_out"]) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  const app = fs.readFileSync(new URL("./app.js", import.meta.url), "utf8");
+  assert.ok(!/localStorage\.setItem\([^)]*(idToken|gdToken|access_token)/.test(app), "tokens never stored");
+  assert.ok(app.includes("auto_select: true") && app.includes("login_hint"), "silent restore + account hint");
+  const priv = fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8");
+  assert.ok(priv.includes("Drive sync") && priv.includes("드라이브 동기화") && priv.includes("sub"), "privacy describes auto sync");
+  console.log("drive sign-in sync check passed");
 }

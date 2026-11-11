@@ -161,7 +161,7 @@ export function totalHours(a) {
 
 /** 저장된 글이나 가져온 백업 파일을 정해진 모양으로만 받아들인다. 모양이 틀리면 throw. */
 export function loadData(raw) {
-  const empty = { ageOk: false, consent: null, lang: "", profile: {}, activities: [], honors: [], apps: [], essays: [] };
+  const empty = { ageOk: false, consent: null, lang: "", savedAt: "", profile: {}, activities: [], honors: [], apps: [], essays: [] };
   if (!raw) return empty;
   const o = JSON.parse(raw);
   if (!o || typeof o !== "object" || Array.isArray(o)) throw new Error("not a backup file");
@@ -178,6 +178,7 @@ export function loadData(raw) {
     ageOk: o.ageOk === true,
     consent: o.consent && typeof o.consent === "object" ? { version: s(o.consent.version, 20), at: s(o.consent.at, 40) } : null,
     lang: o.lang === "en" || o.lang === "ko" ? o.lang : "",
+    savedAt: s(o.savedAt, 40),
     profile,
     activities: arr(o.activities, MAX_ACTIVITIES).map((a) => ({
       id: id(a?.id), type: s(a?.type, 60), position: s(a?.position, 50), org: s(a?.org, 100), desc: s(a?.desc, 150),
@@ -197,6 +198,29 @@ export function loadData(raw) {
       lastEval: e?.lastEval && typeof e.lastEval === "object" && !Array.isArray(e.lastEval) ? { ...e.lastEval, tr: cleanTr(e.lastEval.tr) } : null,
     })),
   };
+}
+
+// ---------- 드라이브 동기화 결정 ----------
+// 학생이 쓴 내용만 비교한다 (동의·언어·저장 시각은 빼고).
+const content = (d) => JSON.stringify([d.profile, d.activities, d.honors, d.apps, d.essays]);
+export const isEmptyData = (d) =>
+  !d.activities.length && !d.honors.length && !d.apps.length && !d.essays.length && !Object.values(d.profile).some((v) => String(v ?? "").trim());
+/**
+ * 로그인해서 드라이브에 연결됐을 때 무엇을 할지. 절대 묻지 않고 덮어쓰지 않는다.
+ * local/drive = loadData 결과 (drive는 백업이 없으면 null)
+ * localSub = 이 브라우저 자료를 마지막으로 맞춘 Google 계정, sub = 지금 로그인한 계정
+ * syncedAt = 마지막으로 맞췄을 때의 savedAt (그 뒤로 이 기기에서 안 고쳤으면 local.savedAt과 같다)
+ * 결과: "switch" 다른 계정 → 물어본다 | "none" 둘 다 빔 | "upload" | "load" | "same" | "ask" 둘 다 있고 다름 → 물어본다
+ */
+export function syncPlan({ local, drive, localSub = "", sub, syncedAt = "" }) {
+  if (localSub && localSub !== sub && !isEmptyData(local)) return "switch";
+  const mine = localSub === sub; // 이 계정과 맞춘 적이 있다
+  if (!drive || isEmptyData(drive)) return isEmptyData(local) ? "none" : "upload";
+  if (isEmptyData(local)) return "load";
+  if (content(local) === content(drive)) return "same";
+  if (mine && syncedAt && local.savedAt === syncedAt) return "load"; // 이 기기는 그대로, 다른 기기에서 고쳤다
+  if (mine && syncedAt && drive.savedAt === syncedAt) return "upload"; // 드라이브는 그대로, 이 기기에서 고쳤다
+  return "ask";
 }
 
 // AI 결과의 두 언어 글(tr = {ko:{…}, en:{…}}). 모양이 틀린 쪽은 버린다. 예전(한 언어) 결과는 tr이 없다.

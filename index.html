@@ -117,7 +117,8 @@ body.out main, body.out nav, body.out .ribbon, body:not(.out) #landing, body:not
 #headStart { margin-left:auto; padding:4px 14px; font-size:12px; }
 body.out #langBtn { order:2; }
 body.out #headLogin { display:none; }
-#headLogin { order:2; font-size:12px; }
+#headLogin { order:2; font-size:12px; display:flex; gap:8px; align-items:center; }
+#headLogin .btn { padding:3px 10px; font-size:12px; }
 .hero { text-align:center; padding:96px 22px 56px; max-width:980px; margin:0 auto; }
 .eyebrow { font-size:17px; font-weight:600; color:var(--accent); margin:0 0 10px; letter-spacing:-0.01em; }
 .hero h2 { font-size:64px; line-height:1.05; font-weight:700; letter-spacing:-0.035em; margin:0 auto; max-width:860px; }
@@ -444,6 +445,12 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
   <div id="sendLogin"></div>
   <label class="check"><input type="checkbox" id="sendOk"> <span data-t="send_ok"></span></label>
   <div class="row"><button class="btn" id="sendGo" disabled data-t="send_go"></button><button class="btn ghost" id="sendCancel" data-t="cancel"></button></div>
+</dialog>
+
+<dialog id="syncAsk">
+  <h2 data-t="sync_h"></h2><p id="syncQ"></p>
+  <ul id="syncWhat"></ul>
+  <div class="row"><button class="btn" id="syncA"></button><button class="btn ghost" id="syncB"></button></div>
 </dialog>
 
 <footer><span data-t="footer"></span> · <a href="privacy.html">개인정보처리방침 · Privacy</a> · <a href="terms.html">서비스 약관 · Terms</a></footer>
