@@ -343,7 +343,7 @@ for (const entry of JSON.parse(fs.readFileSync(new URL("./research/admissions-ev
   // CDS로 갱신된 행은 지원·합격 수와 평균 GPA를 CDS에서 가져오고, 입학처 합격자 GPA 범위만 남긴다.
   const cds = evidence.some((e) => e.id === entry.id);
   for (const [key, value] of Object.entries(entry.verified)) if (!cds || key.startsWith("admitted_gpa")) assert.equal(school[key] ?? null, value);
-  if (!cds) assert.equal(school.gpa_avg, null, "admitted median/percentiles are not enrolled mean GPA");
+  if (!cds) assert.equal(school.gpa_avg, entry.verified.gpa_avg ?? null, "admitted median/percentiles are not enrolled mean GPA; only a verified enrolled mean is kept");
   assert.ok(Math.abs(school.admit_rate - school.admitted / school.applicants) < 1e-10);
 }
 console.log("UC test policy and admission profile check passed");

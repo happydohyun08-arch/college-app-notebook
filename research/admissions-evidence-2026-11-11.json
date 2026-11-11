@@ -117,8 +117,11 @@
       "sat75": null,
       "act25": null,
       "act75": null,
-      "gpa_avg": null
+      "gpa_avg": 3.79,
+      "gpa_status": "reported"
     },
-    "caution": "Campus-level counts only. Purdue publishes no West Lafayette-only SAT/ACT percentiles; admissions profile ranges (admitted, WL+Indianapolis) are kept in the note, not in sat/act fields. CDS 2025-26 C1/C9 combine WL+Indianapolis+Polytechnic Statewide and are not used."
+    "caution": "Campus-level counts and enrolled mean HS GPA only. Purdue publishes no West Lafayette-only SAT/ACT percentiles; admissions profile ranges (admitted, WL+Indianapolis) are kept in the note, not in sat/act fields. CDS 2025-26 C1/C9 combine WL+Indianapolis+Polytechnic Statewide and are not used.",
+    "gpa_source": "https://tableau.it.purdue.edu/t/public/views/NewBeginners/HighSchoolGPAs?Campus%20Description=West%20Lafayette",
+    "gpa_source_filters": "Data Digest New Beginners > High School GPAs (Overview tab: High School GPA 3.79 for 10,173 students); Semester Fall; Academic Year 2027 (= Fall 2026); Campus West Lafayette; Campus Locations West Lafayette; College All; Avg. HS GPA axis 0-4; Fall 2026 = 3.79 (Avg. Core GPA 3.64 shown separately, not used)"
   }
 ]

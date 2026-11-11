@@ -11,7 +11,7 @@
       "sat75": 1388,
       "act25": 1404,
       "act75": 1404,
-      "gpa_avg": 2341
+      "gpa_avg": 2340
     }
   },
   "schools": [
@@ -21450,10 +21450,9 @@
         "sat25",
         "sat75",
         "act25",
-        "act75",
-        "gpa_avg"
+        "act75"
       ],
-      "gpa_status": "review_pending",
+      "gpa_status": "reported",
       "open_admission": false
     },
     {
