@@ -56,11 +56,12 @@ python3 -m http.server 8000
 
 ## CDS 조사 현황 (2026-11-11)
 
-전체 2,370개 대학 중 CDS 자료를 반영한 행은 54개입니다. 전체 조사 완료를 뜻하지 않습니다.
+전체 2,370개 대학 중 CDS 자료를 반영한 행은 61개입니다. 전체 조사 완료를 뜻하지 않습니다.
 이번에는 Columbia, Johns Hopkins, Princeton, Florida, Emory, Tufts, Boston College 7곳의 C1·C9를 갱신했습니다. 평균 GPA는 JHU·Princeton·Florida·Emory에서 확인했습니다. Columbia·Boston College의 C12는 공란이고, Tufts의 GPA는 PDF 폼 재확인 대기입니다.
+후속 조사에서 Caltech, NYU, Stanford, UC Berkeley, UCLA, Chicago, Penn, Brown 8곳의 CDS 2025-26 C1·C9를 반영했습니다(`research/cds-evidence-2026-11-11-followup.json`). Brown은 Tableau 'C - Admissions' 탭 기준이며 GPA를 수집하지 않아 `gpa_status=not_reported`입니다. Chicago의 GPA는 재확인 대기입니다.
 
 - `research/cds-evidence-2026-11-11.json`: 변경 전 값, 원문 URL·연도·페이지, 검증한 값.
-- `research/cds-followup.json`: 원문 접근/표 확인이 필요한 9개 대학. 접근 실패를 미공개로 판단하지 않습니다.
+- `research/cds-followup.json`: 아직 반영하지 않은 Purdue(Main Campus) 1곳. CDS가 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라 보류했습니다. 접근 실패를 미공개로 판단하지 않습니다.
 - `research/data-coverage.json`: 전체 대학의 조사 상태와 빈 항목. `node audit-data.mjs`로 다시 만듭니다.
 - `node check.mjs`: 지원자·합격자·등록자 관계, 합격률 계산, 근거 기록 일치 검사.
 

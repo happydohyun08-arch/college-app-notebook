@@ -7,14 +7,5 @@
     "landing": "https://www.purdue.edu/idata/products-services/common-data-set/",
     "document": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
     "note": "god 제공 XLSX(purdue.xlsx) 확인: CDS-C C1은 87,220 지원/37,881 합격/9,656 등록, C9 SAT 1220–1470·ACT 28–34. CDS-G가 PWL/PIN/PSW로 나뉘고 공식 안내상 West Lafayette·Indianapolis·Polytechnic Statewide 합산이라 Main Campus 행에 반영하지 않음."
-  },
-  {
-    "id": "217156",
-    "name": "Brown University",
-    "status": "source_access_pending",
-    "checked_at": "2026-11-11",
-    "landing": "https://oir.brown.edu/institutional-data/common-data-set",
-    "document": null,
-    "note": "공식 랜딩 페이지에서 보고서 링크 추출 불가"
   }
 ]

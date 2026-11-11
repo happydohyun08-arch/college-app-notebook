@@ -1,9 +1,9 @@
 {
   "summary": {
     "total": 2370,
-    "cds_records": 60,
-    "reviewed_this_batch": 14,
-    "source_access_pending": 2,
+    "cds_records": 61,
+    "reviewed_this_batch": 15,
+    "source_access_pending": 1,
     "cds_review_pending": 2308,
     "missing_fields": {
       "admit_rate": 638,
@@ -3615,13 +3615,13 @@
     {
       "id": "217156",
       "name": "Brown University",
-      "status": "source_access_pending",
-      "year": "IPEDS Fall 2023",
-      "source": "https://nces.ed.gov/collegenavigator/?id=217156",
+      "status": "reviewed_this_batch",
+      "year": "CDS 2025-26",
+      "source": "https://tableau.brown.edu/t/PublicContent/views/CommonDataSet/C-Admissions",
       "missing_fields": [
         "gpa_avg"
       ],
-      "gpa_status": "not_reviewed",
+      "gpa_status": "not_reported",
       "open_admission": false
     },
     {

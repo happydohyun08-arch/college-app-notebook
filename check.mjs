@@ -107,7 +107,7 @@ for (const s of schools) {
   if (s.act25) assert.ok(s.act25 >= 1 && s.act75 <= 36 && s.act25 <= s.act75, `${s.name} ACT range`);
 }
 assert.equal(new Set(schools.map((s) => s.id)).size, schools.length, "no duplicate schools");
-assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length >= 60, true, "CDS-verified rows kept");
+assert.equal(schools.filter((s) => s.year.startsWith("CDS")).length >= 61, true, "CDS-verified rows kept");
 
 // 사전: 두 언어의 키가 같아야 한다
 assert.deepEqual(Object.keys(STR.ko).sort(), Object.keys(STR.en).sort());
@@ -190,10 +190,10 @@ console.log("activity hours regression check passed");
 
 // 새 CDS 조사 기록은 지원자·합격자 수와 원문 위치를 남긴다.
 const evidence = ["cds-evidence-2026-11-11.json", "cds-evidence-2026-11-11-followup.json"].flatMap((f) => JSON.parse(fs.readFileSync(new URL(`./research/${f}`, import.meta.url), "utf8")));
-assert.equal(evidence.length, 14);
-assert.equal(new Set(evidence.map((e) => e.id)).size, 14);
+assert.equal(evidence.length, 15);
+assert.equal(new Set(evidence.map((e) => e.id)).size, 15);
 const followup = JSON.parse(fs.readFileSync(new URL("./research/cds-followup.json", import.meta.url), "utf8"));
-assert.deepEqual(followup.map((f) => f.id).sort(), ["217156", "243780"], "only Brown and Purdue stay pending");
+assert.deepEqual(followup.map((f) => f.id).sort(), ["243780"], "only Purdue stays pending");
 for (const f of followup) assert.ok(!evidence.some((e) => e.id === f.id), `${f.name} is pending, not verified`);
 for (const entry of evidence) {
   const school = schools.find((s) => s.id === entry.id);
