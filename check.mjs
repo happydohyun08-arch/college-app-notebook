@@ -222,3 +222,18 @@ for (const entry of JSON.parse(fs.readFileSync(new URL("./research/admissions-ev
   assert.ok(Math.abs(school.admit_rate - school.admitted / school.applicants) < 1e-10);
 }
 console.log("UC test policy and admission profile check passed");
+
+const { SCHOOL_FIELDS, matchesSchoolField } = await import("./logic.js");
+for (const field of SCHOOL_FIELDS) assert.ok(STR.ko[`field_${field}`] && STR.en[`field_${field}`]);
+for (const school of schools.filter((s) => s.fields)) {
+  assert.ok(school.fields_sources.length && school.fields_checked);
+  assert.equal(new Set(school.fields).size, school.fields.length);
+  for (const field of school.fields) assert.ok(SCHOOL_FIELDS.includes(field));
+}
+const cmu = schools.find((s) => s.id === "211440");
+assert.ok(matchesSchoolField(cmu, "engineering") && matchesSchoolField(cmu, "music") && matchesSchoolField(cmu, "art_design"));
+assert.ok(!matchesSchoolField(cmu, "unreviewed"));
+assert.ok(matchesSchoolField({}, "unreviewed") && matchesSchoolField({}, ""));
+assert.ok(!matchesSchoolField({}, "music") && !matchesSchoolField(cmu, "invalid"));
+assert.ok(!matchesSchoolField(schools.find((s) => s.id === "192110"), "engineering"));
+console.log("school field filter check passed");

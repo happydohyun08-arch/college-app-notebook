@@ -1,4 +1,4 @@
-import { classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, TERMS_VERSION, wordCheck, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -311,7 +311,7 @@ function showOrder(box, out, actIds, honIds) {
 // ---------- 학교 분류 ----------
 let schools = null;
 let schoolLimit = 50; // ponytail: 2,370행을 한 번에 그리면 느려서 50개씩. 더 커지면 가상 스크롤로.
-const sv = { q: "", state: "", kind: "", fit: "", sort: "name" };
+const sv = { q: "", state: "", kind: "", field: "", fit: "", sort: "name" };
 const KINDS = ["liberal_arts", "research", "doctoral", "masters", "baccalaureate", "special_arts", "special_tech", "special_business", "special_health", "special_faith", "special_tribal", "special_other", "other"];
 function schoolControls() {
   $("#schoolQ").placeholder = t("search_ph");
@@ -323,6 +323,8 @@ function schoolControls() {
   };
   fill($("#schoolState"), [["", t("all_states")], ...states.map((x) => [x, x])], "state");
   fill($("#schoolKind"), [["", t("all_kinds")], ["hbcu", t("hbcu")], ...KINDS.map((x) => [x, t(`k_${x}`)])], "kind");
+  fill($("#schoolField"), [["", t("all_fields")], ...SCHOOL_FIELDS.map((x) => [x, t(`field_${x}`)]), ["unreviewed", t("field_unreviewed")]], "field");
+  $("#schoolField").setAttribute("aria-label", t("all_fields"));
   fill($("#schoolFit"), [["", t("all_fits")], ...["Reach", "Target", "Safety", "Unknown"].map((x) => [x, t(x)])], "fit");
   fill($("#schoolSort"), [["name", t("sort_name")], ["fit", t("sort_fit")], ["rate_asc", t("sort_rate_asc")], ["rate_desc", t("sort_rate_desc")]], "sort");
 }
@@ -362,16 +364,19 @@ async function renderSchools() {
     el("button", { ariaPressed: String(sv.fit === l), onclick: () => { sv.fit = sv.fit === l ? "" : l; schoolLimit = 50; renderSchools(); } },
       el("b", { className: `tag ${l}`, textContent: t(l) }), count(l).toLocaleString())));
   let list = all
-    .filter(({ sc, r }) => (!sv.state || sc.state === sv.state) && (!sv.kind || (sv.kind === "hbcu" ? sc.hbcu : sc.kind === sv.kind)) && (!sv.fit || r.label === sv.fit) &&
+    .filter(({ sc, r }) => (!sv.state || sc.state === sv.state) && (!sv.kind || (sv.kind === "hbcu" ? sc.hbcu : sc.kind === sv.kind)) && (!sv.fit || r.label === sv.fit) && matchesSchoolField(sc, sv.field) &&
       (!sv.q || sc.name.toLowerCase().includes(sv.q) || (sc.city ?? "").toLowerCase().includes(sv.q)));
   const FIT = { Safety: 0, Target: 1, Reach: 2, Unknown: 3 };
   if (sv.sort === "fit") list.sort((x, y) => FIT[x.r.label] - FIT[y.r.label] || (y.sc.admit_rate ?? 1) - (x.sc.admit_rate ?? 1));
   else if (sv.sort !== "name") list.sort((x, y) => (sv.sort === "rate_asc" ? 1 : -1) * ((x.sc.admit_rate ?? 1) - (y.sc.admit_rate ?? 1)));
+  $("#fieldCoverage").textContent = t("field_coverage").replace("{n}", schools.filter((s) => s.fields?.length).length.toLocaleString()).replace("{total}", schools.length.toLocaleString());
   $("#schoolCount").textContent = t("school_count").replace("{n}", list.length.toLocaleString()).replace("{m}", Math.min(schoolLimit, list.length).toLocaleString());
   $("#schoolMore").hidden = list.length <= schoolLimit;
   body.replaceChildren(...list.slice(0, schoolLimit).map(({ sc, r }) => el("tr", {},
     el("td", {}, sc.web ? el("a", { href: sc.web, target: "_blank", rel: "noopener", textContent: sc.name }) : sc.name,
       el("div", { className: "muted", textContent: [sc.city && `${sc.city}, ${sc.state}`, sc.control && t(sc.control), sc.kind && t(`k_${sc.kind}`), sc.hbcu && t("hbcu"), sc.note].filter(Boolean).join(" · ") }),
+      el("div", { className: "muted", textContent: sc.fields?.length ? sc.fields.map((f) => t(`field_${f}`)).join(" · ") : t("field_unreviewed") }),
+      ...(sc.fields_sources ?? []).map((url, i) => el("a", { className: "mini", href: url, target: "_blank", rel: "noopener", textContent: `${t("field_source")} ${i + 1} ↗ ` })),
       // 순위는 US News 상품이라 싣지 않고 링크만 건다 (구글 검색: US News 내부 주소 형식이 바뀌어도 동작)
       el("a", { className: "mini", href: `https://www.google.com/search?q=${encodeURIComponent(`${sc.name} ${sc.state ?? ""} site:usnews.com/best-colleges`)}`, target: "_blank", rel: "noopener", textContent: t("usnews") })),
     el("td", { className: "num", textContent: sc.open_admission ? t("open_adm") : pct(sc.admit_rate) }),

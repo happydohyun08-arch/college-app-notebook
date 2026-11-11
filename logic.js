@@ -149,3 +149,11 @@ export function loadData(raw) {
 /** AI가 준 순서가 0..n-1을 한 번씩 쓴 올바른 순서인지. */
 export const isPermutation = (order, n) =>
   Array.isArray(order) && order.length === n && new Set(order).size === n && order.every((i) => Number.isInteger(i) && i >= 0 && i < n);
+
+// 학부 분야: 확인된 분야만 저장한다. 분야가 없다는 뜻이 아닌 미조사 상태는 별도로 보여 준다.
+export const SCHOOL_FIELDS = ["art_design", "engineering", "music", "performing_arts", "film", "architecture", "computing", "science", "business", "humanities"];
+export function matchesSchoolField(school, field) {
+  if (!field) return true;
+  if (field === "unreviewed") return !school.fields?.length;
+  return SCHOOL_FIELDS.includes(field) && (school.fields ?? []).includes(field);
+}
