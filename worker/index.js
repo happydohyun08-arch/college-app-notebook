@@ -148,8 +148,16 @@ export function parseOrder(text, nAct, nHon) {
   return { activity_order: obj.activity_order ?? [], honor_order: obj.honor_order ?? [], notes, summary: obj.summary, injection_flags: flagsOf(obj) };
 }
 
-export function buildUser({ essay, prompt, college }) {
+// 사이트가 고른 에세이 종류. 그 밖의 값이나 없음(예전 사이트) = 줄을 넣지 않고 AI가 짐작한다.
+const KIND_LINE = {
+  ps: "Essay type (chosen by the student on the site): Personal Statement (Common App, 650-word limit).",
+  supplement: "Essay type (chosen by the student on the site): Supplement essay for the college in <untrusted_college>. Judge fit to that college and its prompt; do not apply the 650-word limit.",
+};
+
+export function buildUser({ essay, prompt, college, essay_kind }) {
+  const kind = Object.hasOwn(KIND_LINE, essay_kind) ? `${KIND_LINE[essay_kind]}\n` : "";
   return (
+    kind +
     `<untrusted_college>${college || "(not given)"}</untrusted_college>\n` +
     `<untrusted_prompt>\n${prompt || "(not given: treat as a personal statement)"}\n</untrusted_prompt>\n` +
     `<untrusted_essay>\n${essay}\n</untrusted_essay>\n` +
@@ -247,7 +255,7 @@ export default {
       if (essay.length < 50) return fail(400, "에세이가 너무 짧습니다.", "The essay is too short.");
       if (essay.length > MAX_ESSAY || prompt.length > MAX_PROMPT)
         return fail(400, `에세이는 ${MAX_ESSAY}자, 질문은 ${MAX_PROMPT}자까지입니다.`, `Essays up to ${MAX_ESSAY} characters, prompts up to ${MAX_PROMPT}.`);
-      job = { system: essaySystem(body.lang), user: buildUser({ essay, prompt, college }), parse: (t) => parseEval(t, essay) };
+      job = { system: essaySystem(body.lang), user: buildUser({ essay, prompt, college, essay_kind: body.essay_kind }), parse: (t) => parseEval(t, essay) };
     }
 
     // ponytail: KV 카운터는 동시에 몰리면 몇 회 넘칠 수 있다. 정확한 제한이 필요하면 Durable Object로.
