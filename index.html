@@ -253,6 +253,7 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
     <button data-tab="schools" data-t="tab_schools"></button>
     <button data-tab="apps" data-t="tab_apps"></button>
     <button data-tab="essays" data-t="tab_essays"></button>
+    <button data-tab="class" data-t="tab_class"></button>
     <button data-tab="backup" data-t="tab_backup"></button>
   </nav>
   <button class="btn" id="headStart" data-signup data-t="land_cta"></button>
@@ -401,6 +402,26 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
     <div class="row"><button class="btn" id="addEssay" data-t="add_essay"></button></div>
   </section>
 
+  <section id="class" hidden>
+    <h2 data-t="cl_h"></h2><p class="lead" data-t="cl_lead"></p>
+    <p class="note" id="clLogin" data-t="cl_login"></p>
+    <div class="card">
+      <h3 data-t="cl_student_h"></h3>
+      <p data-t="cl_student_p"></p>
+      <div class="row"><input id="clCode" maxlength="8" autocomplete="off" style="text-transform:uppercase;max-width:10em" aria-label="code"><button class="btn" id="clFind" data-t="cl_find"></button></div>
+      <div id="clInv"></div>
+      <div id="clMine"></div>
+      <p class="muted" id="clMsg"></p>
+    </div>
+    <div class="card">
+      <h3 data-t="cl_co_h"></h3>
+      <p data-t="cl_co_p"></p>
+      <div class="row"><input id="coName" maxlength="80" aria-label="class name"><button class="btn" id="coCreate" data-t="cl_create"></button><button class="btn ghost" id="coLoad" data-t="cl_load"></button></div>
+      <p class="muted" id="coMsg"></p>
+      <div id="coList"></div>
+    </div>
+  </section>
+
   <section id="backup" hidden>
     <h2 data-t="backup_h"></h2><p class="lead" data-t="backup_lead"></p>
     <div class="card">
@@ -445,6 +466,14 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
   <div id="sendLogin"></div>
   <label class="check"><input type="checkbox" id="sendOk"> <span data-t="send_ok"></span></label>
   <div class="row"><button class="btn" id="sendGo" disabled data-t="send_go"></button><button class="btn ghost" id="sendCancel" data-t="cancel"></button></div>
+</dialog>
+
+<dialog id="joinAsk">
+  <h2 data-t="cl_consent_h"></h2>
+  <p id="clWho"></p>
+  <p class="muted" data-t="cl_consent_more"></p>
+  <label class="check"><input type="checkbox" id="clOk"> <span data-t="cl_consent_ok"></span></label>
+  <div class="row"><button class="btn" id="clGo" disabled data-t="cl_join"></button><button class="btn ghost" id="clCancel" data-t="cancel"></button></div>
 </dialog>
 
 <dialog id="syncAsk">

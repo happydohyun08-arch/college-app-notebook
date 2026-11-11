@@ -144,7 +144,7 @@ export function appProgress(app, essays) {
 export const readyCount = (apps, essays) => ({ ready: apps.filter((a) => appProgress(a, essays).ready).length, total: apps.length });
 
 /** 약관을 바꾸면 날짜를 올린다. 예전 버전에 동의한 사람은 다시 동의해야 한다. */
-export const TERMS_VERSION = "2026-11-11"; // 2026-11-11: AI는 Google 로그인, 계정 해시로 횟수 셈
+export const TERMS_VERSION = "2026-11-11.2"; // 2026-11-11: AI는 Google 로그인, 계정 해시로 횟수 셈. .2: 카운슬러 공유
 export const signedUp = (d) => d.ageOk === true && d.consent?.version === TERMS_VERSION;
 
 const PROFILE_KEYS = ["major", "gpa", "sat", "act", "toefl", "ap", "otherTests", "legacy"];
@@ -261,4 +261,49 @@ export function matchesSchoolField(school, field) {
   if (!field) return true;
   if (field === "unreviewed") return !school.fields?.length;
   return SCHOOL_FIELDS.includes(field) && (school.fields ?? []).includes(field);
+}
+
+// ---------- 카운슬러와 공유하는 사본 ----------
+// 학생 드라이브에 두고 카운슬러에게 읽기 전용으로 공유하는 파일의 내용. 동의 화면에 적은 것만 넣는다:
+// 지원 학교 목록, 준비 체크리스트, 에세이(본문·완료 표시), AI 점수. 성적·활동·수상·AI 글 설명은 넣지 않는다.
+export const SHARE_KIND = "college-app-share";
+export function buildSnapshot(d, student, now = new Date()) {
+  return {
+    kind: SHARE_KIND, v: 1, student: String(student ?? ""), updatedAt: now.toISOString(),
+    apps: d.apps.map((a) => {
+      const p = appProgress(a, d.essays);
+      return { school: a.school, round: a.round, deadline: a.deadline, status: a.status, checks: { ...a.checks }, done: p.done, total: p.total };
+    }),
+    essays: d.essays.map((e) => ({
+      title: e.title, kind: essayKind(e), college: e.college, prompt: e.prompt, text: e.text, done: e.done === true, words: words(e.text),
+      ai: e.lastEval && Number.isFinite(e.lastEval.total)
+        ? { total: e.lastEval.total, criteria: arrOf(e.lastEval.criteria).map((c) => ({ name: String(c?.name ?? ""), score: Number(c?.score) || 0 })) }
+        : null,
+    })),
+  };
+}
+/** 카운슬러 화면이 받은 사본을 정해진 모양으로만 받는다 (학생 드라이브의 파일이라 믿지 않는다). 틀리면 throw. */
+export function parseSnapshot(raw) {
+  const o = typeof raw === "string" ? JSON.parse(raw) : raw;
+  if (o?.kind !== SHARE_KIND) throw new Error("not a shared college-app file");
+  const s = (v, max) => String(v ?? "").slice(0, max);
+  const arr = (a, n) => (Array.isArray(a) ? a.slice(0, n) : []);
+  return {
+    student: s(o.student, 254), updatedAt: s(o.updatedAt, 40),
+    apps: arr(o.apps, 200).map((a) => {
+      const total = Math.max(0, Math.min(Number(a?.total) || 0, 999));
+      return {
+        school: s(a?.school, 200), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: STATUSES.includes(a?.status) ? a.status : "prep",
+        checks: Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, CHECK_STATES.includes(a?.checks?.[k]) ? a.checks[k] : "todo"])),
+        total, done: Math.max(0, Math.min(Number(a?.done) || 0, total)),
+      };
+    }),
+    essays: arr(o.essays, 200).map((e) => ({
+      title: s(e?.title, 200), kind: ESSAY_KINDS.includes(e?.kind) ? e.kind : "supplement", college: s(e?.college, 200), prompt: s(e?.prompt, 2000),
+      text: s(e?.text, 8000), done: e?.done === true, words: words(s(e?.text, 8000)),
+      ai: obj(e?.ai) && Number.isFinite(e.ai.total)
+        ? { total: Math.max(0, Math.min(Math.round(e.ai.total), 100)), criteria: arr(e.ai.criteria, 5).map((c) => ({ name: s(c?.name, 40), score: Math.max(0, Math.min(Number(c?.score) || 0, 20)) })) }
+        : null,
+    })),
+  };
 }

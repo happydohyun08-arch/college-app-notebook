@@ -3,6 +3,7 @@
 //   kind "order": 희망 전공에 맞춘 활동·수상 순서 추천
 // - Anthropic 키는 여기에만 있다 (wrangler secret). 브라우저에는 없다.
 // - 받은 내용을 저장하거나 로그로 남기지 않는다. Claude에 넘기고 결과만 돌려준다.
+//   kind "class": 카운슬러 클래스 멤버십 (코드·이메일·드라이브 파일 id만 저장, 학생 자료는 저장 안 함)
 // - Google 로그인한 사람만 쓴다. 하루 횟수 제한: 계정별 + IP별(공유 와이파이 남용 방지) + 전체 (두 기능 합산).
 //   진짜 비용 상한은 Anthropic 콘솔의 월 지출 한도다.
 // 방식은 indie-guild/scripts/evaluate.mjs에서 가져왔다 (주입 방어, JSON 검증).
@@ -293,7 +294,9 @@ async function googleKeys(kid) {
   return certs.keys.find((k) => k.kid === kid);
 }
 // 맞으면 sub, 아니면 null. 구글 키 서버에 못 닿으면 throw (로그인 문제가 아니라 서버 문제라서).
-export async function verifyGoogleIdToken(token, clientId, now = Date.now()) {
+export const verifyGoogleIdToken = async (token, clientId, now = Date.now()) => (await verifyGoogleClaims(token, clientId, now))?.sub ?? null;
+// 맞으면 토큰 내용(claims), 아니면 null. 이메일은 카운슬러 클래스 기능에서만 쓴다 (AI 기능은 sub만).
+async function verifyGoogleClaims(token, clientId, now = Date.now()) {
   const parts = String(token ?? "").split(".");
   if (parts.length !== 3 || !clientId) return null;
   let head, body, sig;
@@ -313,7 +316,129 @@ export async function verifyGoogleIdToken(token, clientId, now = Date.now()) {
     return null;
   }
   if (!GOOGLE_ISS.includes(body?.iss) || body.aud !== clientId || !(body.exp > now / 1000)) return null;
-  return typeof body.sub === "string" && body.sub ? body.sub : null;
+  return typeof body.sub === "string" && body.sub ? body : null;
+}
+
+// ---------- 카운슬러 클래스 ----------
+// 저장하는 것은 멤버십뿐이다: 클래스 코드·이름, 카운슬러 sub·이메일, 학생 sub·이메일, 학생 드라이브 파일 id.
+// 학생 자료(학교·에세이·점수)는 학생 드라이브의 파일에만 있고 이 서버는 읽지도 받지도 않는다.
+// KV 키 (LIMITS 네임스페이스를 같이 쓴다. 값은 비우고 내용은 metadata에 둔다 → list 한 번으로 읽는다):
+//   c:<code>               {name, owner, ownerEmail, created}  (값에 JSON)
+//   o:<ownerSub>:<code>    카운슬러의 클래스 목록
+//   m:<code>:<studentSub>  {email, fileId, joined}
+//   s:<studentSub>:<code>  {fileId}  학생의 클래스 목록
+//   i:<code>:<emailHash>   {email}   이메일로 초대
+//   e:<emailHash>:<code>   초대받은 학생이 자기 초대를 찾는 색인
+// ponytail: KV는 결과적 일관성이라 가입 직후 몇십 초 동안 목록에 안 보일 수 있다. 실시간이 필요하면 Durable Object로.
+const CODE_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // 32자 (0/O, 1/I 뺌). 256의 약수라 치우침 없음
+export const makeCode = (bytes = crypto.getRandomValues(new Uint8Array(6))) => [...bytes].slice(0, 6).map((b) => CODE_CHARS[b % 32]).join("");
+export const normCode = (c) => String(c ?? "").toUpperCase().replace(/[\s-]/g, "");
+export const isCode = (c) => /^[A-HJ-NP-Z2-9]{6}$/.test(c);
+export const isFileId = (v) => typeof v === "string" && /^[A-Za-z0-9_-]{10,100}$/.test(v);
+export const normEmail = (v) => { const e = String(v ?? "").trim().toLowerCase(); return e.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) ? e : null; };
+const OWNER_OPS = ["invite"];
+/** 클래스 요청 권한. cls = 클래스 기록(없으면 null), me = {sub}. 카운슬러는 자기 클래스만, 학생은 자기 멤버십만. */
+export function canClass(op, cls, me, isMember = false) {
+  if (!me?.sub) return false;
+  if (op === "create" || op === "classes" || op === "mine" || op === "invites") return true; // 자기 것만 돌려준다
+  if (!cls) return false;
+  if (OWNER_OPS.includes(op)) return cls.owner === me.sub;
+  if (op === "lookup" || op === "join") return true; // 코드를 아는 로그인 사용자
+  if (op === "leave") return isMember;
+  return false;
+}
+export const CLASS_FAIL_DAILY = 30; // 틀린 코드 입력 하루 상한 (코드 맞히기 방지)
+const MAX_INVITES = 50;
+
+async function classOp(body, claims, env) {
+  const kv = env.LIMITS;
+  const me = { sub: claims.sub, email: claims.email_verified === true ? normEmail(claims.email) : null };
+  if (!me.email) return [403, { error: "verified Google email required", code: "email_required" }];
+  const op = String(body.op ?? "");
+  const code = normCode(body.code);
+  const list = async (prefix) => (await kv.list({ prefix })).keys; // ponytail: 1000개까지 (한 페이지). 넘으면 cursor로.
+  const day = new Date().toISOString().slice(0, 10);
+  const failKey = `cf:${day}:${await sha(day + me.sub)}`;
+  let cls = null;
+  if (isCode(code)) cls = JSON.parse((await kv.get(`c:${code}`)) ?? "null");
+  if (["lookup", "join"].includes(op) && !cls) {
+    const n = Number((await kv.get(failKey)) ?? 0);
+    if (n >= CLASS_FAIL_DAILY) return [429, { error: "too many wrong codes today", code: "too_many" }];
+    await kv.put(failKey, String(n + 1), { expirationTtl: 172800 });
+    return [404, { error: "class not found", code: "not_found" }];
+  }
+  const isMember = !!cls && (await kv.get(`s:${me.sub}:${code}`)) != null;
+  if (!canClass(op, cls, me, isMember)) return [cls || !isCode(code) ? 403 : 404, { error: "not allowed", code: "forbidden" }];
+  const pub = (c, k) => ({ code: k, name: c.name, counselor: c.ownerEmail });
+  switch (op) {
+    case "create": {
+      const name = String(body.name ?? "").trim().slice(0, 80);
+      if (!name) return [400, { error: "class name required" }];
+      let k;
+      for (let i = 0; i < 5 && (!k || (await kv.get(`c:${k}`))); i++) k = makeCode();
+      if (await kv.get(`c:${k}`)) return [503, { error: "try again" }];
+      await kv.put(`c:${k}`, JSON.stringify({ name, owner: me.sub, ownerEmail: me.email, created: new Date().toISOString() }));
+      await kv.put(`o:${me.sub}:${k}`, "");
+      return [200, { code: k, name }];
+    }
+    case "classes": {
+      const out = [];
+      for (const { name: key } of await list(`o:${me.sub}:`)) {
+        const k = key.split(":")[2];
+        const c = JSON.parse((await kv.get(`c:${k}`)) ?? "null");
+        if (c?.owner !== me.sub) continue;
+        const members = (await list(`m:${k}:`)).map((x) => x.metadata ?? {}).map((m) => ({ email: m.email, fileId: m.fileId, joined: m.joined }));
+        const invites = (await list(`i:${k}:`)).map((x) => x.metadata?.email).filter(Boolean);
+        out.push({ code: k, name: c.name, created: c.created, members, invites });
+      }
+      return [200, { classes: out }];
+    }
+    case "invite": {
+      const emails = [...new Set((Array.isArray(body.emails) ? body.emails : []).map(normEmail).filter(Boolean))];
+      const have = (await list(`i:${code}:`)).length;
+      if (!emails.length) return [400, { error: "no valid email" }];
+      if (have + emails.length > MAX_INVITES) return [400, { error: `up to ${MAX_INVITES} invites per class` }];
+      for (const e of emails) {
+        const h = await sha(e);
+        await kv.put(`i:${code}:${h}`, "", { metadata: { email: e } });
+        await kv.put(`e:${h}:${code}`, "");
+      }
+      return [200, { invited: emails }];
+    }
+    case "lookup": return [200, pub(cls, code)];
+    case "invites": {
+      const out = [];
+      for (const { name: key } of await list(`e:${await sha(me.email)}:`)) {
+        const k = key.split(":")[2];
+        const c = JSON.parse((await kv.get(`c:${k}`)) ?? "null");
+        if (c && (await kv.get(`s:${me.sub}:${k}`)) == null) out.push(pub(c, k));
+      }
+      return [200, { invites: out }];
+    }
+    case "join": {
+      if (!isFileId(body.fileId)) return [400, { error: "Drive file id required" }];
+      const meta = { email: me.email, fileId: body.fileId, joined: new Date().toISOString() };
+      await kv.put(`m:${code}:${me.sub}`, "", { metadata: meta });
+      await kv.put(`s:${me.sub}:${code}`, "", { metadata: { fileId: body.fileId } });
+      const h = await sha(me.email);
+      await Promise.all([kv.delete(`i:${code}:${h}`), kv.delete(`e:${h}:${code}`)]);
+      return [200, pub(cls, code)];
+    }
+    case "leave": {
+      await Promise.all([kv.delete(`m:${code}:${me.sub}`), kv.delete(`s:${me.sub}:${code}`)]);
+      return [200, { left: code }];
+    }
+    case "mine": {
+      const out = [];
+      for (const { name: key, metadata } of await list(`s:${me.sub}:`)) {
+        const k = key.split(":")[2];
+        const c = JSON.parse((await kv.get(`c:${k}`)) ?? "null");
+        if (c) out.push({ ...pub(c, k), fileId: metadata?.fileId });
+      }
+      return [200, { classes: out }];
+    }
+  }
+  return [400, { error: "unknown op" }];
 }
 
 async function callClaude(env, system, user) {
@@ -354,6 +479,19 @@ export default {
     // Origin 검사는 다른 웹사이트가 이 서버를 쓰는 것만 막는다. 직접 호출은 아래 Google 로그인 검사와 횟수 제한이 막는다.
     if (req.method !== "POST" || !allowed) return fail(403, "허용되지 않은 요청입니다.", "Request not allowed.");
     if (!body) return fail(400, "요청 형식이 잘못되었습니다.", "Malformed request.");
+
+    // 카운슬러 클래스: 모든 요청에 Google 로그인 필요. AI 횟수와 따로 센다.
+    if (body.kind === "class") {
+      let claims;
+      try {
+        claims = await verifyGoogleClaims((req.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, ""), env.GOOGLE_CLIENT_ID);
+      } catch {
+        return fail(502, "로그인 확인에 실패했어요. 잠시 뒤 다시 해 주세요.", "Could not check your sign-in. Please try again shortly.");
+      }
+      if (!claims) return fail(401, "Google 로그인이 필요해요.", "Please sign in with Google.", { code: "login_required" });
+      const [status, out] = await classOp(body, claims, env);
+      return json(out, status, cors);
+    }
     if (body.consent !== true) return fail(400, "보내기 동의가 필요합니다.", "Consent is required.");
 
     // 검사를 통과한 요청만 만든다 (횟수를 쓰기 전에).

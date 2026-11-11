@@ -41,12 +41,12 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li><b>쓰는 것:</b> 평가 서버는 토큰이 진짜인지(서명·발급자·대상·만료) 확인한 뒤 Google 계정 식별자(계정 번호, <code>sub</code>) 하나만 써요.</li>
 <li><b>저장하는 것:</b> 하루 사용 횟수(계정당 하루 10회)를 세려고 계정 식별자와 IP 주소에 날짜를 붙여 알아볼 수 없게 바꾼 값(SHA-256 해시)과 횟수만 저장해요.</li>
 <li><b>보관 기간:</b> 이 해시 값은 이틀(48시간) 뒤 자동으로 삭제돼요.</li>
-<li><b>쓰지 않는 것:</b> 토큰에 이메일·이름이 들어 있더라도 평가 서버는 읽지도 저장하지도 않아요. 계정 식별자는 Anthropic으로 보내지 않아요.</li>
+<li><b>쓰지 않는 것:</b> AI 요청에서는 토큰에 이메일·이름이 들어 있더라도 평가 서버는 읽지도 저장하지도 않아요 (이메일은 5번 카운슬러 공유에서만 써요). 계정 식별자는 Anthropic으로 보내지 않아요.</li>
 <li>로그인 토큰은 열려 있는 페이지의 메모리에만 있고, 페이지를 새로 고치면 사라져요.</li>
 </ul>
 
 <h3>4. Google 드라이브 동기화 (선택)</h3>
-<p>Google로 로그인하면 내 자료를 내 Google 드라이브에서 불러오고, 고칠 때마다 다시 저장해요. 그래서 어느 기기에서 로그인해도 같은 자료가 보여요. 자료는 운영자 서버에 저장하지 않아요. 이때 요청하는 권한은 <code>https://www.googleapis.com/auth/drive.appdata</code> 하나뿐이에요.</p>
+<p>Google로 로그인하면 내 자료를 내 Google 드라이브에서 불러오고, 고칠 때마다 다시 저장해요. 그래서 어느 기기에서 로그인해도 같은 자료가 보여요. 자료는 운영자 서버에 저장하지 않아요. 이때 요청하는 권한은 <code>https://www.googleapis.com/auth/drive.appdata</code> 하나뿐이에요. (5번 카운슬러 공유를 쓸 때만 <code>drive.file</code> 권한을 추가로 요청해요.)</p>
 <ul>
 <li><b>접근 범위:</b> 내 드라이브의 앱 전용 숨김 폴더(appDataFolder)만 볼 수 있어요. 드라이브의 다른 파일은 보거나 읽거나 바꿀 수 없어요.</li>
 <li><b>하는 일:</b> 그 폴더에 <code>college-app-backup.json</code> 백업 파일 하나를 둬요. 로그인하면 그 파일을 읽어요. 이 기기가 비어 있으면 드라이브 자료를 불러오고, 드라이브가 비어 있으면 이 기기 자료를 올려요. 둘 다 있고 내용이 다르면 묻지 않고 덮어쓰지 않아요: 양쪽의 저장 시각과 개수를 보여 주고 내가 고르게 해요. 연결된 동안은 자동 동기화가 켜져서 고칠 때마다(약 4초 묶어서) 같은 파일에 저장해요. 다른 Google 계정으로 로그인하면 자료를 섞지 않고 그 계정 자료로 바꿀지 따로 둘지 물어요. '드라이브에서 불러오기'·'드라이브에 저장'으로 직접 할 수도 있어요.</li>
@@ -55,16 +55,27 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li><b>삭제와 연결 해제:</b> 위쪽의 '로그아웃'은 토큰을 지우고 동기화를 멈추며, 공용 컴퓨터라면 이 기기의 자료도 지울 수 있게 해요(드라이브 백업은 남아요). '백업' 화면의 '구글 연결 끊기'를 누르면 접근 권한을 취소해요. 드라이브 백업을 지우려면 Google 드라이브 → 설정 → 앱 관리에서 이 앱의 '숨겨진 앱 데이터 삭제'를 누르세요. <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 권한 페이지</a>에서도 언제든 접근을 취소할 수 있어요.</li>
 </ul>
 
-<h3>5. Google 사용자 데이터 정책 준수 (Limited Use)</h3>
+<h3>5. 카운슬러 공유 (선택)</h3>
+<p>카운슬러(Google로 로그인한 누구나)가 '카운슬러' 탭에서 클래스를 만들면 6자리 코드가 나와요. 학생이 코드를 넣거나 이메일 초대를 받아 들어갈 때, 무엇이 누구에게 공유되는지 보여 주는 동의 화면에서 동의해야만 공유가 시작돼요.</p>
+<ul>
+<li><b>공유되는 것:</b> 지원 학교 목록(학교·전형·마감일·상태), 준비 체크리스트, 에세이(제목·학교·질문·본문·완료 표시·단어 수), AI 총점과 항목별 점수. 성적·시험 점수·활동·수상·AI 설명 글은 공유하지 않아요.</li>
+<li><b>어디에 있나:</b> 이 내용의 사본이 <b>학생 본인 Google 드라이브</b>에 파일 하나(클래스마다)로 만들어지고, 그 카운슬러의 이메일에만 읽기 전용으로 공유돼요. 학생이 고칠 때마다(드라이브 동기화 때) 사본도 바뀌어요. 카운슬러 브라우저는 그 파일을 Google에서 직접 읽고, 운영자 서버를 거치지 않아요.</li>
+<li><b>추가 권한:</b> 이 기능을 쓸 때만 <code>https://www.googleapis.com/auth/drive.file</code> 권한을 요청해요. 이 권한으로는 이 앱이 만든 파일과 이용자가 직접 고른 파일만 다룰 수 있고, 드라이브의 다른 파일은 볼 수 없어요. 카운슬러는 처음 한 번 Google 파일 선택 창(Picker)에서 공유받은 학생 파일을 골라 읽기를 허락해요.</li>
+<li><b>운영자 서버에 저장하는 것:</b> 클래스 코드와 이름, 카운슬러의 Google 계정 번호(sub)와 이메일, 학생의 Google 계정 번호와 이메일, 공유 파일 번호(Drive file id), 초대한 이메일, 가입 시각. 학생 자료나 에세이는 저장하지 않아요. 틀린 코드 입력 횟수를 세려고 계정 번호의 해시를 이틀 동안 저장해요.</li>
+<li><b>나가기:</b> 학생은 언제든 '나가기'를 누를 수 있어요. 공유 파일을 지워 카운슬러의 접근이 바로 끝나고, 서버의 멤버십 기록도 지워요. 드라이브에서 그 파일을 직접 지워도 공유가 끝나요.</li>
+<li><b>카운슬러의 의무:</b> 카운슬러는 학생 자료를 그 학생의 진학 지도에만 쓰고 다른 사람에게 넘기면 안 돼요.</li>
+</ul>
+
+<h3>6. Google 사용자 데이터 정책 준수 (Limited Use)</h3>
 <p>College App Manager가 Google API에서 받은 정보를 쓰고 다른 곳으로 옮기는 방식은 Limited Use(제한적 사용) 요구 사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 서비스 사용자 데이터 정책</a>을 따릅니다. Google 사용자 데이터는 위에 적은 기능(로그인 확인·횟수 세기, 내 드라이브 백업)에만 쓰고, 팔지 않으며, 광고에 쓰지 않고, AI 모델 학습에 쓰지 않으며, 사람이 읽지 않아요(이용자 요청·보안·법적 의무가 있을 때 제외).</p>
 
-<h3>6. 자료 삭제</h3>
+<h3>7. 자료 삭제</h3>
 <p>'백업' 화면에서 '모든 자료 지우기'를 누르거나 브라우저 기록(사이트 데이터)을 지우면 이 기기의 자료가 지워져요. 드라이브 백업은 4번 방법으로 지워요. 평가 서버의 횟수 해시는 이틀 뒤 자동으로 지워져요.</p>
 
-<h3>7. 이용 연령</h3>
+<h3>8. 이용 연령</h3>
 <p>만 14세 이상만 쓸 수 있어요. 만 14세 미만은 보호자 동의가 필요해서(한국 개인정보보호법) 지금은 쓸 수 없어요.</p>
 
-<h3>8. 변경과 문의</h3>
+<h3>9. 변경과 문의</h3>
 <p>방침이 바뀌면 이 페이지를 고치고, 서비스에서 다음 방문 때 다시 동의를 받아요. 개인정보 문의: <a href="mailto:dlehgus080310@gmail.com">dlehgus080310@gmail.com</a></p>
 </section>
 
@@ -83,12 +94,12 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li><b>What we use:</b> the server checks that the token is genuine (signature, issuer, audience, expiry) and then uses only your Google account identifier (account number, <code>sub</code>).</li>
 <li><b>What we store:</b> to count daily use (10 per account per day), it stores only unreadable SHA-256 hashes of your account identifier and IP address, each combined with the date, plus the count.</li>
 <li><b>Retention:</b> these hashes are deleted automatically after two days (48 hours).</li>
-<li><b>What we do not use:</b> even if the token contains your email or name, the server neither reads nor stores them. Your account identifier is never sent to Anthropic.</li>
+<li><b>What we do not use:</b> for AI requests, even if the token contains your email or name, the server neither reads nor stores them (email is used only for counselor sharing, section 5). Your account identifier is never sent to Anthropic.</li>
 <li>The sign-in token stays only in the open page's memory and is gone when you reload.</li>
 </ul>
 
 <h3>4. Google Drive sync (optional)</h3>
-<p>When you sign in with Google, your data loads from your own Google Drive and is saved back on every change, so the same data appears on any device where you sign in. Your data is never stored on the operator's server. The only permission requested is <code>https://www.googleapis.com/auth/drive.appdata</code>.</p>
+<p>When you sign in with Google, your data loads from your own Google Drive and is saved back on every change, so the same data appears on any device where you sign in. Your data is never stored on the operator's server. The only permission requested is <code>https://www.googleapis.com/auth/drive.appdata</code> (counselor sharing, section 5, additionally asks for <code>drive.file</code> only when used).</p>
 <ul>
 <li><b>Access:</b> only the hidden app-only folder in your Drive (appDataFolder). The site cannot see, read or change any other file in your Drive.</li>
 <li><b>What it does:</b> keeps one backup file, <code>college-app-backup.json</code>, in that folder and reads it when you sign in. If this device is empty, it loads the Drive data; if Drive is empty, it uploads this device's data. If both have data and they differ, nothing is overwritten silently: you see the last-saved time and item counts for each and choose. While connected, auto-sync is on and saves to the same file on every change (batched about 4 seconds). If a different Google account signs in, the data is not mixed: you choose whether to switch to that account's data or keep it separate. You can also use 'Load from Drive' and 'Save to Drive' by hand.</li>
@@ -97,16 +108,27 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li><b>Deletion and disconnect:</b> 'Sign out' at the top clears the tokens, stops sync and, for shared computers, offers to remove your data from this device (the Drive backup stays). Press 'Disconnect Google' on the Backup screen to revoke access. To delete the Drive backup, open Google Drive → Settings → Manage apps and choose 'Delete hidden app data' for this app. You can also revoke access at any time on your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>.</li>
 </ul>
 
-<h3>5. Google API Services User Data Policy (Limited Use)</h3>
+<h3>5. Counselor sharing (optional)</h3>
+<p>A counselor (anyone signed in with Google) can create a class on the 'Counselor' tab and gets a 6-character code. When a student enters the code or accepts an email invite, sharing starts only after the student agrees on a consent screen that shows what is shared and with whom.</p>
+<ul>
+<li><b>What is shared:</b> the school list (school, round, deadline, status), the progress checklist, essays (title, college, prompt, full text, done flag, word count), and the AI total and per-criterion scores. Grades, test scores, activities, honors and AI feedback text are not shared.</li>
+<li><b>Where it lives:</b> a copy is saved as one file per class in the <b>student's own Google Drive</b> and shared read-only with that counselor's email only. It updates whenever the student edits (on Drive sync). The counselor's browser reads the file directly from Google; it never passes through the operator's server.</li>
+<li><b>Extra permission:</b> only when this feature is used, the site asks for <code>https://www.googleapis.com/auth/drive.file</code>. It covers only files this app created and files the user picks; it cannot see any other file in Drive. The first time, the counselor picks the shared student files in Google's file picker to allow reading them.</li>
+<li><b>What the operator's server stores:</b> the class code and name, the counselor's Google account number (sub) and email, each student's Google account number and email, the shared file id, invited emails, and join time. No student data or essays. To limit wrong-code guesses it keeps a hash of the account number for two days.</li>
+<li><b>Leaving:</b> students can press 'Leave' at any time. This deletes the shared file, so the counselor's access ends at once, and removes the membership record. Deleting the file in Drive also ends sharing.</li>
+<li><b>Counselor duties:</b> counselors may use student data only to advise that student and must not pass it on.</li>
+</ul>
+
+<h3>6. Google API Services User Data Policy (Limited Use)</h3>
 <p>College App Manager's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. Google user data is used only for the features above (verifying sign-in and counting uses, backing up to your own Drive). It is not sold, not used for advertising, not used to train AI models, and not read by humans (except with your request, for security, or as required by law).</p>
 
-<h3>6. Deleting your data</h3>
+<h3>7. Deleting your data</h3>
 <p>Use 'Delete all data' on the Backup screen or clear your browser's site data to erase data on this device. Delete the Drive backup as described in section 4. Usage-count hashes on the server are deleted automatically after two days.</p>
 
-<h3>7. Age</h3>
+<h3>8. Age</h3>
 <p>For ages 14 and up. Under Korean privacy law, users under 14 need a parent's consent, so they cannot use the site for now.</p>
 
-<h3>8. Changes and contact</h3>
+<h3>9. Changes and contact</h3>
 <p>If this policy changes, we update this page and ask you to agree again on your next visit. Privacy contact: <a href="mailto:dlehgus080310@gmail.com">dlehgus080310@gmail.com</a></p>
 </section>
 </main>

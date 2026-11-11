@@ -468,7 +468,7 @@ console.log("school field filter check passed");
 // ---------- Google 로그인(ID 토큰) 검사와 계정별·IP별·전체 한도 ----------
 // 테스트용 RSA 키를 만들어 구글 키 목록(JWKS)인 척하고, fetch를 바꿔 끼워 Anthropic 응답도 흉내 낸다. 네트워크는 안 쓴다.
 {
-  const { default: worker, verifyGoogleIdToken, PER_USER_DAILY, PER_IP_DAILY, GLOBAL_DAILY } = await import("./worker/index.js");
+  const { default: worker, verifyGoogleIdToken, PER_USER_DAILY, PER_IP_DAILY, GLOBAL_DAILY, isCode, CLASS_FAIL_DAILY } = await import("./worker/index.js");
   const CID = "test-client.apps.googleusercontent.com";
   const alg = { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" };
   const mk = async () => crypto.subtle.generateKey({ ...alg, modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]) }, true, ["sign", "verify"]);
@@ -563,6 +563,69 @@ console.log("school field filter check passed");
     assert.equal(allOver.status, 429, "global limit");
     assert.match(allOver.body.error, /전체/);
     assert.ok(PER_IP_DAILY > PER_USER_DAILY && GLOBAL_DAILY === 300);
+
+    // ---------- 카운슬러 클래스: 멤버십만 저장, 인증·권한 ----------
+    const kvs = new Map(); // key → { v, meta }
+    const cenv = { ...env, LIMITS: {
+      get: async (k) => kvs.get(k)?.v ?? null,
+      put: async (k, v, o) => void kvs.set(k, { v, meta: o?.metadata }),
+      delete: async (k) => void kvs.delete(k),
+      list: async ({ prefix }) => ({ keys: [...kvs.keys()].filter((k) => k.startsWith(prefix)).map((name) => ({ name, metadata: kvs.get(name).meta })), list_complete: true }),
+    } };
+    const cls = async (token, body) => {
+      const headers = { origin: "http://localhost:8000", "content-type": "application/json" };
+      if (token) headers.authorization = `Bearer ${token}`;
+      const res = await worker.fetch(new Request("https://w.example/", { method: "POST", headers, body: JSON.stringify({ kind: "class", ...body }) }), cenv);
+      return { status: res.status, body: await res.json() };
+    };
+    const coT = await sign({ sub: "CO1", email: "Counselor@School.org", email_verified: true });
+    const co2T = await sign({ sub: "CO2", email: "other@school.org", email_verified: true });
+    const stT = await sign({ sub: "ST1", email: "kim@student.org", email_verified: true });
+    const st2T = await sign({ sub: "ST2", email: "lee@student.org", email_verified: true });
+    const before2 = claudeCalls;
+    assert.equal((await cls(null, { op: "mine" })).status, 401, "class ops need sign-in");
+    assert.equal((await cls(await sign({ sub: "X", email: "x@y.org", email_verified: false }), { op: "mine" })).status, 403, "unverified email refused");
+    const made = await cls(coT, { op: "create", name: "Class of 2027" });
+    assert.equal(made.status, 200);
+    assert.ok(isCode(made.body.code), "6-char code");
+    const code = made.body.code;
+    assert.deepEqual((await cls(stT, { op: "lookup", code: code.toLowerCase() })).body, { code, name: "Class of 2027", counselor: "counselor@school.org" }, "lookup shows counselor email for consent");
+    assert.equal((await cls(stT, { op: "lookup", code: "ZZZZZZ" })).status, 404);
+    // 초대: 주인만
+    assert.equal((await cls(co2T, { op: "invite", code, emails: ["lee@student.org"] })).status, 403, "other counselor cannot invite");
+    assert.equal((await cls(stT, { op: "invite", code, emails: ["lee@student.org"] })).status, 403, "student cannot invite");
+    assert.deepEqual((await cls(coT, { op: "invite", code, emails: ["LEE@student.org", "bad", "lee@student.org"] })).body.invited, ["lee@student.org"]);
+    assert.deepEqual((await cls(st2T, { op: "invites" })).body.invites.map((x) => x.code), [code], "invited student sees the invite");
+    assert.deepEqual((await cls(stT, { op: "invites" })).body.invites, [], "others do not");
+    // 가입: 파일 id만 받는다. 함께 보낸 자료는 저장하지 않는다.
+    assert.equal((await cls(stT, { op: "join", code, fileId: "../etc" })).status, 400, "file id validated");
+    const SECRET = "MY ESSAY ABOUT A RAINY TUESDAY";
+    assert.equal((await cls(stT, { op: "join", code, fileId: "1AbCdEfGhIjKlMnOp", essay: SECRET, apps: [{ school: SECRET }] })).status, 200);
+    assert.equal((await cls(st2T, { op: "join", code, fileId: "2AbCdEfGhIjKlMnOp" })).status, 200);
+    assert.deepEqual((await cls(st2T, { op: "invites" })).body.invites, [], "invite cleared on join");
+    const dump = JSON.stringify([...kvs.entries()]);
+    assert.ok(!dump.includes(SECRET), "worker never stores student data");
+    assert.equal(claudeCalls, before2, "class ops never reach Claude");
+    assert.deepEqual((await cls(stT, { op: "mine" })).body.classes, [{ code, name: "Class of 2027", counselor: "counselor@school.org", fileId: "1AbCdEfGhIjKlMnOp" }]);
+    // 카운슬러는 자기 클래스만
+    const roster = (await cls(coT, { op: "classes" })).body.classes;
+    assert.equal(roster.length, 1);
+    assert.deepEqual(roster[0].members.map((m) => [m.email, m.fileId]).sort(), [["kim@student.org", "1AbCdEfGhIjKlMnOp"], ["lee@student.org", "2AbCdEfGhIjKlMnOp"]]);
+    assert.ok(!JSON.stringify(roster).includes("ST1"), "student sub not exposed to counselor");
+    assert.deepEqual((await cls(co2T, { op: "classes" })).body.classes, [], "another counselor sees none");
+    assert.deepEqual((await cls(stT, { op: "classes" })).body.classes, [], "a student sees no roster");
+    // 나가기: 본인 멤버십만
+    assert.equal((await cls(co2T, { op: "leave", code })).status, 403, "non-member cannot leave");
+    assert.equal((await cls(stT, { op: "leave", code })).status, 200);
+    assert.deepEqual((await cls(stT, { op: "mine" })).body.classes, []);
+    assert.deepEqual((await cls(coT, { op: "classes" })).body.classes[0].members.map((m) => m.email), ["lee@student.org"], "leaving removes access record");
+    assert.equal((await cls(stT, { op: "leave", code })).status, 403, "cannot leave twice");
+    assert.equal((await cls(stT, { op: "nope", code })).status, 403);
+    // 코드 맞히기 제한
+    let last;
+    for (let i = 0; i <= CLASS_FAIL_DAILY; i++) last = await cls(co2T, { op: "lookup", code: "QQQQQQ" });
+    assert.equal(last.status, 429, "wrong-code guesses capped");
+    assert.ok(![...kvs.keys()].some((k) => k.includes("@")), "no raw email in KV keys");
   } finally {
     globalThis.fetch = realFetch;
   }
@@ -580,7 +643,7 @@ console.log("school field filter check passed");
   assert.ok(terms.includes(STR.ko.terms_html.slice(0, 40)) && terms.includes(STR.en.terms_html.slice(0, 40)) && terms.includes("Anthropic"), "terms.html copies i18n terms");
   for (const h of [priv, terms]) assert.ok(!/<(script|link)\b/i.test(h) && !h.includes("TODO_CONTACT"), "no external assets, no TODO");
   // 페이지 문구가 코드와 맞는지: 드라이브 권한과 해시 보관 기간
-  assert.match(fs.readFileSync(new URL("./app.js", import.meta.url), "utf8"), /scope: `\$\{GD_API\}\/auth\/drive\.appdata`/);
+  assert.match(fs.readFileSync(new URL("./app.js", import.meta.url), "utf8"), /scope: `\$\{GD_API\}\/auth\/drive\.appdata(`|\$\{wantFile \? ` \$\{FILE_SCOPE\}` : ""\}`)/); // drive.file은 카운슬러 공유 때만
   assert.match(fs.readFileSync(new URL("./worker/index.js", import.meta.url), "utf8"), /expirationTtl: 172800/);
   const idx = fs.readFileSync(new URL("./index.html", import.meta.url), "utf8");
   assert.ok(idx.includes('href="privacy.html"') && idx.includes('href="terms.html"'), "index.html links both pages");
@@ -651,4 +714,69 @@ console.log("school field filter check passed");
   const priv = fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8");
   assert.ok(priv.includes("Drive sync") && priv.includes("드라이브 동기화") && priv.includes("sub"), "privacy describes auto sync");
   console.log("drive sign-in sync check passed");
+}
+
+// 카운슬러 공유: 코드, 사본(동의 화면에 적은 것만), 권한 판단
+{
+  const { makeCode, isCode, normCode, canClass, isFileId, normEmail } = await import("./worker/index.js");
+  const { buildSnapshot, parseSnapshot } = await import("./logic.js");
+  assert.equal(makeCode(new Uint8Array([0, 1, 31, 32, 255, 8])), "AB9A9J", "fixed bytes map to the 32-char alphabet");
+  const codes = new Set(Array.from({ length: 2000 }, () => makeCode()));
+  assert.ok([...codes].every(isCode) && codes.size > 1990, "random codes are valid and unique");
+  assert.ok(![...codes].join("").match(/[01IO]/), "no look-alike characters");
+  assert.equal(normCode(" ab2-cd3 "), "AB2CD3");
+  assert.ok(!isCode("AB2CD") && !isCode("AB0CD3") && !isCode("AB2CD34"));
+  assert.ok(isFileId("1AbC_d-EfGhIj") && !isFileId("a/b") && !isFileId("short") && !isFileId(5));
+  assert.equal(normEmail(" A@B.org "), "a@b.org");
+  assert.equal(normEmail("nope"), null);
+  const own = { owner: "C" };
+  assert.ok(canClass("invite", own, { sub: "C" }) && !canClass("invite", own, { sub: "S" }), "only the owner invites");
+  assert.ok(canClass("join", own, { sub: "S" }) && canClass("lookup", own, { sub: "S" }), "anyone with the code can join");
+  assert.ok(canClass("leave", own, { sub: "S" }, true) && !canClass("leave", own, { sub: "S" }, false), "only members leave");
+  assert.ok(!canClass("join", null, { sub: "S" }) && !canClass("invite", null, { sub: "C" }), "no class, no access");
+  assert.ok(!canClass("create", null, {}) && !canClass("delete", own, { sub: "C" }), "no sub / unknown op refused");
+
+  const d = loadData(JSON.stringify({
+    ageOk: true, profile: { gpa: "3.9", sat: "1550", major: "CS" }, activities: [{ position: "Captain" }], honors: [{ title: "AIME" }],
+    apps: [{ school: "Yale", round: "EA", deadline: "2026-11-01", status: "prep", checks: { form: "done", fee: "na" } }],
+    essays: [
+      { kind: "supplement", college: "Yale", title: "Why Yale", text: "one two three", done: true, lastEval: { total: 72, summary: "SECRET SUMMARY", criteria: [{ name: "구체성", score: 15, why: "w", fix: "f" }] } },
+      { kind: "ps", text: "" },
+    ],
+  }));
+  const snap = buildSnapshot(d, "kim@student.org", new Date("2026-11-11T00:00:00Z"));
+  const txt = JSON.stringify(snap);
+  for (const banned of ["3.9", "1550", "Captain", "AIME", "SECRET SUMMARY", "\"why\"", "\"fix\""]) assert.ok(!txt.includes(banned), `snapshot leaves out ${banned}`);
+  assert.equal(snap.apps[0].school, "Yale");
+  assert.equal(snap.apps[0].checks.form, "done");
+  assert.deepEqual([snap.apps[0].done, snap.apps[0].total], [2, 9], "progress counts docs (minus n/a) and done supplements");
+  assert.deepEqual(snap.essays[0].ai, { total: 72, criteria: [{ name: "구체성", score: 15 }] });
+  assert.equal(snap.essays[0].text, "one two three");
+  assert.equal(snap.essays[0].words, 3);
+  assert.equal(snap.essays[1].ai, null);
+  assert.deepEqual(parseSnapshot(txt), parseSnapshot(snap), "string and object parse the same");
+  const back = parseSnapshot(txt);
+  assert.equal(back.student, "kim@student.org");
+  assert.equal(back.essays[0].ai.total, 72);
+  assert.throws(() => parseSnapshot("{}"), /not a shared/);
+  const evil = parseSnapshot({ kind: "college-app-share", apps: [{ school: "x".repeat(999), status: "<img>", checks: { form: "hacked" }, done: 99, total: 3 }], essays: [{ text: "y".repeat(9999), ai: { total: 900, criteria: [{ score: 99 }] } }] });
+  assert.equal(evil.apps[0].school.length, 200);
+  assert.equal(evil.apps[0].status, "prep");
+  assert.equal(evil.apps[0].checks.form, "todo");
+  assert.equal(evil.apps[0].done, 3, "done clamped to total");
+  assert.equal(evil.essays[0].text.length, 8000);
+  assert.deepEqual([evil.essays[0].ai.total, evil.essays[0].ai.criteria[0].score], [100, 20]);
+
+  const app = fs.readFileSync(new URL("./app.js", import.meta.url), "utf8");
+  for (const k of new Set([...app.matchAll(/t\("(cl_[a-z_]+)"\)/g)].map((m) => m[1]))) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  assert.ok(app.includes("sendNotificationEmail=false") && app.includes('role: "reader"'), "shared read-only");
+  assert.ok(app.includes("setFileIds") && app.includes("drive.file"), "picker grant step with drive.file");
+  const html = fs.readFileSync(new URL("./index.html", import.meta.url), "utf8");
+  for (const k of [...html.matchAll(/data-t="(cl_[a-z_]+|tab_class)"/g)].map((m) => m[1])) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  for (const f of ["privacy.html", "terms.html"]) {
+    const page = fs.readFileSync(new URL(`./${f}`, import.meta.url), "utf8");
+    assert.ok(page.includes("카운슬러 공유") && page.includes("Counselor sharing"), `${f} covers counselor sharing`);
+  }
+  assert.ok(fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8").includes("drive.file"));
+  console.log("counselor mode check passed");
 }

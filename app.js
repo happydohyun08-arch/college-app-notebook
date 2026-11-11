@@ -1,4 +1,4 @@
-import { localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -83,6 +83,7 @@ function showTab(id) {
   for (const s of document.querySelectorAll("main > section")) s.hidden = s.id !== id;
   if (id === "schools") renderSchools();
   if (id === "apps") renderApps();
+  if (id === "class") { gdScript(); renderClass(); }
   if (id === "backup") gdScript(); // 버튼을 누를 때 팝업이 막히지 않도록 미리 불러 둔다
 }
 $("#tabs").addEventListener("click", (e) => e.target.dataset.tab && showTab(e.target.dataset.tab));
@@ -266,6 +267,7 @@ function onCredential(r) {
   try { localStorage.setItem(GSI_KEY, "1"); } catch {}
   const { sub, email } = jwt(idToken);
   gdHint = email;
+  loadMine();
   if (signedUp(data) && sub && !(sub === gdSub && gdLive())) driveConnect(sub); // 로그인 = 드라이브 연결까지 한 번에
   headLogin();
   if ($("#send").open) showLogin();
@@ -675,17 +677,21 @@ const gdScript = () => (gdLoading ??= new Promise((ok, no) => {
 const gdMsg = (m) => ($("#gdMsg").textContent = m);
 // 무엇이 저장/로드됐는지 보이게: 활동·수상·지원 학교·에세이 개수
 const gdCount = (d) => t("gd_n").replace("{a}", d.activities.length).replace("{h}", d.honors.length).replace("{p}", d.apps.length).replace("{e}", d.essays.length);
-async function gdAuth() {
-  if (gdLive()) return gdToken.v;
+// wantFile = 카운슬러 공유용 drive.file 권한도 필요 (이 앱이 만든 파일만). 백업만 쓰는 사람에게는 묻지 않는다.
+const FILE_SCOPE = `${GD_API}/auth/drive.file`;
+async function gdAuth(wantFile = false) {
+  if (gdLive() && (!wantFile || gdToken.file)) return gdToken.v;
   await gdScript();
   return new Promise((ok, no) => {
     google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
-      scope: `${GD_API}/auth/drive.appdata`,
+      scope: `${GD_API}/auth/drive.appdata${wantFile ? ` ${FILE_SCOPE}` : ""}`,
       ...(gdHint && { login_hint: gdHint }),
       callback: (r) => {
         if (r.error) return no(new Error(r.error));
-        gdToken = { v: r.access_token, exp: Date.now() + (r.expires_in - 60) * 1000 };
+        // 예전에 허락한 권한도 같이 온다 (include_granted_scopes). 공유 파일 권한이 있는지 기록한다.
+        gdToken = { v: r.access_token, exp: Date.now() + (r.expires_in - 60) * 1000, file: google.accounts.oauth2.hasGrantedAllScopes(r, FILE_SCOPE) };
+        if (wantFile && !gdToken.file) return no(new Error(t("cl_need_file")));
         $("#gdOut").hidden = false;
         ok(gdToken.v);
       },
@@ -694,8 +700,8 @@ async function gdAuth() {
   });
 }
 async function gdFetch(url, opt = {}) {
-  const r = await fetch(GD_API + url, { ...opt, headers: { ...opt.headers, Authorization: `Bearer ${await gdAuth()}` } });
-  if (!r.ok) throw new Error(`Google ${r.status}`);
+  const r = await fetch(GD_API + url, { ...opt, headers: { ...opt.headers, Authorization: `Bearer ${await gdAuth(opt.file)}` } });
+  if (!r.ok) throw Object.assign(new Error(`Google ${r.status}`), { status: r.status });
   return r;
 }
 const gdFind = async () =>
@@ -735,6 +741,7 @@ async function gdPush(auto) {
   sync.last = (await r.json()).modifiedTime;
   sync.savedAt = data.savedAt;
   saveSync();
+  await pushShares();
   gdMsg(`${t(auto ? "gd_auto_saved" : "gd_saved")}: ${gdCount(data)} (${new Date().toLocaleString(lang)})`);
 }
 // ponytail: 4초 묶음 전송. 마지막 수정 후 4초 안에 탭을 닫으면 그 수정은 브라우저에만 남고 다음 저장 때 올라간다.
@@ -845,11 +852,190 @@ async function driveConnect(sub) {
     headLogin();
   }
 }
+// ---------- 카운슬러 클래스 ----------
+// Worker에는 멤버십(코드·이메일·드라이브 파일 id)만 있다. 학생 자료는 학생 드라이브의 공유 파일(클래스마다 하나)에만 있고,
+// 학생 브라우저가 쓰고(drive.file), 카운슬러 브라우저가 Google에서 직접 읽는다. 운영자 서버를 거치지 않는다.
+// drive.file 권한으로는 남이 공유한 파일을 바로 못 읽는다: 카운슬러가 Google Picker에서 한 번 골라(허락해) 줘야 한다.
+const PICKER_API_KEY = ""; // Google Cloud 콘솔 → API 키 (Picker API만, 사이트 주소로 제한). 공개 값이다. 비어 있으면 '허락' 단계가 안내만 한다.
+const GOOGLE_PROJECT_NUMBER = GOOGLE_CLIENT_ID.split("-")[0]; // OAuth 클라이언트 ID 앞부분 = 프로젝트 번호
+let myClasses = [], myInvites = [], coClasses = null;
+const roster = {}; // fileId → 사본 | { error }
+const clMsg = (m) => ($("#clMsg").textContent = m);
+const coMsg = (m) => ($("#coMsg").textContent = m);
+const CL_ERR = { not_found: "cl_not_found", too_many: "cl_too_many", email_required: "cl_email_req", forbidden: "cl_forbidden", login_required: "cl_login" };
+async function classCall(body) {
+  if (!signedIn()) throw new Error(t("cl_login"));
+  const res = await fetch(WORKER_URL, { method: "POST", headers: { "content-type": "application/json", Authorization: `Bearer ${idToken}` }, body: JSON.stringify({ kind: "class", lang, ...body }) });
+  const out = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(CL_ERR[out.code] ? t(CL_ERR[out.code]) : out.error || `${t("server_err")} (${res.status})`);
+  return out;
+}
+async function loadMine() {
+  try {
+    [myClasses, myInvites] = await Promise.all([classCall({ op: "mine" }).then((r) => r.classes), classCall({ op: "invites" }).then((r) => r.invites)]);
+  } catch { myClasses = []; myInvites = []; }
+  renderClass();
+}
+const snapshot = () => JSON.stringify(buildSnapshot(data, jwt(idToken).email));
+// 드라이브 동기화 때마다 공유 사본도 고친다. 공유 권한(drive.file)이 없는 토큰이면 건너뛴다 (창을 띄우지 않는다).
+async function pushShares() {
+  if (!myClasses.length || !gdToken?.file || !signedIn()) return;
+  const body = snapshot();
+  for (const c of myClasses) {
+    try { await gdFetch(`/upload/drive/v3/files/${c.fileId}?uploadType=media`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body, file: true }); }
+    catch (e) { clMsg(`${t("cl_push_fail")} (${c.name}): ${e.message}`); }
+  }
+}
+function askJoin(c) {
+  $("#clWho").textContent = t("cl_consent").replace("{e}", c.counselor).replace("{c}", c.name);
+  $("#clOk").checked = false;
+  $("#clGo").disabled = true;
+  $("#clGo").onclick = () => { $("#joinAsk").close(); joinClass(c); };
+  $("#joinAsk").showModal();
+}
+$("#clOk").addEventListener("change", (e) => ($("#clGo").disabled = !e.target.checked));
+$("#clCancel").addEventListener("click", () => $("#joinAsk").close());
+// 가입: 내 드라이브에 사본 파일을 만들고 → 카운슬러 이메일에 읽기 전용 공유 → Worker에 파일 id 등록. 중간에 실패하면 파일을 지운다.
+async function joinClass(c) {
+  let fileId;
+  try {
+    await gdAuth(true); // 클릭 바로 다음이라 Google 창이 막히지 않는다
+    clMsg(t("gd_working"));
+    const form = new FormData();
+    form.append("metadata", new Blob([JSON.stringify({ name: `College App Manager - ${c.name} (${c.counselor}).json`, mimeType: "application/json", description: t("cl_file_desc") })], { type: "application/json" }));
+    form.append("file", new Blob([snapshot()], { type: "application/json" }));
+    fileId = (await (await gdFetch("/upload/drive/v3/files?uploadType=multipart&fields=id", { method: "POST", body: form, file: true })).json()).id;
+    await gdFetch(`/drive/v3/files/${fileId}/permissions?sendNotificationEmail=false`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ role: "reader", type: "user", emailAddress: c.counselor }), file: true });
+    await classCall({ op: "join", code: c.code, fileId });
+    myClasses = [...myClasses.filter((x) => x.code !== c.code), { ...c, fileId }];
+    myInvites = myInvites.filter((x) => x.code !== c.code);
+    clMsg(t("cl_joined").replace("{c}", c.name));
+  } catch (e) {
+    if (fileId) gdFetch(`/drive/v3/files/${fileId}`, { method: "DELETE", file: true }).catch(() => {});
+    clMsg(`${t("gd_fail")}: ${e.message}`);
+  }
+  renderClass();
+}
+// 나가기: 파일을 먼저 지워 카운슬러의 접근을 바로 끊고, 그다음 멤버십을 지운다.
+async function leaveClass(c) {
+  if (!confirm(t("cl_leave_q").replace("{c}", c.name))) return;
+  try {
+    await gdAuth(true);
+    clMsg(t("gd_working"));
+    await gdFetch(`/drive/v3/files/${c.fileId}`, { method: "DELETE", file: true }).catch((e) => { if (e.status !== 404) throw e; });
+    await classCall({ op: "leave", code: c.code });
+    myClasses = myClasses.filter((x) => x.code !== c.code);
+    clMsg(t("cl_left").replace("{c}", c.name));
+  } catch (e) { clMsg(`${t("gd_fail")}: ${e.message}`); }
+  renderClass();
+}
+$("#clFind").addEventListener("click", async () => {
+  try {
+    const c = await classCall({ op: "lookup", code: $("#clCode").value });
+    if (myClasses.some((x) => x.code === c.code)) return clMsg(t("cl_already"));
+    clMsg("");
+    askJoin(c);
+  } catch (e) { clMsg(e.message); }
+});
+$("#coCreate").addEventListener("click", async () => {
+  const name = $("#coName").value.trim();
+  if (!name) return coMsg(t("cl_name_req"));
+  try {
+    const c = await classCall({ op: "create", name });
+    $("#coName").value = "";
+    coMsg(t("cl_created").replace("{c}", c.name).replace("{k}", c.code));
+    await loadCounselor();
+  } catch (e) { coMsg(e.message); }
+});
+$("#coLoad").addEventListener("click", () => loadCounselor());
+async function loadCounselor() {
+  try { coClasses = (await classCall({ op: "classes" })).classes; } catch (e) { coMsg(e.message); }
+  renderClass();
+}
+// 학생 사본 읽기. 아직 허락하지 않은 파일은 404/403으로 온다 → '접근 허락' 단계.
+async function readStudents(c) {
+  try {
+    await gdAuth(true);
+    coMsg(t("gd_working"));
+    await Promise.all(c.members.map(async (m) => {
+      try { roster[m.fileId] = parseSnapshot(await (await gdFetch(`/drive/v3/files/${m.fileId}?alt=media`, { file: true })).text()); }
+      catch (e) { roster[m.fileId] = { error: e.status === 404 || e.status === 403 ? "grant" : e.message }; }
+    }));
+    coMsg("");
+  } catch (e) { coMsg(`${t("gd_fail")}: ${e.message}`); }
+  renderClass();
+}
+let pickerLoading = null;
+const pickerScript = () => (pickerLoading ??= new Promise((ok, no) => {
+  document.head.append(el("script", { src: "https://apis.google.com/js/api.js", onload: () => gapi.load("picker", { callback: ok, onerror: () => no(new Error(t("gd_noscript"))) }), onerror: () => { pickerLoading = null; no(new Error(t("gd_noscript"))); } }));
+}));
+// 한 번 클릭으로 공유받은 학생 파일들을 이 앱이 읽도록 허락한다 (Picker에 그 파일들만 미리 골라 보여 준다).
+async function grantAccess(c) {
+  if (!PICKER_API_KEY) return coMsg(t("cl_no_picker"));
+  const ids = c.members.filter((m) => roster[m.fileId]?.error === "grant").map((m) => m.fileId);
+  try {
+    const token = await gdAuth(true);
+    await pickerScript();
+    const P = google.picker;
+    new P.PickerBuilder()
+      .addView(new P.DocsView(P.ViewId.DOCS).setFileIds(ids.join(",")).setMode(P.DocsViewMode.LIST))
+      .enableFeature(P.Feature.MULTISELECT_ENABLED)
+      .setOAuthToken(token).setDeveloperKey(PICKER_API_KEY).setAppId(GOOGLE_PROJECT_NUMBER).setLocale(lang).setTitle(t("cl_pick_title"))
+      .setCallback((r) => { if (r[P.Response.ACTION] === P.Action.PICKED) readStudents(c); })
+      .build().setVisible(true);
+  } catch (e) { coMsg(`${t("gd_fail")}: ${e.message}`); }
+}
+const byDeadline = (a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999");
+function studentView(m) {
+  const s = roster[m.fileId];
+  const head = el("h4", { textContent: m.email });
+  if (!s) return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: t("cl_not_loaded") }));
+  if (s.error) return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: s.error === "grant" ? t("cl_need_grant") : `${t("gd_fail")}: ${s.error}` }));
+  const apps = el("div", { className: "scroll" }, el("table", {},
+    el("thead", {}, el("tr", {}, ...["th_school", "th_round", "th_deadline", "th_dday", "th_status", "cl_th_checks"].map((k) => el("th", { textContent: t(k) })))),
+    el("tbody", {}, ...[...s.apps].sort(byDeadline).map((a) => el("tr", {},
+      el("td", { textContent: a.school }), el("td", { textContent: a.round }), el("td", { textContent: a.deadline }),
+      el("td", { textContent: a.status === "prep" ? dday(a.deadline) : "" }), el("td", { textContent: t(`st_${a.status}`) }),
+      el("td", {}, el("span", { className: "num", textContent: `${a.done} / ${a.total}` }),
+        el("div", { className: "muted", textContent: CHECK_ITEMS.filter(({ k }) => a.checks[k] === "todo").map(({ k }) => t(`ck_${k}`)).join(", ") })))))));
+  const essays = s.essays.map((e) => el("details", {},
+    el("summary", { textContent: [e.title || e.college || t("new_essay"), t(e.done ? "es_done" : e.text.trim() ? "es_draft" : "es_planned"), `${e.words} ${t("cl_words")}`, e.ai ? `AI ${e.ai.total}/100` : t("cl_no_ai")].join(" · ") }),
+    e.prompt && el("p", { className: "muted", textContent: e.prompt }),
+    e.ai && el("p", { className: "muted", textContent: e.ai.criteria.map((c) => `${CRIT_KEY[c.name] ? t(CRIT_KEY[c.name]) : c.name} ${c.score}/20`).join(" · ") }),
+    el("p", { style: "white-space:pre-wrap", textContent: e.text })));
+  return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: `${t("cl_updated")}: ${when(s.updatedAt)}` }), apps, ...essays);
+}
+function renderClass() {
+  const on = signedIn();
+  $("#clLogin").hidden = on;
+  for (const b of document.querySelectorAll("#clFind, #coCreate, #coLoad")) b.disabled = !on;
+  const row = (c, btn) => el("div", { className: "row" }, el("span", { textContent: `${c.name} · ${c.counselor}` }), btn);
+  $("#clInv").replaceChildren(...(on ? myInvites : []).map((c) => row(c, el("button", { className: "btn mini", textContent: t("cl_join"), onclick: () => askJoin(c) }))));
+  $("#clMine").replaceChildren(...(on ? myClasses : []).map((c) => row(c, el("button", { className: "btn ghost mini", textContent: t("cl_leave"), onclick: () => leaveClass(c) }))));
+  $("#coList").replaceChildren(...(on && coClasses ? coClasses : []).map((c) => {
+    const emails = el("input", { placeholder: t("cl_emails_ph") });
+    const invite = el("button", { className: "btn ghost mini", textContent: t("cl_invite"), onclick: async () => {
+      try { await classCall({ op: "invite", code: c.code, emails: emails.value.split(/[\s,;]+/).filter(Boolean) }); coMsg(t("cl_invited")); await loadCounselor(); } catch (e) { coMsg(e.message); }
+    } });
+    const needGrant = c.members.some((m) => roster[m.fileId]?.error === "grant");
+    return el("div", { className: "track" },
+      el("div", { className: "row tr-head" }, el("b", { textContent: c.name }), el("span", { className: "tag", textContent: `${t("cl_code")} ${c.code}` }), el("span", { className: "muted", textContent: t("cl_n").replace("{n}", c.members.length) })),
+      el("div", { className: "row" }, emails, invite),
+      c.invites.length > 0 && el("p", { className: "muted", textContent: `${t("cl_pending")}: ${c.invites.join(", ")}` }),
+      el("div", { className: "row" },
+        c.members.length > 0 && el("button", { className: "btn mini", textContent: t("cl_read"), onclick: () => readStudents(c) }),
+        needGrant && el("button", { className: "btn mini", textContent: t("cl_grant"), onclick: () => grantAccess(c) })),
+      ...c.members.map(studentView));
+  }));
+}
+
 async function signOut() {
   if (gdPending && gdLive()) { clearTimeout(gdTimer); gdPending = false; try { await gdPush(true); } catch {} } // 아직 안 올라간 수정을 먼저 올린다
   clearTimeout(gdTimer);
   idToken = gdToken = null;
   gdSub = "";
+  myClasses = [];
+  renderClass();
   aiLeft = null;
   needClick = false;
   sync.auto = $("#gdAuto").checked = false;
