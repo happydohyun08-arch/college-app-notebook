@@ -110,6 +110,8 @@ dialog::backdrop { background:rgb(0 0 0 / .4); backdrop-filter:blur(6px); }
 body.out main, body.out nav, body.out .ribbon, body:not(.out) #landing, body:not(.out) #headStart { display:none; }
 #headStart { margin-left:auto; padding:4px 14px; font-size:12px; }
 body.out #langBtn { order:2; }
+body.out #headLogin { display:none; }
+#headLogin { order:2; font-size:12px; }
 .hero { text-align:center; padding:96px 22px 56px; max-width:980px; margin:0 auto; }
 .eyebrow { font-size:17px; font-weight:600; color:var(--accent); margin:0 0 10px; letter-spacing:-0.01em; }
 .hero h2 { font-size:64px; line-height:1.05; font-weight:700; letter-spacing:-0.035em; margin:0 auto; max-width:860px; }
@@ -246,6 +248,7 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
     <button data-tab="backup" data-t="tab_backup"></button>
   </nav>
   <button class="btn" id="headStart" data-signup data-t="land_cta"></button>
+  <div id="headLogin"></div>
   <button id="themeBtn" type="button"></button>
   <button id="langBtn" data-t="lang_btn"></button>
  </div>

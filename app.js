@@ -49,6 +49,7 @@ function applyLang() {
   if (signedUp(data)) for (const b of document.querySelectorAll("[data-signup]")) b.textContent = t("land_back");
   paintThemeBtn();
   renderAll();
+  if (!document.body.classList.contains("out")) headLogin(); // 버튼 언어도 바꾼다
 }
 function toggleLang() {
   lang = lang === "ko" ? "en" : "ko";
@@ -93,6 +94,7 @@ const gate = $("#gate");
 // 시작 페이지를 보여 준다. 가입한 사람에게는 시작 버튼이 '내 노트로 가기'가 된다.
 function setView(landing = !signedUp(data)) {
   document.body.classList.toggle("out", landing);
+  if (!landing) headLogin(); // 첫 화면(가입 전)에서는 Google 스크립트를 불러오지 않는다
   for (const b of document.querySelectorAll("[data-signup]")) b.textContent = t(signedUp(data) ? "land_back" : b.dataset.t);
 }
 const goHome = () => { setView(true); scrollTo(0, 0); };
@@ -252,18 +254,20 @@ $("#sendGo").addEventListener("click", () => {
 let idToken = null, aiLeft = null, gsiInit = false;
 const tokenExp = (tok) => { try { return JSON.parse(atob(tok.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).exp * 1000; } catch { return 0; } };
 const signedIn = () => !!idToken && tokenExp(idToken) > Date.now() + 60000;
-async function showLogin() {
-  const box = $("#sendLogin");
-  if (signedIn()) return void box.replaceChildren(el("p", { className: "muted", textContent: aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft) }));
+// 같은 로그인을 동의 창(#sendLogin)과 상단 바(#headLogin, compact) 두 곳에 그린다.
+const showLogin = () => renderLogin($("#sendLogin"));
+const headLogin = () => renderLogin($("#headLogin"), true);
+async function renderLogin(box, compact = false) {
+  if (signedIn()) return void box.replaceChildren(el(compact ? "span" : "p", { className: "muted", textContent: aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft) }));
   const btn = el("div");
-  box.replaceChildren(el("p", { textContent: t("ai_login") }), btn);
+  box.replaceChildren(...(compact ? [] : [el("p", { textContent: t("ai_login") })]), btn);
   try {
     await gdScript();
     if (!gsiInit) {
-      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: (r) => { idToken = r.credential; aiLeft = null; showLogin(); sendState(); } });
+      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: (r) => { idToken = r.credential; aiLeft = null; headLogin(); if ($("#send").open) showLogin(); sendState(); } });
       gsiInit = true;
     }
-    google.accounts.id.renderButton(btn, { theme: "outline", text: "signin_with", locale: lang });
+    google.accounts.id.renderButton(btn, { theme: "outline", text: "signin_with", locale: lang, ...(compact && { size: "small" }) });
   } catch (e) {
     box.append(el("p", { className: "muted", textContent: e.message }));
   }
@@ -277,6 +281,7 @@ async function callWorker(body) {
   const { remaining, ...out } = await res.json().catch(() => ({ error: `${t("server_err")} (${res.status})` }));
   if (typeof remaining === "number") aiLeft = remaining;
   if (out.code === "login_required") idToken = null; // 다음에 누르면 로그인 버튼이 다시 나온다
+  headLogin(); // 상단 바의 남은 횟수를 갱신한다
   if (!res.ok || out.error) throw new Error(out.error ?? `${t("server_err")} (${res.status})`);
   return out;
 }
