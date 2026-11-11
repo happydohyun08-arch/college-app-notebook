@@ -541,3 +541,18 @@ console.log("school field filter check passed");
   assert.match(STR.en.about2_html, /hashes of your Google account identifier/);
   console.log("google sign-in + per-user limit check passed");
 }
+
+// 공개 약관·개인정보 페이지 (Google OAuth 동의 화면 브랜딩 URL)
+{
+  const priv = fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8");
+  const terms = fs.readFileSync(new URL("./terms.html", import.meta.url), "utf8");
+  for (const s of ["drive.appdata", "해시", "hashes", "Anthropic", "Limited Use", 'id="ko"', 'id="en"', "prefers-color-scheme", "mailto:" + STR.en.contact_value]) assert.ok(priv.includes(s), `privacy.html has ${s}`);
+  assert.ok(terms.includes(STR.ko.terms_html.slice(0, 40)) && terms.includes(STR.en.terms_html.slice(0, 40)) && terms.includes("Anthropic"), "terms.html copies i18n terms");
+  for (const h of [priv, terms]) assert.ok(!/<(script|link)\b/i.test(h) && !h.includes("TODO_CONTACT"), "no external assets, no TODO");
+  // 페이지 문구가 코드와 맞는지: 드라이브 권한과 해시 보관 기간
+  assert.match(fs.readFileSync(new URL("./app.js", import.meta.url), "utf8"), /scope: `\$\{GD_API\}\/auth\/drive\.appdata`/);
+  assert.match(fs.readFileSync(new URL("./worker/index.js", import.meta.url), "utf8"), /expirationTtl: 172800/);
+  const idx = fs.readFileSync(new URL("./index.html", import.meta.url), "utf8");
+  assert.ok(idx.includes('href="privacy.html"') && idx.includes('href="terms.html"'), "index.html links both pages");
+  console.log("privacy/terms pages check passed");
+}
