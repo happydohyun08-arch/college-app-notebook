@@ -856,7 +856,7 @@ async function driveConnect(sub) {
 // Worker에는 멤버십(코드·이메일·드라이브 파일 id)만 있다. 학생 자료는 학생 드라이브의 공유 파일(클래스마다 하나)에만 있고,
 // 학생 브라우저가 쓰고(drive.file), 카운슬러 브라우저가 Google에서 직접 읽는다. 운영자 서버를 거치지 않는다.
 // drive.file 권한으로는 남이 공유한 파일을 바로 못 읽는다: 카운슬러가 Google Picker에서 한 번 골라(허락해) 줘야 한다.
-const PICKER_API_KEY = ""; // Google Cloud 콘솔 → API 키 (Picker API만, 사이트 주소로 제한). 공개 값이다. 비어 있으면 '허락' 단계가 안내만 한다.
+const PICKER_API_KEY = "AIzaSyDj41LxNEBNvaBKXNuKgf4CPPTEDF25rGg"; // Google Cloud 콘솔 → API 키 (Picker API만, 사이트 주소로 제한). 공개 값이다. 비어 있으면 '허락' 단계가 안내만 한다.
 const GOOGLE_PROJECT_NUMBER = GOOGLE_CLIENT_ID.split("-")[0]; // OAuth 클라이언트 ID 앞부분 = 프로젝트 번호
 let myClasses = [], myInvites = [], coClasses = null;
 const roster = {}; // fileId → 사본 | { error }
