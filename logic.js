@@ -147,6 +147,15 @@ export const readyCount = (apps, essays) => ({ ready: apps.filter((a) => appProg
 export const TERMS_VERSION = "2026-11-11.2"; // 2026-11-11: AI는 Google 로그인, 계정 해시로 횟수 셈. .2: 카운슬러 공유
 export const signedUp = (d) => d.ageOk === true && d.consent?.version === TERMS_VERSION;
 
+// ---------- 역할 (학생 / 카운슬러) ----------
+// 역할은 내 자료(data.role)에 저장돼 드라이브 동기화로 같이 옮겨진다. 값이 없거나 틀리면 학생이다.
+export const ROLES = ["student", "counselor"];
+export const roleOf = (d) => (d?.role === "counselor" ? "counselor" : "student");
+const COUNSELOR_TABS = ["class", "about", "backup"]; // 카운슬러는 학생용 탭(내 정보·활동·학교·지원 목록·에세이)을 안 본다
+export const tabVisible = (role, tab) => role !== "counselor" || COUNSELOR_TABS.includes(tab);
+/** 가입 직후·역할을 바꾼 뒤 처음 여는 탭. */
+export const homeTab = (role) => (role === "counselor" ? "class" : "profile");
+
 const PROFILE_KEYS = ["major", "gpa", "sat", "act", "toefl", "ap", "otherTests", "legacy"];
 export const MAX_ACTIVITIES = 10;
 export const MAX_HONORS = 5;
@@ -161,7 +170,7 @@ export function totalHours(a) {
 
 /** 저장된 글이나 가져온 백업 파일을 정해진 모양으로만 받아들인다. 모양이 틀리면 throw. */
 export function loadData(raw) {
-  const empty = { ageOk: false, consent: null, lang: "", savedAt: "", profile: {}, activities: [], honors: [], apps: [], essays: [] };
+  const empty = { ageOk: false, consent: null, lang: "", role: "student", savedAt: "", profile: {}, activities: [], honors: [], apps: [], essays: [] };
   if (!raw) return empty;
   const o = JSON.parse(raw);
   if (!o || typeof o !== "object" || Array.isArray(o)) throw new Error("not a backup file");
@@ -178,6 +187,7 @@ export function loadData(raw) {
     ageOk: o.ageOk === true,
     consent: o.consent && typeof o.consent === "object" ? { version: s(o.consent.version, 20), at: s(o.consent.at, 40) } : null,
     lang: o.lang === "en" || o.lang === "ko" ? o.lang : "",
+    role: roleOf(o),
     savedAt: s(o.savedAt, 40),
     profile,
     activities: arr(o.activities, MAX_ACTIVITIES).map((a) => ({
@@ -202,9 +212,10 @@ export function loadData(raw) {
 
 // ---------- 드라이브 동기화 결정 ----------
 // 학생이 쓴 내용만 비교한다 (동의·언어·저장 시각은 빼고).
-const content = (d) => JSON.stringify([d.profile, d.activities, d.honors, d.apps, d.essays]);
+// 역할도 비교한다: 카운슬러는 학생 자료가 비어 있어도 역할만은 드라이브에 올라가야 다른 기기에서 이어진다.
+const content = (d) => JSON.stringify([d.profile, d.activities, d.honors, d.apps, d.essays, roleOf(d)]);
 export const isEmptyData = (d) =>
-  !d.activities.length && !d.honors.length && !d.apps.length && !d.essays.length && !Object.values(d.profile).some((v) => String(v ?? "").trim());
+  roleOf(d) === "student" && !d.activities.length && !d.honors.length && !d.apps.length && !d.essays.length && !Object.values(d.profile).some((v) => String(v ?? "").trim());
 /**
  * 로그인해서 드라이브에 연결됐을 때 무엇을 할지. 절대 묻지 않고 덮어쓰지 않는다.
  * local/drive = loadData 결과 (drive는 백업이 없으면 null)
@@ -216,8 +227,8 @@ export function syncPlan({ local, drive, localSub = "", sub, syncedAt = "" }) {
   if (localSub && localSub !== sub && !isEmptyData(local)) return "switch";
   const mine = localSub === sub; // 이 계정과 맞춘 적이 있다
   if (!drive || isEmptyData(drive)) return isEmptyData(local) ? "none" : "upload";
-  if (isEmptyData(local)) return "load";
   if (content(local) === content(drive)) return "same";
+  if (isEmptyData({ ...local, role: "student" })) return "load"; // 역할만 고른 새 기기: 드라이브 자료를 덮어쓰지 않고 불러온다
   if (mine && syncedAt && local.savedAt === syncedAt) return "load"; // 이 기기는 그대로, 다른 기기에서 고쳤다
   if (mine && syncedAt && drive.savedAt === syncedAt) return "upload"; // 드라이브는 그대로, 이 기기에서 고쳤다
   return "ask";

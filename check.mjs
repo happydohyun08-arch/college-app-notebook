@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { registerHooks } from "node:module";
-import { classify, dday, loadData, syncPlan, isEmptyData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES } from "./logic.js";
+import { classify, dday, loadData, syncPlan, isEmptyData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES, roleOf, tabVisible, homeTab, ROLES } from "./logic.js";
 import { STR } from "./i18n.js";
 
 // Worker는 rubric.md를 글자로 불러온다. Node에서도 같게 흉내 낸다.
@@ -779,4 +779,31 @@ console.log("school field filter check passed");
   }
   assert.ok(fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8").includes("drive.file"));
   console.log("counselor mode check passed");
+}
+
+// 역할: 학생 / 카운슬러. 예전 자료(역할 없음)는 학생이다.
+{
+  assert.equal(loadData(null).role, "student");
+  assert.equal(loadData(JSON.stringify({ ageOk: true })).role, "student", "old data defaults to student");
+  assert.equal(loadData(JSON.stringify({ role: "admin" })).role, "student", "unknown role -> student");
+  assert.equal(loadData(JSON.stringify({ role: "counselor" })).role, "counselor");
+  assert.equal(roleOf(undefined), "student");
+  const tabs = ["about", "profile", "activities", "schools", "apps", "essays", "class", "backup"];
+  assert.deepEqual(tabs.filter((x) => tabVisible("student", x)), tabs, "students see every tab");
+  assert.deepEqual(tabs.filter((x) => tabVisible("counselor", x)), ["about", "class", "backup"], "counselors see no student tabs");
+  assert.deepEqual(ROLES.map(homeTab), ["profile", "class"]);
+  // 카운슬러는 학생 자료가 없어도 역할을 드라이브에 올리고, 새 기기에서는 내려받는다
+  const co = loadData(JSON.stringify({ ageOk: true, role: "counselor" })), st = loadData(JSON.stringify({ ageOk: true }));
+  assert.ok(!isEmptyData(co) && isEmptyData(st));
+  assert.equal(syncPlan({ local: co, drive: null, sub: "A" }), "upload");
+  assert.equal(syncPlan({ local: st, drive: co, sub: "A" }), "load");
+  assert.equal(syncPlan({ local: co, drive: co, sub: "A" }), "same");
+  assert.equal(syncPlan({ local: co, drive: loadData(JSON.stringify({ ageOk: true, essays: [{ id: "e", text: "hi" }] })), sub: "A" }), "load", "role-only device never overwrites Drive student data");
+  // 화면에 쓰는 글이 두 언어 모두 있다
+  const html = fs.readFileSync(new URL("./index.html", import.meta.url), "utf8"), app = fs.readFileSync(new URL("./app.js", import.meta.url), "utf8");
+  for (const k of ["land_student", "land_counselor", "role_h", "role_now_student", "role_now_counselor", "role_to_student", "role_to_counselor", "land_back"]) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  assert.ok(html.includes('data-role="counselor"') && html.includes('id="roleSwitch"') && html.includes('id="clStudent"'));
+  for (const id of [...html.matchAll(/data-tab="([a-z]+)"/g)].map((m) => m[1])) assert.ok(tabs.includes(id), `tab ${id} covered by role test`);
+  assert.ok(app.includes("auto_select: true"), "GSI auto_select restore unchanged");
+  console.log("role check passed");
 }

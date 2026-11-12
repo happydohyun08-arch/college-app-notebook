@@ -1,4 +1,4 @@
-import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -45,7 +45,7 @@ function applyLang() {
     const k = n.dataset.t;
     k.endsWith("_html") ? (n.innerHTML = t(k)) : (n.textContent = t(k)); // _html은 운영자가 쓴 i18n.js 글뿐이다
   }
-  if (signedUp(data)) for (const b of document.querySelectorAll("[data-signup]")) b.textContent = t("land_back");
+  if (signedUp(data)) for (const b of document.querySelectorAll('[data-signup][data-role="student"]')) b.textContent = t("land_back");
   paintThemeBtn();
   renderAll();
   if (!document.body.classList.contains("out")) headLogin(); // 버튼 언어도 바꾼다
@@ -76,9 +76,15 @@ $("#themeBtn").addEventListener("click", () => {
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintThemeBtn);
 
 // ---------- 탭 ----------
-let tab = "about";
+let tab = roleOf(data) === "counselor" ? "class" : "about"; // 카운슬러는 바로 카운슬러 탭으로
 function showTab(id) {
+  const role = roleOf(data);
+  if (!tabVisible(role, id)) id = homeTab(role); // 카운슬러는 학생용 탭을 열 수 없다
   tab = id;
+  for (const b of document.querySelectorAll("#tabs button")) b.toggleAttribute("data-role-off", !tabVisible(role, b.dataset.tab));
+  $("#clStudent").toggleAttribute("data-role-off", role === "counselor"); // 클래스 참여는 학생만
+  $("#roleNow").textContent = t(`role_now_${role}`);
+  $("#roleSwitch").textContent = t(role === "counselor" ? "role_to_student" : "role_to_counselor");
   for (const b of document.querySelectorAll("#tabs button")) b.setAttribute("aria-current", String(b.dataset.tab === id));
   for (const s of document.querySelectorAll("main > section")) s.hidden = s.id !== id;
   if (id === "schools") renderSchools();
@@ -95,7 +101,11 @@ const gate = $("#gate");
 function setView(landing = !signedUp(data)) {
   document.body.classList.toggle("out", landing);
   if (!landing) headLogin(); // 첫 화면(가입 전)에서는 Google 스크립트를 불러오지 않는다
-  for (const b of document.querySelectorAll("[data-signup]")) b.textContent = t(signedUp(data) ? "land_back" : b.dataset.t);
+  // 가입한 사람에게는 '내 노트 열기' 하나만 보인다. 역할은 설정(백업 탭)에서 바꾼다.
+  for (const b of document.querySelectorAll("[data-signup]")) {
+    b.textContent = t(signedUp(data) && b.dataset.role === "student" ? "land_back" : b.dataset.t);
+    b.toggleAttribute("data-role-off", signedUp(data) && b.dataset.role === "counselor");
+  }
 }
 const goHome = () => { setView(true); scrollTo(0, 0); };
 $("#brand").addEventListener("click", goHome);
@@ -107,8 +117,10 @@ const gateCheck = () => {
 };
 for (const c of gc) c.addEventListener("change", gateCheck);
 $("#gateAll").addEventListener("change", (e) => { for (const c of gc) c.checked = e.target.checked; $("#gateMsg").textContent = ""; gateCheck(); });
+let signupRole = "student";
 for (const b of document.querySelectorAll("[data-signup]")) b.addEventListener("click", () => {
   if (signedUp(data)) return setView(false), showTab(tab), scrollTo(0, 0);
+  signupRole = b.dataset.role;
   $("#gateMsg").textContent = "";
   gate.showModal();
 });
@@ -117,10 +129,11 @@ $("#gateOk").addEventListener("click", () => {
   data.ageOk = true;
   data.consent = { version: TERMS_VERSION, at: new Date().toISOString() };
   data.lang = lang;
+  data.role = roleOf({ role: signupRole });
   save();
   gate.close();
   setView();
-  showTab("profile");
+  showTab(homeTab(data.role));
   scrollTo(0, 0);
 });
 $("#gateNo").addEventListener("click", () => {
@@ -806,10 +819,12 @@ function choose(q, lines, a, b) {
   });
 }
 function takeDrive(next) {
+  const was = roleOf(data);
   data = { ...next, ageOk: true, consent: data.consent, lang };
   lastOrder = null;
   save(false);
   renderAll();
+  if (roleOf(data) !== was) showTab(homeTab(roleOf(data))); // 다른 기기에서 고른 역할로 연다
 }
 async function driveConnect(sub) {
   if (connecting) return;
@@ -1051,6 +1066,13 @@ async function signOut() {
   headLogin();
   sendState();
 }
+
+// 역할 바꾸기. 학생 자료는 지우지 않고 숨기기만 한다.
+$("#roleSwitch").addEventListener("click", () => {
+  data.role = roleOf(data) === "counselor" ? "student" : "counselor";
+  save();
+  showTab(homeTab(data.role));
+});
 
 $("#wipeBtn").addEventListener("click", () => {
   if (!confirm(t("wipe_q"))) return;
