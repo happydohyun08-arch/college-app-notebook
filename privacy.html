@@ -45,7 +45,7 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li>로그인 토큰은 열려 있는 페이지의 메모리에만 있고, 페이지를 새로 고치면 사라져요.</li>
 </ul>
 
-<h3>4. Google 드라이브 동기화 (선택)</h3>
+<h3 id="ko-4">4. Google 드라이브 동기화 (선택)</h3>
 <p>Google로 로그인하면 내 자료를 내 Google 드라이브에서 불러오고, 고칠 때마다 다시 저장해요. 그래서 어느 기기에서 로그인해도 같은 자료가 보여요. 자료는 운영자 서버에 저장하지 않아요. 이때 요청하는 권한은 <code>https://www.googleapis.com/auth/drive.appdata</code> 하나뿐이에요. (5번 카운슬러 공유를 쓸 때만 <code>drive.file</code> 권한을 추가로 요청해요.)</p>
 <ul>
 <li><b>접근 범위:</b> 내 드라이브의 앱 전용 숨김 폴더(appDataFolder)만 볼 수 있어요. 드라이브의 다른 파일은 보거나 읽거나 바꿀 수 없어요.</li>
@@ -98,7 +98,7 @@ code { background:var(--bg-2); padding:1px 5px; border-radius:4px; font-size:.9e
 <li>The sign-in token stays only in the open page's memory and is gone when you reload.</li>
 </ul>
 
-<h3>4. Google Drive sync (optional)</h3>
+<h3 id="en-4">4. Google Drive sync (optional)</h3>
 <p>When you sign in with Google, your data loads from your own Google Drive and is saved back on every change, so the same data appears on any device where you sign in. Your data is never stored on the operator's server. The only permission requested is <code>https://www.googleapis.com/auth/drive.appdata</code> (counselor sharing, section 5, additionally asks for <code>drive.file</code> only when used).</p>
 <ul>
 <li><b>Access:</b> only the hidden app-only folder in your Drive (appDataFolder). The site cannot see, read or change any other file in your Drive.</li>

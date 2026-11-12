@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { registerHooks } from "node:module";
-import { classify, dday, loadData, syncPlan, isEmptyData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES, roleOf, tabVisible, homeTab, ROLES } from "./logic.js";
+import { classify, dday, loadData, syncPlan, isEmptyData, wordCheck, essayKind, addAppOnce, totalHours, isPermutation, newApp, appProgress, readyCount, CHECK_ITEMS, CHECK_STATES, roleOf, tabVisible, homeTab, ROLES, outSaveState } from "./logic.js";
 import { STR } from "./i18n.js";
 
 // Worker는 rubric.md를 글자로 불러온다. Node에서도 같게 흉내 낸다.
@@ -819,3 +819,13 @@ console.log("school field filter check passed");
   assert.ok(/Google/.test(STR.ko.land_student) && /Google/.test(STR.en.land_counselor), "landing buttons are Google sign-in");
   console.log("role check passed");
 }
+
+// 로그아웃 창: 드라이브 저장 상태와 글
+assert.equal(outSaveState({ savedAt: "a", syncedAt: "a" }), "saved");
+assert.equal(outSaveState({ savedAt: "b", syncedAt: "a" }), "local", "unsynced edit");
+assert.equal(outSaveState({}), "local", "never saved: not in Drive");
+assert.equal(outSaveState({ savedAt: "a", syncedAt: "a", err: "Google 500" }), "failed", "error wins");
+for (const k of ["acct", "out_h", "out_as_student", "out_as_counselor", "out_checking", "out_saved", "out_failed", "out_local", "out_keep", "out_erase", "out_erase_p_html"]) assert.ok(STR.ko[k] && STR.en[k], k);
+assert.ok(STR.ko.out_failed.includes("{e}") && STR.en.out_failed.includes("{e}"));
+assert.ok(STR.ko.out_erase_p_html.includes("privacy.html#ko-4") && STR.en.out_erase_p_html.includes("privacy.html#en-4"));
+for (const id of ["ko-4", "en-4"]) assert.ok(fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8").includes(`id="${id}"`), id);

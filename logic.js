@@ -159,6 +159,8 @@ const COUNSELOR_TABS = ["class", "about", "backup"]; // 카운슬러는 학생�
 export const tabVisible = (role, tab) => role !== "counselor" || COUNSELOR_TABS.includes(tab);
 /** 가입 직후·역할을 바꾼 뒤 처음 여는 탭. */
 export const homeTab = (role) => (role === "counselor" ? "class" : "profile");
+// 로그아웃 창의 드라이브 상태: 올리다 실패 / 드라이브와 같음 / 이 기기에만 있음
+export const outSaveState = ({ savedAt = "", syncedAt = "", err = "" }) => (err ? "failed" : savedAt && savedAt === syncedAt ? "saved" : "local");
 
 const PROFILE_KEYS = ["major", "gpa", "sat", "act", "toefl", "ap", "otherTests", "legacy"];
 export const MAX_ACTIVITIES = 10;

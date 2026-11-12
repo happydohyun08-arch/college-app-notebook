@@ -121,6 +121,11 @@ body.out #langBtn { order:2; }
 body.out #headLogin { display:none; }
 #headLogin { order:2; font-size:12px; display:flex; gap:8px; align-items:center; }
 #headLogin .btn { padding:3px 10px; font-size:12px; }
+#headLogin .acct { display:inline-flex; gap:6px; align-items:center; }
+.acct img, #outWho img { width:20px; height:20px; border-radius:50%; }
+#outWho { display:flex; gap:12px; align-items:center; margin:8px 0 4px; }
+#outWho img { width:40px; height:40px; }
+#syncH:empty { display:none; }
 .hero { text-align:center; padding:96px 22px 56px; max-width:980px; margin:0 auto; }
 .eyebrow { font-size:17px; font-weight:600; color:var(--accent); margin:0 0 10px; letter-spacing:-0.01em; }
 .hero h2 { font-size:64px; line-height:1.05; font-weight:700; letter-spacing:-0.035em; margin:0 auto; max-width:860px; }
@@ -448,6 +453,7 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
         <button class="btn" id="gdSave" data-t="gd_save"></button>
         <button class="btn ghost" id="gdLoad" data-t="gd_load"></button>
         <button class="btn ghost" id="gdOut" data-t="gd_out" hidden></button>
+        <button class="btn ghost" id="outBtn" data-t="sign_out" hidden></button>
       </div>
       <label class="check"><input type="checkbox" id="gdAuto"> <span data-t="gd_auto"></span></label>
       <p class="muted" id="gdMsg"></p>
@@ -490,8 +496,16 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
   <div class="row"><button class="btn" id="clGo" disabled data-t="cl_join"></button><button class="btn ghost" id="clCancel" data-t="cancel"></button></div>
 </dialog>
 
+<dialog id="outAsk">
+  <h2 data-t="out_h"></h2>
+  <div id="outWho"></div>
+  <p id="outSave"></p>
+  <p class="muted" data-t="out_erase_p_html"></p>
+  <div class="row"><button class="btn" id="outKeep" data-t="out_keep"></button><button class="btn ghost" id="outErase" data-t="out_erase"></button><button class="btn ghost" id="outCancel" data-t="cancel"></button></div>
+</dialog>
+
 <dialog id="syncAsk">
-  <h2 data-t="sync_h"></h2><p id="syncQ"></p>
+  <h2 id="syncH" data-t="sync_h"></h2><p id="syncQ"></p>
   <ul id="syncWhat"></ul>
   <div class="row"><button class="btn" id="syncA"></button><button class="btn ghost" id="syncB"></button></div>
 </dialog>

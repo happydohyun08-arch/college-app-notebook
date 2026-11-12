@@ -1,4 +1,4 @@
-import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, signinSteps, roleAfterSignin, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, outSaveState, signinSteps, roleAfterSignin, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -297,7 +297,7 @@ const tokenExp = (tok) => (jwt(tok).exp ?? 0) * 1000;
 const signedIn = () => !!idToken && tokenExp(idToken) > Date.now() + 60000;
 // 같은 로그인을 동의 창(#sendLogin)과 상단 바(#headLogin, compact) 두 곳에 그린다.
 const showLogin = () => renderLogin($("#sendLogin"), false, t("ai_login"));
-const headLogin = () => (paintSignup(), renderLogin($("#headLogin"), true));
+const headLogin = () => (paintSignup(), ($("#outBtn").hidden = !signedIn()), renderLogin($("#headLogin"), true));
 // 새로고침해도 로그인 상태를 잇기 위해 '로그인했었다' 표시만 저장한다 (토큰은 저장하지 않는다).
 const GSI_KEY = "college-app.gsi";
 const wasIn = () => { try { return localStorage.getItem(GSI_KEY) === "1"; } catch { return false; } };
@@ -323,13 +323,19 @@ async function gsiReady() {
   // ponytail: 페이지를 열 때 한 번만 조용히 다시 로그인한다. 1시간 뒤 토큰이 끝나면 버튼을 한 번 누른다.
   if (wasIn() && signedUp(data)) google.accounts.id.prompt();
 }
+// 상단 바의 작은 계정 버튼: 사진(있으면) + '계정'. 누르면 로그아웃 창을 연다.
+function acctBtn() {
+  const { email, picture } = jwt(idToken);
+  return el("button", { className: "btn ghost acct", title: email || "", onclick: askSignOut },
+    picture && el("img", { src: picture, alt: "", referrerPolicy: "no-referrer" }), t("acct"));
+}
 async function renderLogin(box, compact = false, note = "") {
   if (signedIn()) {
     const status = el(compact ? "span" : "p", { className: "muted", textContent: (aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft)) + (compact && gdSub && gdLive() ? ` · ${t("gd_on")}` : "") });
     if (!compact) return void box.replaceChildren(status);
     return void box.replaceChildren(...[status,
       needClick && el("button", { className: "btn ghost", textContent: t("gd_connect"), onclick: () => driveConnect(jwt(idToken).sub) }),
-      el("button", { className: "btn ghost", textContent: t("sign_out"), onclick: signOut })].filter(Boolean));
+      acctBtn()].filter(Boolean));
   }
   if (compact) { // 상단 바: 로그인 전에는 역할 두 개 중 하나를 고르면 Google 로그인으로 간다
     box.replaceChildren(...["student", "counselor"].map((r) => el("button", { className: "btn ghost", textContent: t(`head_${r}`), onclick: () => pickRole(r) })));
@@ -640,7 +646,7 @@ function essayCard(es) {
     el("label", { textContent: t("e_prompt") }), field("prompt", "textarea", { placeholder: t("e_prompt_ph"), style: "min-height:60px" }),
     el("label", { textContent: t("e_text") }), field("text", "textarea", { style: "min-height:220px", maxLength: 8000 }),
     el("div", { className: "row" }, evalBtn, count,
-      el("button", { className: "btn ghost", textContent: t("del"), onclick: () => { if (confirm(t("del_essay_q"))) { data.essays = data.essays.filter((x) => x !== es); save(); renderEssays(); } } })),
+      el("button", { className: "btn ghost", textContent: t("del"), onclick: async () => { if (await ask(t("del_essay_q"), t("del"))) { data.essays = data.essays.filter((x) => x !== es); save(); renderEssays(); } } })),
     result);
 }
 
@@ -696,14 +702,14 @@ $("#importFile").addEventListener("change", async (e) => {
   e.target.value = "";
   if (!file) return;
   try {
-    if (applyBackup(await file.text())) $("#backupMsg").textContent = t("imported");
+    if (await applyBackup(await file.text())) $("#backupMsg").textContent = t("imported");
   } catch (err) {
     $("#backupMsg").textContent = `${t("import_fail")}: ${err.message}`;
   }
 });
-function applyBackup(text) {
+async function applyBackup(text) {
   const next = loadData(text);
-  if (!confirm(t("import_q"))) return false;
+  if (!(await ask(t("import_q"), t("import")))) return false;
   data = { ...next, ageOk: true, consent: data.consent, lang };
   lastOrder = null;
   save();
@@ -821,7 +827,7 @@ $("#gdLoad").addEventListener("click", () => gdRun(async () => {
   const f = await gdFind();
   if (!f) return gdMsg(t("gd_none"));
   const text = await (await gdFetch(`/drive/v3/files/${f.id}?alt=media`)).text();
-  const ok = applyBackup(text);
+  const ok = await applyBackup(text);
   if (ok) { sync.last = f.modifiedTime; sync.savedAt = data.savedAt; saveSync(); }
   gdMsg(ok ? `${t("imported").replace(/\.$/, "")}: ${gdCount(data)} (${t("gd_when")} ${new Date(f.modifiedTime).toLocaleString(lang)})` : t("gd_kept"));
 }));
@@ -838,9 +844,10 @@ $("#gdOut").addEventListener("click", () => {
 // ---------- 로그인하면 드라이브와 맞추기 ----------
 let gdSub = "", connecting = false, needClick = false;
 const when = (iso) => (iso ? new Date(iso).toLocaleString(lang) : t("sync_unknown"));
-// 두 버튼 중 하나를 고르게 한다. 0 / 1, 닫으면 null.
-function choose(q, lines, a, b) {
+// 두 버튼 중 하나를 고르게 한다. 0 / 1, 닫으면 null. h = 제목 ("" 이면 숨김)
+function choose(q, lines, a, b, h = t("sync_h")) {
   const d = $("#syncAsk");
+  $("#syncH").textContent = h;
   $("#syncQ").textContent = q;
   $("#syncWhat").replaceChildren(...lines.map((l) => el("li", { textContent: l })));
   $("#syncA").textContent = a;
@@ -853,6 +860,8 @@ function choose(q, lines, a, b) {
     d.showModal();
   });
 }
+// confirm() 대신: 같은 창으로 '확인 / 취소'를 묻는다
+const ask = async (q, ok) => (await choose(q, [], ok, t("cancel"), "")) === 0;
 function takeDrive(next) {
   const was = roleOf(data);
   data = { ...next, ageOk: true, consent: data.consent, lang };
@@ -968,7 +977,7 @@ async function joinClass(c) {
 }
 // 나가기: 파일을 먼저 지워 카운슬러의 접근을 바로 끊고, 그다음 멤버십을 지운다.
 async function leaveClass(c) {
-  if (!confirm(t("cl_leave_q").replace("{c}", c.name))) return;
+  if (!(await ask(t("cl_leave_q").replace("{c}", c.name), t("cl_leave")))) return;
   try {
     await gdAuth(true);
     clMsg(t("gd_working"));
@@ -1079,9 +1088,41 @@ function renderClass() {
   }));
 }
 
-async function signOut() {
-  if (gdPending && gdLive()) { clearTimeout(gdTimer); gdPending = false; try { await gdPush(true); } catch {} } // 아직 안 올라간 수정을 먼저 올린다
+// 로그아웃 창: 계정과 역할을 보이고, 아직 안 올라간 수정을 먼저 드라이브에 올린 뒤 결과를 알린다.
+// 돌려주는 값 = 실패 이유 ("" 이면 문제없음)
+async function flushDrive() {
+  while (gdBusy) await new Promise((r) => setTimeout(r, 200)); // 이미 올리는 중이면 끝나길 기다린다
+  if (!(gdLive() && sync.auto && data.savedAt !== sync.savedAt)) return "";
   clearTimeout(gdTimer);
+  gdPending = false;
+  try { await gdPush(true); } catch (err) { return err.message; } // 자동 저장과 같이: 더 새 드라이브 백업은 덮어쓰지 않는다
+  return data.savedAt === sync.savedAt ? "" : $("#gdMsg").textContent;
+}
+async function askSignOut() {
+  const d = $("#outAsk"), st = $("#outSave"), btns = [$("#outKeep"), $("#outErase")];
+  const { email, name, picture } = jwt(idToken);
+  $("#outWho").replaceChildren(...[picture && el("img", { src: picture, alt: "", referrerPolicy: "no-referrer" }),
+    el("div", {}, el("strong", { textContent: name || email || "" }), el("br"),
+      el("span", { className: "muted", textContent: [name && email, t(`out_as_${roleOf(data)}`)].filter(Boolean).join(" · ") }))].filter(Boolean));
+  st.className = "muted";
+  st.textContent = t("out_checking");
+  for (const b of btns) b.disabled = true;
+  d.showModal();
+  const err = await flushDrive();
+  const s = outSaveState({ savedAt: data.savedAt, syncedAt: sync.savedAt, err });
+  st.className = s === "saved" ? "muted" : "note";
+  st.textContent = t(`out_${s}`).replace("{e}", err);
+  for (const b of btns) b.disabled = false;
+}
+$("#outKeep").addEventListener("click", () => signOut(false));
+$("#outErase").addEventListener("click", () => signOut(true));
+$("#outCancel").addEventListener("click", () => $("#outAsk").close());
+$("#outBtn").addEventListener("click", askSignOut);
+// erase=true 일 때만 이 기기의 자료를 지운다. 드라이브 사본은 그대로 둔다.
+function signOut(erase) {
+  $("#outAsk").close();
+  clearTimeout(gdTimer);
+  gdPending = false;
   idToken = gdToken = null;
   gdSub = "";
   myClasses = [];
@@ -1093,13 +1134,14 @@ async function signOut() {
   $("#gdOut").hidden = true;
   try { localStorage.removeItem(GSI_KEY); } catch {}
   try { google.accounts.id.disableAutoSelect(); } catch {}
-  if (confirm(t("out_wipe_q"))) {
+  if (erase) {
     try { for (const k of [KEY, SYNC_KEY, THEME_KEY]) localStorage.removeItem(k); } catch {}
     return location.reload();
   }
   gdMsg(t("signed_out"));
   headLogin();
   sendState();
+  goHome(); // 학생/카운슬러 로그인 버튼이 있는 시작 페이지로
 }
 
 // 역할 바꾸기. 학생 자료는 지우지 않고 숨기기만 한다.
@@ -1109,8 +1151,8 @@ $("#roleSwitch").addEventListener("click", () => {
   showTab(homeTab(data.role));
 });
 
-$("#wipeBtn").addEventListener("click", () => {
-  if (!confirm(t("wipe_q"))) return;
+$("#wipeBtn").addEventListener("click", async () => {
+  if (!(await ask(t("wipe_q"), t("wipe")))) return;
   try { localStorage.removeItem(KEY); } catch {}
   location.reload();
 });
