@@ -150,6 +150,10 @@ export const signedUp = (d) => d.ageOk === true && d.consent?.version === TERMS_
 // ---------- 역할 (학생 / 카운슬러) ----------
 // 역할은 내 자료(data.role)에 저장돼 드라이브 동기화로 같이 옮겨진다. 값이 없거나 틀리면 학생이다.
 export const ROLES = ["student", "counselor"];
+// 'Google로 ○○ 로그인'을 눌렀을 때 거칠 단계. 동의는 아직 안 했을 때만, 이미 로그인했으면 Google 창은 건너뛴다.
+export const signinSteps = ({ signedUp, signedIn }) => [...(signedUp ? [] : ["consent"]), ...(signedIn ? [] : ["google"]), "sync", "open"];
+// 드라이브를 불러온 뒤 열 역할: 이번에 누른 역할. 안 눌렀으면(자동 로그인) 저장된 역할 그대로.
+export const roleAfterSignin = (picked, d) => (ROLES.includes(picked) ? picked : roleOf(d));
 export const roleOf = (d) => (d?.role === "counselor" ? "counselor" : "student");
 const COUNSELOR_TABS = ["class", "about", "backup"]; // 카운슬러는 학생용 탭(내 정보·활동·학교·지원 목록·에세이)을 안 본다
 export const tabVisible = (role, tab) => role !== "counselor" || COUNSELOR_TABS.includes(tab);

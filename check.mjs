@@ -805,5 +805,17 @@ console.log("school field filter check passed");
   assert.ok(html.includes('data-role="counselor"') && html.includes('id="roleSwitch"') && html.includes('id="clStudent"'));
   for (const id of [...html.matchAll(/data-tab="([a-z]+)"/g)].map((m) => m[1])) assert.ok(tabs.includes(id), `tab ${id} covered by role test`);
   assert.ok(app.includes("auto_select: true"), "GSI auto_select restore unchanged");
+  // 역할 고르기 = Google 로그인 첫 단계. 동의는 처음 한 번, 역할은 드라이브를 불러온 뒤 적용, 자동 로그인은 저장된 역할
+  const { signinSteps, roleAfterSignin } = await import("./logic.js");
+  assert.deepEqual(signinSteps({ signedUp: false, signedIn: false }), ["consent", "google", "sync", "open"]);
+  assert.deepEqual(signinSteps({ signedUp: true, signedIn: false }), ["google", "sync", "open"], "agreed users skip consent");
+  assert.deepEqual(signinSteps({ signedUp: true, signedIn: true }), ["sync", "open"]);
+  assert.equal(roleAfterSignin("counselor", st), "counselor", "clicked role wins over Drive role");
+  assert.equal(roleAfterSignin("student", co), "student");
+  assert.equal(roleAfterSignin(null, co), "counselor", "auto_select restore keeps saved role");
+  assert.equal(roleAfterSignin("admin", st), "student");
+  for (const k of ["head_student", "head_counselor", "signas_student", "signas_counselor", "signas_p", "signas_later"]) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  assert.ok(html.includes('id="signAs"') && html.includes('id="signAsBtn"'));
+  assert.ok(/Google/.test(STR.ko.land_student) && /Google/.test(STR.en.land_counselor), "landing buttons are Google sign-in");
   console.log("role check passed");
 }

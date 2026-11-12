@@ -1,4 +1,4 @@
-import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, signinSteps, roleAfterSignin, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -45,7 +45,7 @@ function applyLang() {
     const k = n.dataset.t;
     k.endsWith("_html") ? (n.innerHTML = t(k)) : (n.textContent = t(k)); // _html은 운영자가 쓴 i18n.js 글뿐이다
   }
-  if (signedUp(data)) for (const b of document.querySelectorAll('[data-signup][data-role="student"]')) b.textContent = t("land_back");
+  paintSignup();
   paintThemeBtn();
   renderAll();
   if (!document.body.classList.contains("out")) headLogin(); // 버튼 언어도 바꾼다
@@ -101,10 +101,13 @@ const gate = $("#gate");
 function setView(landing = !signedUp(data)) {
   document.body.classList.toggle("out", landing);
   if (!landing) headLogin(); // 첫 화면(가입 전)에서는 Google 스크립트를 불러오지 않는다
-  // 가입한 사람에게는 '내 노트 열기' 하나만 보인다. 역할은 설정(백업 탭)에서 바꾼다.
+  paintSignup();
+}
+// 로그인 전: 'Google로 학생/카운슬러 로그인' 두 개. 로그인 뒤: '내 노트 열기' 하나만. 역할은 설정(백업 탭)에서 바꾼다.
+function paintSignup() {
   for (const b of document.querySelectorAll("[data-signup]")) {
-    b.textContent = t(signedUp(data) && b.dataset.role === "student" ? "land_back" : b.dataset.t);
-    b.toggleAttribute("data-role-off", signedUp(data) && b.dataset.role === "counselor");
+    b.textContent = t(signedIn() && b.dataset.role === "student" ? "land_back" : b.dataset.t);
+    b.toggleAttribute("data-role-off", signedIn() && b.dataset.role === "counselor");
   }
 }
 const goHome = () => { setView(true); scrollTo(0, 0); };
@@ -117,24 +120,49 @@ const gateCheck = () => {
 };
 for (const c of gc) c.addEventListener("change", gateCheck);
 $("#gateAll").addEventListener("change", (e) => { for (const c of gc) c.checked = e.target.checked; $("#gateMsg").textContent = ""; gateCheck(); });
-let signupRole = "student";
+// 역할 고르기 = Google 로그인의 첫 단계: (동의) → Google 로그인 → 드라이브 맞추기 → 그 역할로 연다.
+let pickedRole = null;
+function pickRole(role) {
+  pickedRole = role;
+  const [step] = signinSteps({ signedUp: signedUp(data), signedIn: signedIn() });
+  if (step === "consent") { $("#gateMsg").textContent = ""; return gate.showModal(); }
+  askGoogle();
+}
 for (const b of document.querySelectorAll("[data-signup]")) b.addEventListener("click", () => {
-  if (signedUp(data)) return setView(false), showTab(tab), scrollTo(0, 0);
-  signupRole = b.dataset.role;
-  $("#gateMsg").textContent = "";
-  gate.showModal();
+  if (signedIn()) return setView(false), showTab(tab), scrollTo(0, 0); // '내 노트 열기'
+  pickRole(b.dataset.role);
 });
-$("#gateCancel").addEventListener("click", () => gate.close());
+// GSI는 자기 버튼(또는 One Tap)으로만 로그인 창을 연다: 역할을 고르면 작은 창에 Google 버튼을 그린다.
+function askGoogle() {
+  if (signedIn()) return finishSignin(jwt(idToken).sub);
+  $("#signAsH").textContent = t(`signas_${pickedRole}`);
+  renderLogin($("#signAsBtn"));
+  $("#signAs").showModal();
+}
+async function finishSignin(sub) {
+  const role = roleAfterSignin(pickedRole, data);
+  pickedRole = null;
+  $("#signAs").close();
+  if (sub && !(sub === gdSub && gdLive())) await driveConnect(sub); // 드라이브 자료를 먼저 불러온 뒤에
+  openAs(role); // 누른 역할을 적용한다 (숨기기만, 지우지 않는다)
+}
+function openAs(role) {
+  if (roleOf(data) !== role) { data.role = role; save(); }
+  setView(false);
+  showTab(homeTab(role));
+  scrollTo(0, 0);
+}
+$("#signAsLater").addEventListener("click", () => { const r = pickedRole; pickedRole = null; $("#signAs").close(); openAs(roleAfterSignin(r, data)); });
+$("#signAsCancel").addEventListener("click", () => $("#signAs").close());
+$("#signAs").addEventListener("close", () => { if (!signedIn()) pickedRole = null; });
+$("#gateCancel").addEventListener("click", () => { pickedRole = null; gate.close(); });
 $("#gateOk").addEventListener("click", () => {
   data.ageOk = true;
   data.consent = { version: TERMS_VERSION, at: new Date().toISOString() };
   data.lang = lang;
-  data.role = roleOf({ role: signupRole });
   save();
   gate.close();
-  setView();
-  showTab(homeTab(data.role));
-  scrollTo(0, 0);
+  askGoogle(); // 역할은 드라이브를 불러온 뒤에 적용한다
 });
 $("#gateNo").addEventListener("click", () => {
   $("#gateMsg").textContent = t("gate_under");
@@ -268,8 +296,8 @@ let idToken = null, aiLeft = null, gsiInit = false;
 const tokenExp = (tok) => (jwt(tok).exp ?? 0) * 1000;
 const signedIn = () => !!idToken && tokenExp(idToken) > Date.now() + 60000;
 // 같은 로그인을 동의 창(#sendLogin)과 상단 바(#headLogin, compact) 두 곳에 그린다.
-const showLogin = () => renderLogin($("#sendLogin"));
-const headLogin = () => renderLogin($("#headLogin"), true);
+const showLogin = () => renderLogin($("#sendLogin"), false, t("ai_login"));
+const headLogin = () => (paintSignup(), renderLogin($("#headLogin"), true));
 // 새로고침해도 로그인 상태를 잇기 위해 '로그인했었다' 표시만 저장한다 (토큰은 저장하지 않는다).
 const GSI_KEY = "college-app.gsi";
 const wasIn = () => { try { return localStorage.getItem(GSI_KEY) === "1"; } catch { return false; } };
@@ -281,12 +309,21 @@ function onCredential(r) {
   const { sub, email } = jwt(idToken);
   gdHint = email;
   loadMine();
-  if (signedUp(data) && sub && !(sub === gdSub && gdLive())) driveConnect(sub); // 로그인 = 드라이브 연결까지 한 번에
+  if (pickedRole) finishSignin(sub); // 역할을 고르고 로그인했다
+  else if (signedUp(data) && sub && !(sub === gdSub && gdLive())) driveConnect(sub); // 자동 로그인: 저장된 역할 그대로, 드라이브 연결까지 한 번에
   headLogin();
   if ($("#send").open) showLogin();
   sendState();
 }
-async function renderLogin(box, compact = false) {
+async function gsiReady() {
+  await gdScript();
+  if (gsiInit) return;
+  google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: onCredential, auto_select: true });
+  gsiInit = true;
+  // ponytail: 페이지를 열 때 한 번만 조용히 다시 로그인한다. 1시간 뒤 토큰이 끝나면 버튼을 한 번 누른다.
+  if (wasIn() && signedUp(data)) google.accounts.id.prompt();
+}
+async function renderLogin(box, compact = false, note = "") {
   if (signedIn()) {
     const status = el(compact ? "span" : "p", { className: "muted", textContent: (aiLeft == null ? t("ai_daily") : t("ai_left").replace("{n}", aiLeft)) + (compact && gdSub && gdLive() ? ` · ${t("gd_on")}` : "") });
     if (!compact) return void box.replaceChildren(status);
@@ -294,17 +331,15 @@ async function renderLogin(box, compact = false) {
       needClick && el("button", { className: "btn ghost", textContent: t("gd_connect"), onclick: () => driveConnect(jwt(idToken).sub) }),
       el("button", { className: "btn ghost", textContent: t("sign_out"), onclick: signOut })].filter(Boolean));
   }
+  if (compact) { // 상단 바: 로그인 전에는 역할 두 개 중 하나를 고르면 Google 로그인으로 간다
+    box.replaceChildren(...["student", "counselor"].map((r) => el("button", { className: "btn ghost", textContent: t(`head_${r}`), onclick: () => pickRole(r) })));
+    return void gsiReady().catch(() => {});
+  }
   const btn = el("div");
-  box.replaceChildren(...(compact ? [] : [el("p", { textContent: t("ai_login") })]), btn);
+  box.replaceChildren(...(note ? [el("p", { textContent: note })] : []), btn);
   try {
-    await gdScript();
-    if (!gsiInit) {
-      google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: onCredential, auto_select: true });
-      gsiInit = true;
-      // ponytail: 페이지를 열 때 한 번만 조용히 다시 로그인한다. 1시간 뒤 토큰이 끝나면 버튼을 한 번 누른다.
-      if (wasIn() && signedUp(data)) google.accounts.id.prompt();
-    }
-    google.accounts.id.renderButton(btn, { theme: "outline", text: "signin_with", locale: lang, ...(compact && { size: "small" }) });
+    await gsiReady();
+    google.accounts.id.renderButton(btn, { theme: "outline", text: "signin_with", locale: lang });
   } catch (e) {
     box.append(el("p", { className: "muted", textContent: e.message }));
   }
@@ -1119,4 +1154,5 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 applyLang();
+if (signedUp(data) && wasIn()) gsiReady().catch(() => {}); // 돌아온 사람: 자동 로그인하면 고르지 않고 저장된 역할로 '내 노트 열기'
 setView(true); // 가입한 사람도 항상 시작 페이지에서 연다. '내 노트 열기'로 들어간다.

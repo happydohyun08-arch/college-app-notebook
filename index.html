@@ -258,8 +258,8 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
     <button data-tab="class" data-t="tab_class"></button>
     <button data-tab="backup" data-t="tab_backup"></button>
   </nav>
-  <button class="btn" id="headStart" data-signup data-role="student" data-t="land_student"></button>
-  <button class="btn ghost" id="headStartCo" data-signup data-role="counselor" data-t="land_counselor"></button>
+  <button class="btn" id="headStart" data-signup data-role="student" data-t="head_student"></button>
+  <button class="btn ghost" id="headStartCo" data-signup data-role="counselor" data-t="head_counselor"></button>
   <div id="headLogin"></div>
   <button id="themeBtn" type="button"></button>
   <button id="langBtn" data-t="lang_btn"></button>
@@ -465,6 +465,12 @@ dialog { border:1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
   <details><summary data-t="view"></summary><div class="terms"><p data-t="about1_html"></p><p data-t="about2_html"></p><p data-t="about3_html"></p><p data-t="about6_html"></p></div></details>
   <div class="row"><button class="btn" id="gateOk" disabled data-t="gate_ok"></button><button class="btn ghost" id="gateCancel" data-t="cancel"></button><button class="btn ghost" id="gateNo" data-t="gate_no"></button></div>
   <p class="muted" id="gateMsg"></p>
+</dialog>
+
+<dialog id="signAs">
+  <h2 id="signAsH"></h2><p data-t="signas_p"></p>
+  <div id="signAsBtn"></div>
+  <div class="row"><button class="btn ghost" id="signAsLater" data-t="signas_later"></button><button class="btn ghost" id="signAsCancel" data-t="cancel"></button></div>
 </dialog>
 
 <dialog id="send">
