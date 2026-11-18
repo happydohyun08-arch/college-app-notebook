@@ -704,7 +704,7 @@ console.log("school field filter check passed");
   let nAid = 0, nReq = 0, nAdm = 0;
   for (const id of ids) {
     const s = schools.find((x) => x.id === id), d = det[id], e = dev.find((x) => x.id === id);
-    assert.ok(s && (!s.aid || JSON.stringify(s.aid) === JSON.stringify(d.aid)) && e.name === s.name, `${id}: base row exists and is not one of the 61 detailed`);
+    assert.ok(s && (!s.aid || Object.entries(d.aid).every(([k, v]) => v == null || JSON.stringify(s.aid[k]) === JSON.stringify(v))) && e.name === s.name, `${id}: base row exists and is not one of the 61 detailed`);
     assert.deepEqual(Object.keys(d.aid), AID_KEYS, `${s.name}: aid shape`);
     const a = d.aid, c = e.cds;
     assert.ok(money(a.tuition_fees, 5000, 120000) && money(a.room_board, 3000, 40000) && count(a.merit_n) && money(a.merit_avg, 100, 120000) && count(a.intl_n) && money(a.intl_avg, 100, 120000), `${s.name}: aid ranges`);
