@@ -1,0 +1,209 @@
+{
+ "131496": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 74732,
+   "room_board": 22180,
+   "intl_aid": true,
+   "intl_n": 48,
+   "intl_avg": 75050
+  },
+  "admissions": {
+   "admit_rate": 0.135,
+   "sat25": 1405,
+   "sat75": 1530,
+   "act25": 32,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "160755": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 71998,
+   "room_board": 19630,
+   "merit_n": 518,
+   "merit_avg": 19636,
+   "intl_aid": true,
+   "intl_n": 74,
+   "intl_avg": 49005
+  },
+  "admissions": {
+   "admit_rate": 0.145,
+   "sat25": 1430,
+   "sat75": 1500,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "167835": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 70768,
+   "room_board": 24520,
+   "merit_n": 31,
+   "merit_avg": 28090,
+   "intl_aid": true,
+   "intl_n": 155,
+   "intl_avg": 89103
+  },
+  "admissions": {
+   "admit_rate": 0.224,
+   "sat25": 1420,
+   "sat75": 1520,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "168342": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 76640,
+   "room_board": 19320,
+   "merit_n": 0,
+   "intl_aid": true,
+   "intl_n": 123,
+   "intl_avg": 94807
+  },
+  "admissions": {
+   "admit_rate": 0.086,
+   "sat25": 1490,
+   "sat75": 1550,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "174066": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 43198,
+   "room_board": 15696,
+   "merit_n": 953,
+   "merit_avg": 6517,
+   "intl_aid": true,
+   "intl_n": 386,
+   "intl_avg": 3783
+  },
+  "admissions": {
+   "admit_rate": 0.789,
+   "sat25": 1310,
+   "sat75": 1460,
+   "act25": 26,
+   "act75": 32,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "189097": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 75592,
+   "room_board": 23258,
+   "merit_n": 0,
+   "intl_aid": true,
+   "intl_n": 31,
+   "intl_avg": 80574
+  },
+  "admissions": {
+   "admit_rate": 0.101,
+   "sat25": 1480,
+   "sat75": 1540,
+   "act25": 32,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "191515": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 75960,
+   "room_board": 19290,
+   "merit_n": 0,
+   "intl_aid": true,
+   "intl_n": 71,
+   "intl_avg": 74400
+  },
+  "admissions": {
+   "admit_rate": 0.136,
+   "sat25": 1440,
+   "sat75": 1510,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "228778": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 44816,
+   "room_board": 15420,
+   "merit_n": 0,
+   "intl_aid": true,
+   "intl_n": 832,
+   "intl_avg": 21343
+  },
+  "admissions": {
+   "admit_rate": 0.222,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "230959": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 70640,
+   "room_board": 20116,
+   "merit_n": 3,
+   "merit_avg": 2700,
+   "intl_aid": true,
+   "intl_n": 198,
+   "intl_avg": 83697
+  },
+  "admissions": {
+   "admit_rate": 0.128,
+   "sat25": 1460,
+   "sat75": 1530,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "234076": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 62980,
+   "room_board": 16070,
+   "merit_n": 88,
+   "merit_avg": 7270,
+   "intl_aid": true,
+   "intl_n": 99,
+   "intl_avg": 28419
+  },
+  "admissions": {
+   "admit_rate": 0.156,
+   "sat25": 1410,
+   "sat75": 1510,
+   "act25": 32,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "240444": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 46932,
+   "room_board": 14994,
+   "merit_n": 650,
+   "merit_avg": 7397,
+   "intl_aid": false
+  },
+  "admissions": {
+   "admit_rate": 0.408,
+   "sat25": 1400,
+   "sat75": 1490,
+   "act25": 29,
+   "act75": 33,
+   "cds_year": "CDS 2025-26"
+  }
+ }
+}

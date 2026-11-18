@@ -1,0 +1,1069 @@
+{
+ "131496": {
+  "name": "Georgetown University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header (file CDS_2025-2026.pdf linked from oads.georgetown.edu/commondataset)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 74732,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Tuition: $74,520 $74,520 / Required Fees: $212 $212",
+    "where": "G1 p.22: tuition 74520 + required fees 212 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 22180,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Food and housing (on-campus): $22,180 $23,004",
+    "where": "G1 p.22 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: 48 $75,050",
+    "where": "H6 p.27",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 48,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid ... 48",
+    "where": "H6 p.27",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 75050,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: 48 $75,050",
+    "where": "H6 p.27",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.135,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Total first-time, first-year (degree-seeking) who applied 243 22653 3926 26822 / who were admitted 48 3244 326 3618",
+    "where": "C1 p.9: admitted 3618 / applied 26822",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1405,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "SAT Composite 1405 1480 1530",
+    "where": "C9 p.12 (25th/50th/75th)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1530,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "SAT Composite 1405 1480 1530",
+    "where": "C9 p.12 (25th/50th/75th)",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "ACT Composite 32 34 35",
+    "where": "C9 p.12",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "ACT Composite 32 34 35",
+    "where": "C9 p.12",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://georgetown.box.com/s/0r8akn4cbm52zjkll6i7uttlb9k36px2",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header",
+    "source_type": "official_cds"
+   }
+  },
+  "notes": [
+   "aid.merit_n/merit_avg: CDS 2025-26 H2A line n and o are blank (no figure printed), left null"
+  ]
+ },
+ "160755": {
+  "name": "Tulane University of Louisiana",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header (2025-26 CDS link on oair.tulane.edu/common-data-set)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 71998,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "Tuition: $67,592 $67,592 / Required Fees: $4,406 $4,406",
+    "where": "G1 p.21: tuition 67592 + required fees 4406",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 19630,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "Food and housing (on-campus): $19,630 $19,630",
+    "where": "G1 p.21",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 518,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "scholarship and grant aid awarded to students in line n 518 1886 0",
+    "where": "H2A line n p.25 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 19636,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "$ 19,636 $ 17,104 $ 0",
+    "where": "H2A line o p.25 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "X X Institutional need-based scholarship or grant aid is available / Institutional non-need-based scholarship or grant aid is available",
+    "where": "H6 p.26-27",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 74,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "nonresidents: Total dollar amount ... 74 $49,005 $4,802,516",
+    "where": "H6 p.27",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 49005,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "nonresidents: Total dollar amount ... 74 $49,005 $4,802,516",
+    "where": "H6 p.27",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.145,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "2,676 25,512 4,754 0 32,942 / 595 3,593 575 0 4,763",
+    "where": "C1 p.8 residency totals: admitted 4763 / applied 32942",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1430,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "SAT Composite 1430 1460 1500",
+    "where": "C9 p.11",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1500,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "SAT Composite 1430 1460 1500",
+    "where": "C9 p.11",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "ACT Composite 32 33 34",
+    "where": "C9 p.11",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 34,
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "ACT Composite 32 33 34",
+    "where": "C9 p.11",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://tulane.box.com/s/1dgaxpa2x2ie24zgglrg0puwm1h7xrt5",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "167835": {
+  "name": "Smith College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "Number of degrees awarded by your institution from July 1, 2024, to June 30, 2025.",
+    "where": "file SmithCollege_CDS_2025-2026.pdf in Smith IR shared Drive folder (linked from smith.edu data-about-smith); page header still reads 2024-2025 but B/C/H items cover Fall 2025 and the year to June 30 2025",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 70768,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "Tuition: $70,460 $70,460 / Required Fees: $308 $308",
+    "where": "G1 p.20: tuition 70460 + required fees 308",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 24520,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "Food and housing (on-campus): $24,520 $24,520",
+    "where": "G1 p.20",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 31,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "N Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship or grant aid ... 31 151 0",
+    "where": "H2A line n p.24 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 28090,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "scholarship and grant aid awarded to students in line n $ 28,090 $ 25,510 $ 0",
+    "where": "H2A line o p.24 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "x x ... Institutional need-based scholarship or grant aid is available",
+    "where": "H6 p.25-26",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 155,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "Total dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: 155 $89,103 $13,810,949",
+    "where": "H6 p.26",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 89103,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "Total dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: 155 $89,103 $13,810,949",
+    "where": "H6 p.26",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.224,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "8102 First-Time, First-Year Student Admits Total 1816",
+    "where": "C1 p.7: admitted 1816 / applied 8102 (residency rows 716+4399+2987)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1420,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "SAT Composite 1420 1470 1520",
+    "where": "C9 p.10",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1520,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "SAT Composite 1420 1470 1520",
+    "where": "C9 p.10",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "ACT Composite 32 33 34",
+    "where": "C9 p.10",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 34,
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "ACT Composite 32 33 34",
+    "where": "C9 p.10",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://drive.google.com/file/d/1qDhlH43IbOCQzP6xtUHMzTmgEss1I-68/view",
+    "quote": "SmithCollege_CDS_2025-2026.pdf",
+    "where": "file name; see aid.cds_year note",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "168342": {
+  "name": "Williams College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "Common Data Set 2025-2026   Williams College",
+    "where": "p.1 header",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 76640,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "Tuition:   $76,300 | Required Fees:   $340",
+    "where": "G1 p.21: tuition 76300 + required fees 340",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 19320,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "Food and housing (on-campus):   $19,320",
+    "where": "G1 p.21",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 0,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship or grant aid ... 0 0 0",
+    "where": "H2A line n p.24 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "H6 X 123 $94,807 $11,661,308",
+    "where": "H6 p.25",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 123,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "H6 X 123 $94,807 $11,661,308",
+    "where": "H6 p.25",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 94807,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "H6 X 123 $94,807 $11,661,308",
+    "where": "H6 p.25",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.086,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "Total first-time, first-year (degree-seeking) who applied ... ALL 15520; who were admitted ... ALL 1336",
+    "where": "C1 p.11: admitted 1336 / applied 15520",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1490,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "SAT Composite   1490   1520   1550   1510",
+    "where": "C9 p.14 (25th/50th/75th/avg)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1550,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "SAT Composite   1490   1520   1550   1510",
+    "where": "C9 p.14 (25th/50th/75th/avg)",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 33,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "ACT Composite   33   34   35   34",
+    "where": "C9 p.14",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "ACT Composite   33   34   35   34",
+    "where": "C9 p.14",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://hub.williams.edu/institutional-research/files/2026/04/Williams-CDS-2025-2026-V2.pdf",
+    "quote": "Common Data Set 2025-2026   Williams College",
+    "where": "p.1 header",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "174066": {
+  "name": "University of Minnesota-Twin Cities",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 title (fillable PDF read in browser; file behind a Cloudflare check for curl)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 43198,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "TUIT_NRES_1ST_FT_D=40780; FEES_1ST_D=2418",
+    "where": "G1 p.26 form fields TUIT_NRES_1ST_FT_D 40780 + FEES_1ST_D 2418",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 15696,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "RM_BD_1ST_D=15696",
+    "where": "G1 p.26 form field",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 953,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "FRESH_FT_NN_NONEED_N=953",
+    "where": "H2A p.31 form field",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 6517,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "FRESH_FT_NN_NONEED_D=6517",
+    "where": "H2A p.31 form field",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "INTL_NB=X; INTL_NN=X; INTL_NO=Off",
+    "where": "H6 p.32 form fields",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 386,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "INTL_RECD_N=386",
+    "where": "H6 p.32 form field",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 3783,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "INTL_AVG_D=3783",
+    "where": "H6 p.32 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.789,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "AP_RECD_1ST_N=43929; AP_ADMT_1ST_N=34648",
+    "where": "C1 p.11 form fields: 34648 / 43929",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1310,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "SAT1_COMP_25TH_P=1310",
+    "where": "C9 p.16 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1460,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "SAT1_COMP_75TH_P=1460",
+    "where": "C9 p.16 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 26,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "ACT_COMP_25TH_P=26",
+    "where": "C9 p.16 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 32,
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "ACT_COMP_75TH_P=32",
+    "where": "C9 p.16 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://idr.umn.edu/sites/idr.umn.edu/files/cds_2025_2026_tc_0.pdf",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 title",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "186380": {
+  "name": "Rutgers University-New Brunswick",
+  "checked_at": "2026-11-18",
+  "fields": {},
+  "notes": [
+   "No 2025-26 CDS: oirap.rutgers.edu/ReportingCommonDataSet.html lists New Brunswick files only through 2023-2024 (checked 2026-11-18)"
+  ]
+ },
+ "189097": {
+  "name": "Barnard College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "Barnard_CDS_2025-2026.pdf",
+    "where": "file name and title (fillable PDF)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 75592,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "TUIT_OVERALL_1ST_FT_D=73120; FEES_1ST_D=2472",
+    "where": "G1 p.29 form fields TUIT_OVERALL_1ST_FT_D 73120 + FEES_1ST_D 2472",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 23258,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "RM_BD_1ST_D=23258",
+    "where": "G1 p.29 form field RM_BD_1ST_D",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 0,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "FRESH_FT_NN_NONEED_N=0",
+    "where": "H2A p.34 form field FRESH_FT_NN_NONEED_N",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "INTL_NB=X; INTL_RECD_N=31; INTL_AVG_D=80574",
+    "where": "H6 p.35 form fields",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 31,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "INTL_RECD_N=31",
+    "where": "H6 p.35 form field INTL_RECD_N",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 80574,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "INTL_AVG_D=80574",
+    "where": "H6 p.35 form field INTL_AVG_D",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.101,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "AP_RECD_1ST_WMN_N=10426; AP_ADMT_1ST_WMN_N=1048",
+    "where": "C1 p.13 form fields: admitted 1048 / applied 10426 (women; men and unknown 0)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1480,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "SAT1_COMP_25TH_P=1480",
+    "where": "C9 p.19 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1540,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "SAT1_COMP_75TH_P=1540",
+    "where": "C9 p.19 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "ACT_COMP_25TH_P=32",
+    "where": "C9 p.19 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "ACT_COMP_75TH_P=35",
+    "where": "C9 p.19 form field",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://barnard.edu/sites/default/files/2026-09/Barnard_CDS_2025-2026.pdf",
+    "quote": "Barnard_CDS_2025-2026.pdf",
+    "where": "file name",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "191515": {
+  "name": "Hamilton College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "Hamilton College ",
+    "where": "page banner (file linked from hamilton.edu/offices/oir/common-data-sets/cds-2025-26)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 75960,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "Tuition: $75,210 $75,210 / Required Fees: $750 $750",
+    "where": "G1 p.15: tuition 75210 + required fees 750",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 19290,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "Housing Only (on-campus): $10,540 $10,540 / Food Only (on-campus meal plan): $8,750 $8,750",
+    "where": "G1 p.15: no combined row; housing only 10540 + food only 8750",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 0,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "*As policy, Hamilton does not award non-need based aid.",
+    "where": "H2A p.18 (page image): rows marked * with the footnote that Hamilton awards no non-need aid",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "X Institutional need-based scholarship or grant aid is available ... 71",
+    "where": "H6 p.19 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 71,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 71",
+    "where": "H6 p.19 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 74400,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $74,400",
+    "where": "H6 p.19 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.136,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "Total first-time, first-year (degree-seeking) who applied 1611 3707 3586 8904 / who were admitted 334 780 96 1210",
+    "where": "C1 p.6 (page image) residency totals: 1210 / 8904",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1440,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "SAT Composite 1440 1480 1510",
+    "where": "C9 p.8 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1510,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "SAT Composite 1440 1480 1510",
+    "where": "C9 p.8 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 33,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "ACT Composite 33 34 35",
+    "where": "C9 p.8",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "ACT Composite 33 34 35",
+    "where": "C9 p.8",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://www.hamilton.edu/documents/CDS%202025-26%20Excel%20Final.pdf",
+    "quote": "Hamilton College ",
+    "where": "page banner",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "228778": {
+  "name": "The University of Texas at Austin",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Common Data Set 2025-2026",
+    "where": "page header (file UT_PUB_CDS_2025-2026_AY_public2.pdf, 2025-26 link on reports.utexas.edu/common-data-set/pdf)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 44816,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Tuition: Non-resident $44,816 $44,816",
+    "where": "G1 p.29 nonresident tuition, first-year column; Required Fees row left blank (fees folded into tuition per the 'Other' note)",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 15420,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Food and Housing (on-campus): $15,420 $15,420",
+    "where": "G1 p.29 first-year column",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 0,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship or grant aid ... 0 0 0",
+    "where": "H2A line n p.34 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Institutional need-based scholarship or grant aid is available / Institutional non-need-based scholarship or grant aid is available ... 832",
+    "where": "H6 p.35 (page image: both aid boxes checked)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 832,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 832",
+    "where": "H6 p.35 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 21343,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $21,343",
+    "where": "H6 p.35 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.222,
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Total first-time, first-year (degree-seeking) who applied 46,879 35,268 8,543 0 90,690 / who were admitted 16,828 2,653 673 0 20,154",
+    "where": "C1 p.14 residency totals: admitted 20154 / applied 90690",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://utexas.box.com/s/z5p8zzbr6yk4eluam3v3dt2wyaha3cja",
+    "quote": "Common Data Set 2025-2026",
+    "where": "page header",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "230959": {
+  "name": "Middlebury College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Provide the number of degree-seeking, first-time, first-year students who applied, admitted, and enrolled (full- or part-time) in Fall 2025.",
+    "where": "file 'Fall 2025 CDS FINAL.pdf'; page header still reads 2024-2025 but C1/C9 cover Fall 2025 and H4 the class finishing June 30 2025",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 70640,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Tuition: $70,120 / Required Fees: $520",
+    "where": "G1 p.20: tuition 70120 + required fees 520",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 20116,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Food and housing (on-campus): $20,116",
+    "where": "G1 p.20",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 3,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship or grant aid ... 3 8 0",
+    "where": "H2A line N p.24 (page image, first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 2700,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Average dollar amount of institutional non-need-based scholarship and grant aid awarded to students in line n $ 2,700 $ 3,850 $ 0",
+    "where": "H2A line O p.24 (page image, first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 198",
+    "where": "H6 p.26 (page image; policy boxes left unticked but counts reported)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 198,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 198",
+    "where": "H6 p.26 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 83697,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $83,697",
+    "where": "H6 p.26 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.128,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Total Admit Rate (Sept Only) = 12.8%",
+    "where": "C1 p.8: the CDS's own rate, September entrants only (1509 admitted / 11831 applied)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1460,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "SAT Composite 1460 1500 1530",
+    "where": "C9 p.10 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1530,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "SAT Composite 1460 1500 1530",
+    "where": "C9 p.10 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 33,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "ACT Composite 33 34 35",
+    "where": "C9 p.10",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "ACT Composite 33 34 35",
+    "where": "C9 p.10",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://www.middlebury.edu/sites/default/files/2026-06/Fall%202025%20CDS%20FINAL.pdf",
+    "quote": "Fall 2025 CDS FINAL.pdf",
+    "where": "see aid.cds_year",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "234076": {
+  "name": "University of Virginia-Main Campus",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "2025-2026 Common Data Set",
+    "where": "page title (sections are Qlik embeds from https://qlksnpn-apprd01.eservices.virginia.edu/extensions/CDS_Section*/)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 62980,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "Tuition: Nonresident $59,035 $61,273 ¦ Required Fees $3,945 $3,950",
+    "where": "G1 embed https://qlksnpn-apprd01.eservices.virginia.edu/extensions/CDS_SectionG/CDS_SectionG.html: nonresident tuition 59035 + required fees 3945 (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 16070,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "Food and housing (on-campus) $16,070 $17,234",
+    "where": "G1 embed CDS_SectionG (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 88,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "athletic awards and tuition benefits) ¦ 88 ¦ 1378 ¦ 175",
+    "where": "H2A line N, embed https://qlksnpn-apprd01.eservices.virginia.edu/extensions/CDS_SectionH/CDS_SectionH.html (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 7270,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "O. Average dollar amount of institutional non-need-based scholarship and grant aid ¦ awarded to students in line n ¦ $7,270",
+    "where": "H2A line O, embed CDS_SectionH (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "X Institutional need-based scholarship or grant aid is available ¦ X Institutional non-need-based scholarship or grant aid is available",
+    "where": "H6, embed CDS_SectionH",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 99,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: ¦ 99",
+    "where": "H6, embed CDS_SectionH",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 28419,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: ¦ $28,419",
+    "where": "H6, embed CDS_SectionH",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.156,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "Total Applicants ¦ 29,657 ¦ 34,776 ¦ 24 ¦ 64,457 ¦ Offered Admission ¦ 4,564 ¦ 5,520 ¦ 2 ¦ 10,086",
+    "where": "C1 embed https://qlksnpn-apprd01.eservices.virginia.edu/extensions/CDS_SectionC/CDS_SectionC.html: 10086 / 64457",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1410,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "SAT Composite 1410 1470 1510",
+    "where": "C9 embed CDS_SectionC (25th/50th/75th)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1510,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "SAT Composite 1410 1470 1510",
+    "where": "C9 embed CDS_SectionC",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "ACT Composite 32 33 34.25",
+    "where": "C9 embed CDS_SectionC (75th reported as 34.25, not an integer score, left null)",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://ira.virginia.edu/common-data-set/common-data-set-2025-2026",
+    "quote": "2025-2026 Common Data Set",
+    "where": "page title",
+    "source_type": "official_cds"
+   }
+  },
+  "notes": [
+   "admissions.act75: CDS shows 34.25 (not a whole ACT score), left null"
+  ]
+ },
+ "240444": {
+  "name": "University of Wisconsin-Madison",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "UW-Madison 2025-2026 CDS (Excel)",
+    "where": "xlsx 'UW-Madison 2025-2026 CDS (Excel)' linked from data.wisc.edu",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 46932,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "G.106 Tuition: Nonresident 45232.08 / G.111 Required Fees: 1699.48",
+    "where": "CDS-G G.106 nonresident tuition 45232.08 + G.111 required fees 1699.48",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 14994,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "G.112 Food and housing (on-campus): 14994",
+    "where": "CDS-G G.112",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 650,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "H.2A01 N. Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship 650",
+    "where": "CDS-H H.2A01",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 7397,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "H.2A02 O. Average dollar amount of institutional non-need-based scholarship and grant aid awarded to students in line n 7397",
+    "where": "CDS-H H.2A02",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": false,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "H.603 Institutional scholarship or grant aid is not available X",
+    "where": "CDS-H H.603",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.408,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "C.116 Total first-time, first-year students who applied 73912 / C.117 ... who were admitted 30167",
+    "where": "CDS-C C.116/C.117: 30167 / 73912",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1400,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "C.905 SAT Composite: 25th Percentile 1400",
+    "where": "CDS-C C.905",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1490,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "C.907 SAT Composite: 75th Percentile 1490",
+    "where": "CDS-C C.907",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 29,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "C.914 ACT Composite: 25th Percentile 29",
+    "where": "CDS-C C.914",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 33,
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "C.916 ACT Composite: 75th Percentile 33",
+    "where": "CDS-C C.916",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://uwmadison.box.com/s/ilx9kil11ninf8vwj1z87vumhuvpw4px",
+    "quote": "UW-Madison 2025-2026 CDS (Excel)",
+    "where": "xlsx link text",
+    "source_type": "official_cds"
+   }
+  }
+ }
+}

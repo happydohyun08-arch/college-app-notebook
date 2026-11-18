@@ -1056,3 +1056,42 @@ for (const id of ["ko-4", "en-4"]) assert.ok(fs.readFileSync(new URL("./privacy.
   }
   console.log(`school requirements check passed (${aidIds.length} schools, ${n} requirement values)`);
 }
+
+// 빈칸 채우기(2026-11-18): research/gap-fill 값은 원래 상세 학교 101곳의 빈칸(null)만 채우고, 모두 gap-fill-evidence 근거(공식 URL·원문 인용·위치)와 같아야 한다. schools.json은 건드리지 않는다.
+{
+  const gap = JSON.parse(fs.readFileSync(new URL("./research/gap-fill-2026-11-18.json", import.meta.url), "utf8"));
+  const gev = JSON.parse(fs.readFileSync(new URL("./research/gap-fill-evidence-2026-11-18.json", import.meta.url), "utf8"));
+  const AID = { cds_year: "s", tuition_fees: [5000, 100000], room_board: [3000, 40000], merit_n: [0, 20000], merit_avg: [0, 100000], intl_aid: "b", intl_n: [0, 5000], intl_avg: [0, 100000], intl_policy: ["need_blind", "need_aware"], intl_full_need: "b", merit_named: "a", aid_url: "u" };
+  const RNO = ["required", "optional", "none"];
+  const REQ = { teacher_recs: [0, 10], teacher_recs_max: [0, 10], counselor_rec: RNO, tests: ["required", "optional", "blind"], english: RNO, interview: ["required", "optional", "not_offered"], css_profile: RNO, portfolio: RNO, midyear: RNO, supplements: [0, 10], source_url: "u" };
+  const ADM = { admit_rate: [0.01, 1], sat25: [400, 1600], sat75: [400, 1600], act25: [1, 36], act75: [1, 36], cds_year: "s" };
+  const SPEC = { aid: AID, reqs: REQ, admissions: ADM };
+  const ok = (rule, v) => rule === "s" ? /^CDS 20\d\d-\d\d$/.test(v) : rule === "b" ? typeof v === "boolean" : rule === "u" ? /^https:\/\//.test(v)
+    : rule === "a" ? Array.isArray(v) && v.length && v.every((m) => m.name && m.note) : typeof rule[0] === "number" ? typeof v === "number" && v >= rule[0] && v <= rule[1] && (rule[1] === 1 || Number.isInteger(v)) : rule.includes(v);
+  let n = 0;
+  for (const [id, blocks] of Object.entries(gap)) {
+    const s = schools.find((x) => x.id === id), e = gev[id];
+    assert.ok(s && (s.aid || s.reqs) && e && e.name === s.name, `${id}: detailed school with evidence`);
+    for (const [sec, vals] of Object.entries(blocks)) {
+      assert.ok(SPEC[sec], `${s.name}: section ${sec}`);
+      for (const [k, v] of Object.entries(vals)) {
+        assert.ok(k in SPEC[sec] && ok(SPEC[sec][k], v), `${s.name}: ${sec}.${k} = ${JSON.stringify(v)}`);
+        if (sec !== "admissions") assert.ok(s[sec] && (s[sec][k] == null || JSON.stringify(s[sec][k]) === JSON.stringify(v)), `${s.name}: ${sec}.${k} fills a gap`);
+        const q = e.fields[`${sec}.${k}`];
+        assert.ok(q && JSON.stringify(q.value) === JSON.stringify(v) && /^https:\/\//.test(q.url) && q.quote.length > 10 && q.where, `${s.name}: ${sec}.${k} evidence`);
+        assert.ok(["official_cds", "official_aid_page", "official_admissions_page"].includes(q.source_type), `${s.name}: ${sec}.${k} source type`);
+        n++;
+      }
+    }
+    const a = blocks.admissions;
+    if (a && a.sat25 != null && a.sat75 != null) assert.ok(a.sat25 <= a.sat75, `${s.name}: sat order`);
+    if (a && a.act25 != null && a.act75 != null) assert.ok(a.act25 <= a.act75, `${s.name}: act order`);
+    const r = { ...(s.reqs || {}), ...(blocks.reqs || {}) };
+    if (r.teacher_recs != null && r.teacher_recs_max != null) assert.ok(r.teacher_recs_max >= r.teacher_recs, `${s.name}: max >= required`);
+  }
+  for (const [id, e] of Object.entries(gev)) {
+    assert.ok(schools.some((x) => x.id === id), `${id}: evidence id exists`);
+    for (const key of Object.keys(e.fields)) { const [sec, k] = key.split("."); assert.ok(gap[id] && gap[id][sec] && k in gap[id][sec], `${e.name}: no stray evidence ${key}`); }
+  }
+  console.log(`gap-fill check passed (${Object.keys(gap).length} schools, ${n} values)`);
+}
