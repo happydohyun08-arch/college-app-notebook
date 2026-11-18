@@ -110,6 +110,7 @@ const isInt = (v) => Number.isInteger(v) && v >= 0;
 function recNeed(r, n, fb) {
   if (!isInt(r.teacher_recs)) return fb;
   if (r.teacher_recs >= n) return "required";
+  if (r.teacher_recs === 0 && !isInt(r.teacher_recs_max)) return n === 1 ? "optional" : null; // 필수 0개(요건표 빈칸)면 1장은 선택으로 남긴다
   return (isInt(r.teacher_recs_max) ? r.teacher_recs_max : r.teacher_recs) >= n ? "optional" : null;
 }
 /**

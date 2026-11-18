@@ -1,0 +1,4419 @@
+[
+  {
+    "id": "110714",
+    "name": "University of California-Santa Cruz",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://mediafiles.ucsc.edu/iraps/common-data-set/common-data-set-2025-26-revised.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/110714.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 53472,
+          "where": "G1 p.28",
+          "quote": "Tuition: Non-resident\n$53,472"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.34",
+          "quote": "awarded need-based or non-need-based aid:\n231"
+        },
+        "intl_n": {
+          "value": 231,
+          "where": "H6 p.34",
+          "quote": "awarded need-based or non-need-based aid:\n231"
+        },
+        "intl_avg": {
+          "value": 11055,
+          "where": "H6 p.34",
+          "quote": "Average dollar amount of institutional financial aid awarded to\nundergraduate degree-seeking nonresidents:\n$11,055"
+        },
+        "applied": {
+          "value": 66374,
+          "where": "C1 p.12",
+          "quote": "Total first-time, first-year men who applied\n28,428\nTotal first-time, first-year women who applied\n34,971\nTotal first-time, first-year unknown sex who applied\n2,975"
+        },
+        "admitted": {
+          "value": 48274,
+          "where": "C1 p.12",
+          "quote": "Total first-time, first-year men who were admitted\n19,978\nTotal first-time, first-year women who were admitted\n25,969\nTotal first-time, first-year unknown sex who were admitted\n2,327"
+        },
+        "admit_rate": {
+          "value": 0.727,
+          "where": "C1 p.12 and C1 p.12",
+          "quote": "Total first-time, first-year men who applied\n28,428\nTotal first-time, first-year women who applied\n34,971\nTotal first-time, first-year unknown sex who applied\n2,975\nTotal first-time, first-year men who were admitted\n19,978\nTotal first-time, first-year women who were admitted\n25,969\nTotal first-time, first-year unknown sex who were admitted\n2,327"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "blind",
+        "url": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/filling-out-the-application.html",
+        "quote": "ACT & SAT: UC will not consider SAT or ACT test scores when making admissions decisions or awarding scholarships.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://admission.universityofcalifornia.edu/admission-requirements/international-applicants/english-language-proficiency-toefl-ielts.html",
+        "quote": "Whether you’re applying as a first-year or transfer student, you must demonstrate proficiency in English to be considered for admission to any of our campuses.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://admission.universityofcalifornia.edu/apply-now.html",
+        "quote": "UC does not require (nor read) letters of recommendation at the time of application.",
+        "source_type": "official_admissions_page"
+      },
+      "supplements": {
+        "value": 4,
+        "url": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-freshman/personal-insight-questions.html",
+        "quote": "You will have 8 questions to choose from. You must respond to only 4 of the 8 questions.",
+        "source_type": "official_admissions_page"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, room_board, merit_n, merit_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, interview, css_profile, portfolio, midyear. Admissions fields not available from verified CDS evidence: sat25, sat75, act25, act75.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.625,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=110714"
+    }
+  },
+  {
+    "id": "110671",
+    "name": "University of California-Riverside",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://ir.ucr.edu/sites/default/files/2026-05/cds-2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/110671.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": 176,
+          "where": "H2A p.30",
+          "quote": "Number of students in line A who had no financial need and who\nwere awarded institutional non-need-based scholarship or grant\naid (exclude those who were awarded athletic awards and tuition\nbenefits)\n176 986 88"
+        },
+        "merit_avg": {
+          "value": 12152,
+          "where": "H2A p.30",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line N $12,152 $7,204 $5,252"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 61184,
+          "where": "C1 p.9",
+          "quote": "Total first-time, first-year who applied\n51,828 3,137 6,219 61,184"
+        },
+        "admitted": {
+          "value": 52676,
+          "where": "C1 p.9",
+          "quote": "Total first-time, first-year who were admitted\n44,686 2,810 5,180 52,676"
+        },
+        "admit_rate": {
+          "value": 0.861,
+          "where": "C1 p.9 and C1 p.9",
+          "quote": "Total first-time, first-year who applied\n51,828 3,137 6,219 61,184\nTotal first-time, first-year who were admitted\n44,686 2,810 5,180 52,676"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "blind",
+        "url": "https://admissions.ucr.edu/international",
+        "quote": "UC Riverside will not consider SAT or ACT test scores when making admissions decisions or awarding scholarships.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://admission.universityofcalifornia.edu/admission-requirements/international-applicants/english-language-proficiency-toefl-ielts.html",
+        "quote": "Whether you’re applying as a first-year or transfer student, you must demonstrate proficiency in English to be considered for admission to any of our campuses.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://admission.universityofcalifornia.edu/apply-now.html",
+        "quote": "UC does not require (nor read) letters of recommendation at the time of application.",
+        "source_type": "official_admissions_page"
+      },
+      "supplements": {
+        "value": 4,
+        "url": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-freshman/personal-insight-questions.html",
+        "quote": "You will have 8 questions to choose from. You must respond to only 4 of the 8 questions.",
+        "source_type": "official_admissions_page"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, room_board, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, interview, css_profile, portfolio, midyear. Admissions fields not available from verified CDS evidence: sat25, sat75, act25, act75.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.633,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=110671"
+    }
+  },
+  {
+    "id": "137351",
+    "name": "University of South Florida",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.usf.edu/ods/documents/cds/usf-cds-2025-2026-final-v2.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/137351.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": 1851,
+          "where": "G1 p.29",
+          "quote": "1851"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": 14824,
+          "where": "G1 p.29",
+          "quote": "14824"
+        },
+        "merit_n": {
+          "value": 1070,
+          "where": "H2A p.34",
+          "quote": "1070"
+        },
+        "merit_avg": {
+          "value": 3422,
+          "where": "H2A p.34",
+          "quote": "3422"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "X"
+        },
+        "intl_n": {
+          "value": 1187,
+          "where": "H6 p.35",
+          "quote": "1187"
+        },
+        "intl_avg": {
+          "value": 10001,
+          "where": "H6 p.35",
+          "quote": "10001"
+        },
+        "applied": {
+          "value": 71722,
+          "where": "C1 p.14",
+          "quote": "71722"
+        },
+        "admitted": {
+          "value": 29196,
+          "where": "C1 p.14",
+          "quote": "29196"
+        },
+        "admit_rate": {
+          "value": 0.407,
+          "where": "C1 p.14 and C1 p.14",
+          "quote": "71722\n29196"
+        },
+        "sat25": {
+          "value": 1160,
+          "where": "C9 p.19",
+          "quote": "1160"
+        },
+        "sat75": {
+          "value": 1340,
+          "where": "C9 p.19",
+          "quote": "1340"
+        },
+        "act25": {
+          "value": 25,
+          "where": "C9 p.19",
+          "quote": "25"
+        },
+        "act75": {
+          "value": 29,
+          "where": "C9 p.19",
+          "quote": "29"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of South Florida [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.48; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of South Florida [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.48; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.41,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=137351",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of Sout h Fl or i da 6, 985",
+      "international_students": 6985,
+      "where": "p.10, leading institutions"
+    }
+  },
+  {
+    "id": "196413",
+    "name": "Syracuse University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Syracuse University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Syracuse University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Syracuse University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Syracuse University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.417,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=196413"
+    }
+  },
+  {
+    "id": "191241",
+    "name": "Fordham University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.fordham.edu/undergraduate-admission/apply/what-were-looking-for/testing-policy/",
+        "quote": "The Office of Undergraduate Admission does not require scores from the SAT or ACT.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Fordham University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Fordham University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Fordham University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Fordham University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.563,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=191241"
+    }
+  },
+  {
+    "id": "131469",
+    "name": "George Washington University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://irp.gwu.edu/sites/g/files/zaxdzs6056/files/2026-04/CDS-PDF-2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/131469.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 72000,
+          "where": "G1 p.29",
+          "quote": "72000"
+        },
+        "required_fees": {
+          "value": 770,
+          "where": "G1 p.29",
+          "quote": "770"
+        },
+        "tuition_fees": {
+          "value": 72770,
+          "where": "G1 p.29 + G1 p.29",
+          "quote": "72000\n770"
+        },
+        "room_board": {
+          "value": 18160,
+          "where": "G1 p.29",
+          "quote": "18160"
+        },
+        "merit_n": {
+          "value": 722,
+          "where": "H2A p.34",
+          "quote": "722"
+        },
+        "merit_avg": {
+          "value": 22037,
+          "where": "H2A p.34",
+          "quote": "22036.67"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "X"
+        },
+        "intl_n": {
+          "value": 157,
+          "where": "H6 p.35",
+          "quote": "157"
+        },
+        "intl_avg": {
+          "value": 39344,
+          "where": "H6 p.35",
+          "quote": "39343.97"
+        },
+        "applied": {
+          "value": 27034,
+          "where": "C1 p.14",
+          "quote": "27034"
+        },
+        "admitted": {
+          "value": 12741,
+          "where": "C1 p.14",
+          "quote": "12741"
+        },
+        "admit_rate": {
+          "value": 0.471,
+          "where": "C1 p.14 and C1 p.14",
+          "quote": "27034\n12741"
+        },
+        "sat25": {
+          "value": 1310,
+          "where": "C9 p.19",
+          "quote": "1310"
+        },
+        "sat75": {
+          "value": 1450,
+          "where": "C9 p.19",
+          "quote": "1450"
+        },
+        "act25": {
+          "value": 31,
+          "where": "C9 p.19",
+          "quote": "31"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.19",
+          "quote": "34"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://undergraduate.admissions.gwu.edu/apply/test-optional",
+        "quote": "SAT/ACT scores are an optional credential. You can decide if you want to submit your scores to GW as part of your application.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The George Washington University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.40; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The George Washington University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.40; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The George Washington University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.40; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The George Washington University [english: D or I or T or P]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.40; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The George Washington University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.40; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, interview, css_profile, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.435,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=131469",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Geor ge Was hi ngt on Uni v er si t y 4, 459",
+      "international_students": 4459,
+      "where": "p.9, leading institutions"
+    }
+  },
+  {
+    "id": "131159",
+    "name": "American University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.american.edu/provost/oira/upload/cds-pdf-2025-2026_pdf_american-university_web_final_04-23-26.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/131159.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 62680,
+          "where": "G1 p.26",
+          "quote": "62680"
+        },
+        "required_fees": {
+          "value": 1972,
+          "where": "G1 p.26",
+          "quote": "1972"
+        },
+        "tuition_fees": {
+          "value": 64652,
+          "where": "G1 p.26 + G1 p.26",
+          "quote": "62680\n1972"
+        },
+        "room_board": {
+          "value": 19696,
+          "where": "G1 p.26",
+          "quote": "13112\n6584"
+        },
+        "merit_n": {
+          "value": 363,
+          "where": "H2A p.31",
+          "quote": "363"
+        },
+        "merit_avg": {
+          "value": 17232,
+          "where": "H2A p.31",
+          "quote": "17232"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.31",
+          "quote": "X"
+        },
+        "intl_n": {
+          "value": 56,
+          "where": "H6 p.31",
+          "quote": "56"
+        },
+        "intl_avg": {
+          "value": 35353,
+          "where": "H6 p.31",
+          "quote": "35353"
+        },
+        "applied": {
+          "value": 20960,
+          "where": "C1 p.12",
+          "quote": "20960"
+        },
+        "admitted": {
+          "value": 13741,
+          "where": "C1 p.12",
+          "quote": "13741"
+        },
+        "admit_rate": {
+          "value": 0.656,
+          "where": "C1 p.12 and C1 p.12",
+          "quote": "20960\n13741"
+        },
+        "sat25": {
+          "value": 1320,
+          "where": "C9 p.17",
+          "quote": "1320"
+        },
+        "sat75": {
+          "value": 1440,
+          "where": "C9 p.17",
+          "quote": "1440"
+        },
+        "act25": {
+          "value": 30,
+          "where": "C9 p.17",
+          "quote": "30"
+        },
+        "act75": {
+          "value": 33,
+          "where": "C9 p.17",
+          "quote": "33"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "American University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.2; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "American University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.2; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, portfolio, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.474,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=131159"
+    }
+  },
+  {
+    "id": "215293",
+    "name": "University of Pittsburgh-Pittsburgh Campus",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.ir.pitt.edu/sites/default/files/2026-09/2025-2026%20Pittsburgh%20Common%20Data%20Set.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/215293.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 43328,
+          "where": "G1 p.31",
+          "quote": "Tuition: Out-of-state: $43,328 $43,328"
+        },
+        "required_fees": {
+          "value": 2152,
+          "where": "G1 p.32",
+          "quote": "Required Fees: $2,152 $2,152"
+        },
+        "tuition_fees": {
+          "value": 45480,
+          "where": "G1 p.31 + G1 p.32",
+          "quote": "Tuition: Out-of-state: $43,328 $43,328\nRequired Fees: $2,152 $2,152"
+        },
+        "room_board": {
+          "value": 15430,
+          "where": "G1 p.32",
+          "quote": "Food and Housing (on-campus): $15,430 $15,430"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.40",
+          "quote": "☒ Institutional need-based scholarship or grant aid is available"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": null,
+          "where": "C1"
+        },
+        "admitted": {
+          "value": null,
+          "where": "C1"
+        },
+        "admit_rate": {
+          "value": null,
+          "where": "C1"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": 29,
+          "where": "C9 p.19",
+          "quote": "ACT Composite 29 32 33"
+        },
+        "act75": {
+          "value": 33,
+          "where": "C9 p.19",
+          "quote": "ACT Composite 29 32 33"
+        }
+      },
+      "year_quote": "and Instructions for the 2025-2026 Survey. https://nces.ed.gov/ipeds/use-the-"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Pittsburgh [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.47; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Pittsburgh [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.47; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: merit_n, merit_avg, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.497,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=215293"
+    }
+  },
+  {
+    "id": "151351",
+    "name": "Indiana University-Bloomington",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "english": {
+        "value": "required",
+        "url": "https://bloomington.iu.edu/admissions/apply/international/freshman/",
+        "quote": "IU Bloomington requires all international undergraduate applicants to demonstrate English proficiency.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Indiana University Bloomington - Flagship Campus [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.18; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Indiana University Bloomington - Flagship Campus [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.18; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.804,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=151351",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "I ndi ana Uni v er si t y - Bl oomi ngt on 6, 285",
+      "international_students": 6285,
+      "where": "p.15, leading institutions"
+    }
+  },
+  {
+    "id": "171100",
+    "name": "Michigan State University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://edge.sitecorecloud.io/michiganstab57e-msustrategi129d-prod9868-7e5e/media/project/msu/ir/docs/cds/cds-2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/171100.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 44300,
+          "where": "G1 p.29",
+          "quote": "Tuition: Non-resident $44300.00 $45636.00"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": 12928,
+          "where": "G1 p.29",
+          "quote": "Food and Housing (on-campus): $12928.00 $12928.00"
+        },
+        "merit_n": {
+          "value": 764,
+          "where": "H2A p.34",
+          "quote": "764"
+        },
+        "merit_avg": {
+          "value": 11014,
+          "where": "H2A p.34",
+          "quote": "11014"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "X"
+        },
+        "intl_n": {
+          "value": 1054,
+          "where": "H6 p.35",
+          "quote": "1054"
+        },
+        "intl_avg": {
+          "value": 18450,
+          "where": "H6 p.35",
+          "quote": "18450"
+        },
+        "applied": {
+          "value": 62965,
+          "where": "C1 p.14",
+          "quote": "62965"
+        },
+        "admitted": {
+          "value": 52411,
+          "where": "C1 p.14",
+          "quote": "52411"
+        },
+        "admit_rate": {
+          "value": 0.832,
+          "where": "C1 p.14 and C1 p.14",
+          "quote": "62965\n52411"
+        },
+        "sat25": {
+          "value": 1100,
+          "where": "C9 p.19",
+          "quote": "1100"
+        },
+        "sat75": {
+          "value": 1310,
+          "where": "C9 p.19",
+          "quote": "1310"
+        },
+        "act25": {
+          "value": 25,
+          "where": "C9 p.19",
+          "quote": "25"
+        },
+        "act75": {
+          "value": 31,
+          "where": "C9 p.19",
+          "quote": "31"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Michigan State University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.24; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Michigan State University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.24; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.839,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=171100",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Mi chi gan St at e Uni v er s i t y 5, 019",
+      "international_students": 5019,
+      "where": "p.23, leading institutions"
+    }
+  },
+  {
+    "id": "104151",
+    "name": "Arizona State University Campus Immersion",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://uoia.asu.edu/sites/g/files/litvpz1436/files/2026-06/CDS%202025-26%20-%20ASU%20Campus%20Immersion.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/104151.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 39412,
+          "where": "G1 p.21",
+          "quote": "Tuition: Non-resident: $39,412 $39,412"
+        },
+        "required_fees": {
+          "value": 1007,
+          "where": "G1 p.21",
+          "quote": "Required Fees: $1,007 $1,007"
+        },
+        "tuition_fees": {
+          "value": 40419,
+          "where": "G1 p.21 + G1 p.21",
+          "quote": "Tuition: Non-resident: $39,412 $39,412\nRequired Fees: $1,007 $1,007"
+        },
+        "room_board": {
+          "value": 18819,
+          "where": "G1 p.21",
+          "quote": "Food and housing (on-campus): $18,819 $18,819"
+        },
+        "merit_n": {
+          "value": 5284,
+          "where": "H2A p.26",
+          "quote": "N Number of students in line a who had no financial need\nand who were awarded institutional non-need-based\nscholarship or grant aid (exclude those who were\nawarded athletic awards and tuition benefits)\n5,284 20,663 207"
+        },
+        "merit_avg": {
+          "value": 10188,
+          "where": "H2A p.26",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $10,188 $9,393 $8,284"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.27",
+          "quote": "3,344\n$12,660\n$42,336,655"
+        },
+        "intl_n": {
+          "value": 3344,
+          "where": "H6 p.27",
+          "quote": "3,344\n$12,660\n$42,336,655"
+        },
+        "intl_avg": {
+          "value": 12660,
+          "where": "H6 p.27",
+          "quote": "3,344\n$12,660\n$42,336,655"
+        },
+        "applied": {
+          "value": 69617,
+          "where": "C1 p.8",
+          "quote": "20,323 40,388 8,906 18,291 35,233 8,009 9,239 3,634 792 69,617"
+        },
+        "admitted": {
+          "value": 61533,
+          "where": "C1 p.8",
+          "quote": "61,533"
+        },
+        "admit_rate": {
+          "value": 0.884,
+          "where": "C1 p.8 and C1 p.8",
+          "quote": "20,323 40,388 8,906 18,291 35,233 8,009 9,239 3,634 792 69,617\n61,533"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": {
+      "url": "https://tuition.asu.edu/new-american-university/international",
+      "source_type": "official_aid_page",
+      "quote": "New American University Scholarships recognize outstanding academic achievement and help make an ASU education more affordable.",
+      "intl_policy": null,
+      "intl_full_need": null,
+      "merit_named": [
+        {
+          "name": "New American University Scholarship",
+          "note": "Automatically considered for eligible international first-year students."
+        }
+      ]
+    },
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://admission.asu.edu/apply/international/first-year",
+        "quote": "ACT or SAT scores are not required for admission, but may be submitted for ASU course placement or as supplemental information.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://admission.asu.edu/apply/international/first-year",
+        "quote": "ASU requires proof of English proficiency from all international student applicants, or applicants whose native language is not English.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Arizona State University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.2; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Arizona State University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.2; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_policy, intl_full_need. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: sat25, sat75, act25, act75.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.902,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=104151",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OD26_Fast-Facts.pdf",
+      "quote": "Arizona State University - Campus Immersion | Tempe | AZ | 20,926",
+      "international_students": 20926
+    }
+  },
+  {
+    "id": "104179",
+    "name": "University of Arizona",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "english": {
+        "value": "required",
+        "url": "https://www.arizona.edu/admissions/undergraduate/international",
+        "quote": "All applicants to the University of Arizona whose primary language is not English, or who attended school in a non-English speaking country – regardless of citizenship – must prove English Proficiency.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The University of Arizona [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.41; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The University of Arizona [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.41; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.857,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=104179",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of Ar i zona 4, 249",
+      "international_students": 4249,
+      "where": "p.3, leading institutions"
+    }
+  },
+  {
+    "id": "153658",
+    "name": "University of Iowa",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://provost.uiowa.edu/sites/provost.uiowa.edu/files/2026-04/CDS_2526.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/153658.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.33",
+          "quote": "awarded need-based or non-need-based aid:\n161"
+        },
+        "intl_n": {
+          "value": 161,
+          "where": "H6 p.33",
+          "quote": "awarded need-based or non-need-based aid:\n161"
+        },
+        "intl_avg": {
+          "value": 23085,
+          "where": "H6 p.33",
+          "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $23,085"
+        },
+        "applied": {
+          "value": 31454,
+          "where": "C1 p.13",
+          "quote": "Total first-time, first-year (degree-seeking) who applied 5,892 24,060 1,502 0 31,454"
+        },
+        "admitted": {
+          "value": 25131,
+          "where": "C1 p.13",
+          "quote": "4,984 19,510 637 0 25,131"
+        },
+        "admit_rate": {
+          "value": 0.799,
+          "where": "C1 p.13 and C1 p.13",
+          "quote": "Total first-time, first-year (degree-seeking) who applied 5,892 24,060 1,502 0 31,454\n4,984 19,510 637 0 25,131"
+        },
+        "sat25": {
+          "value": 1130,
+          "where": "C9 p.16",
+          "quote": "SAT Composite 1,130 1,230 1,320"
+        },
+        "sat75": {
+          "value": 1320,
+          "where": "C9 p.16",
+          "quote": "SAT Composite 1,130 1,230 1,320"
+        },
+        "act25": {
+          "value": 21,
+          "where": "C9 p.16",
+          "quote": "ACT Composite 21 25 28"
+        },
+        "act75": {
+          "value": 28,
+          "where": "C9 p.16",
+          "quote": "ACT Composite 21 25 28"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://admissions.uiowa.edu/international-first-year-admission-requirements",
+        "quote": "SAT or ACT scores are not required of international applicants who completed secondary school outside the United States; however, SAT or ACT scores are required of first-year applicants who wish to be considered for academic scholarships, Direct Admission to the Tippie College of Business , or for the University of Iowa Honors Program .",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Iowa [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.44; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Iowa [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.44; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, room_board, merit_n, merit_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.847,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=153658",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of I owa 2, 029",
+      "international_students": 2029,
+      "where": "p.16, leading institutions"
+    }
+  },
+  {
+    "id": "153603",
+    "name": "Iowa State University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.ir.iastate.edu/files/documents/cds/CDS-25-26.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/153603.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 28578,
+          "where": "G1 p.21",
+          "quote": "Tuition: Nonresident $28,578 $28,578"
+        },
+        "required_fees": {
+          "value": 1561,
+          "where": "G1 p.21",
+          "quote": "Required Fees: $1,561 $1,561"
+        },
+        "tuition_fees": {
+          "value": 30139,
+          "where": "G1 p.21 + G1 p.21",
+          "quote": "Tuition: Nonresident $28,578 $28,578\nRequired Fees: $1,561 $1,561"
+        },
+        "room_board": {
+          "value": 10928,
+          "where": "G1 p.21",
+          "quote": "Food and housing (on-campus): $10,928 $10,928"
+        },
+        "merit_n": {
+          "value": 2537,
+          "where": "H2A p.26",
+          "quote": "Number of students in line a who had no financial need\nand who were awarded institutional non-need-based\nscholarship or grant aid (exclude those who were\nawarded athletic awards and tuition benefits)\n2537 9406 81"
+        },
+        "merit_avg": {
+          "value": 8830,
+          "where": "H2A p.26",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $ 8,830 $ 8,255 $ 3,591"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 24625,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n5921 15521 3183 0 24625"
+        },
+        "admitted": {
+          "value": 21652,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n5452 14133 2067 0 21652"
+        },
+        "admit_rate": {
+          "value": 0.879,
+          "where": "C1 p.8 and C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n5921 15521 3183 0 24625\nTotal first-time, first-year (degree-seeking) who were admitted\n5452 14133 2067 0 21652"
+        },
+        "sat25": {
+          "value": 1153,
+          "where": "C9 p.11",
+          "quote": "SAT Composite 1153 1260 1360"
+        },
+        "sat75": {
+          "value": 1360,
+          "where": "C9 p.11",
+          "quote": "SAT Composite 1153 1260 1360"
+        },
+        "act25": {
+          "value": 21,
+          "where": "C9 p.11",
+          "quote": "ACT Composite 21 25 28"
+        },
+        "act75": {
+          "value": 28,
+          "where": "C9 p.11",
+          "quote": "ACT Composite 21 25 28"
+        }
+      },
+      "year_quote": "Common Data Set 2025-26"
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.iastate.edu/admission-and-aid/admissions/international-admissions/international-first-year-requirements",
+        "quote": "SAT/ACT scores are not required for admission.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Iowa State University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.18; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Iowa State University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.18; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.891,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=153603",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "I owa St at e Uni v er si t y 3, 623",
+      "international_students": 3623,
+      "where": "p.16, leading institutions"
+    }
+  },
+  {
+    "id": "166629",
+    "name": "University of Massachusetts-Amherst",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Massachusetts Amherst [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Massachusetts Amherst [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Massachusetts Amherst [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Massachusetts Amherst [english: I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, portfolio, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.578,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=166629",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of Mas sachuset t s - Amher st 5, 171",
+      "international_students": 5171,
+      "where": "p.22, leading institutions"
+    }
+  },
+  {
+    "id": "129020",
+    "name": "University of Connecticut",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://bpir.media.uconn.edu/wp-content/uploads/sites/3452/2026/08/UConn_CDS_2025_2026_WEB.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/129020.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 39678,
+          "where": "G1 p.14",
+          "quote": "Tuition: Nonresident $39,678 $39,678"
+        },
+        "required_fees": {
+          "value": 4564,
+          "where": "G1 p.14",
+          "quote": "Required Fees: $4,564 $4,564"
+        },
+        "tuition_fees": {
+          "value": 44242,
+          "where": "G1 p.14 + G1 p.14",
+          "quote": "Tuition: Nonresident $39,678 $39,678\nRequired Fees: $4,564 $4,564"
+        },
+        "room_board": {
+          "value": 15184,
+          "where": "G1 p.14",
+          "quote": "Food and housing (on-campus): $15,184 $15,184"
+        },
+        "merit_n": {
+          "value": 1251,
+          "where": "H2A p.17",
+          "quote": "Number of students in line a who had no financial need\nand who were awarded institutional non-need-based\nscholarship or grant aid (exclude those who were\nawarded athletic awards and tuition benefits)\n1251 4689 13"
+        },
+        "merit_avg": {
+          "value": 11221,
+          "where": "H2A p.17",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $ 11,221 $ 11,624 $ 5,669"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.18",
+          "quote": "H6\nX\nX\n641"
+        },
+        "intl_n": {
+          "value": 641,
+          "where": "H6 p.18",
+          "quote": "H6\nX\nX\n641"
+        },
+        "intl_avg": {
+          "value": 18754,
+          "where": "H6 p.18",
+          "quote": "641\n$18,754"
+        },
+        "applied": {
+          "value": 59553,
+          "where": "C1 p.5",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n15,633 38,178 5,742 59,553"
+        },
+        "admitted": {
+          "value": 32369,
+          "where": "C1 p.5",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n6,337 22,349 3,683 32,369"
+        },
+        "admit_rate": {
+          "value": 0.544,
+          "where": "C1 p.5 and C1 p.5",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n15,633 38,178 5,742 59,553\nTotal first-time, first-year (degree-seeking) who were admitted\n6,337 22,349 3,683 32,369"
+        },
+        "sat25": {
+          "value": 1260,
+          "where": "C9 p.7",
+          "quote": "SAT Composite 1260 1350 1420"
+        },
+        "sat75": {
+          "value": 1420,
+          "where": "C9 p.7",
+          "quote": "SAT Composite 1260 1350 1420"
+        },
+        "act25": {
+          "value": 29,
+          "where": "C9 p.7",
+          "quote": "ACT Composite 29 31 32"
+        },
+        "act75": {
+          "value": 32,
+          "where": "C9 p.7",
+          "quote": "ACT Composite 29 31 32"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://admissions.uconn.edu/apply/international/first-year/",
+        "quote": "Two letters of recommendation are optional but can distinguish an applicant’s character and are preferred.",
+        "source_type": "official_admissions_page"
+      },
+      "tests": {
+        "value": "optional",
+        "url": "https://admissions.uconn.edu/apply/international/first-year/",
+        "quote": "At UConn, we understand that one test may not accurately define a student’s academic progress and potential, which is why we are allowing first-year applicants the choice to submit standardized test results.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://admissions.uconn.edu/apply/international/first-year/",
+        "quote": "Results of standardized English language proficiency tests are required for international applicants whose primary language is not English.",
+        "source_type": "official_admissions_page"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, interview, css_profile, portfolio, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.539,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=129020"
+    }
+  },
+  {
+    "id": "212054",
+    "name": "Drexel University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://drexel.edu/institutionalresearch/~/media/Drexel/Provost-Group/InstitutionalResearch/Documents/Factbook/CDS_2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/212054.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": 2370,
+          "where": "G1 p.25",
+          "quote": "Required Fees: $2,370"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": 19398,
+          "where": "G1 p.25",
+          "quote": "Food and housing (on-campus): $19,398"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 38030,
+          "where": "C1 p.10",
+          "quote": "students who enrolled 38030"
+        },
+        "admitted": {
+          "value": 26583,
+          "where": "C1 p.10",
+          "quote": "26583"
+        },
+        "admit_rate": {
+          "value": 0.699,
+          "where": "C1 p.10 and C1 p.10",
+          "quote": "students who enrolled 38030\n26583"
+        },
+        "sat25": {
+          "value": 1260,
+          "where": "C9 p.13",
+          "quote": "SAT Composite: 25th Percentile 1260"
+        },
+        "sat75": {
+          "value": 1430,
+          "where": "C9 p.13",
+          "quote": "SAT Composite: 75th Percentile 1430"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "• For complete instructions and definitions of data elements, see the IPEDS GRS Forms and Instructions for the 2025-2026 Survey."
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://drexel.edu/admissions/apply/undergrad-instructions/first-year-instructions",
+        "quote": "Drexel practices No Harm Test-Optional admission, meaning applicants are not required to submit standardized test scores as part of their application.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://drexel.edu/admissions/apply/undergrad-instructions/first-year-instructions",
+        "quote": "One letter of recommendation is required and should be completed by a school or college counselor.",
+        "source_type": "official_admissions_page"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://drexel.edu/admissions/apply/undergrad-instructions/first-year-instructions",
+        "quote": "One letter of recommendation is required and should be completed by a school or college counselor.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://drexel.edu/admissions/apply/undergrad-instructions/first-year-instructions",
+        "quote": "International applicants whose first (or native) language is not English or have not completed a minimum of three full years of instruction in English prior to applying must take an approved English proficiency exam and request that results be forwarded to the Office of Admissions.",
+        "source_type": "official_admissions_page"
+      },
+      "css_profile": {
+        "value": "required",
+        "url": "https://drexel.edu/admissions/apply/undergrad-instructions/first-year-instructions",
+        "quote": "International applicants are required to submit the CSS Profile by the appropriate deadline to be considered for institutional need-based aid.",
+        "source_type": "official_admissions_page"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Drexel University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, interview, midyear, supplements. Admissions fields not available from verified CDS evidence: act25, act75.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.775,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=212054"
+    }
+  },
+  {
+    "id": "186867",
+    "name": "Stevens Institute of Technology",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://assets.stevens.edu/mviowpldu823/2zUxKdJEW7cZfrwg5TSrFh/23047b8c60731ee4288b09567befe833/CDS-2025-2026-PDF_Final.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/186867.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "awarded need-based or non-need-based aid:\n652"
+        },
+        "intl_n": {
+          "value": 652,
+          "where": "H6 p.35",
+          "quote": "awarded need-based or non-need-based aid:\n652"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": null,
+          "where": "C1"
+        },
+        "admitted": {
+          "value": null,
+          "where": "C1"
+        },
+        "admit_rate": {
+          "value": null,
+          "where": "C1"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "CDS-2025-2026-PDF_Final.pdf"
+    },
+    "aid_page": null,
+    "reqs": {
+      "interview": {
+        "value": "optional",
+        "url": "https://www.stevens.edu/admission-aid/undergraduate-admissions/international-students",
+        "quote": "International applicants are strongly recommended to schedule an interview.",
+        "source_type": "official_admissions_page"
+      },
+      "css_profile": {
+        "value": "required",
+        "url": "https://www.stevens.edu/admission-aid/undergraduate-admissions/international-students",
+        "quote": "International students who wish to be considered for institutional scholarship must submit the College Scholarship Service Profile (CSS PROFILE) on the College Board website.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://www.stevens.edu/admission-aid/undergraduate-admissions/international-students",
+        "quote": "If you are an international student (non-US Citizen, non-US Permanent Resident) applying to Stevens Institute of Technology and English is not your first language, you must demonstrate English proficiency with one of the following:",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Stevens Institute of Technology [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Stevens Institute of Technology [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Stevens Institute of Technology [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Stevens Institute of Technology [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, room_board, merit_n, merit_avg, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.434,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=186867",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "St ev ens I ns t i t ut e of Tec hnol ogy 5, 023",
+      "international_students": 5023,
+      "where": "p.31, leading institutions"
+    }
+  },
+  {
+    "id": "168421",
+    "name": "Worcester Polytechnic Institute",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.wpi.edu/sites/default/files/2026-05/WPI_CDS_2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/168421.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 63936,
+          "where": "G1 p.21",
+          "quote": "PRIVATE INSTITUTION Tuition: $63,936 $63,936"
+        },
+        "required_fees": {
+          "value": 1502,
+          "where": "G1 p.21",
+          "quote": "REQUIRED FEES: $1,502 $1,302"
+        },
+        "tuition_fees": {
+          "value": 65438,
+          "where": "G1 p.21 + G1 p.21",
+          "quote": "PRIVATE INSTITUTION Tuition: $63,936 $63,936\nREQUIRED FEES: $1,502 $1,302"
+        },
+        "room_board": {
+          "value": 19252,
+          "where": "G1 p.21",
+          "quote": "ROOM AND BOARD (on-campus): $19,252 $19,252"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.26",
+          "quote": "☒ Institutional need-based scholarship or grant aid is available"
+        },
+        "intl_n": {
+          "value": 325,
+          "where": "H6 p.26",
+          "quote": "based or non-need-based aid: 325"
+        },
+        "intl_avg": {
+          "value": 26749,
+          "where": "H6 p.27",
+          "quote": "nonresidents: $26,749"
+        },
+        "applied": {
+          "value": 12355,
+          "where": "C1 p.9",
+          "quote": "Total first-time, first-year students who applied 8,522 3,820 13 12,355"
+        },
+        "admitted": {
+          "value": 7647,
+          "where": "C1 p.9",
+          "quote": "Total first-time, first-year admitted 2,571 4,414 662 7,647"
+        },
+        "admit_rate": {
+          "value": 0.619,
+          "where": "C1 p.9 and C1 p.9",
+          "quote": "Total first-time, first-year students who applied 8,522 3,820 13 12,355\nTotal first-time, first-year admitted 2,571 4,414 662 7,647"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "calculates its official enrollment in Fall 2025? 95%"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Worcester Polytechnic Institute [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.54; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Worcester Polytechnic Institute [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.54; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Worcester Polytechnic Institute [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.54; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Worcester Polytechnic Institute [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.54; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: merit_n, merit_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, supplements. Admissions fields not available from verified CDS evidence: sat25, sat75, act25, act75.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.585,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=168421",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Wor c est er Pol y t ec hni c I ns t i t ut e 877",
+      "international_students": 877,
+      "where": "p.22, leading institutions"
+    }
+  },
+  {
+    "id": "194824",
+    "name": "Rensselaer Polytechnic Institute",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Rensselaer Polytechnic Institute [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.31; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Rensselaer Polytechnic Institute [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.31; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Rensselaer Polytechnic Institute [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.31; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Rensselaer Polytechnic Institute [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.31; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.584,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=194824"
+    }
+  },
+  {
+    "id": "165334",
+    "name": "Clark University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Clark University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.8; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Clark University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.8; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Clark University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.8; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Clark University [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.8; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Clark University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.8; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.417,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=165334"
+    }
+  },
+  {
+    "id": "122931",
+    "name": "Santa Clara University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.scu.edu/media/offices/institutional-research/ff/common-data-set/rba13-Common_Data_Set_2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/122931.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 64956,
+          "where": "G1 p.29",
+          "quote": "Tuition: $64956.00 $64956.00"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": 21234,
+          "where": "G1 p.29",
+          "quote": "Food and Housing (on-campus): $21234.00 $21234.00"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "nonresidents:\n57\n55941"
+        },
+        "intl_n": {
+          "value": 57,
+          "where": "H6 p.35",
+          "quote": "nonresidents:\n57\n55941"
+        },
+        "intl_avg": {
+          "value": 55941,
+          "where": "H6 p.35",
+          "quote": "nonresidents:\n57\n55941"
+        },
+        "applied": {
+          "value": 20032,
+          "where": "C1 p.14",
+          "quote": "Total first-time, first-year (degree-seeking) who applied 10205 7213 2604 10 20032"
+        },
+        "admitted": {
+          "value": 9592,
+          "where": "C1 p.14",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted 4923 3921 745 3 9592"
+        },
+        "admit_rate": {
+          "value": 0.479,
+          "where": "C1 p.14 and C1 p.14",
+          "quote": "Total first-time, first-year (degree-seeking) who applied 10205 7213 2604 10 20032\nTotal first-time, first-year (degree-seeking) who were admitted 4923 3921 745 3 9592"
+        },
+        "sat25": {
+          "value": 1330,
+          "where": "C9 p.19",
+          "quote": "SAT Composite 1330 1410 1470"
+        },
+        "sat75": {
+          "value": 1470,
+          "where": "C9 p.19",
+          "quote": "SAT Composite 1330 1410 1470"
+        },
+        "act25": {
+          "value": 29,
+          "where": "C9 p.19",
+          "quote": "ACT Composite 29 31 33"
+        },
+        "act75": {
+          "value": 33,
+          "where": "C9 p.19",
+          "quote": "ACT Composite 29 31 33"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Santa Clara University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Santa Clara University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Santa Clara University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, merit_n, merit_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.438,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=122931"
+    }
+  },
+  {
+    "id": "121150",
+    "name": "Pepperdine University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Pepperdine University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.30; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Pepperdine University [english: I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.30; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Pepperdine University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.30; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.499,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=121150"
+    }
+  },
+  {
+    "id": "228246",
+    "name": "Southern Methodist University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.smu.edu/-/media/site/ir/commondatasets/2025/cds-2025-26-part-c-first-time-freshman-final.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/228246.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 24053,
+          "where": "C1 p.2",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n12254 9805 1767 227 24053"
+        },
+        "admitted": {
+          "value": 11459,
+          "where": "C1 p.2",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n5071 5859 437 92 11459"
+        },
+        "admit_rate": {
+          "value": 0.476,
+          "where": "C1 p.2 and C1 p.2",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n12254 9805 1767 227 24053\nTotal first-time, first-year (degree-seeking) who were admitted\n5071 5859 437 92 11459"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Southern Methodist University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.36; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Southern Methodist University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.36; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Southern Methodist University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.36; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: sat25, sat75, act25, act75.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.612,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=228246"
+    }
+  },
+  {
+    "id": "228875",
+    "name": "Texas Christian University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://ir.tcu.edu/wp-content/uploads/2026/03/CDS-2025-26-TCU.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/228875.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 66520,
+          "where": "G1 p.19",
+          "quote": "Tuition: $66,520 $66,520"
+        },
+        "required_fees": {
+          "value": 90,
+          "where": "G1 p.19",
+          "quote": "Required Fees: $90 $90"
+        },
+        "tuition_fees": {
+          "value": 66610,
+          "where": "G1 p.19 + G1 p.19",
+          "quote": "Tuition: $66,520 $66,520\nRequired Fees: $90 $90"
+        },
+        "room_board": {
+          "value": 18780,
+          "where": "G1 p.19",
+          "quote": "Food and housing (on-campus): $18,780 $18,780"
+        },
+        "merit_n": {
+          "value": 1044,
+          "where": "H2A p.23",
+          "quote": "Number of students in line a who had no financial need and\nwho were awarded institutional non-need-based scholarship\nor grant aid (exclude those who were awarded athletic\nawards and tuition benefits)\n1044 4395 58"
+        },
+        "merit_avg": {
+          "value": 24703,
+          "where": "H2A p.23",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $ 24,703 $ 23,724 $ 13,850"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 22680,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year males who applied\n8705\nTotal first-time, first-year females who applied\n13975"
+        },
+        "admitted": {
+          "value": 10906,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year males who were admitted\n3868\nTotal first-time, first-year females who were admitted\n7038"
+        },
+        "admit_rate": {
+          "value": 0.481,
+          "where": "C1 p.8 and C1 p.8",
+          "quote": "Total first-time, first-year males who applied\n8705\nTotal first-time, first-year females who applied\n13975\nTotal first-time, first-year males who were admitted\n3868\nTotal first-time, first-year females who were admitted\n7038"
+        },
+        "sat25": {
+          "value": 1110,
+          "where": "C9 p.10",
+          "quote": "SAT Composite 1110 1240 1330"
+        },
+        "sat75": {
+          "value": 1330,
+          "where": "C9 p.10",
+          "quote": "SAT Composite 1110 1240 1330"
+        },
+        "act25": {
+          "value": 26,
+          "where": "C9 p.10",
+          "quote": "ACT Composite 26 30 31"
+        },
+        "act75": {
+          "value": 31,
+          "where": "C9 p.10",
+          "quote": "ACT Composite 26 30 31"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Texas Christian University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Texas Christian University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Texas Christian University [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Texas Christian University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.426,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=228875"
+    }
+  },
+  {
+    "id": "135726",
+    "name": "University of Miami",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Miami [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Miami [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Miami [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Miami [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.45; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.185,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=135726"
+    }
+  },
+  {
+    "id": "139940",
+    "name": "Georgia State University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Georgia State University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.15; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Georgia State University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.15; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Georgia State University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.15; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.623,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=139940"
+    }
+  },
+  {
+    "id": "199193",
+    "name": "North Carolina State University at Raleigh",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://report.isa.ncsu.edu/ir/cds/pdfs/CDS_2025-26.v1.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/199193.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": 2493,
+          "where": "G1 p.29",
+          "quote": "2493"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": 14741,
+          "where": "G1 p.29",
+          "quote": "14741"
+        },
+        "merit_n": {
+          "value": 299,
+          "where": "H2A p.34",
+          "quote": "299"
+        },
+        "merit_avg": {
+          "value": 4921,
+          "where": "H2A p.34",
+          "quote": "4921"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "X"
+        },
+        "intl_n": {
+          "value": 169,
+          "where": "H6 p.35",
+          "quote": "169"
+        },
+        "intl_avg": {
+          "value": 21931,
+          "where": "H6 p.35",
+          "quote": "21931"
+        },
+        "applied": {
+          "value": 49350,
+          "where": "C1 p.14",
+          "quote": "49350"
+        },
+        "admitted": {
+          "value": 19510,
+          "where": "C1 p.14",
+          "quote": "19510"
+        },
+        "admit_rate": {
+          "value": 0.395,
+          "where": "C1 p.14 and C1 p.14",
+          "quote": "49350\n19510"
+        },
+        "sat25": {
+          "value": 1310,
+          "where": "C9 p.19",
+          "quote": "1310"
+        },
+        "sat75": {
+          "value": 1440,
+          "where": "C9 p.19",
+          "quote": "1440"
+        },
+        "act25": {
+          "value": 25,
+          "where": "C9 p.19",
+          "quote": "25"
+        },
+        "act75": {
+          "value": 32,
+          "where": "C9 p.19",
+          "quote": "32"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "english": {
+        "value": "required",
+        "url": "https://admissions.ncsu.edu/apply/international/",
+        "quote": "Learn how to submit the required official English proficiency test scores and how we consider SAT, ACT or CLT test scores during the review process.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "North Carolina State University [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.27; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "North Carolina State University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.27; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "North Carolina State University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.27; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, interview, css_profile, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.398,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=199193",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Nor t h Car ol i na St at e Uni v er si t y 5, 366",
+      "international_students": 5366,
+      "where": "p.34, leading institutions"
+    }
+  },
+  {
+    "id": "126614",
+    "name": "University of Colorado Boulder",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Colorado Boulder [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.43; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Colorado Boulder [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.43; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.833,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=126614",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of Col or ado - Boul der 3, 490",
+      "international_students": 3490,
+      "where": "p.6, leading institutions"
+    }
+  },
+  {
+    "id": "209551",
+    "name": "University of Oregon",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.uoregon.edu/admissions/undergraduate/find-your-path/international-students/",
+        "quote": "International students are not required to submit SAT or ACT results for admission to the UO.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://www.uoregon.edu/admissions/undergraduate/find-your-path/international-students/",
+        "quote": "Provide your official exam results from the TOEFL, IELTS, or Duolingo English Test.",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Oregon [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.47; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, interview, css_profile, portfolio, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.851,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=209551"
+    }
+  },
+  {
+    "id": "230764",
+    "name": "University of Utah",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://data.utah.edu/wp-content/uploads/2026/08/CDS-C.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/230764.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 30036,
+          "where": "C1 p.2",
+          "quote": "30036"
+        },
+        "admitted": {
+          "value": 27076,
+          "where": "C1 p.2",
+          "quote": "27076"
+        },
+        "admit_rate": {
+          "value": 0.901,
+          "where": "C1 p.2 and C1 p.2",
+          "quote": "30036\n27076"
+        },
+        "sat25": {
+          "value": 1120,
+          "where": "C9 p.7",
+          "quote": "1120"
+        },
+        "sat75": {
+          "value": 1320,
+          "where": "C9 p.7",
+          "quote": "1320"
+        },
+        "act25": {
+          "value": 22,
+          "where": "C9 p.7",
+          "quote": "22"
+        },
+        "act75": {
+          "value": 29,
+          "where": "C9 p.7",
+          "quote": "29"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The University of Utah [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.41; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "The University of Utah [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.41; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.872,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=230764",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of Ut ah 4, 045",
+      "international_students": 4045,
+      "where": "p.47, leading institutions"
+    }
+  },
+  {
+    "id": "130943",
+    "name": "University of Delaware",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.udel.edu/apply/undergraduate-admissions/apply-to-ud/international-admissions/",
+        "quote": "International students are not required to submit standardized test scores such as the SAT or ACT.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://www.udel.edu/apply/undergraduate-admissions/apply-to-ud/international-admissions/",
+        "quote": "English proficiency exams such as TOEFL or IELTS are required for students applying for direct admission (either exam satisfies the requirement).",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Delaware [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.44; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "University of Delaware [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.44; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Open Doors lists this university among leading international student hosts. The base admit rate places it on the broader selectivity shortlist.",
+      "base_admit_rate": 0.651,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=130943",
+      "url": "https://opendoorsdata.org/wp-content/uploads/2026/11/OpenDoors_FactSheet_All-States_2026.pdf",
+      "quote": "Uni ver s i t y of Del awar e 2, 425",
+      "international_students": 2425,
+      "where": "p.8, leading institutions"
+    }
+  },
+  {
+    "id": "196088",
+    "name": "University at Buffalo",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.buffalo.edu/content/dam/www/oia/Common-Data-Sets/CDS_2025-26_v2.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/196088.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 28500,
+          "where": "G1 p.27",
+          "quote": "NONRESIDENTS: $28,500 $28,500"
+        },
+        "required_fees": {
+          "value": 3966,
+          "where": "G1 p.27",
+          "quote": "REQUIRED FEES: $3,966 $3,966"
+        },
+        "tuition_fees": {
+          "value": 32466,
+          "where": "G1 p.27 + G1 p.27",
+          "quote": "NONRESIDENTS: $28,500 $28,500\nREQUIRED FEES: $3,966 $3,966"
+        },
+        "room_board": {
+          "value": 18063,
+          "where": "G1 p.27",
+          "quote": "FOOD AND HOUSING: $18,063 $18,063"
+        },
+        "merit_n": {
+          "value": 411,
+          "where": "H2A p.30",
+          "quote": "n) Number of students in line a who had no financial need and who\nwere awarded institutional non-need-based scholarship or grant\naid (exclude those who were awarded athletic awards and tuition\nbenefits)\n411 1,090 8"
+        },
+        "merit_avg": {
+          "value": 4559,
+          "where": "H2A p.30",
+          "quote": "o) Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $4,559 $4,590 $2,592"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.31",
+          "quote": "degree-seeking nonresidents: Institutional scholarship or grant aid is available"
+        },
+        "intl_n": {
+          "value": 454,
+          "where": "H6 p.31",
+          "quote": "need-based aid: 454"
+        },
+        "intl_avg": {
+          "value": 11503,
+          "where": "H6 p.31",
+          "quote": "Average dollar amount of Institutional financial aid awarded to undergraduate degree-seeking\nnonresidents: $11,503"
+        },
+        "applied": {
+          "value": 45637,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-years who applied 36,127 4,739 4,771 0 45,637"
+        },
+        "admitted": {
+          "value": 36780,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-years who were admitted 28,935 3,340 4,505 0 36,780"
+        },
+        "admit_rate": {
+          "value": 0.806,
+          "where": "C1 p.8 and C1 p.8",
+          "quote": "Total first-time, first-years who applied 36,127 4,739 4,771 0 45,637\nTotal first-time, first-years who were admitted 28,935 3,340 4,505 0 36,780"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9"
+        },
+        "act25": {
+          "value": 27,
+          "where": "C9 p.11",
+          "quote": "ACT Composite 27 29 31"
+        },
+        "act75": {
+          "value": 31,
+          "where": "C9 p.11",
+          "quote": "ACT Composite 27 29 31"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 0,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "SUNY University at Buffalo [TE: (blank)]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "SUNY University at Buffalo [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.39; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: sat25, sat75.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.693,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=196088",
+      "url": "https://www.buffalo.edu/provost/admin-units.host.html/content/shared/university/news/ub-reporter-articles/stories/2026/11/open-doors.detail.html",
+      "quote": "Still, this is the 24th straight year that the university has been listed among the top 30 in the institute’s “Open Doors Report on International Exchange.”",
+      "international_students": null
+    }
+  },
+  {
+    "id": "196079",
+    "name": "Binghamton University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.binghamton.edu/offices/oir/institutional-data/cds2025.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/196079.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 28970,
+          "where": "G1 p.13",
+          "quote": "Tuition: Nonresident $28,970 $28,970"
+        },
+        "required_fees": {
+          "value": 3497,
+          "where": "G1 p.13",
+          "quote": "Required Fees: $3,497 $3,497"
+        },
+        "tuition_fees": {
+          "value": 32467,
+          "where": "G1 p.13 + G1 p.13",
+          "quote": "Tuition: Nonresident $28,970 $28,970\nRequired Fees: $3,497 $3,497"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.16",
+          "quote": "1521\n$9,637"
+        },
+        "intl_n": {
+          "value": 1521,
+          "where": "H6 p.16",
+          "quote": "1521\n$9,637"
+        },
+        "intl_avg": {
+          "value": 9637,
+          "where": "H6 p.16",
+          "quote": "1521\n$9,637"
+        },
+        "applied": {
+          "value": 61188,
+          "where": "C1 p.5",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n49217 8932 2810 229 61188"
+        },
+        "admitted": {
+          "value": 22832,
+          "where": "C1 p.5",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n14324 6586 1744 178 22832"
+        },
+        "admit_rate": {
+          "value": 0.373,
+          "where": "C1 p.5 and C1 p.5",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n49217 8932 2810 229 61188\nTotal first-time, first-year (degree-seeking) who were admitted\n14324 6586 1744 178 22832"
+        },
+        "sat25": {
+          "value": 1320,
+          "where": "C9 p.7",
+          "quote": "SAT Composite 1320 1410 1480"
+        },
+        "sat75": {
+          "value": 1480,
+          "where": "C9 p.7",
+          "quote": "SAT Composite 1320 1410 1480"
+        },
+        "act25": {
+          "value": 31,
+          "where": "C9 p.7",
+          "quote": "ACT Composite 31 33 34"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.7",
+          "quote": "ACT Composite 31 33 34"
+        }
+      },
+      "year_quote": "for the 2025-2026 Survey. https://nces.ed.gov/ipeds/use-the-data/survey-components/9/graduation-rates"
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.binghamton.edu/admissions/undergraduate/apply/international/first-year.html",
+        "quote": "Binghamton University is a SAT/ACT test-optional university which means SAT/ACT scores",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "SUNY Binghamton University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.38; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "SUNY Binghamton University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.38; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: room_board, merit_n, merit_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, english, interview, css_profile, midyear, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Research university in the requested applicant shortlist; included for coverage across admission rates and locations.",
+      "base_admit_rate": 0.377,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=196079"
+    }
+  },
+  {
+    "id": "173902",
+    "name": "Macalester College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.macalester.edu/institutional-research/wp-content/uploads/sites/515/CDS_2025-2026_Macalester-College_completed-1.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/173902.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 70632,
+          "where": "G1 p.29",
+          "quote": "70632"
+        },
+        "required_fees": {
+          "value": 230,
+          "where": "G1 p.29",
+          "quote": "230"
+        },
+        "tuition_fees": {
+          "value": 70862,
+          "where": "G1 p.29 + G1 p.29",
+          "quote": "70632\n230"
+        },
+        "room_board": {
+          "value": 16476,
+          "where": "G1 p.29",
+          "quote": "16476"
+        },
+        "merit_n": {
+          "value": 160,
+          "where": "H2A p.34",
+          "quote": "160"
+        },
+        "merit_avg": {
+          "value": 19016,
+          "where": "H2A p.34",
+          "quote": "19016"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "287"
+        },
+        "intl_n": {
+          "value": 287,
+          "where": "H6 p.35",
+          "quote": "287"
+        },
+        "intl_avg": {
+          "value": 59839,
+          "where": "H6 p.35",
+          "quote": "59839"
+        },
+        "applied": {
+          "value": null,
+          "where": "C1"
+        },
+        "admitted": {
+          "value": null,
+          "where": "C1"
+        },
+        "admit_rate": {
+          "value": null,
+          "where": "C1"
+        },
+        "sat25": {
+          "value": 1350,
+          "where": "C9 p.19",
+          "quote": "1350"
+        },
+        "sat75": {
+          "value": 1480,
+          "where": "C9 p.19",
+          "quote": "1480"
+        },
+        "act25": {
+          "value": 30,
+          "where": "C9 p.19",
+          "quote": "29.75"
+        },
+        "act75": {
+          "value": 33,
+          "where": "C9 p.19",
+          "quote": "33"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": {
+      "url": "https://www.macalester.edu/financial-aid/apply/international/",
+      "source_type": "official_aid_page",
+      "quote": "The Charles J. Turck Presidential Honor Scholarship is awarded to a limited number of international students who demonstrate special potential to excel academically.",
+      "intl_policy": null,
+      "intl_full_need": null,
+      "merit_named": [
+        {
+          "name": "Charles J. Turck Presidential Honor Scholarship",
+          "note": "Automatic consideration for international applicants."
+        }
+      ]
+    },
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.macalester.edu/admissions/international/first-year/",
+        "quote": "Macalester follows a Test-Optional admissions policy.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "optional",
+        "url": "https://www.macalester.edu/admissions/international/first-year/",
+        "quote": "Submission of English proficiency testing (EPT) is optional .",
+        "source_type": "official_admissions_page"
+      },
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://www.macalester.edu/admissions/international/first-year/",
+        "quote": "One recommendation letter from a teacher – An evaluation from a teacher in one of your primary academic courses of study.",
+        "source_type": "official_admissions_page"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://www.macalester.edu/admissions/international/first-year/",
+        "quote": "One recommendation letter from a counselor or school official",
+        "source_type": "official_admissions_page"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://www.macalester.edu/admissions/international/first-year/",
+        "quote": "Regular Decision applicants must request that a school official (counselor, registrar, assistant principal, etc.) send us an updated transcript by February 15 if senior year first-term grades are not on the initial transcript.",
+        "source_type": "official_admissions_page"
+      },
+      "interview": {
+        "value": "optional",
+        "url": "https://www.macalester.edu/admissions/international/first-year/",
+        "quote": "Interviews are optional and not having an interview does not decrease a student’s chances for admission.",
+        "source_type": "official_admissions_page"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Macalester College [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.22; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_policy, intl_full_need. Requirements without conclusive fall 2027 evidence: teacher_recs_max, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.282,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=173902"
+    }
+  },
+  {
+    "id": "212911",
+    "name": "Haverford College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.haverford.edu/sites/default/files/Office/President/CDS-2025-26.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/212911.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 74930,
+          "where": "G1 p.18",
+          "quote": "Tuition: $74,930 $74,930"
+        },
+        "required_fees": {
+          "value": 863,
+          "where": "G1 p.18",
+          "quote": "Required Fees: $863 552"
+        },
+        "tuition_fees": {
+          "value": 75793,
+          "where": "G1 p.18 + G1 p.18",
+          "quote": "Tuition: $74,930 $74,930\nRequired Fees: $863 552"
+        },
+        "room_board": {
+          "value": 20554,
+          "where": "G1 p.18",
+          "quote": "Food and housing (on-campus): $20,554 $20,554"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 6730,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n626 2850 3254 6730"
+        },
+        "admitted": {
+          "value": 896,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n108 664 124 896"
+        },
+        "admit_rate": {
+          "value": 0.133,
+          "where": "C1 p.8 and C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n626 2850 3254 6730\nTotal first-time, first-year (degree-seeking) who were admitted\n108 664 124 896"
+        },
+        "sat25": {
+          "value": 1460,
+          "where": "C9 p.11",
+          "quote": "SAT Composite 1460 1490 1530"
+        },
+        "sat75": {
+          "value": 1530,
+          "where": "C9 p.11",
+          "quote": "SAT Composite 1460 1490 1530"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 p.11",
+          "quote": "ACT Composite 33 34 35"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 p.11",
+          "quote": "ACT Composite 33 34 35"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 2,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Haverford College [TE: 2]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.16; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Haverford College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.16; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Haverford College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.16; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Haverford College [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.16; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, portfolio, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.129,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=212911"
+    }
+  },
+  {
+    "id": "211273",
+    "name": "Bryn Mawr College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 2,
+        "url": "https://www.brynmawr.edu/admissions-aid/how-apply/international-students",
+        "quote": "We require two recommendations—these are typically written by teachers of core academic subjects (e.g.",
+        "source_type": "official_admissions_page"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://www.brynmawr.edu/admissions-aid/how-apply/international-students",
+        "quote": "Your school/college counselor should submit their recommendation through Common App .",
+        "source_type": "official_admissions_page"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://www.brynmawr.edu/admissions-aid/how-apply/international-students",
+        "quote": "If you are currently in your final year of secondary school, we require a mid-year grade report.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Bryn Mawr College [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.5; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, portfolio, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.311,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=211273"
+    }
+  },
+  {
+    "id": "166939",
+    "name": "Mount Holyoke College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 2,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Mount Holyoke College [TE: 2]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.26; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Mount Holyoke College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.26; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Mount Holyoke College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.26; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, portfolio, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.383,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=166939"
+    }
+  },
+  {
+    "id": "212009",
+    "name": "Dickinson College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.dickinson.edu/download/downloads/id/17199/cds_2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/212009.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 71100,
+          "where": "G1 p.29",
+          "quote": "71100"
+        },
+        "required_fees": {
+          "value": 550,
+          "where": "G1 p.29",
+          "quote": "550"
+        },
+        "tuition_fees": {
+          "value": 71650,
+          "where": "G1 p.29 + G1 p.29",
+          "quote": "71100\n550"
+        },
+        "room_board": {
+          "value": 18650,
+          "where": "G1 p.29",
+          "quote": "18650"
+        },
+        "merit_n": {
+          "value": 139,
+          "where": "H2A p.34",
+          "quote": "139"
+        },
+        "merit_avg": {
+          "value": 30319,
+          "where": "H2A p.34",
+          "quote": "30319"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35",
+          "quote": "X"
+        },
+        "intl_n": {
+          "value": 221,
+          "where": "H6 p.35",
+          "quote": "221"
+        },
+        "intl_avg": {
+          "value": 58593,
+          "where": "H6 p.35",
+          "quote": "58593"
+        },
+        "applied": {
+          "value": 5719,
+          "where": "C1 p.14",
+          "quote": "5719"
+        },
+        "admitted": {
+          "value": 2373,
+          "where": "C1 p.14",
+          "quote": "2373"
+        },
+        "admit_rate": {
+          "value": 0.415,
+          "where": "C1 p.14 and C1 p.14",
+          "quote": "5719\n2373"
+        },
+        "sat25": {
+          "value": 1340,
+          "where": "C9 p.19",
+          "quote": "1340"
+        },
+        "sat75": {
+          "value": 1440,
+          "where": "C9 p.19",
+          "quote": "1440"
+        },
+        "act25": {
+          "value": 29,
+          "where": "C9 p.19",
+          "quote": "29"
+        },
+        "act75": {
+          "value": 32,
+          "where": "C9 p.19",
+          "quote": "32"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": {
+      "url": "https://www.dickinson.edu/info/20045/admissions/1179/international_student_financial_aid",
+      "source_type": "official_aid_page",
+      "quote": "Dickinson College is need-aware in the admission of international students and applicants’ ability to provide funding for their Dickinson education is considered in our admission decisions.",
+      "intl_policy": "need_aware",
+      "intl_full_need": null,
+      "merit_named": null
+    },
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Dickinson College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Dickinson College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Dickinson College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_full_need, merit_named. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, portfolio, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.431,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=212009"
+    }
+  },
+  {
+    "id": "211291",
+    "name": "Bucknell University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.bucknell.edu/sites/default/files/institutional-research/common_data_set_2025-26.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/211291.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 72600,
+          "where": "G1 p.16",
+          "quote": "Tuition: $72,600"
+        },
+        "required_fees": {
+          "value": 900,
+          "where": "G1 p.16",
+          "quote": "Required Fees: $900"
+        },
+        "tuition_fees": {
+          "value": 73500,
+          "where": "G1 p.16 + G1 p.16",
+          "quote": "Tuition: $72,600\nRequired Fees: $900"
+        },
+        "room_board": {
+          "value": 18380,
+          "where": "G1 p.16",
+          "quote": "Food and housing (on-campus): $18,380"
+        },
+        "merit_n": {
+          "value": 121,
+          "where": "H2A p.20",
+          "quote": "Number of students in line a who had no financial need and\nwho were awarded institutional non-need-based scholarship\nor grant aid (exclude those who were awarded athletic awards\nand tuition benefits)\n121 481 0"
+        },
+        "merit_avg": {
+          "value": 20060,
+          "where": "H2A p.20",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $ 20,060 $ 27,383 $ 0"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 11561,
+          "where": "C1 p.7",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n2044 6884 2631 2 11561"
+        },
+        "admitted": {
+          "value": 3723,
+          "where": "C1 p.7",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n751 2816 156 0 3723"
+        },
+        "admit_rate": {
+          "value": 0.322,
+          "where": "C1 p.7 and C1 p.7",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n2044 6884 2631 2 11561\nTotal first-time, first-year (degree-seeking) who were admitted\n751 2816 156 0 3723"
+        },
+        "sat25": {
+          "value": 1170,
+          "where": "C9 p.9",
+          "quote": "SAT Composite 1170 1270 1360"
+        },
+        "sat75": {
+          "value": 1360,
+          "where": "C9 p.9",
+          "quote": "SAT Composite 1170 1270 1360"
+        },
+        "act25": {
+          "value": 25,
+          "where": "C9 p.9",
+          "quote": "ACT Composite 25 29 32"
+        },
+        "act75": {
+          "value": 32,
+          "where": "C9 p.9",
+          "quote": "ACT Composite 25 29 32"
+        }
+      },
+      "year_quote": "for the 2025-2026 Survey. https://nces.ed.gov/ipeds/use-the-data/survey-components/9/graduation-rates"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Bucknell University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.5; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Bucknell University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.5; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Bucknell University [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.5; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Bucknell University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.5; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.32,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=211291"
+    }
+  },
+  {
+    "id": "213385",
+    "name": "Lafayette College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://oir.lafayette.edu/wp-content/uploads/sites/196/2026/01/CDS2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/213385.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 70486,
+          "where": "G1 p.22",
+          "quote": "Tuition: $70,486 $70,486"
+        },
+        "required_fees": {
+          "value": 1110,
+          "where": "G1 p.22",
+          "quote": "Required Fees: $1,110 $360"
+        },
+        "tuition_fees": {
+          "value": 71596,
+          "where": "G1 p.22 + G1 p.22",
+          "quote": "Tuition: $70,486 $70,486\nRequired Fees: $1,110 $360"
+        },
+        "room_board": {
+          "value": 20896,
+          "where": "G1 p.22",
+          "quote": "Food and housing (on-campus): $20,896 $20,896"
+        },
+        "merit_n": {
+          "value": 172,
+          "where": "H2A p.27",
+          "quote": "Number of students in line a who had no financial need\nand who were awarded institutional non-need-based\nscholarship or grant aid (exclude those who were\nawarded athletic awards and tuition benefits)\n172 564 2"
+        },
+        "merit_avg": {
+          "value": 23965,
+          "where": "H2A p.27",
+          "quote": "O Average dollar amount of institutional non-need-based\nscholarship and grant aid awarded to students in line n $ 23,965 $ 23,940 n<5"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 10556,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n1233 5410 3913 0 10556"
+        },
+        "admitted": {
+          "value": 3289,
+          "where": "C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who were admitted\n416 2587 286 0 3289"
+        },
+        "admit_rate": {
+          "value": 0.312,
+          "where": "C1 p.8 and C1 p.8",
+          "quote": "Total first-time, first-year (degree-seeking) who applied\n1233 5410 3913 0 10556\nTotal first-time, first-year (degree-seeking) who were admitted\n416 2587 286 0 3289"
+        },
+        "sat25": {
+          "value": 1360,
+          "where": "C9 p.12",
+          "quote": "SAT Composite 1360 1420 1490"
+        },
+        "sat75": {
+          "value": 1490,
+          "where": "C9 p.12",
+          "quote": "SAT Composite 1360 1420 1490"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9"
+        }
+      },
+      "year_quote": "Common Data Set 2025-2026"
+    },
+    "aid_page": {
+      "url": "https://admissions.lafayette.edu/apply/international-students/",
+      "source_type": "official_aid_page",
+      "quote": "Lafayette is proud to be one of only a select few colleges in the United States to guarantee to meet full demonstrated financial need of all admitted students, both domestic and international.\nLafayette College is need aware and considers a student’s financial situation when making admission decisions.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "Letters of Recommendation from a g uidance counselor and at least one teacher .",
+        "source_type": "official_admissions_page"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "Letters of Recommendation from a g uidance counselor and at least one teacher .",
+        "source_type": "official_admissions_page"
+      },
+      "tests": {
+        "value": "optional",
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "For applicants applying for matriculation for fall 2027 and fall 2028, submission of standardized test scores (SAT and/or ACT) is optional.",
+        "source_type": "official_admissions_page"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "English language proficiency test, such as the TOEFL, IELTS, or Duolingo, is required for international students.",
+        "source_type": "official_admissions_page"
+      },
+      "css_profile": {
+        "value": "required",
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "If you are applying for need-based financial aid please submit the CSS Profile form online.",
+        "source_type": "official_admissions_page"
+      },
+      "interview": {
+        "value": "optional",
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "While interviews are not required, they are encouraged.",
+        "source_type": "official_admissions_page"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://admissions.lafayette.edu/apply/international-students/",
+        "quote": "Mid-year or first trimester grades submitted directly from the high school when they become available.",
+        "source_type": "official_admissions_page"
+      }
+    },
+    "note": "Aid fields without verified evidence: intl_aid, intl_n, intl_avg, merit_named. Requirements without conclusive fall 2027 evidence: teacher_recs_max, portfolio, supplements. Admissions fields not available from verified CDS evidence: act25, act75.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.315,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=213385"
+    }
+  },
+  {
+    "id": "196866",
+    "name": "Union College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Union College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.43; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Union College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.43; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Union College [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.43; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, portfolio, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.438,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=196866"
+    }
+  },
+  {
+    "id": "195526",
+    "name": "Skidmore College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 2,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Skidmore College [TE: 2]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.35; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Skidmore College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.35; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Skidmore College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.35; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Skidmore College [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.35; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.229,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=195526"
+    }
+  },
+  {
+    "id": "120254",
+    "name": "Occidental College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.oxy.edu/financial-aid/apply/international",
+      "source_type": "official_aid_page",
+      "quote": "Aid packages for non-U.S. citizens are not guaranteed to meet full demonstrated need.",
+      "intl_policy": null,
+      "intl_full_need": false,
+      "merit_named": null
+    },
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Occidental College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.29; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Occidental College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.29; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Occidental College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.29; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Occidental College [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.29; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, merit_named. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, portfolio, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.399,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=120254"
+    }
+  },
+  {
+    "id": "123165",
+    "name": "Scripps College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.scrippscollege.edu/assessir/wp-content/uploads/sites/30/CDS_2025-2026_FINAL_V2.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x4/123165.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 68212,
+          "where": "G1 p.27",
+          "quote": "Tuition: $68,212 C or t"
+        },
+        "required_fees": {
+          "value": 320,
+          "where": "G1 p.27",
+          "quote": "Required Fees: $320 $320"
+        },
+        "tuition_fees": {
+          "value": 68532,
+          "where": "G1 p.27 + G1 p.27",
+          "quote": "Tuition: $68,212 C or t\nRequired Fees: $320 $320"
+        },
+        "room_board": {
+          "value": 22656,
+          "where": "G1 p.27",
+          "quote": "Food and Housing (on-campus): $ 22,656 $22,656"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.33",
+          "quote": "☒ Institutional need-based scholarship or grant aid is available"
+        },
+        "intl_n": {
+          "value": 15,
+          "where": "H6 p.33",
+          "quote": "awarded need-based or non-need-based aid:\n⇒ 15"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6"
+        },
+        "applied": {
+          "value": 3230,
+          "where": "C1 p.13",
+          "quote": "Total first-time, first-years who applied 1477 1304 449 0 3230"
+        },
+        "admitted": {
+          "value": 1288,
+          "where": "C1 p.13",
+          "quote": "admitted 645 562 81 0 1288"
+        },
+        "admit_rate": {
+          "value": 0.399,
+          "where": "C1 p.13 and C1 p.13",
+          "quote": "Total first-time, first-years who applied 1477 1304 449 0 3230\nadmitted 645 562 81 0 1288"
+        },
+        "sat25": {
+          "value": 1430,
+          "where": "C9 p.17",
+          "quote": "SAT Composite 1430 1480 1500"
+        },
+        "sat75": {
+          "value": 1500,
+          "where": "C9 p.17",
+          "quote": "SAT Composite 1430 1480 1500"
+        },
+        "act25": {
+          "value": 32,
+          "where": "C9 p.17",
+          "quote": "ACT Composite 32 33 34"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.17",
+          "quote": "ACT Composite 32 33 34"
+        }
+      },
+      "year_quote": "COMMON DATA SET 2025-2026"
+    },
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 2,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Scripps College [TE: 2]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Scripps College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Scripps College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Scripps College [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.34; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: merit_n, merit_avg, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, portfolio, supplements. Admissions fields not available from verified CDS evidence: none.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.339,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=123165"
+    }
+  },
+  {
+    "id": "121257",
+    "name": "Pitzer College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Pitzer College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.30; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Pitzer College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.30; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Pitzer College [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.30; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.167,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=121257"
+    }
+  },
+  {
+    "id": "202523",
+    "name": "Denison University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://denison.edu/campus/admission/international-applicant-financial-aid",
+      "source_type": "official_aid_page",
+      "quote": "Denison is need-aware in the application process as this allows us to meet 100% of demonstrated need for all admitted students.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Denison University [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Denison University [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Denison University [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Denison University [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.11; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, merit_named. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.169,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=202523"
+    }
+  },
+  {
+    "id": "174844",
+    "name": "St Olaf College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "St. Olaf College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      },
+      "english": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "St. Olaf College [english: D or I or T]. If you are an international student and English is not your first or primary language, institutions require that you take one of the English proficiency exams listed.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "St. Olaf College [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.37; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, intl_full_need, merit_named, aid_url. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, interview, css_profile, midyear, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.521,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=174844"
+    }
+  },
+  {
+    "id": "130590",
+    "name": "Trinity College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.trincoll.edu/admissions/finaid/international-students/",
+      "source_type": "official_aid_page",
+      "quote": "If you are admitted to Trinity, we will meet your full, demonstrated need.",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Trinity College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.42; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Trinity College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.42; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Trinity College [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.42; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, merit_named. Requirements without conclusive fall 2027 evidence: teacher_recs_max, counselor_rec, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.335,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=130590"
+    }
+  },
+  {
+    "id": "212577",
+    "name": "Franklin and Marshall College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.fandm.edu/financial-aid/guidance-and-information.html",
+      "source_type": "official_aid_page",
+      "quote": "Franklin & Marshall\nwill meet 100% of your demonstrated need for all four years based upon your family\ncontribution and the information that you provide prior to admission.",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "teacher_recs": {
+        "value": 1,
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Franklin & Marshall College [TE: 1]. (TE) number of Teacher Evaluations required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      },
+      "counselor_rec": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Franklin & Marshall College [CR: Y]. (CR) is Counselor Recommendation required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      },
+      "midyear": {
+        "value": "required",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Franklin & Marshall College [MR: Y]. (MR) is Mid Year Report required",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      },
+      "portfolio": {
+        "value": "none",
+        "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+        "quote": "Franklin & Marshall College [portfolio: (blank)]. If the college does not collect portfolios, the field is blank.",
+        "source_type": "common_app_grid",
+        "where": "2026-27 grid p.14; notes p.55"
+      }
+    },
+    "note": "Aid fields without verified evidence: cds_year, tuition_fees, room_board, merit_n, merit_avg, intl_aid, intl_n, intl_avg, intl_policy, merit_named. Requirements without conclusive fall 2027 evidence: teacher_recs_max, tests, english, interview, css_profile, supplements. No newer CDS admissions total verified.",
+    "selection": {
+      "reason": "Liberal arts college in the requested shortlist; included for selective small-college coverage.",
+      "base_admit_rate": 0.318,
+      "base_source": "https://nces.ed.gov/collegenavigator/?id=212577"
+    }
+  }
+]
