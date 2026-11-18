@@ -344,12 +344,12 @@ assert.match(orderSystem("en"), /NO GHOSTWRITING/);
   assert.deepEqual(d.essays.map((e) => e.done), [true, false, false, false], "essay done flag");
   assert.deepEqual(loadData(JSON.stringify(d)), d, "saved data round-trips (localStorage / Drive backup)");
   assert.deepEqual(Object.keys(newApp("X").checks), CHECK_ITEMS.map((c) => c.k));
-  // Duke: 서류 9개 + 보충 2개(PS·다른 학교 글은 제외), 완료 1개
+  // Duke (학교 자료 없음): 필수 서류 7개(선택 항목은 준비율에서 빠짐) + 보충 2개(PS·다른 학교 글은 제외), 완료 1개
   let p = appProgress(duke, d.essays);
-  assert.deepEqual([p.done, p.total, p.supps.length, p.suppLeft.length, p.ready], [1, 11, 2, 1, false]);
+  assert.deepEqual([p.done, p.total, p.supps.length, p.suppLeft.length, p.ready], [1, 9, 2, 1, false]);
   duke.checks = Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, k === "aid" ? "na" : "done"]));
   p = appProgress(duke, d.essays);
-  assert.deepEqual([p.done, p.total, p.missing], [9, 10, []], "na is not counted");
+  assert.deepEqual([p.done, p.total, p.missing], [8, 9, []], "na is not counted");
   assert.deepEqual(readyCount(d.apps, d.essays), { ready: 1, total: 3 });
   d.essays[1].done = true;
   assert.deepEqual(readyCount(d.apps, d.essays), { ready: 2, total: 3 }, "finishing the last supplement makes Duke ready");
@@ -814,8 +814,9 @@ console.log("school field filter check passed");
   const txt = JSON.stringify(snap);
   for (const banned of ["3.9", "1550", "Captain", "AIME", "SECRET SUMMARY", "\"why\"", "\"fix\""]) assert.ok(!txt.includes(banned), `snapshot leaves out ${banned}`);
   assert.equal(snap.apps[0].school, "Yale");
-  assert.equal(snap.apps[0].checks.form, "done");
-  assert.deepEqual([snap.apps[0].done, snap.apps[0].total], [2, 9], "progress counts docs (minus n/a) and done supplements");
+  assert.equal(snap.v, 2);
+  assert.deepEqual(snap.apps[0].items.find((i) => i.k === "form"), { k: "form", need: "required", state: "done" });
+  assert.deepEqual([snap.apps[0].done, snap.apps[0].total], [2, 7], "progress counts required docs (minus n/a) and done supplements");
   assert.deepEqual(snap.essays[0].ai, { total: 72, criteria: [{ name: "구체성", score: 15 }] });
   assert.equal(snap.essays[0].text, "one two three");
   assert.equal(snap.essays[0].words, 3);
@@ -828,7 +829,7 @@ console.log("school field filter check passed");
   const evil = parseSnapshot({ kind: "college-app-share", apps: [{ school: "x".repeat(999), status: "<img>", checks: { form: "hacked" }, done: 99, total: 3 }], essays: [{ text: "y".repeat(9999), ai: { total: 900, criteria: [{ score: 99 }] } }] });
   assert.equal(evil.apps[0].school.length, 200);
   assert.equal(evil.apps[0].status, "prep");
-  assert.equal(evil.apps[0].checks.form, "todo");
+  assert.equal(evil.apps[0].items.find((i) => i.k === "form").state, "todo", "v1 checks read with the default list");
   assert.equal(evil.apps[0].done, 3, "done clamped to total");
   assert.equal(evil.essays[0].text.length, 8000);
   assert.deepEqual([evil.essays[0].ai.total, evil.essays[0].ai.criteria[0].score], [100, 20]);
@@ -845,6 +846,65 @@ console.log("school field filter check passed");
   }
   assert.ok(fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8").includes("drive.file"));
   console.log("counselor mode check passed");
+}
+
+// 필수/선택 체크리스트 (학교 reqs) + 카운슬러 진행 표
+{
+  const { itemsFor, findSchool, itemGroups, studentSummary, buildSnapshot, parseSnapshot, migrateApp } = await import("./logic.js");
+  const R = (o) => ({ teacher_recs: null, teacher_recs_max: null, counselor_rec: null, tests: null, english: null, interview: null, css_profile: null, portfolio: null, midyear: null, supplements: null, source_url: null, as_of: null, ...o });
+  const fx = [
+    { id: "f1", name: "Fixture Art", reqs: R({ teacher_recs: 1, teacher_recs_max: 2, tests: "blind", interview: "required", portfolio: "required", css_profile: "required", midyear: "none", supplements: 2 }) },
+    { id: "f2", name: "Fixture Tech", reqs: R({ teacher_recs: 2, tests: "required", interview: "not_offered", supplements: 0, counselor_rec: "optional" }) },
+    { id: "f3", name: "Fixture Unknown", reqs: R({}) },
+  ];
+  const m = (sc, app = { checks: {} }) => Object.fromEntries(itemsFor(app, sc).map((i) => [i.k, i.need]));
+  const a1 = m(fx[0]);
+  assert.equal(a1.teacher2, "optional", "2nd rec optional when max >= 2");
+  assert.ok(!("tests" in a1) && !("midyear" in a1), "blind / none dropped");
+  assert.deepEqual([a1.interview, a1.portfolio, a1.css, a1.supplements], ["required", "required", "required", "required"]);
+  assert.ok(!("css" in m(fx[0], { checks: { aid: "na" } })), "css only when applying for aid");
+  const a2 = m(fx[1]);
+  assert.deepEqual([a2.teacher2, a2.tests, a2.counselor], ["required", "required", "optional"]);
+  assert.ok(!("interview" in a2) && !("supplements" in a2), "not_offered / 0 supplements dropped");
+  const def = Object.fromEntries(CHECK_ITEMS.map(({ k, opt }) => [k, opt ? "optional" : "required"]));
+  assert.deepEqual(m(fx[2]), def, "all-null reqs = default opt flags");
+  assert.deepEqual(m(null), def, "no school = default opt flags");
+  assert.deepEqual(m({ reqs: R({ teacher_recs: 1 }) }).teacher2, undefined, "1 rec, max unknown -> no 2nd rec");
+  // 진짜 schools.json 자료
+  const all = JSON.parse(fs.readFileSync(new URL("./schools.json", import.meta.url), "utf8"));
+  const bow = all.find((x) => x.name === "Bowdoin College"), amh = all.find((x) => x.name === "Amherst College");
+  assert.deepEqual([m(bow).tests, m(bow).css], ["optional", "required"], "Bowdoin reqs used");
+  assert.ok(!("interview" in m(amh)) && m(amh).english === "required", "Amherst: no interview, English required");
+  assert.equal(findSchool(all, { school: "x", schoolId: bow.id }), bow, "found by id");
+  assert.equal(findSchool(all, { school: " amherst  college " }), amh, "found by name");
+  assert.equal(findSchool(all, { school: "Nowhere U" }), null);
+  // 준비율은 필수만
+  const app = newApp("Fixture Art", "f1");
+  for (const k of ["form", "fee", "transcript", "counselor", "teacher1", "english", "interview", "portfolio", "css", "supplements"]) app.checks[k] = "done";
+  let p = appProgress(app, [], fx[0]);
+  assert.ok(p.ready && p.missing.length === 0, "optional teacher2/aid left todo still ready");
+  app.checks.portfolio = "todo";
+  p = appProgress(app, [], fx[0]);
+  assert.deepEqual(p.missing, ["portfolio"]);
+  const g = itemGroups(p.items);
+  assert.deepEqual([g.missing.map((i) => i.k), g.optional.map((i) => i.k)], [["portfolio"], ["teacher2", "aid"]]);
+  // 예전 체크 유지, 새 항목은 제출한 학교면 완료
+  const old = migrateApp({ status: "submitted", checks: { form: "done", fee: "na" } });
+  assert.deepEqual([old.checks.form, old.checks.fee, old.checks.interview], ["done", "na", "done"]);
+  assert.equal(migrateApp({ status: "prep", checks: { form: "done" } }).checks.portfolio, "todo");
+  // 사본 v2 → 카운슬러 요약
+  const d = { apps: [app, { ...newApp("Fixture Tech", "f2"), deadline: "2026-12-01" }, { ...newApp("Old", ""), deadline: "2026-01-01" }], essays: [{ kind: "ps", text: "", done: true }] };
+  const snap = parseSnapshot(JSON.parse(JSON.stringify(buildSnapshot(d, "s@x.org", new Date(), fx))));
+  assert.equal(snap.apps[0].schoolId, "f1");
+  assert.ok(snap.apps[1].items.some((i) => i.k === "tests" && i.need === "required"));
+  const sum = studentSummary(snap, new Date("2026-11-18T12:00:00"));
+  assert.deepEqual([sum.schools, sum.next, sum.missingSchools], [3, "2026-12-01", 3], "past deadline skipped");
+  assert.equal(sum.reqDone, 9);
+  const v1 = parseSnapshot({ kind: "college-app-share", v: 1, apps: [{ school: "A", checks: { form: "done", fee: "na" }, done: 1, total: 6 }], essays: [] });
+  assert.deepEqual(studentSummary(v1, new Date("2026-11-18")).reqDone, 1, "v1 snapshot still read");
+  for (const k of new Set([...fs.readFileSync(new URL("./app.js", import.meta.url), "utf8").matchAll(/t\(`?"?((?:co|tr|ck)_[a-z_]+)/g)].map((x) => x[1]).filter((k) => !k.endsWith("_")))) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  for (const k of [...CHECK_ITEMS.map((c) => `ck_${c.k}`), ...["name", "missing", "next"].map((x) => `co_sort_${x}`)]) assert.ok(STR.ko[k] && STR.en[k], `i18n ${k}`);
+  console.log("required/optional checklist + counselor progress check passed");
 }
 
 // 역할: 학생 / 카운슬러. 예전 자료(역할 없음)는 학생이다.

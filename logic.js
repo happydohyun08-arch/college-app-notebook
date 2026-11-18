@@ -96,11 +96,53 @@ export function wordCheck(e) {
   return { n, limit, over: limit != null && n > limit, src: "wc_common" };
 }
 
-// 지원 서류 체크리스트. opt = 학교에 따라 필요 없을 수 있음(화면에 '선택'으로 표시).
+// 지원 서류 체크리스트. opt = 학교 자료(reqs)가 없을 때 '선택'으로 보는 항목.
 export const CHECK_ITEMS = [
   { k: "form" }, { k: "fee" }, { k: "transcript" }, { k: "counselor" }, { k: "teacher1" }, { k: "teacher2" },
   { k: "tests", opt: true }, { k: "english" }, { k: "aid", opt: true },
+  { k: "interview", opt: true }, { k: "css", opt: true }, { k: "portfolio", opt: true }, { k: "midyear", opt: true }, { k: "supplements", opt: true },
 ];
+const NEEDS = ["required", "optional"];
+// 학교 값 → 필요 정도. 'none'·'not_offered'·'blind'는 목록에서 뺀다(null). 모르면(null 등) fb.
+const needOf = (v, fb) => (NEEDS.includes(v) ? v : ["none", "not_offered", "blind"].includes(v) ? null : fb);
+const isInt = (v) => Number.isInteger(v) && v >= 0;
+// 추천서 n번째: 필수 수 이상이면 필수, 최대 수 이상이면 선택, 둘 다 알려져 있고 모자라면 뺀다.
+function recNeed(r, n, fb) {
+  if (!isInt(r.teacher_recs)) return fb;
+  if (r.teacher_recs >= n) return "required";
+  return (isInt(r.teacher_recs_max) ? r.teacher_recs_max : r.teacher_recs) >= n ? "optional" : null;
+}
+/**
+ * 이 학교에 낼 서류 목록 [{k, need}]. 학교 자료(school.reqs)가 없거나 값이 null이면 CHECK_ITEMS의 opt를 따른다.
+ * CSS Profile은 재정 보조를 '해당 없음'으로 두지 않았을 때만(= 보조를 신청할 때) 보인다.
+ */
+export function itemsFor(app, school) {
+  const r = obj(school?.reqs) ?? {};
+  const fb = (k) => (CHECK_ITEMS.find((c) => c.k === k).opt ? "optional" : "required");
+  const need = {
+    counselor: needOf(r.counselor_rec, fb("counselor")),
+    teacher1: recNeed(r, 1, fb("teacher1")), teacher2: recNeed(r, 2, fb("teacher2")),
+    tests: needOf(r.tests, fb("tests")), english: needOf(r.english, fb("english")),
+    interview: needOf(r.interview, fb("interview")), portfolio: needOf(r.portfolio, fb("portfolio")), midyear: needOf(r.midyear, fb("midyear")),
+    css: app?.checks?.aid === "na" ? null : needOf(r.css_profile, fb("css")),
+    supplements: isInt(r.supplements) ? (r.supplements > 0 ? "required" : null) : fb("supplements"),
+  };
+  return CHECK_ITEMS.map(({ k }) => ({ k, need: k in need ? need[k] : fb(k) })).filter((x) => x.need);
+}
+/** 지원 목록의 학교 → schools.json의 학교. 목록에서 추가해 id가 있으면 id로, 아니면 이름이 하나만 맞을 때. */
+export function findSchool(schools, app) {
+  if (!Array.isArray(schools)) return null;
+  if (app?.schoolId) { const s = schools.find((x) => x.id === app.schoolId); if (s) return s; }
+  const k = schoolKey(app?.school);
+  const hits = k ? schools.filter((x) => schoolKey(x.name) === k) : [];
+  return hits.length === 1 ? hits[0] : null;
+}
+/** 화면용 묶음: 남은 필수 → 남은 선택 → 끝남(완료·해당 없음). items = [{k, need, state}] */
+export const itemGroups = (items) => ({
+  missing: items.filter((i) => i.need === "required" && i.state === "todo"),
+  optional: items.filter((i) => i.need === "optional" && i.state === "todo"),
+  done: items.filter((i) => i.state !== "todo"),
+});
 export const CHECK_STATES = ["todo", "done", "na"]; // 할 일 / 완료 / 해당 없음
 const freshChecks = (v = "todo") => Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, v]));
 export const STATUSES = ["prep", "submitted", "waiting", "admitted", "denied", "waitlist"];
@@ -112,11 +154,13 @@ const OLD_STATUS = { "준비 중": "prep", "제출 완료": "submitted", "결과
 export function migrateApp(a) {
   a.status = OLD_STATUS[a.status] ?? (STATUSES.includes(a.status) ? a.status : "prep");
   const c = a.checks && typeof a.checks === "object" && !Array.isArray(a.checks) ? a.checks : null;
-  a.checks = c ? Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, CHECK_STATES.includes(c[k]) ? c[k] : "todo"])) : freshChecks(a.status === "prep" ? "todo" : "done");
+  // 예전 체크는 그대로. 나중에 생긴 항목(값이 비어 있음)은 이미 제출한 학교면 '완료', 아니면 '할 일'.
+  const fill = a.status === "prep" ? "todo" : "done";
+  a.checks = c ? Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, CHECK_STATES.includes(c[k]) ? c[k] : c[k] == null || c[k] === "" ? fill : "todo"])) : freshChecks(fill);
   return a;
 }
 
-export const newApp = (school = "") => ({ id: crypto.randomUUID(), school, round: "RD", deadline: "", status: "prep", note: "", checks: freshChecks() });
+export const newApp = (school = "", schoolId = "") => ({ id: crypto.randomUUID(), school, schoolId, round: "RD", deadline: "", status: "prep", note: "", checks: freshChecks() });
 export const schoolKey = (v) => String(v ?? "").trim().replace(/\s+/g, " ").toLowerCase();
 /** 지원 목록에 학교가 없을 때만 추가한다 (대소문자·공백 무시). 추가했으면 true. */
 export function addAppOnce(apps, school) {
@@ -129,19 +173,21 @@ export function addAppOnce(apps, school) {
 
 /**
  * 학교 하나의 준비 현황. 보충 에세이는 따로 입력받지 않고 에세이 탭에서 학교 이름이 같은 Supplement를 센다.
- * 서류 중 '해당 없음'은 빼고, 보충 에세이는 '완료' 표시한 것만 끝난 것으로 본다.
+ * 준비율은 필수 서류만 센다 ('해당 없음'은 뺀다). 보충 에세이는 '완료' 표시한 것만 끝난 것으로 본다.
+ * items = 이 학교의 전체 서류 목록 [{k, need, state}] (필수·선택 묶음 표시용)
  */
-export function appProgress(app, essays) {
+export function appProgress(app, essays, school = null) {
   const supps = (essays ?? []).filter((e) => essayKind(e) === "supplement" && schoolKey(e.college) && schoolKey(e.college) === schoolKey(app.school));
-  const items = CHECK_ITEMS.filter(({ k }) => app.checks?.[k] !== "na").map(({ k }) => k);
+  const all = itemsFor(app, school).map((i) => ({ ...i, state: CHECK_STATES.includes(app.checks?.[i.k]) ? app.checks[i.k] : "todo" }));
+  const items = all.filter((i) => i.need === "required" && i.state !== "na").map((i) => i.k);
   const missing = items.filter((k) => app.checks?.[k] !== "done");
   const suppLeft = supps.filter((e) => !e.done);
   const total = items.length + supps.length;
   const done = total - missing.length - suppLeft.length;
-  return { done, total, missing, supps, suppLeft, ready: done === total };
+  return { done, total, missing, supps, suppLeft, ready: done === total, items: all };
 }
-/** 전체 요약: 서류와 보충 에세이가 모두 끝난 학교 수. */
-export const readyCount = (apps, essays) => ({ ready: apps.filter((a) => appProgress(a, essays).ready).length, total: apps.length });
+/** 전체 요약: 필수 서류와 보충 에세이가 모두 끝난 학교 수. schools = 학교 목록 (없으면 기본 목록) */
+export const readyCount = (apps, essays, schools = null) => ({ ready: apps.filter((a) => appProgress(a, essays, findSchool(schools, a)).ready).length, total: apps.length });
 
 /** 약관을 바꾸면 날짜를 올린다. 예전 버전에 동의한 사람은 다시 동의해야 한다. */
 export const TERMS_VERSION = "2026-11-11.2"; // 2026-11-11: AI는 Google 로그인, 계정 해시로 횟수 셈. .2: 카운슬러 공유
@@ -206,7 +252,7 @@ export function loadData(raw) {
       levels: pick(h?.levels, ["School", "State/Regional", "National", "International"]),
     })),
     apps: arr(o.apps).map((a) => ({
-      id: id(a?.id), school: s(a?.school, 200), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: s(a?.status, 20), note: s(a?.note, 2000),
+      id: id(a?.id), school: s(a?.school, 200), schoolId: s(a?.schoolId, 12), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: s(a?.status, 20), note: s(a?.note, 2000),
       ...(a?.checks && typeof a.checks === "object" && !Array.isArray(a.checks) ? { checks: Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, s(a.checks[k], 4)])) } : {}),
     })).map(migrateApp),
     essays: arr(o.essays).map((e) => ({
@@ -284,12 +330,15 @@ export function matchesSchoolField(school, field) {
 // 학생 드라이브에 두고 카운슬러에게 읽기 전용으로 공유하는 파일의 내용. 동의 화면에 적은 것만 넣는다:
 // 지원 학교 목록, 준비 체크리스트, 에세이(본문·완료 표시), AI 점수. 성적·활동·수상·AI 글 설명은 넣지 않는다.
 export const SHARE_KIND = "college-app-share";
-export function buildSnapshot(d, student, now = new Date()) {
+// v2: 학교마다 학교 id와 서류별 필요 정도·상태(학생 쪽에서 학교 자료로 계산)를 넣는다. v1 사본도 계속 읽는다.
+const httpsUrl = (v) => (/^https:\/\/[^\s"<>]+$/.test(String(v ?? "")) ? String(v).slice(0, 500) : "");
+export function buildSnapshot(d, student, now = new Date(), schools = null) {
   return {
-    kind: SHARE_KIND, v: 1, student: String(student ?? ""), updatedAt: now.toISOString(),
+    kind: SHARE_KIND, v: 2, student: String(student ?? ""), updatedAt: now.toISOString(),
     apps: d.apps.map((a) => {
-      const p = appProgress(a, d.essays);
-      return { school: a.school, round: a.round, deadline: a.deadline, status: a.status, checks: { ...a.checks }, done: p.done, total: p.total };
+      const sc = findSchool(schools, a);
+      const p = appProgress(a, d.essays, sc);
+      return { school: a.school, schoolId: sc?.id ?? "", src: httpsUrl(sc?.reqs?.source_url), round: a.round, deadline: a.deadline, status: a.status, items: p.items, done: p.done, total: p.total };
     }),
     essays: d.essays.map((e) => ({
       title: e.title, kind: essayKind(e), college: e.college, prompt: e.prompt, text: e.text, done: e.done === true, words: words(e.text),
@@ -309,10 +358,14 @@ export function parseSnapshot(raw) {
     student: s(o.student, 254), updatedAt: s(o.updatedAt, 40),
     apps: arr(o.apps, 200).map((a) => {
       const total = Math.max(0, Math.min(Number(a?.total) || 0, 999));
+      const state = (v) => (CHECK_STATES.includes(v) ? v : "todo");
+      // v2는 items를 그대로(알려진 항목만, 한 번씩), v1은 checks를 기본 목록으로 읽는다.
+      const items = Array.isArray(a?.items)
+        ? CHECK_ITEMS.map(({ k }) => a.items.find((i) => i?.k === k)).filter((i) => i && NEEDS.includes(i.need)).map((i) => ({ k: i.k, need: i.need, state: state(i.state) }))
+        : itemsFor({ checks: obj(a?.checks) ?? {} }, null).map((i) => ({ ...i, state: state(a?.checks?.[i.k]) }));
       return {
-        school: s(a?.school, 200), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: STATUSES.includes(a?.status) ? a.status : "prep",
-        checks: Object.fromEntries(CHECK_ITEMS.map(({ k }) => [k, CHECK_STATES.includes(a?.checks?.[k]) ? a.checks[k] : "todo"])),
-        total, done: Math.max(0, Math.min(Number(a?.done) || 0, total)),
+        school: s(a?.school, 200), schoolId: s(a?.schoolId, 12), src: httpsUrl(a?.src), round: s(a?.round, 20), deadline: s(a?.deadline, 10), status: STATUSES.includes(a?.status) ? a.status : "prep",
+        items, total, done: Math.max(0, Math.min(Number(a?.done) || 0, total)),
       };
     }),
     essays: arr(o.essays, 200).map((e) => ({
@@ -322,5 +375,16 @@ export function parseSnapshot(raw) {
         ? { total: Math.max(0, Math.min(Math.round(e.ai.total), 100)), criteria: arr(e.ai.criteria, 5).map((c) => ({ name: s(c?.name, 40), score: Math.max(0, Math.min(Number(c?.score) || 0, 20)) })) }
         : null,
     })),
+  };
+}
+
+/** 카운슬러 반 전체 표의 한 줄: 학교 수, 필수 서류 완료/전체('해당 없음' 제외), 다음 마감(오늘 이후, 준비 중인 학교), 필수가 남은 학교 수. */
+export function studentSummary(snap, today = new Date()) {
+  const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const req = snap.apps.flatMap((a) => a.items.filter((i) => i.need === "required" && i.state !== "na"));
+  const next = snap.apps.filter((a) => a.status === "prep" && /^\d{4}-\d{2}-\d{2}$/.test(a.deadline) && a.deadline >= iso(today)).map((a) => a.deadline).sort()[0] ?? "";
+  return {
+    schools: snap.apps.length, reqDone: req.filter((i) => i.state === "done").length, reqTotal: req.length, next,
+    missingSchools: snap.apps.filter((a) => itemGroups(a.items).missing.length).length,
   };
 }

@@ -1,4 +1,4 @@
-import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, outSaveState, signinSteps, roleAfterSignin, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
+import { buildSnapshot, parseSnapshot, localizeEval, localizeOrder, SCHOOL_FIELDS, matchesSchoolField, classify, addEstimates, dday, loadData, signedUp, syncPlan, TERMS_VERSION, roleOf, outSaveState, signinSteps, roleAfterSignin, tabVisible, homeTab, wordCheck, essayKind, ESSAY_KINDS, newApp, addAppOnce, STATUSES, CHECK_ITEMS, CHECK_STATES, appProgress, readyCount, findSchool, itemGroups, studentSummary, totalHours, MAX_ACTIVITIES, MAX_HONORS } from "./logic.js";
 import { STR, ACTIVITY_TYPES, GRADES, RECOGNITION } from "./i18n.js";
 
 // Worker 주소. 바꾸면 worker/wrangler.toml의 ALLOWED_ORIGIN도 사이트 주소와 맞아야 한다.
@@ -429,6 +429,9 @@ function showOrder(box, raw, actIds, honIds) {
 
 // ---------- 학교 분류 ----------
 let schools = null;
+let schoolsLoading = null;
+// 학교 목록은 한 번만 받는다 (학교 탭, 지원 목록의 서류 요건, 카운슬러 공유 사본이 같이 쓴다).
+const loadSchools = () => (schoolsLoading ??= fetch("schools.json").then((r) => r.json()).then((j) => (schools = addEstimates(j))).catch((e) => { schoolsLoading = null; throw e; }));
 let schoolLimit = 50; // ponytail: 2,370행을 한 번에 그리면 느려서 50개씩. 더 커지면 가상 스크롤로.
 const sv = { q: "", state: "", kind: "", field: "", fit: "", sort: "name" };
 const KINDS = ["liberal_arts", "research", "doctoral", "masters", "baccalaureate", "special_arts", "special_tech", "special_business", "special_health", "special_faith", "special_tribal", "special_other", "other"];
@@ -479,7 +482,7 @@ async function renderSchools() {
   const body = $("#schoolRows");
   if (!schools) {
     try {
-      schools = addEstimates(await (await fetch("schools.json")).json());
+      await loadSchools();
     } catch {
       body.replaceChildren(el("tr", {}, el("td", { colSpan: 8, textContent: t("load_fail") })));
       return;
@@ -522,12 +525,12 @@ async function renderSchools() {
     el("td", { className: "num", textContent: sc.gpa_avg ?? "–" }),
     el("td", {}, el("span", { className: `tag ${r.label}`, textContent: t(r.label) }), el("div", { className: "muted", textContent: r.reasons.map(t).join(" · ") })),
     el("td", {}, sc.source ? el("a", { href: sc.source, target: "_blank", rel: "noopener", textContent: sc.year ?? t("source") }) : el("span", { className: "muted", textContent: t("no_data") })),
-    el("td", {}, el("button", { className: "btn ghost mini", textContent: t("add_to_list"), onclick: () => addApp(sc.name) })))));
+    el("td", {}, el("button", { className: "btn ghost mini", textContent: t("add_to_list"), onclick: () => addApp(sc.name, sc.id) })))));
 }
 
 // ---------- 지원 목록 ----------
-function addApp(school = "") {
-  data.apps.push(newApp(school));
+function addApp(school = "", schoolId = "") {
+  data.apps.push(newApp(school, schoolId));
   save();
   showTab("apps");
 }
@@ -536,7 +539,8 @@ $("#addApp").addEventListener("click", () => addApp());
 function renderApps() {
   const sorted = [...data.apps].sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
   $("#appRows").replaceChildren(...sorted.map((a) => {
-    const set = (k, rerender) => (e) => { a[k] = e.target.value; save(); rerender ? renderApps() : renderTracker(); };
+    // 학교 이름을 고치면 목록에서 고른 학교 id는 버린다 (이름으로 다시 찾는다).
+    const set = (k, rerender) => (e) => { a[k] = e.target.value; if (k === "school") a.schoolId = ""; save(); rerender ? renderApps() : renderTracker(); };
     return el("tr", {},
       el("td", {}, el("input", { value: a.school, placeholder: t("school_ph"), oninput: set("school") })),
       el("td", {}, select(ROUNDS, a.round, set("round"), (o) => (o === "other" ? t("round_other") : o))),
@@ -550,16 +554,22 @@ function renderApps() {
 
 // 준비 현황: 학교마다 서류 체크리스트 + 그 학교 보충 에세이(에세이 탭과 같은 자료).
 function renderTracker() {
+  // 학교 요건(reqs)을 쓰려면 학교 목록이 필요하다. 아직 없으면 기본 목록으로 먼저 그리고, 받으면 다시 그린다.
+  if (!schools) loadSchools().then(() => tab === "apps" && renderTracker(), () => {});
   const sorted = [...data.apps].sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
-  const { ready, total } = readyCount(data.apps, data.essays);
+  const { ready, total } = readyCount(data.apps, data.essays, schools);
   $("#trackTotal").textContent = t("tr_total").replace("{r}", ready).replace("{n}", total);
   const name = (e, n) => e.title || e.prompt.slice(0, n) || t("new_essay");
   $("#trackList").replaceChildren(...sorted.map((a) => {
-    const p = appProgress(a, data.essays);
+    const sc = findSchool(schools, a), reqs = sc?.reqs;
+    const known = reqs && Object.entries(reqs).some(([k, v]) => v != null && k !== "source_url" && k !== "as_of");
+    const p = appProgress(a, data.essays, sc);
     const left = [...p.missing.map((k) => t(`ck_${k}`)), ...p.suppLeft.map((e) => `${t("tr_supp")}: ${name(e, 40)}`)];
-    const checks = CHECK_ITEMS.map(({ k, opt }) => el("div", { className: "ckrow" },
-      el("span", { textContent: t(`ck_${k}`) + (opt ? ` (${t("ck_opt")})` : "") }),
-      select(CHECK_STATES, a.checks[k], (e) => { a.checks[k] = e.target.value; save(); renderTracker(); }, (o) => t(`cs_${o}`))));
+    const row = ({ k }) => el("div", { className: "ckrow" },
+      el("span", { textContent: t(`ck_${k}`) }),
+      select(CHECK_STATES, a.checks[k], (e) => { a.checks[k] = e.target.value; save(); renderTracker(); }, (o) => t(`cs_${o}`)));
+    const group = (need, h) => { const list = p.items.filter((i) => i.need === need); return list.length ? [el("h4", { textContent: h }), el("div", { className: "ckgrid" }, ...list.map(row))] : []; };
+    const src = /^https:\/\//.test(reqs?.source_url ?? "") && el("a", { className: "mini", href: reqs.source_url, target: "_blank", rel: "noopener", textContent: `${t("tr_src")}${reqs.as_of ? ` (${t("tr_asof")} ${reqs.as_of})` : ""} ↗` });
     const supps = p.supps.map((e) => el("label", { className: "check" },
       el("input", { type: "checkbox", checked: e.done, onchange: (ev) => { e.done = ev.target.checked; save(); renderEssays(); renderTracker(); } }),
       el("span", { textContent: `${name(e, 60)} · ${t(e.done ? "es_done" : e.text.trim() ? "es_draft" : "es_planned")}` })));
@@ -575,7 +585,9 @@ function renderTracker() {
       el("div", { className: "meter" }, el("i", { style: `width:${p.total ? Math.round((p.done / p.total) * 100) : 100}%` })),
       el("div", { className: "muted", textContent: p.ready ? t("tr_ready") : `${t("tr_left")}: ${left.join(", ")}` }),
       el("details", {}, el("summary", { textContent: t("tr_edit") }),
-        el("div", { className: "ckgrid" }, ...checks),
+        known ? src : el("p", { className: "muted", textContent: t("tr_generic") }),
+        ...group("required", t("tr_req")), ...group("optional", t("tr_opt")),
+        el("p", { className: "muted", textContent: t("tr_aid_hint") }),
         el("p", { className: "muted", textContent: p.supps.length ? t("tr_supp_h") : t("tr_no_supp") }),
         ...supps, addSupp));
   }));
@@ -935,11 +947,12 @@ async function loadMine() {
   } catch { myClasses = []; myInvites = []; }
   renderClass();
 }
-const snapshot = () => JSON.stringify(buildSnapshot(data, jwt(idToken).email));
+// 사본의 서류 요건은 학교 목록으로 계산한다. 목록을 못 받으면 기본 목록으로 보낸다.
+const snapshot = async () => { await loadSchools().catch(() => {}); return JSON.stringify(buildSnapshot(data, jwt(idToken).email, new Date(), schools)); };
 // 드라이브 동기화 때마다 공유 사본도 고친다. 공유 권한(drive.file)이 없는 토큰이면 건너뛴다 (창을 띄우지 않는다).
 async function pushShares() {
   if (!myClasses.length || !gdToken?.file || !signedIn()) return;
-  const body = snapshot();
+  const body = await snapshot();
   for (const c of myClasses) {
     try { await gdFetch(`/upload/drive/v3/files/${c.fileId}?uploadType=media`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body, file: true }); }
     catch (e) { clMsg(`${t("cl_push_fail")} (${c.name}): ${e.message}`); }
@@ -962,7 +975,7 @@ async function joinClass(c) {
     clMsg(t("gd_working"));
     const form = new FormData();
     form.append("metadata", new Blob([JSON.stringify({ name: `College App Manager - ${c.name} (${c.counselor}).json`, mimeType: "application/json", description: t("cl_file_desc") })], { type: "application/json" }));
-    form.append("file", new Blob([snapshot()], { type: "application/json" }));
+    form.append("file", new Blob([await snapshot()], { type: "application/json" }));
     fileId = (await (await gdFetch("/upload/drive/v3/files?uploadType=multipart&fields=id", { method: "POST", body: form, file: true })).json()).id;
     await gdFetch(`/drive/v3/files/${fileId}/permissions?sendNotificationEmail=false`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ role: "reader", type: "user", emailAddress: c.counselor }), file: true });
     await classCall({ op: "join", code: c.code, fileId });
@@ -1050,19 +1063,49 @@ function studentView(m) {
   const head = el("h4", { textContent: m.email });
   if (!s) return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: t("cl_not_loaded") }));
   if (s.error) return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: s.error === "grant" ? t("cl_need_grant") : `${t("gd_fail")}: ${s.error}` }));
-  const apps = el("div", { className: "scroll" }, el("table", {},
-    el("thead", {}, el("tr", {}, ...["th_school", "th_round", "th_deadline", "th_dday", "th_status", "cl_th_checks"].map((k) => el("th", { textContent: t(k) })))),
-    el("tbody", {}, ...[...s.apps].sort(byDeadline).map((a) => el("tr", {},
-      el("td", { textContent: a.school }), el("td", { textContent: a.round }), el("td", { textContent: a.deadline }),
-      el("td", { textContent: a.status === "prep" ? dday(a.deadline) : "" }), el("td", { textContent: t(`st_${a.status}`) }),
-      el("td", {}, el("span", { className: "num", textContent: `${a.done} / ${a.total}` }),
-        el("div", { className: "muted", textContent: CHECK_ITEMS.filter(({ k }) => a.checks[k] === "todo").map(({ k }) => t(`ck_${k}`)).join(", ") })))))));
+  // 학교마다: 남은 필수(빨강) → 남은 선택 → 끝남. '필수가 남은 것만'이면 다 끝낸 학교는 숨긴다.
+  const names = (list) => list.map((i) => t(`ck_${i.k}`) + (i.state === "na" ? ` (${t("cs_na")})` : "")).join(", ") || t("co_none");
+  const shown = [...s.apps].sort(byDeadline).map((a) => ({ a, g: itemGroups(a.items) })).filter(({ g }) => !coView.only || g.missing.length);
+  const apps = shown.map(({ a, g }) => el("div", { className: "co-app" },
+    el("div", { className: "row tr-head" }, el("b", { textContent: a.school }),
+      el("span", { className: "muted", textContent: [a.round, a.deadline, a.status === "prep" ? dday(a.deadline) : t(`st_${a.status}`)].filter(Boolean).join(" · ") }),
+      el("span", { className: "num muted", textContent: `${a.done} / ${a.total}` }),
+      a.src && el("a", { className: "mini", href: a.src, target: "_blank", rel: "noopener", textContent: `${t("tr_src")} ↗` })),
+    el("div", { className: g.missing.length ? "co-miss" : "muted", textContent: `${t("co_missing")}: ${names(g.missing)}` }),
+    !coView.only && el("div", { className: "muted", textContent: `${t("co_optional")}: ${names(g.optional)}` }),
+    !coView.only && el("div", { className: "muted", textContent: `${t("co_done")}: ${names(g.done)}` })));
+  if (coView.only && !shown.length) apps.push(el("p", { className: "muted", textContent: t("co_all_set") }));
+  const essayDone = el("p", { className: "muted", textContent: `${t("co_essays")}: ${s.essays.filter((e) => e.done).length} / ${s.essays.length}` });
   const essays = s.essays.map((e) => el("details", {},
     el("summary", { textContent: [e.title || e.college || t("new_essay"), t(e.done ? "es_done" : e.text.trim() ? "es_draft" : "es_planned"), `${e.words} ${t("cl_words")}`, e.ai ? `AI ${e.ai.total}/100` : t("cl_no_ai")].join(" · ") }),
     e.prompt && el("p", { className: "muted", textContent: e.prompt }),
     e.ai && el("p", { className: "muted", textContent: e.ai.criteria.map((c) => `${CRIT_KEY[c.name] ? t(CRIT_KEY[c.name]) : c.name} ${c.score}/20`).join(" · ") }),
     el("p", { style: "white-space:pre-wrap", textContent: e.text })));
-  return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: `${t("cl_updated")}: ${when(s.updatedAt)}` }), apps, ...essays);
+  return el("div", { className: "card" }, head, el("p", { className: "muted", textContent: `${t("cl_updated")}: ${when(s.updatedAt)}` }), ...apps, essayDone, ...essays);
+}
+const coView = { only: false, sort: "name" }; // 카운슬러 화면: 필수가 남은 것만 / 정렬
+const SORTS = ["name", "missing", "next"];
+// 반 전체 표: 학생마다 학교 수, 필수 서류 완료/전체, 다음 마감, 필수가 남은 학교 수(빨강). 불러온 학생만 계산한다.
+function classOverview(members) {
+  const rows = members.map((m) => ({ m, s: roster[m.fileId] })).filter(({ s }) => s && !s.error).map(({ m, s }) => ({ m, sum: studentSummary(s) }));
+  if (!rows.length) return null;
+  return el("div", {}, el("h4", { textContent: t("co_ov_h") }),
+    el("div", { className: "row" },
+      el("label", { className: "check" }, el("input", { type: "checkbox", checked: coView.only, onchange: (e) => { coView.only = e.target.checked; renderClass(); } }), el("span", { textContent: t("co_only_missing") })),
+      el("span", { className: "muted", textContent: t("co_sort") }), select(SORTS, coView.sort, (e) => { coView.sort = e.target.value; renderClass(); }, (o) => t(`co_sort_${o}`))),
+    el("div", { className: "scroll" }, el("table", {},
+      el("thead", {}, el("tr", {}, ...["co_th_student", "co_th_schools", "co_th_req", "co_th_next", "co_th_missing"].map((k) => el("th", { textContent: t(k) })))),
+      el("tbody", {}, ...sortMembers(rows.map((r) => r.m)).map((m) => rows.find((r) => r.m === m)).filter(({ sum }) => !coView.only || sum.missingSchools).map(({ m, sum }) => el("tr", {},
+        el("td", { textContent: m.email }), el("td", { className: "num", textContent: sum.schools }),
+        el("td", { className: "num", textContent: `${sum.reqDone} / ${sum.reqTotal}` }),
+        el("td", { textContent: sum.next ? `${sum.next} (${dday(sum.next)})` : "–" }),
+        el("td", { className: `num${sum.missingSchools ? " co-miss" : ""}`, textContent: sum.missingSchools })))))));
+}
+// 정렬: 이름 / 필수가 남은 학교 많은 순 / 다음 마감 빠른 순. 아직 못 불러온 학생은 맨 뒤.
+function sortMembers(members) {
+  const sum = (m) => (roster[m.fileId] && !roster[m.fileId].error ? studentSummary(roster[m.fileId]) : null);
+  const key = (m) => { const x = sum(m); return coView.sort === "missing" ? -(x?.missingSchools ?? -1) : coView.sort === "next" ? x?.next || "9999" : 0; };
+  return [...members].sort((a, b) => { const ka = key(a), kb = key(b); return (ka < kb ? -1 : ka > kb ? 1 : 0) || a.email.localeCompare(b.email); });
 }
 function renderClass() {
   const on = signedIn();
@@ -1084,7 +1127,8 @@ function renderClass() {
       el("div", { className: "row" },
         c.members.length > 0 && el("button", { className: "btn mini", textContent: t("cl_read"), onclick: () => readStudents(c) }),
         needGrant && el("button", { className: "btn mini", textContent: t("cl_grant"), onclick: () => grantAccess(c) })),
-      ...c.members.map(studentView));
+      classOverview(c.members),
+      ...sortMembers(c.members).filter((m) => !coView.only || !roster[m.fileId] || roster[m.fileId].error || studentSummary(roster[m.fileId]).missingSchools).map(studentView));
   }));
 }
 
