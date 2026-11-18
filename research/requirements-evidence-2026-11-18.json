@@ -1,0 +1,2537 @@
+[
+ {
+  "id": "160977",
+  "name": "Bates College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://www.bates.edu/admission/apply/",
+    "quote": "Applicants are required to submit 1 teacher recommendation and may submit up to 2.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.bates.edu/admission/apply/",
+    "quote": "1 counselor recommendation",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://www.bates.edu/admission/apply/",
+    "quote": "If applying Regular Decision , a mid-year transcript report is due by February 15 .",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.bates.edu/admission/apply/international-students/",
+    "quote": "Yes, the submission of the SAT or ACT has been optional for all students applying to Bates since 1984.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://www.bates.edu/admission/apply/",
+    "quote": "Arts Supplement (Optional)",
+    "source_type": "official_admissions_page"
+   },
+   "teacher_recs_max": {
+    "value": 2,
+    "url": "https://www.bates.edu/admission/apply/",
+    "quote": "Applicants are required to submit 1 teacher recommendation and may submit up to 2.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.bates.edu/admission/apply/international-students/",
+    "quote": "If English is neither your native language nor the primary language of your secondary school instruction, then an official copy of the results of an English-proficiency test, the TOEFL , IELTS , or Duolingo English Test , are required.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.bates.edu/admission/apply/international-students/",
+    "quote": "An InitialView or Vericant interview is encouraged, though not required",
+    "source_type": "official_admissions_page"
+   },
+   "css_profile": {
+    "value": "none",
+    "url": "https://www.bates.edu/admission/apply/international-students/",
+    "quote": "The CSS Profile is not needed to apply to Bates as an international student.",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 0,
+    "url": "https://www.bates.edu/admission/apply/",
+    "quote": "Bates does not require a supplemental essay when applying.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "223232",
+  "name": "Baylor University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Baylor University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Baylor University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "142115",
+  "name": "Boise State University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "english": {
+    "value": "required",
+    "url": "https://www.boisestate.edu/global-international/apply/ia-international-first-year-admission/",
+    "quote": "international students must demonstrate appropriate levels of English proficiency in order to be admissible to a degree program.",
+    "source_type": "official_admissions_page"
+   },
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://www.boisestate.edu/global-international/apply/ia-international-first-year-admission/",
+    "quote": "Though they are not required, we welcome letters of recommendation, personal statements, or other things you may wish to share with us as we review your application.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "optional",
+    "url": "https://www.boisestate.edu/global-international/apply/ia-international-first-year-admission/",
+    "quote": "Though they are not required, we welcome letters of recommendation, personal statements, or other things you may wish to share with us as we review your application.",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 0,
+    "url": "https://www.boisestate.edu/global-international/apply/ia-international-first-year-admission/",
+    "quote": "Though they are not required, we welcome letters of recommendation, personal statements, or other things you may wish to share with us as we review your application.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "Boise State is not on the Common App grid; it uses its own application. SAT/ACT policy for international first-years was not stated on the international page."
+ },
+ {
+  "id": "164924",
+  "name": "Boston College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://www.bc.edu/bc-web/admission/apply.html",
+    "quote": "You are required to submit two teacher evaluations as part of your application to Boston College.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.bc.edu/bc-web/admission/apply.html",
+    "quote": "The School Report and Counselor Recommendation Form - Your counselor or school official should submit these forms.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://www.bc.edu/bc-web/admission/apply.html",
+    "quote": "We require that the Mid-Year Grade Report be submitted as soon as it is available by your counselor or designated school official.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.bc.edu/bc-web/admission/apply/international.html",
+    "quote": "Boston College has adopted a test-optional policy for first-year applicants. This policy does not include English proficiency examinations.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.bc.edu/bc-web/admission/apply/international.html",
+    "quote": "Boston College requires that non-U.S. citizens submit TOEFL iBT (at a test center or Home Edition), IELTS , or Duolingo English Test examination scores.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.bc.edu/bc-web/admission/apply/international.html",
+    "quote": "While an InitialView interview is not required and does not replace the English Proficiency requirement",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "164988",
+  "name": "Boston University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Boston University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.bu.edu/admissions/apply/first-year/",
+    "quote": "Please ask your counselor to submit the School Report form and the School Counselor Recommendation form found on the Common Application.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://www.bu.edu/admissions/apply/first-year/",
+    "quote": "In addition, your counselor must submit first semester grades once they are available.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.bu.edu/admissions/apply/first-year/",
+    "quote": "Boston University is test optional for first-year applicants applying through fall 2028 and spring 2029.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.bu.edu/admissions/apply/international/",
+    "quote": "If your first language is not English, you must take the Test of English as a Foreign Language Internet Based Test (TOEFL iBT) , International English Language Testing System (IELTS), or the Duolingo English Test (DET).",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.bu.edu/admissions/apply/international/",
+    "quote": "InitialView and Vericant Interviews (Optional)",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 1,
+    "url": "https://www.bu.edu/admissions/apply/first-year/",
+    "quote": "you must submit two essays: the Common Application personal statement and the Boston University supplemental essay.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "217156",
+  "name": "Brown University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admission.brown.edu/first-year/application-checklist",
+    "quote": "Two Teacher Evaluations/Recommendations: Two letters of recommendation from teachers who have taught you in major academic subjects",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admission.brown.edu/first-year/application-checklist",
+    "quote": "Counselor Recommendation: Please note that the School Report and Counselor Recommendation are separate items on the Common Application.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://admission.brown.edu/first-year/application-checklist",
+    "quote": "All applicants should have their school submit midyear or second trimester grades as soon as they are available.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://admission.brown.edu/first-year/standardized-tests",
+    "quote": "Brown University has returned to a policy requiring standardized test scores (either SAT or ACT scores) for first-year applicants beginning with the 2024-25 admission cycle.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://admission.brown.edu/first-year/application-checklist",
+    "quote": "If you are accomplished in music or visual art, you may include additional supplements with your application in the Common Application through SlideRoom .",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 4,
+    "url": "https://admission.brown.edu/apply/how-apply",
+    "quote": "Four essays are required for all first-year and transfer applicants:",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "110404",
+  "name": "California Institute of Technology",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://www.admissions.caltech.edu/apply/first-year-applicants/international-applicants",
+    "quote": "We require letters of recommendation from two secondary school teachers:",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"California Institute of Technology (Caltech)\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://www.admissions.caltech.edu/apply/first-year-applicants/international-applicants",
+    "quote": "We require either the SAT or ACT test scores.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.admissions.caltech.edu/apply/first-year-applicants/international-applicants",
+    "quote": "English Proficiency Exam scores are required of all international applicants unless 1) your native language is English or 2) English is the primary language of instruction",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"California Institute of Technology (Caltech)\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.admissions.caltech.edu/apply/first-year-applicants/international-applicants",
+    "quote": "InitialView is recommended but not required for international students.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "173258",
+  "name": "Carleton College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Carleton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.carleton.edu/admissions/apply/steps/materials/",
+    "quote": "High School Counselor Recommendation (also known as “School Report”)",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Carleton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.carleton.edu/admissions/apply/steps/materials/",
+    "quote": "As of 2025, Carleton has adopted a permanent test-optional policy for all applicants. This means results of the SAT or the ACT are not required, but you may still submit them.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://www.carleton.edu/admissions/apply/steps/materials/",
+    "quote": "These portfolios are not required for participation or majoring in the arts at Carleton.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.carleton.edu/admissions/apply/steps/materials/",
+    "quote": "TOEFL, IELTS, or Duolingo English Test for students whose primary language of instruction has not been English",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.carleton.edu/admissions/apply/steps/international/",
+    "quote": "Interviews are not a required part of the application process.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "211440",
+  "name": "Carnegie Mellon University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Carnegie Mellon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Carnegie Mellon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Carnegie Mellon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Carnegie Mellon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.cmu.edu/admission/admission/international-applicants",
+    "quote": "the Duolingo English Test (DET), or the Cambridge English Assessment are required.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.cmu.edu/admission/admission/international-applicants",
+    "quote": "InitialView or Vericant interviews are recommended for nonnative English speakers but aren't required.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "tests vary by CMU college (Engineering test flexible = scores required; Fine Arts test optional), so tests is null"
+ },
+ {
+  "id": "112260",
+  "name": "Claremont McKenna College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Claremont McKenna College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.cmc.edu/admission/first-year-application-instructions",
+    "quote": "Please have your school’s college counselor send the school report, a counselor recommendation, and official high school transcript",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Claremont McKenna College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.cmc.edu/admission/first-year-application-instructions",
+    "quote": "CMC’s provisional test-optional policy is extended to applicants applying through the Fall 2027 entry term.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Claremont McKenna College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.cmc.edu/admission/first-year-application-instructions",
+    "quote": "While interviews are not required, they are highly recommended .",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "190150",
+  "name": "Columbia University in the City of New York",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://undergrad.admissions.columbia.edu/apply/first-year",
+    "quote": "Columbia requires two teacher recommendations.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://undergrad.admissions.columbia.edu/apply/first-year",
+    "quote": "One high school counselor recommendation and school profile",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Columbia University\": test policy=N; English proficiency=C or D or I or T; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://undergrad.admissions.columbia.edu/apply/first-year",
+    "quote": "Students applying to enter Columbia in Fall 2027 (ie. applicants in the 2026-2027 admissions cycle) may choose whether or not to submit testing.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Columbia University\": test policy=N; English proficiency=C or D or I or T; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "source_type": "common_app_grid"
+   },
+   "interview": {
+    "value": "not_offered",
+    "url": "https://undergrad.admissions.columbia.edu/apply/first-year",
+    "quote": "Interviews are not a part of the application process.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://undergrad.admissions.columbia.edu/apply/first-year",
+    "quote": "Supplementary materials , such as an arts portfolio, research abstract or resume, are not a required part of our admissions process",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "190415",
+  "name": "Cornell University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admissions.cornell.edu/how-to-apply/first-year-applicants",
+    "quote": "You're required to submit two teacher recommendations, which should highlight your academic strengths and contributions in the classroom.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admissions.cornell.edu/how-to-apply/first-year-applicants",
+    "quote": "For your letters of recommendation, we recommend someone not related to you complete at least two of the three required recommendations.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://admissions.cornell.edu/how-to-apply/first-year-applicants",
+    "quote": "Mid-year grades for current courses are required when available.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://admissions.cornell.edu/how-to-apply/first-year-applicants",
+    "quote": "You're required to submit SAT or ACT scores when applying to Cornell.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Cornell University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "182670",
+  "name": "Dartmouth College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Dartmouth College\": test policy=A; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Dartmouth College\": test policy=A; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Dartmouth College\": test policy=A; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://admissions.dartmouth.edu/apply/testing-policy",
+    "quote": "Standardized testing is a required element of Dartmouth's undergraduate application.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Dartmouth College\": test policy=A; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Dartmouth College\": test policy=A; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://admissions.dartmouth.edu/apply/apply-dartmouth",
+    "quote": "Interviews are not required for any first-year applicant to Dartmouth.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "198419",
+  "name": "Duke University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admissions.duke.edu/apply/",
+    "quote": "We require three letters of recommendation for each applicant: one from your school counselor and two from teachers who have taught you in major academic courses",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admissions.duke.edu/apply/",
+    "quote": "We require three letters of recommendation for each applicant: one from your school counselor and two from teachers",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://admissions.duke.edu/apply/",
+    "quote": "We require midyear grades for all applicants by February 15 or as soon as they are available",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admissions.duke.edu/apply/",
+    "quote": "Duke University is test-optional for both first-year and transfer applicants in the 2026-2027 admissions cycle.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "optional",
+    "url": "https://admissions.duke.edu/apply/",
+    "quote": "we recommend but do not require that you take an English proficiency test.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://admissions.duke.edu/apply/",
+    "quote": "Alumni interviews are an optional component of the Duke application process.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "198516",
+  "name": "Elon University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Elon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Elon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Elon University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.elon.edu/u/admissions/undergraduate/international-admissions/admissions-requirements/",
+    "quote": "Submission of SAT or ACT results is not required for admissions consideration.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.elon.edu/u/admissions/undergraduate/international-admissions/admissions-requirements/",
+    "quote": "If you are attending a school where English is not the primary language of instruction, you must demonstrate English proficiency by submitting the TOEFL (Test of English as a Foreign Language), IELTS or Duolingo English Test scores.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.elon.edu/u/admissions/undergraduate/international-admissions/admissions-requirements/",
+    "quote": "If you have chosen to include an InitialView interview as part of your application process, we would invite you to provide it to us.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "139658",
+  "name": "Emory University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Emory University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Emory University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Emory University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Emory University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "css_profile": {
+    "value": "required",
+    "url": "https://studentaid.emory.edu/undergraduate/apply/new-students/international.html",
+    "quote": "Complete the CSS Profile before February 5th if you think you will need financial assistance at any time during your education",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://apply.emory.edu/apply/international",
+    "quote": "Additionally, they must demonstrate English proficiency and provide financial certification.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://apply.emory.edu/apply/international",
+    "quote": "While the interview is not required for admission, students from any country are welcome to submit one",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "teacher_recs left null: the Common App 2026-27 grid lists TE=2 but Emory's requirements page asks for one teacher evaluation (\"Ask a teacher ... to submit a formal evaluation\")."
+ },
+ {
+  "id": "139755",
+  "name": "Georgia Institute of Technology-Main Campus",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgia Institute of Technology\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgia Institute of Technology\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://admission.gatech.edu/first-year/standardized-tests",
+    "quote": "All first-year applicants must submit results from at least one SAT and/or ACT in order to be considered for admission.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgia Institute of Technology\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admission.gatech.edu/international/first-year",
+    "quote": "The University System of Georgia requires that all international applicants demonstrate English proficiency using one of the USG approved methods .",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "153384",
+  "name": "Grinnell College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "You will provide the Common Application system with the email address of two teachers which will allow them to submit recommendation letters online on your behalf.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "6. School Report Form and Counselor Recommendation",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Grinnell College\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Grinnell College\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "css_profile": {
+    "value": "optional",
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "all applicants needing financial assistance are required to complete the CSS Profile or Grinnell's International Student Application for Financial Assistance",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "We encourage you to read more about Grinnell's test-optional policy .",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "If your native language is not English and/or your primary language of instruction in high school was not English, you will need to demonstrate your English proficiency.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "Grinnell College does not require personal interviews",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 0,
+    "url": "https://www.grinnell.edu/admission/apply/international",
+    "quote": "While Grinnell does not have a required supplementary essay / application",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "166027",
+  "name": "Harvard University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://college.harvard.edu/admissions/apply/application-requirements",
+    "quote": "Ask two teachers in different academic subjects who know you well to complete the Teacher Recommendation forms",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://college.harvard.edu/admissions/apply/application-requirements",
+    "quote": "The secondary school report is a required form that is submitted by your school counselor or another school leader. This form gives an overview of the student's academic record. It includes the applicant's academic transcript(s), a letter of recommendation",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://college.harvard.edu/admissions/apply/application-requirements",
+    "quote": "That is why the midyear school report is required",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://college.harvard.edu/admissions/apply/international-applicants",
+    "quote": "Harvard requires the SAT or ACT to meet its standardized testing requirement.",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 5,
+    "url": "https://college.harvard.edu/admissions/apply/application-requirements",
+    "quote": "This includes the following five required short-answer questions, each with a 150 word limit.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "optional",
+    "url": "https://college.harvard.edu/admissions/apply/international-applicants",
+    "quote": "First-year and transfer applicants are not required to take an English proficiency exam, but you may submit scores if you wish to do so.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://college.harvard.edu/admissions/apply/international-applicants",
+    "quote": "we are unable to interview all applicants. The absence of an interview will not adversely affect your candidacy.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "115409",
+  "name": "Harvey Mudd College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://www.hmc.edu/admission/apply/first-year-students/",
+    "quote": "Teacher Recommendation from a humanities, social sciences or arts teacher.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Harvey Mudd College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.hmc.edu/admission/apply/first-year-students/",
+    "quote": "We are test-optional for students applying for Fall 2027 and will return to requiring standardized testing for all students for the Fall 2028 application cycle",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.hmc.edu/admission/apply/international-applicants/",
+    "quote": "Required: Proof of proficiency in English. International students must demonstrate proficiency in English.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Harvey Mudd College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "supplements": {
+    "value": 2,
+    "url": "https://www.hmc.edu/admission/apply/first-year-students/",
+    "quote": "An additional essay and short answer response are required.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.hmc.edu/admission/apply/first-year-students/",
+    "quote": "Admission Interview. For information on how to arrange an interview, see the interviews page .",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "HMC lists the admission interview under \"Optional Materials\" and a STEM plus a humanities/social sciences/arts teacher recommendation under \"Required Materials\"."
+ },
+ {
+  "id": "162928",
+  "name": "Johns Hopkins University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+    "quote": "Also known as letters of recommendation, these should be from teachers of two different academic subjects",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+    "quote": "Ask your school counselor or another school official to submit your secondary school report—which includes your counselor recommendation, transcript, and high school profile",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+    "quote": "The mid-year school report allows us to review your grades and performance in the first half of your senior year.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+    "quote": "Johns Hopkins University requires standardized testing.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Johns Hopkins University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "css_profile": {
+    "value": "required",
+    "url": "https://apply.jhu.edu/tuition-aid/common-financial-aid-questions/",
+    "quote": "International Applicants: Students are required to submit the CSS Profile .",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 1,
+    "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+    "quote": "The Hopkins supplement, which includes our supplemental essay",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "optional",
+    "url": "https://apply.jhu.edu/international-applicants/",
+    "quote": "TOEFL, IELTS, the Duolingo English Test (DET), or the Cambridge English Exam are recommended for applicants whose primary language is not English",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "203535",
+  "name": "Kenyon College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Kenyon College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Kenyon College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Kenyon College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.kenyon.edu/admissions-aid/apply-to-kenyon/deadlines-requirements/",
+    "quote": "Kenyon has adopted a test-optional policy for all students applying for admission.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.kenyon.edu/admissions-aid/apply-to-kenyon/deadlines-requirements/",
+    "quote": "Students are required to submit the results of an English proficiency exam.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://www.kenyon.edu/admissions-aid/apply-to-kenyon/deadlines-requirements/",
+    "quote": "Prospective students who have an interest or talent they would like to share may submit a portfolio through the Kenyon Applicant Portal.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.kenyon.edu/admissions-aid/apply-to-kenyon/deadlines-requirements/",
+    "quote": "Interviews are recommended but not required.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "213543",
+  "name": "Lehigh University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lehigh University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lehigh University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lehigh University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lehigh University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lehigh University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "css_profile": {
+    "value": "required",
+    "url": "https://www2.lehigh.edu/admissions/international-students",
+    "quote": "All non-U.S. citizens who will need financial aid during any of their years enrolled at Lehigh are required to submit the CSS Profile through the College Board by the appropriate admissions application deadline.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www2.lehigh.edu/admissions/international-students",
+    "quote": "Results from an English proficiency assessment must be submitted unless the applicant’s first language is English",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "209056",
+  "name": "Lewis & Clark College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lewis & Clark College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lewis & Clark College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Lewis & Clark College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://college.lclark.edu/offices/admissions/international-students/",
+    "quote": "Proof of English proficiency (if English is not your first language)",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://college.lclark.edu/offices/admissions/international-students/",
+    "quote": "Optional Submissions Academic and nonacademic work Interview",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "tests left null: Lewis & Clark calls itself test-free (\"have not required standardized test scores since 1991\"); no fetched page says whether submitted SAT/ACT scores are read (optional) or ignored (blind)."
+ },
+ {
+  "id": "117946",
+  "name": "Loyola Marymount University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "tests": {
+    "value": "optional",
+    "url": "https://admission.lmu.edu/learnmore/prospectivestudents/first-yearapplicants/",
+    "quote": "The ACT or SAT is optional for students.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Loyola Marymount University\": test policy=N; English proficiency=D or I or T or P; Portfolio=(blank); TE=1; MR=(blank); CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Loyola Marymount University\": test policy=N; English proficiency=D or I or T or P; Portfolio=(blank); TE=1; MR=(blank); CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": "LMU requires one letter of recommendation and only recommends a teacher plus a counselor letter (\"A letter from a teacher and a letter from your counselor or principal are recommended. One letter of recommendation is required.\"); the Common App grid lists TE=1 and CR=Y, so both stay null."
+ },
+ {
+  "id": "166683",
+  "name": "Massachusetts Institute of Technology",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://mitadmissions.org/apply/firstyear/letters-of-recommendation/",
+    "quote": "We require letters of recommendation from two teachers.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "optional",
+    "url": "https://mitadmissions.org/apply/firstyear/letters-of-recommendation/",
+    "quote": "Your school counselor (or another school official ) may send a letter of recommendation alongside the required SSR with official transcript , only if available.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://mitadmissions.org/apply/firstyear/international/",
+    "quote": "We require the SAT or the ACT from both prospective first-year and transfer students.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "optional",
+    "url": "https://mitadmissions.org/apply/firstyear/international/",
+    "quote": "For non-native English speakers, we strongly recommend providing the results of an English proficiency exam",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://mitadmissions.org/apply/firstyear/interview/",
+    "quote": "That’s why, whenever possible, we offer an interview with a member of the MIT Educational Council",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://mitadmissions.org/apply/firstyear/portfolios-additional-material/",
+    "quote": "Researchers, performing artists, visual artists, and makers may submit optional portfolios for review by MIT staff or faculty through SlideRoom .",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://mitadmissions.org/apply/firstyear/february-updates-notes-form/",
+    "quote": "This online form is required for all applicants who were admitted or deferred in Early Action, and all students who applied for Regular Action.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "MIT uses its own application (not Common App). Midyear grades are reported through the required February Updates & Notes Form."
+ },
+ {
+  "id": "193900",
+  "name": "New York University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"New York University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"New York University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "147767",
+  "name": "Northwestern University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://admissions.northwestern.edu/faqs/international-applicants/index.html",
+    "quote": "Northwestern requires one recommendation from a counselor or school administrator and one recommendation from an academic teacher.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admissions.northwestern.edu/faqs/international-applicants/index.html",
+    "quote": "Northwestern requires one recommendation from a counselor or school administrator and one recommendation from an academic teacher.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northwestern University\": test policy=F; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admissions.northwestern.edu/apply/requirements.html",
+    "quote": "Northwestern follows a test-optional policy and will not require ACT or SAT scores from first-year or transfer candidates.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northwestern University\": test policy=F; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admissions.northwestern.edu/faqs/international-applicants/index.html",
+    "quote": "An English proficiency score is required for applicants whose first/primary language is not English or whose secondary schooling has not been in English.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://admissions.northwestern.edu/faqs/international-applicants/index.html",
+    "quote": "Interviews are an optional addition to your application for admission and are conducted through InitialView .",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "204501",
+  "name": "Oberlin College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/first-year-applicants",
+    "quote": "Oberlin requires one academic evaluation from a teacher who has taught you in a core academic subject",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Oberlin College of Arts and Sciences\": test policy=N; English proficiency=See website; Portfolio=COL; TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/first-year-applicants",
+    "quote": "we will also need a midyear report from your counselor.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/testing-policy",
+    "quote": "Oberlin College has been test optional since 2020, which means that applicants can choose whether or not to submit their SAT and/or ACT scores.",
+    "source_type": "official_admissions_page"
+   },
+   "css_profile": {
+    "value": "required",
+    "url": "https://www.oberlin.edu/admissions-and-aid/financial-aid/applying-aid-international-students",
+    "quote": "Submit the CSS Profile (Oberlin's code is 1587). If you are unable to submit the CSS Profile or if paying the fee would present a financial burden, you may complete and upload the International Student Application for Financial Assistance (ISAFA).",
+    "source_type": "official_admissions_page"
+   },
+   "teacher_recs_max": {
+    "value": 2,
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/first-year-applicants",
+    "quote": "You are welcome to submit a second academic evaluation and/or a supplemental recommendation from another adult",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 0,
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/first-year-applicants",
+    "quote": "Oberlin does not require any additional supplemental essays (hooray!).",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/testing-policy",
+    "quote": "If English is not your native language and your secondary school instruction is not in English, you will need to demonstrate English proficiency.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://www.oberlin.edu/admissions-and-aid/arts-and-sciences/first-year-applicants",
+    "quote": "After you submit your application to Oberlin, you’ll have the opportunity to submit supplemental materials to highlight a special accomplishment, talent, or interest.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "204909",
+  "name": "Ohio Wesleyan University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Ohio Wesleyan University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Ohio Wesleyan University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Ohio Wesleyan University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Ohio Wesleyan University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "214777",
+  "name": "Pennsylvania State University-Main Campus",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Penn State\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Penn State\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Penn State\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "186131",
+  "name": "Princeton University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admission.princeton.edu/apply/application-checklist",
+    "quote": "Two (2) Teacher Recommendations.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admission.princeton.edu/apply/application-checklist",
+    "quote": "Counselor Recommendation. Please note that the SR and the Counselor Recommendation are separate items.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://admission.princeton.edu/apply/application-checklist",
+    "quote": "Midyear School Report. Please ask your school counselor or other school official to complete and submit this form when your midyear grades are available.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admission.princeton.edu/apply/standardized-testing",
+    "quote": "For first-year and transfer applicants seeking to enroll in fall 2027, Princeton remains test optional.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://admission.princeton.edu/apply/application-checklist",
+    "quote": "you are welcome to submit an optional Arts Supplement",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://admission.princeton.edu/apply/application-checklist",
+    "quote": "Interview. Princeton offers optional alumni interviews.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admission.princeton.edu/apply/international-students",
+    "quote": "If English is not your native language and you are attending a school where English is not the language of instruction, you must take the Test of English as a Foreign Language (TOEFL)",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "227757",
+  "name": "Rice University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+    "quote": "Candidates must submit letters of recommendation from their counselor and two teachers.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+    "quote": "Candidates must submit letters of recommendation from their counselor and two teachers.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Rice University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+    "quote": "Students applying to Rice University are recommended but not required to submit SAT or ACT for admission consideration.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+    "quote": "Applicants interested in the Department of Art under the School of Humanities may submit a portfolio of creative work.",
+    "source_type": "official_admissions_page"
+   },
+   "css_profile": {
+    "value": "required",
+    "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+    "quote": "Rice uses the CSS Profile for international students applying for financial aid.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://admission.rice.edu/apply/first-year-international-applicants",
+    "quote": "We recommend that first-year applicants request an interview, though interviews are optional and not guaranteed.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "195003",
+  "name": "Rochester Institute of Technology",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Rochester Institute of Technology\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Rochester Institute of Technology\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Rochester Institute of Technology\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.rit.edu/admissions/first-year",
+    "quote": "We’re Test Optional and Have Early Application Plans",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Rochester Institute of Technology\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "163851",
+  "name": "Salisbury University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Salisbury University\": test policy=S; English proficiency=I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.salisbury.edu/admissions/international-students/international-first-year.aspx",
+    "quote": "Salisbury University requires all international applicants from a non-English speaking country to submit proof of English proficiency.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Salisbury University\": test policy=S; English proficiency=I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.salisbury.edu/admissions/international-students/international-first-year.aspx",
+    "quote": "Though not required, international students are encouraged to provide SAT or ACT scores to Salisbury for admission and scholarship consideration.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "Salisbury requires one letter of recommendation of any type (\"A letter of recommendation and a personal statement are required.\"), not specifically a teacher letter."
+ },
+ {
+  "id": "141060",
+  "name": "Spelman College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://www.spelman.edu/admissions/applying-to-spelman/international-students.html",
+    "quote": "Two teacher recommendations",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Spelman College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.spelman.edu/admissions/applying-to-spelman/international-students.html",
+    "quote": "Official SAT or ACT scores (optional)",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.spelman.edu/admissions/applying-to-spelman/international-students.html",
+    "quote": "Official TOEFL score of 4 or higher (only for students from non-English-speaking countries)",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Spelman College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "243744",
+  "name": "Stanford University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admission.stanford.edu/apply/first-year/index.html",
+    "quote": "Letters of recommendation from two academic teachers",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admission.stanford.edu/apply/first-year/index.html",
+    "quote": "School Report form and counselor letter of recommendation",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://admission.stanford.edu/apply/first-year/index.html",
+    "quote": "Midyear transcript (due by February 15)",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://admission.stanford.edu/apply/international/index.html",
+    "quote": "Yes, the ACT or SAT is required.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://admission.stanford.edu/apply/first-year/index.html",
+    "quote": "Application with Optional Arts Portfolio - December 5",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "optional",
+    "url": "https://admission.stanford.edu/apply/international/index.html",
+    "quote": "No, we do not require any English proficiency exams. If you would like to send us one, you are welcome to self-report your scores from any English proficiency exam.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "216287",
+  "name": "Swarthmore College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Swarthmore College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Swarthmore College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Swarthmore College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Swarthmore College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Swarthmore College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "optional",
+    "url": "https://www.swarthmore.edu/admissions-aid/international-students",
+    "quote": "Applicants attending school outside of the U.S., regardless of citizenship, are required to submit one of the following:",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.swarthmore.edu/admissions-aid/international-students",
+    "quote": "You may submit videos through InitialView (including interviews, Glimpse, or VIVA) or Vericant for your application to Swarthmore.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "english: applicants schooled outside the U.S. must send one of a Swarthmore Video Response, an English proficiency exam result or an InitialView/Vericant video, so the exam itself is optional."
+ },
+ {
+  "id": "216339",
+  "name": "Temple University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://admissions.temple.edu/apply/first-year-students",
+    "quote": "Letters of recommendation are optional but will be reviewed if you choose to send them.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admissions.temple.edu/apply/first-year-students",
+    "quote": "Temple is a test-optional school. First-year students can apply without submitting standardized test scores by selecting test-optional on the Common Application.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Temple University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "teacher_recs_max": {
+    "value": 2,
+    "url": "https://admissions.temple.edu/apply/first-year-students",
+    "quote": "Please do not send more than two letters.",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "optional",
+    "url": "https://admissions.temple.edu/apply/first-year-students",
+    "quote": "Letters of recommendation are optional but will be reviewed if you choose to send them.",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 0,
+    "url": "https://admissions.temple.edu/apply/first-year-students",
+    "quote": "we have an optional essay where you can tell us more about yourself beyond your grades and/or test scores.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "teacher_recs_max counts all optional letters (teacher or advisor), capped at two."
+ },
+ {
+  "id": "224147",
+  "name": "Texas A & M University-Corpus Christi",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Texas A&M University- Corpus Christi\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Texas A&M University- Corpus Christi\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Texas A&M University- Corpus Christi\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "229115",
+  "name": "Texas Tech University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Texas Tech University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Texas Tech University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "180489",
+  "name": "The University of Montana",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Montana\": test policy=F; English proficiency=D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Montana\": test policy=F; English proficiency=D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.umt.edu/admissions/admission-requirements/international/apply-international.php",
+    "quote": "An official English proficiency test score report or documentation demonstrating eligibility for an exemption",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Montana\": test policy=F; English proficiency=D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "168148",
+  "name": "Tufts University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tufts University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tufts University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tufts University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admissions.tufts.edu/apply/applying-as-an-international-s/",
+    "quote": "Tufts University is test-optional, giving applicants a choice about whether or not to submit SAT or ACT scores to be considered with their application.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tufts University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "css_profile": {
+    "value": "optional",
+    "url": "https://admissions.tufts.edu/tuition-and-aid/applying-for-aid/international-student-aid/",
+    "quote": "The CSS Profile is not required at the",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admissions.tufts.edu/apply/applying-as-an-international-s/",
+    "quote": "All applicants whose primary language is not English must submit proof of English proficiency, unless they have been enrolled in an English instruction school for at least three years.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "110635",
+  "name": "University of California-Berkeley",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "tests": {
+    "value": "blind",
+    "url": "https://admission.universityofcalifornia.edu/counselors/preparing-freshman-students/freshman-requirements.html",
+    "quote": "UC does not consider SAT or ACT test scores when making admissions decisions or awarding scholarships.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admissions.berkeley.edu/requirements-for-international-students/",
+    "quote": "Students will need to have satisfied English Proficiency by no later than January 31st.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "not_offered",
+    "url": "https://admissions.berkeley.edu/requirements-for-international-students/",
+    "quote": "UC Berkeley does not offer alumni or admissions officer interviews as part of its application process.",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 4,
+    "url": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-freshman/personal-insight-questions.html",
+    "quote": "You will have 8 questions to choose from. You must respond to only 4 of the 8 questions.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "UC application (not Common App). supplements = the 4 required UC personal insight questions. English proficiency is met by TOEFL/IELTS/DET minimums or 3+ years of English-language instruction."
+ },
+ {
+  "id": "110662",
+  "name": "University of California-Los Angeles",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "tests": {
+    "value": "blind",
+    "url": "https://admission.ucla.edu/apply/first-year/first-year-requirements",
+    "quote": "UCLA will not consider SAT or ACT scores for admission or scholarship purposes.",
+    "source_type": "official_admissions_page"
+   },
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://admission.ucla.edu/apply/first-year/first-year-requirements",
+    "quote": "We do not require or accept letters of recommendation in our process",
+    "source_type": "official_admissions_page"
+   },
+   "teacher_recs_max": {
+    "value": 0,
+    "url": "https://admission.ucla.edu/apply/first-year/first-year-requirements",
+    "quote": "We do not require or accept letters of recommendation in our process",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "none",
+    "url": "https://admission.ucla.edu/apply/first-year/first-year-requirements",
+    "quote": "We do not require or accept letters of recommendation in our process",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "not_offered",
+    "url": "https://admission.ucla.edu/apply/first-year/first-year-requirements",
+    "quote": "We do not offer admission interviews.",
+    "source_type": "official_admissions_page"
+   },
+   "supplements": {
+    "value": 4,
+    "url": "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-freshman/personal-insight-questions.html",
+    "quote": "You will have 8 questions to choose from. You must respond to only 4 of the 8 questions.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "UC application (not Common App). supplements = the 4 required UC personal insight questions; some UCLA specialty-school majors add a supplemental application (audition/portfolio)."
+ },
+ {
+  "id": "144050",
+  "name": "University of Chicago",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Chicago\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Chicago\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Chicago\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "201885",
+  "name": "University of Cincinnati-Main Campus",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Cincinnati\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Cincinnati\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Cincinnati\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "134130",
+  "name": "University of Florida",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Florida\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Florida\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Florida\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "139959",
+  "name": "University of Georgia",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://admissions.uga.edu/apply/first-year-applicants/",
+    "quote": "January 15 materials deadline (test scores, official transcripts, school report, and optional recommendation letters)",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Georgia\": test policy=A; English proficiency=I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Georgia\": test policy=A; English proficiency=I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Georgia\": test policy=A; English proficiency=I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "optional",
+    "url": "https://admissions.uga.edu/apply/first-year-applicants/",
+    "quote": "January 15 materials deadline (test scores, official transcripts, school report, and optional recommendation letters)",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "225432",
+  "name": "University of Houston-Downtown",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "tests": {
+    "value": "optional",
+    "url": "https://www.uhd.edu/admissions/international/index.html",
+    "quote": "Submit the Admissions Application Update Form to request Test Optional",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.uhd.edu/admissions/international/index.html",
+    "quote": "for the internet-based version (iBT), or an IELTS score of 6.5 is required for admission",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "UHD is not on the Common App grid; it uses ApplyTexas. Recommendation, interview and essay items were not listed on the international admission page."
+ },
+ {
+  "id": "145637",
+  "name": "University of Illinois Urbana-Champaign",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Illinois Urbana-Champaign\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Illinois Urbana-Champaign\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.admissions.illinois.edu/international-requirements/",
+    "quote": "We require all students, regardless of citizenship, permanent residency, or curriculum type, to demonstrate English proficiency .",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Illinois Urbana-Champaign\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "220862",
+  "name": "University of Memphis",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Memphis\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Memphis\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Memphis\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.memphis.edu/admissions/basics/international.php",
+    "quote": "Submit English Proficiency scores ( if applying from a non-English speaking country).",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "170976",
+  "name": "University of Michigan-Ann Arbor",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Michigan\": test policy=F; English proficiency=See website; Portfolio=SR; TE=1; MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Michigan\": test policy=F; English proficiency=See website; Portfolio=SR; TE=1; MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "215062",
+  "name": "University of Pennsylvania",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Pennsylvania\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Pennsylvania\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Pennsylvania\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Pennsylvania\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Pennsylvania\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "source_type": "common_app_grid"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Pennsylvania\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "217484",
+  "name": "University of Rhode Island",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rhode Island\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: (CR) is Counselor Recommendation required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://web.uri.edu/admission/international/",
+    "quote": "SAT or ACT test scores are not mandatory but encouraged if seeking merit scholarships.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://web.uri.edu/admission/international/",
+    "quote": "Submit official TOEFL/IELTS/Duolingo scores. Scores must be sent to URI directly by the testing agency.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rhode Island\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": "teacher_recs left null: the Common App grid shows no teacher evaluation required, but URI international steps list \"Submit letter(s) of recommendation\" without saying from whom."
+ },
+ {
+  "id": "123961",
+  "name": "University of Southern California",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "midyear": {
+    "value": "required",
+    "url": "https://admission.usc.edu/prospective-students/how-to-apply/first-year-students/",
+    "quote": "Use the “Mid-Year Report” form included in the Common Application or visit your applicant portal to submit your fall grades.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admission.usc.edu/prospective-students/how-to-apply/international-students/",
+    "quote": "USC will continue our test-optional policy for the upcoming year, meaning that first-year applicants to the 2027-28 academic year are not required to send SAT or ACT scores to apply.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admission.usc.edu/prospective-students/how-to-apply/international-students/",
+    "quote": "All international applicants whose native language is not English, including those already residing in the United States, must submit a USC-approved English proficiency examination to be considered for admission.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "not_offered",
+    "url": "https://admission.usc.edu/prospective-students/how-to-apply/international-students/",
+    "quote": "USC does not offer evaluative admission interviews.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "USC requires one letter from either the school counselor or a teacher (\"One letter is required from either your school counselor or a teacher from your school\"), so teacher_recs and counselor_rec stay null. Portfolio is major-specific only. Third-party interviews (InitialView etc.) are optional English-proficiency tools, not admission interviews."
+ },
+ {
+  "id": "152600",
+  "name": "Valparaiso University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Valparaiso University\": test policy=N; English proficiency=D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Valparaiso University\": test policy=N; English proficiency=D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "source_type": "common_app_grid"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.valpo.edu/admission/international/undergraduate/",
+    "quote": "Applicants for whom English is a non-native language must demonstrate English proficiency.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Valparaiso University\": test policy=N; English proficiency=D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "221999",
+  "name": "Vanderbilt University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://admissions.vanderbilt.edu/apply/first-year-process/",
+    "quote": "Two academic teacher letters of recommendation",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://admissions.vanderbilt.edu/apply/first-year-process/",
+    "quote": "Counselor letter of recommendation",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Vanderbilt University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://admissions.vanderbilt.edu/apply/testing-policies/",
+    "quote": "For students applying for entry to Vanderbilt for fall 2027 and 2028, ACT or SAT scores are optional.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Vanderbilt University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "source_type": "common_app_grid"
+   },
+   "css_profile": {
+    "value": "optional",
+    "url": "https://admissions.vanderbilt.edu/affordability/international-costs-and-finances/",
+    "quote": "In order to apply for need-based scholarships, you must submit the College Scholarship Service (CSS) Profile or the ISFAA (International Student Financial Aid Application).",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admissions.vanderbilt.edu/apply/first-year-process/",
+    "quote": "Applicants whose first language or language of instruction is English are not required to submit English proficiency exam scores.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "not_offered",
+    "url": "https://admissions.vanderbilt.edu/apply/first-year-process/",
+    "quote": "Vanderbilt does not offer interviews through the Office of Undergraduate Admissions.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "197133",
+  "name": "Vassar College",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Vassar College\": test policy=N; English proficiency=D or I or T; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "source_type": "common_app_grid"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.vassar.edu/admission/apply/requirements/",
+    "quote": "School Report with the Counselor Recommendation and High School Transcript: To be completed and sent by your school counselor.",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://www.vassar.edu/admission/apply/requirements/",
+    "quote": "Mid-year Report: Your school counselor or another school official must submit your mid-year grades to us.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.vassar.edu/admission/apply/requirements/",
+    "quote": "Vassar does not require applicants to submit SAT or ACT scores.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://www.vassar.edu/admission/apply/international/",
+    "quote": "If English is not the primary language of instruction in the secondary school(s) you have attended for the last three years, you must submit English language proficiency exam results.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.vassar.edu/admission/apply/requirements/",
+    "quote": "These interviews are not evaluative and are not a required part of the application process.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://www.vassar.edu/admission/apply/requirements/",
+    "quote": "If you have a well-developed talent or significant accomplishment in music, art, or dance, you may submit a portfolio to be evaluated by our faculty.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": null
+ },
+ {
+  "id": "234207",
+  "name": "Washington and Lee University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "teacher_recs": {
+    "value": 2,
+    "url": "https://www.wlu.edu/admissions/apply/for-international-applicants",
+    "quote": "Two teacher recommendations",
+    "source_type": "official_admissions_page"
+   },
+   "counselor_rec": {
+    "value": "required",
+    "url": "https://www.wlu.edu/admissions/apply/for-international-applicants",
+    "quote": "One recommendation letter from your college counselor (or a school official supporting your application if no college counselor exists)",
+    "source_type": "official_admissions_page"
+   },
+   "midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Washington and Lee University\": test policy=N; English proficiency=See website; Portfolio=COL; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "source_type": "common_app_grid"
+   },
+   "tests": {
+    "value": "optional",
+    "url": "https://www.wlu.edu/admissions/apply/for-international-applicants",
+    "quote": "For first-year undergraduate applicants to the Class of 2031, submitting SAT or ACT scores is optional.",
+    "source_type": "official_admissions_page"
+   },
+   "css_profile": {
+    "value": "required",
+    "url": "https://www.wlu.edu/admissions/financial-aid/types-of-aid/international-student-aid",
+    "quote": "Complete and submit the CSS Profile by the financial aid deadline.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://www.wlu.edu/admissions/apply/admissions-interviews",
+    "quote": "Interviews are not required but are strongly recommended.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "English: W&L requires every applicant to demonstrate English proficiency but lets applicants choose among several methods, so english stays as the Common App grid gives it (See website = null)."
+ },
+ {
+  "id": "130794",
+  "name": "Yale University",
+  "checked_at": "2026-11-18",
+  "cycle": "2026-27 (fall 2027 entry)",
+  "reqs": {
+   "css_profile": {
+    "value": "required",
+    "url": "https://admissions.yale.edu/financial-aid-international-applicants",
+    "quote": "This CSS Profile is required by for all financial aid applicants.",
+    "source_type": "official_admissions_page"
+   },
+   "tests": {
+    "value": "required",
+    "url": "https://admissions.yale.edu/international",
+    "quote": "First-year and transfer applicants must submit scores from the SAT or ACT.",
+    "source_type": "official_admissions_page"
+   },
+   "english": {
+    "value": "required",
+    "url": "https://admissions.yale.edu/international",
+    "quote": "on-native English-speakers who have not taken at least two years of secondary education where English is the medium of instruction are required to submit results from any of the proficiency tests below.",
+    "source_type": "official_admissions_page"
+   },
+   "interview": {
+    "value": "optional",
+    "url": "https://admissions.yale.edu/interviews",
+    "quote": "No. Interviews are not required, and many successful applicants are not interviewed.",
+    "source_type": "official_admissions_page"
+   },
+   "portfolio": {
+    "value": "optional",
+    "url": "https://admissions.yale.edu/apply",
+    "quote": "Applicants may submit supplementary material showcasing Visual Art, Dance, Music, Film, or STEM research.",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "note": "Yale is not on the Common App 2026-27 requirements grid PDF; recommendation counts were not on a fetchable Yale page (recommendations page is script-rendered)."
+ }
+]

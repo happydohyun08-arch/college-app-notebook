@@ -955,3 +955,38 @@ for (const k of ["acct", "out_h", "out_as_student", "out_as_counselor", "out_che
 assert.ok(STR.ko.out_failed.includes("{e}") && STR.en.out_failed.includes("{e}"));
 assert.ok(STR.ko.out_erase_p_html.includes("privacy.html#ko-4") && STR.en.out_erase_p_html.includes("privacy.html#en-4"));
 for (const id of ["ko-4", "en-4"]) assert.ok(fs.readFileSync(new URL("./privacy.html", import.meta.url), "utf8").includes(`id="${id}"`), id);
+
+// 지원 요건 61곳(aid 블록 학교): research/school-reqs 값은 모두 requirements-evidence 근거(학교 공식 페이지 인용 또는 Common App 2026-27 요건표 행)와 같아야 한다. schools.json은 건드리지 않는다.
+{
+  const reqs = JSON.parse(fs.readFileSync(new URL("./research/school-reqs-2026-11-18.json", import.meta.url), "utf8"));
+  const rev = JSON.parse(fs.readFileSync(new URL("./research/requirements-evidence-2026-11-18.json", import.meta.url), "utf8"));
+  const aidIds = JSON.parse(fs.readFileSync(new URL("./research/aid-evidence-2026-11-11.json", import.meta.url), "utf8")).map((e) => e.id);
+  const GRID = "https://content.commonapp.org/Files/ReqGrid.pdf";
+  const KEYS = ["teacher_recs", "teacher_recs_max", "counselor_rec", "tests", "english", "interview", "css_profile", "portfolio", "midyear", "supplements"];
+  const RNO = ["required", "optional", "none"];
+  const ENUM = { tests: ["required", "optional", "blind"], interview: ["required", "optional", "not_offered"], counselor_rec: RNO, english: RNO, css_profile: RNO, portfolio: RNO, midyear: RNO };
+  assert.deepEqual(Object.keys(reqs).sort(), [...aidIds].sort(), "reqs for exactly the 61 aid-evidence schools");
+  assert.deepEqual(rev.map((e) => e.id).sort(), [...aidIds].sort(), "one evidence row per school");
+  let n = 0;
+  for (const id of aidIds) {
+    const r = reqs[id], e = rev.find((x) => x.id === id), s = schools.find((x) => x.id === id);
+    assert.ok(s && e.name === s.name, `${id}: base row exists`);
+    assert.deepEqual(Object.keys(r), [...KEYS, "source_url", "as_of"], `${s.name}: reqs shape`);
+    assert.equal(r.as_of, "2026-11-18");
+    for (const k of ["teacher_recs", "teacher_recs_max", "supplements"]) assert.ok(r[k] == null || (Number.isInteger(r[k]) && r[k] >= 0 && r[k] <= 10), `${s.name}: ${k}`);
+    if (r.teacher_recs != null && r.teacher_recs_max != null) assert.ok(r.teacher_recs_max >= r.teacher_recs, `${s.name}: max >= required`);
+    for (const [k, vals] of Object.entries(ENUM)) assert.ok(r[k] == null || vals.includes(r[k]), `${s.name}: ${k} value`);
+    assert.ok(Object.keys(e.reqs).every((k) => KEYS.includes(k)), `${s.name}: evidence keys`);
+    for (const k of KEYS) {
+      const q = e.reqs[k];
+      if (r[k] == null) { assert.ok(!q, `${s.name}: no stray ${k} evidence`); continue; }
+      n++;
+      assert.ok(q && q.value === r[k] && /^https:\/\//.test(q.url) && q.quote.length > 15, `${s.name}: ${k} has evidence`);
+      if (q.url === GRID) assert.ok(q.source_type === "common_app_grid" && q.quote.includes(`row "`), `${s.name}: ${k} grid row`);
+      else assert.equal(q.source_type, "official_admissions_page", `${s.name}: ${k} official page`);
+    }
+    assert.ok(r.source_url == null || Object.values(e.reqs).some((q) => q.url === r.source_url), `${s.name}: source_url is one of the evidence urls`);
+    if (r.tests === "blind") assert.match(e.reqs.tests.quote, /not consider|will not|Ignored/i, `${s.name}: blind is stated`);
+  }
+  console.log(`school requirements check passed (${aidIds.length} schools, ${n} requirement values)`);
+}
