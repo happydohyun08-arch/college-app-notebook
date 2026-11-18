@@ -1079,7 +1079,9 @@ for (const id of ["ko-4", "en-4"]) assert.ok(fs.readFileSync(new URL("./privacy.
         if (sec !== "admissions") assert.ok(s[sec] && (s[sec][k] == null || JSON.stringify(s[sec][k]) === JSON.stringify(v)), `${s.name}: ${sec}.${k} fills a gap`);
         const q = e.fields[`${sec}.${k}`];
         assert.ok(q && JSON.stringify(q.value) === JSON.stringify(v) && /^https:\/\//.test(q.url) && q.quote.length > 10 && q.where, `${s.name}: ${sec}.${k} evidence`);
-        assert.ok(["official_cds", "official_aid_page", "official_admissions_page"].includes(q.source_type), `${s.name}: ${sec}.${k} source type`);
+        assert.ok(["official_cds", "official_aid_page", "official_admissions_page", "common_app_grid"].includes(q.source_type), `${s.name}: ${sec}.${k} source type`);
+        if (q.source_type === "common_app_grid") assert.ok(sec === "reqs" && q.url === "https://content.commonapp.org/Files/ReqGrid.pdf" && q.quote.includes('row "') && q.quote.includes("Key: "), `${s.name}: ${sec}.${k} grid row`);
+        if (sec === "reqs" && k === "tests" && v === "blind") assert.match(q.quote, /not consider|will not|ignored/i, `${s.name}: blind is stated`);
         n++;
       }
     }

@@ -1,4 +1,351 @@
 {
+ "110705": {
+  "name": "University of California-Santa Barbara",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header (file linked as 'Common Data Set - 2025-26' from bap.ucsb.edu/institutional-research)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 56913,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Tuition: Nonresident $53,472 $49,280 / Required Fees: $3,441 $3,365",
+    "where": "G1 p.18 first-year column: nonresident tuition 53472 + required fees 3441",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 23974,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Food and housing (on-campus): $23,974 $23,974",
+    "where": "G1 p.18 first-year column",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 137,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship or grant aid ... 137 923 117",
+    "where": "H2A line N p.21 (page image, first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 11666,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Average dollar amount of institutional non-need-based scholarship and grant aid awarded to students in line n $ 11,666 $ 8,594 $ 6,079",
+    "where": "H2A line O p.21 (page image, first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 74",
+    "where": "H6 p.22 (page image): boxes for 'non-need-based available' and 'not available' are both ticked; the reported 74 awards decide it",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 74,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 74",
+    "where": "H6 p.22 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 27537,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $27,537",
+    "where": "H6 p.22 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.382,
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "First-Time, First-Year Student Applicants 48509 58374 3304 / Admits 16945 23627 1521",
+    "where": "C1 p.6: admitted 16945+23627+1521=42093 / applied 48509+58374+3304=110187",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://drive.google.com/file/d/1FIkvY5dANho45ioG7-JHgO3IPH6-ui1W/view",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header",
+    "source_type": "official_cds"
+   }
+  }
+ },
+ "121345": {
+  "name": "Pomona College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "Common Data Set 2025-2026",
+    "where": "Tableau workbook 'CDS 2025-26', linked as 'Common Data Set 2025-2026' from pomona.edu/administration/institutional-research/information-center/common-data-set",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 72080,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "Tuition 71660 71660 / Required Fees: 420 420",
+    "where": "sheet G_AnnualExpenses, G1 first-year column: tuition 71660 + required fees 420",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 23590,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "Food and housing (on-campus): 23590 23590",
+    "where": "sheet G_AnnualExpenses, G1 first-year column",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 0,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "N. Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship or grant aid ... 0 2 0",
+    "where": "sheet H_FinancialAid, H2A line N (first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "Institutional need-based scholarship or grant aid is available X ... 98",
+    "where": "sheet H_FinancialAid, H6",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 98,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 98",
+    "where": "sheet H_FinancialAid, H6",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 86889,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $86889",
+    "where": "sheet H_FinancialAid, H6",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.071,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "Applied All 5365 7096 9 / Admitted All 418 471 1",
+    "where": "sheet C_First-timeFirst-yearadmission, C1: admitted 418+471+1=890 / applied 5365+7096+9=12470",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1490,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "SAT Composite 1490 1520 1550",
+    "where": "sheet C, C9 (the C9 heading says 'Fall 2024', likely a stale label; C8A in the same sheet is for Fall 2026)",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1550,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "SAT Composite 1490 1520 1550",
+    "where": "sheet C, C9 (see sat25 note)",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "ACT Composite 32 34 34",
+    "where": "sheet C, C9 (see sat25 note)",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 34,
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "ACT Composite 32 34 34",
+    "where": "sheet C, C9 (see sat25 note)",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://tableau.campus.pomona.edu/views/CDS2025-26/A_GeneralInformation",
+    "quote": "CDS 2025-26",
+    "where": "workbook name",
+    "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Pomona College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.30",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Pomona College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.30",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Pomona College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.30",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Pomona College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.30",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Pomona College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.30",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Pomona College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.30",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "130697": {
+  "name": "Wesleyan University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "CDS_2025-2026.xlsx",
+    "where": "CDS_2025-2026.xlsx in the 'Common Data Set' SharePoint folder linked from wesleyan.edu/ir/common-data-sets.html",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 73128,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "G.101 Tuition 72438 / G.111 Required Fees: 690",
+    "where": "xlsx CDS-G: G.101 tuition 72438 + G.111 required fees 690",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 20668,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "G.112 Food and housing (on-campus): 20668",
+    "where": "xlsx CDS-G G.112",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 3,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "H.2A01 N. Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship 3",
+    "where": "xlsx CDS-H H.2A01",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 21454,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "H.2A02 O. Average dollar amount of institutional non-need-based scholarship and grant aid awarded to students in line n 21454",
+    "where": "xlsx CDS-H H.2A02",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "H.604 ... provide the number of undergraduate degree-seeking nonresidents who were awarded ... 91",
+    "where": "xlsx CDS-H H.604 (awards reported)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 91,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "H.604 ... provide the number of undergraduate degree-seeking nonresidents who were awarded ... 91",
+    "where": "xlsx CDS-H H.604",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 96349,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "H.605 Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: 96349",
+    "where": "xlsx CDS-H H.605",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.164,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "C.116 Total first-time, first-year students who applied 14973 / C.117 ... who were admitted 2451",
+    "where": "xlsx CDS-C C.116/C.117: 2451 / 14973",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1350,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "C.905 SAT Composite: 25th Percentile 1350",
+    "where": "xlsx CDS-C C.905",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1510,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "C.907 SAT Composite: 75th Percentile 1510",
+    "where": "xlsx CDS-C C.907",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 32,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "C.914 ACT Composite: 25th Percentile 32",
+    "where": "xlsx CDS-C C.914",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "C.916 ACT Composite: 75th Percentile 35",
+    "where": "xlsx CDS-C C.916",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://wesleyan0.sharepoint.com/:f:/s/IRDataandReports/EtCqjFa5sgBLif1SveNykPUB6j5D6s_nZFlWs_GLu_3yXA",
+    "quote": "CDS_2025-2026.xlsx",
+    "where": "file name",
+    "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wesleyan University\": test policy=S; English proficiency=C or D or I or T; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.52",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wesleyan University\": test policy=S; English proficiency=C or D or I or T; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.52",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wesleyan University\": test policy=S; English proficiency=C or D or I or T; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.52",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wesleyan University\": test policy=S; English proficiency=C or D or I or T; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.52",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
  "131496": {
   "name": "Georgetown University",
   "checked_at": "2026-11-18",
@@ -86,11 +433,178 @@
     "quote": "Common Data Set 2025-2026",
     "where": "p.1 header",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgetown University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.15",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgetown University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.15",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgetown University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.15",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgetown University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.15",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Georgetown University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.15",
+    "source_type": "common_app_grid"
    }
   },
   "notes": [
    "aid.merit_n/merit_avg: CDS 2025-26 H2A line n and o are blank (no figure printed), left null"
   ]
+ },
+ "152080": {
+  "name": "University of Notre Dame",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "aid.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header (CDS_2025-2026.pdf in the Drive folder linked as 'View CDS reports' from iris.nd.edu/institutional-research/common-data-set-cds/)",
+    "source_type": "official_cds"
+   },
+   "aid.tuition_fees": {
+    "value": 69794,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Tuition: $69,280 $69,280 / Required Fees: $514 $514",
+    "where": "G1 p.16: tuition 69280 + required fees 514",
+    "source_type": "official_cds"
+   },
+   "aid.room_board": {
+    "value": 18992,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Food and housing (on-campus): $18,992 $18,992",
+    "where": "G1 p.16",
+    "source_type": "official_cds"
+   },
+   "aid.merit_n": {
+    "value": 43,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Number of students in line a who had no financial need and who were awarded institutional non-need-based scholarship ... 43 354",
+    "where": "H2A line N p.20 (page image, first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.merit_avg": {
+    "value": 16616,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Average dollar amount of institutional non-need-based scholarship and grant aid awarded to students in line n $ 16,616 $ 16,569",
+    "where": "H2A line O p.20 (page image, first-year column)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_aid": {
+    "value": true,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "X Institutional need-based scholarship or grant aid is available / X Institutional non-need-based scholarship or grant aid is available ... 363",
+    "where": "H6 p.21 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_n": {
+    "value": 363,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "provide the number of undergraduate degree-seeking nonresidents who were awarded need-based or non-need-based aid: 363",
+    "where": "H6 p.21 (page image)",
+    "source_type": "official_cds"
+   },
+   "aid.intl_avg": {
+    "value": 68653,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Average dollar amount of institutional financial aid awarded to undergraduate degree-seeking nonresidents: $68,653",
+    "where": "H6 p.21 (page image)",
+    "source_type": "official_cds"
+   },
+   "admissions.admit_rate": {
+    "value": 0.094,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "17,934 17,467 35,401 First-Time, First-Year Student Admits Total 1,741 1,579 3,320",
+    "where": "C1 p.7: admitted 3320 / applied 35401",
+    "source_type": "official_cds"
+   },
+   "admissions.sat25": {
+    "value": 1460,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "SAT Composite 1460 1500 1540",
+    "where": "C9 p.9",
+    "source_type": "official_cds"
+   },
+   "admissions.sat75": {
+    "value": 1540,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "SAT Composite 1460 1500 1540",
+    "where": "C9 p.9",
+    "source_type": "official_cds"
+   },
+   "admissions.act25": {
+    "value": 33,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "ACT Composite 33 34 35",
+    "where": "C9 p.9",
+    "source_type": "official_cds"
+   },
+   "admissions.act75": {
+    "value": 35,
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "ACT Composite 33 34 35",
+    "where": "C9 p.9",
+    "source_type": "official_cds"
+   },
+   "admissions.cds_year": {
+    "value": "CDS 2025-26",
+    "url": "https://drive.google.com/file/d/1jFtuEmv7OPCTq9e8kD90I7CByERcMBty/view",
+    "quote": "Common Data Set 2025-2026",
+    "where": "p.1 header",
+    "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Notre Dame\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Notre Dame\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Notre Dame\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Notre Dame\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   }
+  }
  },
  "160755": {
   "name": "Tulane University of Louisiana",
@@ -193,6 +707,279 @@
     "quote": "Common Data Set 2025-2026",
     "where": "p.1 header",
     "source_type": "official_cds"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tulane University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.42 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tulane University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.42 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Tulane University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.42 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "161004": {
+  "name": "Bowdoin College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Bowdoin College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Bowdoin College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Bowdoin College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Bowdoin College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "161086": {
+  "name": "Colby College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colby College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=(blank); CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.8 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colby College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=(blank); CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.8 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colby College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=(blank); CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.8 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "163286": {
+  "name": "University of Maryland-College Park",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Maryland\": test policy=F; English proficiency=See website; Portfolio=(blank); TE=1; MR=(blank); CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.45",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Maryland\": test policy=F; English proficiency=See website; Portfolio=(blank); TE=1; MR=(blank); CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.45",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Maryland\": test policy=F; English proficiency=See website; Portfolio=(blank); TE=1; MR=(blank); CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.45",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "164465": {
+  "name": "Amherst College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Amherst College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.2",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Amherst College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.2",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Amherst College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.2",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Amherst College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.2",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Amherst College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.2",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "164580": {
+  "name": "Babson College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Babson College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Babson College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Babson College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Babson College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Babson College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Babson College\": test policy=N; English proficiency=C or D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "165015": {
+  "name": "Brandeis University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Brandeis University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Brandeis University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Brandeis University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Brandeis University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.5",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "167358": {
+  "name": "Northeastern University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northeastern University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.28",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northeastern University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.28",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northeastern University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.28",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northeastern University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.28",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Northeastern University\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.28",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -297,6 +1084,54 @@
     "quote": "SmithCollege_CDS_2025-2026.pdf",
     "where": "file name; see aid.cds_year note",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Smith College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.35 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Smith College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.35 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Smith College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.35 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Smith College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.35 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "168218": {
+  "name": "Wellesley College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wellesley College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.52 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wellesley College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.52 (row read without the fee-waiver column; blanks not used)",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -394,6 +1229,34 @@
     "quote": "Common Data Set 2025-2026   Williams College",
     "where": "p.1 header",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Williams College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.54",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Williams College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.54",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Williams College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.54",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Williams College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.54",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -498,6 +1361,68 @@
     "quote": "Common Data Set 2025-2026",
     "where": "p.1 title",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Minnesota Twin Cities\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Minnesota Twin Cities\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Minnesota Twin Cities\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Minnesota Twin Cities\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "179867": {
+  "name": "Washington University in St Louis",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Washington University in St. Louis\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Washington University in St. Louis\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Washington University in St. Louis\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Washington University in St. Louis\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -603,6 +1528,75 @@
     "quote": "Barnard_CDS_2025-2026.pdf",
     "where": "file name",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Barnard College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Barnard College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Barnard College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Barnard College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Barnard College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.3",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "190099": {
+  "name": "Colgate University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colgate University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.8",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colgate University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.8",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colgate University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.8",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Colgate University\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.8",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -700,6 +1694,313 @@
     "quote": "Hamilton College ",
     "where": "page banner",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Hamilton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.16",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Hamilton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.16",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Hamilton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.16",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Hamilton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.16",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Hamilton College\": test policy=N; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.16",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "195030": {
+  "name": "University of Rochester",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rochester\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rochester\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rochester\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rochester\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rochester\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Rochester\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.47",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "196097": {
+  "name": "Stony Brook University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"SUNY Stony Brook University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.39",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"SUNY Stony Brook University\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.39",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "198385": {
+  "name": "Davidson College",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Davidson College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.10",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Davidson College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.10",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Davidson College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.10",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Davidson College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.10",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Davidson College\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=2; MR=Y; CR=Y. Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.10",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "199120": {
+  "name": "University of North Carolina at Chapel Hill",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of North Carolina at Chapel Hill\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of North Carolina at Chapel Hill\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of North Carolina at Chapel Hill\": test policy=S; English proficiency=See website; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.46",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "199847": {
+  "name": "Wake Forest University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wake Forest University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wake Forest University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wake Forest University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Wake Forest University\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "201645": {
+  "name": "Case Western Reserve University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Case Western Reserve University\": test policy=N; English proficiency=See website; Portfolio=COL; TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.7",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Case Western Reserve University\": test policy=N; English proficiency=See website; Portfolio=COL; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.7",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Case Western Reserve University\": test policy=N; English proficiency=See website; Portfolio=COL; TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.7",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Case Western Reserve University\": test policy=N; English proficiency=See website; Portfolio=COL; TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.7",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "204796": {
+  "name": "Ohio State University-Main Campus",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The Ohio State University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.40",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The Ohio State University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.40",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The Ohio State University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.40",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "216597": {
+  "name": "Villanova University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Villanova University\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.50",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Villanova University\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.50",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Villanova University\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.50",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Villanova University\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.50",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Villanova University\": test policy=N; English proficiency=C or D or I or T or P; Portfolio=(blank); TE=1; MR=Y; CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.50",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -769,6 +2070,34 @@
     "quote": "Common Data Set 2025-2026",
     "where": "page header",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Texas at Austin\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.41",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Texas at Austin\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.41",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Texas at Austin\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.41",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"The University of Texas at Austin\": test policy=A; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.41",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -873,6 +2202,68 @@
     "quote": "Fall 2025 CDS FINAL.pdf",
     "where": "see aid.cds_year",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Middlebury College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.24",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Middlebury College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.24",
+    "source_type": "common_app_grid"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Middlebury College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: (CR) is Counselor Recommendation required",
+    "where": "ReqGrid.pdf p.24",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Middlebury College\": test policy=N; English proficiency=See website; Portfolio=SR; TE=2; MR=Y; CR=Y. Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.24",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "233921": {
+  "name": "Virginia Polytechnic Institute and State University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Virginia Tech\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Virginia Tech\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Virginia Tech\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Virginia Tech\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.51",
+    "source_type": "common_app_grid"
    }
   }
  },
@@ -970,6 +2361,27 @@
     "quote": "2025-2026 Common Data Set",
     "where": "page title",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Virginia\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Virginia\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=(blank). Key: (MR) is Mid Year Report required",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Virginia\": test policy=N; English proficiency=See website; Portfolio=SR; TE=1; MR=Y; CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
    }
   },
   "notes": [
@@ -1063,6 +2475,61 @@
     "quote": "UW-Madison 2025-2026 CDS (Excel)",
     "where": "xlsx link text",
     "source_type": "official_cds"
+   },
+   "reqs.teacher_recs": {
+    "value": 1,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Wisconsin-Madison\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Wisconsin-Madison\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Wisconsin-Madison\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=(blank); CR=(blank). Key: if English is not your first language, institutions require one of the exams listed (C Cambridge, D Duolingo, I IELTS, P PTE, T TOEFL)",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "optional",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"University of Wisconsin-Madison\": test policy=N; English proficiency=D or I or T; Portfolio=(blank); TE=1; MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.49",
+    "source_type": "common_app_grid"
+   }
+  }
+ },
+ "243780": {
+  "name": "Purdue University-Main Campus",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 0,
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Purdue University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: (TE) number of Teacher Evaluations required",
+    "where": "ReqGrid.pdf p.31",
+    "source_type": "common_app_grid"
+   },
+   "reqs.portfolio": {
+    "value": "none",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Purdue University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: If the college does not collect portfolios, the field is blank.",
+    "where": "ReqGrid.pdf p.31",
+    "source_type": "common_app_grid"
+   },
+   "reqs.tests": {
+    "value": "required",
+    "url": "https://content.commonapp.org/Files/ReqGrid.pdf",
+    "quote": "Common App 2026-27 first-year requirements grid (updated 09-25-2026), row \"Purdue University\": test policy=A; English proficiency=See website; Portfolio=(blank); TE=(blank); MR=(blank); CR=(blank). Key: A: Tests Always Required, F: Test Flexible, I: Tests Ignored, N: Tests Never Required, S: Tests Sometimes Required. This testing policy applies to US citizens/permanent residents; it may vary for non-US citizens",
+    "where": "ReqGrid.pdf p.31",
+    "source_type": "common_app_grid"
    }
   }
  }

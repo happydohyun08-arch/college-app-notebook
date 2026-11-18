@@ -1,4 +1,73 @@
 {
+ "110705": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 56913,
+   "room_board": 23974,
+   "merit_n": 137,
+   "merit_avg": 11666,
+   "intl_aid": true,
+   "intl_n": 74,
+   "intl_avg": 27537
+  },
+  "admissions": {
+   "admit_rate": 0.382,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "121345": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 72080,
+   "room_board": 23590,
+   "merit_n": 0,
+   "intl_aid": true,
+   "intl_n": 98,
+   "intl_avg": 86889
+  },
+  "admissions": {
+   "admit_rate": 0.071,
+   "sat25": 1490,
+   "sat75": 1550,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 2,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "130697": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 73128,
+   "room_board": 20668,
+   "merit_n": 3,
+   "merit_avg": 21454,
+   "intl_aid": true,
+   "intl_n": 91,
+   "intl_avg": 96349
+  },
+  "admissions": {
+   "admit_rate": 0.164,
+   "sat25": 1350,
+   "sat75": 1510,
+   "act25": 32,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "english": "required"
+  }
+ },
  "131496": {
   "aid": {
    "cds_year": "CDS 2025-26",
@@ -15,6 +84,39 @@
    "act25": 32,
    "act75": 35,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "required"
+  }
+ },
+ "152080": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 69794,
+   "room_board": 18992,
+   "merit_n": 43,
+   "merit_avg": 16616,
+   "intl_aid": true,
+   "intl_n": 363,
+   "intl_avg": 68653
+  },
+  "admissions": {
+   "admit_rate": 0.094,
+   "sat25": 1460,
+   "sat75": 1540,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 1,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
   }
  },
  "160755": {
@@ -35,6 +137,69 @@
    "act25": 32,
    "act75": 34,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "counselor_rec": "required",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "161004": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required"
+  }
+ },
+ "161086": {
+  "reqs": {
+   "teacher_recs": 2,
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "163286": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "counselor_rec": "required"
+  }
+ },
+ "164465": {
+  "reqs": {
+   "teacher_recs": 2,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "164580": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "165015": {
+  "reqs": {
+   "teacher_recs": 1,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "167358": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
   }
  },
  "167835": {
@@ -55,6 +220,18 @@
    "act25": 32,
    "act75": 34,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "168218": {
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required"
   }
  },
  "168342": {
@@ -74,6 +251,12 @@
    "act25": 33,
    "act75": 35,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
   }
  },
  "174066": {
@@ -94,6 +277,20 @@
    "act25": 26,
    "act75": 32,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 0,
+   "portfolio": "none",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "179867": {
+  "reqs": {
+   "teacher_recs": 1,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
   }
  },
  "189097": {
@@ -113,6 +310,21 @@
    "act25": 32,
    "act75": 35,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 2,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "190099": {
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
   }
  },
  "191515": {
@@ -132,6 +344,77 @@
    "act25": 33,
    "act75": 35,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "195030": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "196097": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none"
+  }
+ },
+ "198385": {
+  "reqs": {
+   "teacher_recs": 2,
+   "portfolio": "none",
+   "midyear": "required",
+   "counselor_rec": "required",
+   "english": "required"
+  }
+ },
+ "199120": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required"
+  }
+ },
+ "199847": {
+  "reqs": {
+   "teacher_recs": 0,
+   "portfolio": "none",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "201645": {
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "204796": {
+  "reqs": {
+   "teacher_recs": 0,
+   "portfolio": "none",
+   "tests": "required"
+  }
+ },
+ "216597": {
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "midyear": "required",
+   "english": "required",
+   "tests": "optional"
   }
  },
  "228778": {
@@ -147,6 +430,12 @@
   "admissions": {
    "admit_rate": 0.222,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 0,
+   "portfolio": "none",
+   "english": "required",
+   "tests": "required"
   }
  },
  "230959": {
@@ -167,6 +456,20 @@
    "act25": 33,
    "act75": 35,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 2,
+   "midyear": "required",
+   "counselor_rec": "required",
+   "tests": "optional"
+  }
+ },
+ "233921": {
+  "reqs": {
+   "teacher_recs": 0,
+   "portfolio": "none",
+   "english": "required",
+   "tests": "optional"
   }
  },
  "234076": {
@@ -186,6 +489,11 @@
    "sat75": 1510,
    "act25": 32,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 1,
+   "midyear": "required",
+   "tests": "optional"
   }
  },
  "240444": {
@@ -204,6 +512,19 @@
    "act25": 29,
    "act75": 33,
    "cds_year": "CDS 2025-26"
+  },
+  "reqs": {
+   "teacher_recs": 1,
+   "portfolio": "none",
+   "english": "required",
+   "tests": "optional"
+  }
+ },
+ "243780": {
+  "reqs": {
+   "teacher_recs": 0,
+   "portfolio": "none",
+   "tests": "required"
   }
  }
 }
