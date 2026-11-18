@@ -1,0 +1,1388 @@
+{
+ "110644": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 57270,
+   "room_board": 22125,
+   "merit_n": 319,
+   "merit_avg": 7912,
+   "intl_aid": true,
+   "intl_n": 195,
+   "intl_avg": 14753,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.443,
+   "sat25": null,
+   "sat75": null,
+   "act25": null,
+   "act75": null,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "110653": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": 212,
+   "merit_avg": 10513,
+   "intl_aid": true,
+   "intl_n": 52,
+   "intl_avg": 24494,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": "blind",
+   "english": null,
+   "interview": null,
+   "css_profile": "none",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://irap.uci.edu/files/2026/05/2025-26-CDS-PDF-Upload.pdf",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.289,
+   "sat25": null,
+   "sat75": null,
+   "act25": null,
+   "act75": null,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "110680": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 57261,
+   "room_board": 20443,
+   "merit_n": 409,
+   "merit_avg": 12722,
+   "intl_aid": true,
+   "intl_n": 214,
+   "intl_avg": 10290,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.286,
+   "sat25": null,
+   "sat75": null,
+   "act25": null,
+   "act75": null,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "110705": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "121345": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": "need_aware",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.pomona.edu/admissions/apply/international-applicants"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "130697": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "131496": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": "https://uadmissions.georgetown.edu/faq/faq-international-applicants/"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "152080": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "160755": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "161004": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 71740,
+   "room_board": 19560,
+   "merit_n": 17,
+   "merit_avg": 1000,
+   "intl_aid": true,
+   "intl_n": 102,
+   "intl_avg": 84882,
+   "intl_policy": "need_blind",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.bowdoin.edu/admissions/apply/international-students/index.html"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": "optional",
+   "english": null,
+   "interview": null,
+   "css_profile": "required",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://www.bowdoin.edu/ir/pdf/bowdoin-cds_2025-2026.pdf",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.068,
+   "sat25": 1470,
+   "sat75": 1540,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "161086": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "163286": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 42053,
+   "room_board": 16747,
+   "merit_n": 1276,
+   "merit_avg": 8565,
+   "intl_aid": false,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.45,
+   "sat25": 1410,
+   "sat75": 1520,
+   "act25": 32,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "164465": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": 1,
+   "merit_avg": 22017,
+   "intl_aid": true,
+   "intl_n": 204,
+   "intl_avg": 84590,
+   "intl_policy": "need_blind",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.amherst.edu/admission/apply/international"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": "required",
+   "interview": "not_offered",
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://www.amherst.edu/admission/apply/international",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.077,
+   "sat25": 1470,
+   "sat75": 1540,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "164580": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 60288,
+   "room_board": 23218,
+   "merit_n": 30,
+   "merit_avg": 30222,
+   "intl_aid": true,
+   "intl_n": 170,
+   "intl_avg": 46246,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.162,
+   "sat25": 1410,
+   "sat75": 1510,
+   "act25": 30,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "165015": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 74128,
+   "room_board": 20260,
+   "merit_n": 149,
+   "merit_avg": 18791,
+   "intl_aid": true,
+   "intl_n": 146,
+   "intl_avg": 57906,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.454,
+   "sat25": 1370,
+   "sat75": 1470,
+   "act25": 31,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "167358": {
+  "aid": {
+   "cds_year": "CDS 2024-25",
+   "tuition_fees": 69289,
+   "room_board": 22048,
+   "merit_n": 358,
+   "merit_avg": 16112,
+   "intl_aid": true,
+   "intl_n": 368,
+   "intl_avg": 24539,
+   "intl_policy": "need_aware",
+   "intl_full_need": false,
+   "merit_named": [
+    {
+     "name": "International Scholars Award",
+     "note": "Competitive merit award; incoming first-year international students are considered automatically through the admission application"
+    }
+   ],
+   "aid_url": "https://studentfinance.northeastern.edu/applying-for-aid/international-students/"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.052,
+   "sat25": 1450,
+   "sat75": 1520,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2024-25"
+  }
+ },
+ "167835": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.smith.edu/admission-aid/tuition-aid-applicants/international-applicants"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "168218": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": 4,
+   "merit_avg": 55716,
+   "intl_aid": true,
+   "intl_n": 71,
+   "intl_avg": 94053,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": "optional",
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://wellesley-college.files.svdcdn.com/production/administrative-departments/OIR/CDS_2025-2026-FINAL.pdf",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.148,
+   "sat25": 1460,
+   "sat75": 1540,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "168342": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "174066": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "179867": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 72722,
+   "room_board": 24272,
+   "merit_n": 44,
+   "merit_avg": 36250,
+   "intl_aid": true,
+   "intl_n": 30,
+   "intl_avg": 71003,
+   "intl_policy": null,
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://admissions.washu.edu/how-to-apply/first-year-international-applicants/"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.119,
+   "sat25": 1500,
+   "sat75": 1550,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "186380": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "189097": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": "need_aware",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://barnard.edu/admissions/internationalstudents"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "190099": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 73646,
+   "room_board": 18446,
+   "merit_n": 0,
+   "merit_avg": null,
+   "intl_aid": true,
+   "intl_n": 119,
+   "intl_avg": 86649,
+   "intl_policy": "need_aware",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.colgate.edu/admission-aid/apply/international-applicants"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": "required",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://www.colgate.edu/sites/default/files/2026-07/CDS-PDF-2025-2026.pdf",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.175,
+   "sat25": 1450,
+   "sat75": 1510,
+   "act25": 33,
+   "act75": 35,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "191515": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": "need_aware",
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": "https://www.hamilton.edu/admission/finaid/international"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "195030": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 73372,
+   "room_board": 21572,
+   "merit_n": 260,
+   "merit_avg": 16073,
+   "intl_aid": true,
+   "intl_n": 510,
+   "intl_avg": 40057,
+   "intl_policy": "need_aware",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://admissions.rochester.edu/applying/international-students/"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": "optional",
+   "css_profile": "required",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://www.rochester.edu/provost/wp-content/uploads/2026/06/CDS-2025-26-completed-for-web.xlsx",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.419,
+   "sat25": 1400,
+   "sat75": 1510,
+   "act25": 31,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "196097": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 34911,
+   "room_board": 18874,
+   "merit_n": 1520,
+   "merit_avg": 3672,
+   "intl_aid": true,
+   "intl_n": 968,
+   "intl_avg": 3799,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.482,
+   "sat25": 1350,
+   "sat75": 1470,
+   "act25": 30,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "198385": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 73990,
+   "room_board": 18780,
+   "merit_n": 19,
+   "merit_avg": 35495,
+   "intl_aid": true,
+   "intl_n": 201,
+   "intl_avg": 60298,
+   "intl_policy": "need_aware",
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.davidson.edu/admission-and-financial-aid/financial-aid/policies-resources"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": "optional",
+   "english": null,
+   "interview": null,
+   "css_profile": "required",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://www.davidson.edu/media/9718/download",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.126,
+   "sat25": 1410,
+   "sat75": 1500,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "199120": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 49601,
+   "room_board": 15870,
+   "merit_n": 275,
+   "merit_avg": 7233,
+   "intl_aid": false,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.167,
+   "sat25": 1400,
+   "sat75": 1530,
+   "act25": null,
+   "act75": null,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "199847": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 73170,
+   "room_board": 23430,
+   "merit_n": 54,
+   "merit_avg": 23168,
+   "intl_aid": true,
+   "intl_n": 40,
+   "intl_avg": 20528,
+   "intl_policy": null,
+   "intl_full_need": false,
+   "merit_named": [
+    {
+     "name": "Carswell, Gordon, Reynolds and Stamps Scholarships",
+     "note": "Full-cost merit awards that international students are eligible for"
+    }
+   ],
+   "aid_url": "https://admissions.wfu.edu/become-a-deacon/international/"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": "none",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://prod.wp.cdn.aws.wfu.edu/sites/202/2026/06/CDS_2025-2026-PDF_Template_WFU.pdf",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.208,
+   "sat25": 1420,
+   "sat75": 1490,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "201645": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 71410,
+   "room_board": null,
+   "merit_n": 662,
+   "merit_avg": 32560,
+   "intl_aid": true,
+   "intl_n": 275,
+   "intl_avg": 43200,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": "required",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://case.edu/financialaid/undergraduates/international-students",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.353,
+   "sat25": 1440,
+   "sat75": 1530,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "204796": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 45526,
+   "room_board": 16222,
+   "merit_n": 2508,
+   "merit_avg": 7336,
+   "intl_aid": true,
+   "intl_n": 9,
+   "intl_avg": 1944,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.492,
+   "sat25": 1300,
+   "sat75": 1440,
+   "act25": 27,
+   "act75": 32,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "216597": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 74014,
+   "room_board": 19354,
+   "merit_n": 119,
+   "merit_avg": 38439,
+   "intl_aid": true,
+   "intl_n": 82,
+   "intl_avg": 67815,
+   "intl_policy": "need_aware",
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": "https://www.villanova.edu/university/office-of-financial-assistance/financial-aid-process/international-students.html"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.281,
+   "sat25": 1420,
+   "sat75": 1490,
+   "act25": 32,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "228778": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "230959": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": true,
+   "merit_named": null,
+   "aid_url": "https://www.middlebury.edu/office-student-financial-services/common-questions"
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "233921": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 39576,
+   "room_board": 17220,
+   "merit_n": 1123,
+   "merit_avg": 3169,
+   "intl_aid": false,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.546,
+   "sat25": null,
+   "sat75": null,
+   "act25": 28,
+   "act75": 32,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "234076": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "236948": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 44640,
+   "room_board": 18405,
+   "merit_n": 628,
+   "merit_avg": 4399,
+   "intl_aid": false,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": "none",
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": "https://www.washington.edu/iads/files/docs/ipeds/common_data_set/cds_2025-2026_seattle.pdf",
+   "as_of": "2026-11-15"
+  },
+  "admissions": {
+   "admit_rate": 0.417,
+   "sat25": 1320,
+   "sat75": 1502,
+   "act25": 30,
+   "act75": 34,
+   "cds_year": "CDS 2025-26"
+  }
+ },
+ "240444": {
+  "aid": {
+   "cds_year": null,
+   "tuition_fees": null,
+   "room_board": null,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ },
+ "243780": {
+  "aid": {
+   "cds_year": "CDS 2025-26",
+   "tuition_fees": 32104,
+   "room_board": 16734,
+   "merit_n": null,
+   "merit_avg": null,
+   "intl_aid": null,
+   "intl_n": null,
+   "intl_avg": null,
+   "intl_policy": null,
+   "intl_full_need": null,
+   "merit_named": null,
+   "aid_url": null
+  },
+  "reqs": {
+   "teacher_recs": null,
+   "teacher_recs_max": null,
+   "counselor_rec": null,
+   "tests": null,
+   "english": null,
+   "interview": null,
+   "css_profile": null,
+   "portfolio": null,
+   "midyear": null,
+   "supplements": null,
+   "source_url": null,
+   "as_of": "2026-11-15"
+  }
+ }
+}

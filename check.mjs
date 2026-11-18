@@ -653,7 +653,9 @@ console.log("school field filter check passed");
 // 유학생 장학금: schools.json의 aid 값은 모두 research/aid-evidence 근거 줄과 같아야 한다 (CDS G·H, 학교 공식 페이지).
 {
   const aidEv = JSON.parse(fs.readFileSync(new URL("./research/aid-evidence-2026-11-11.json", import.meta.url), "utf8"));
-  const withAid = schools.filter((s) => s.aid);
+  const aidIds = new Set(aidEv.map((e) => e.id)), detail = JSON.parse(fs.readFileSync(new URL("./research/school-detail-2026-11-15.json", import.meta.url), "utf8"));
+  assert.ok(schools.filter((s) => s.aid).every((s) => aidIds.has(s.id) || detail[s.id]), "every aid block has evidence (61 + school-detail 40)");
+  const withAid = schools.filter((s) => s.aid && aidIds.has(s.id));
   assert.equal(withAid.length, 61, "aid block on every CDS row");
   assert.equal(new Set(aidEv.map((e) => e.id)).size, aidEv.length, "one evidence row per school");
   const money = (v, lo, hi) => v == null || (Number.isInteger(v) && v >= lo && v <= hi);
@@ -684,6 +686,70 @@ console.log("school field filter check passed");
   assert.match(STR.en.aid_note, /Common Data Set/);
   assert.match(STR.en.aid_note, /External scholarships are not included/);
   console.log(`aid check passed (${withAid.length} schools)`);
+}
+
+// 학교 40곳 상세: research/school-detail 값은 모두 school-detail-evidence 근거 줄과 같아야 한다 (CDS C·G·H, 학교 공식 페이지). schools.json은 건드리지 않는다.
+{
+  const det = JSON.parse(fs.readFileSync(new URL("./research/school-detail-2026-11-15.json", import.meta.url), "utf8"));
+  const dev = JSON.parse(fs.readFileSync(new URL("./research/school-detail-evidence-2026-11-15.json", import.meta.url), "utf8"));
+  const ids = Object.keys(det);
+  assert.equal(ids.length, 40, "40 schools");
+  assert.deepEqual(dev.map((e) => e.id).sort(), [...ids].sort(), "one evidence row per school");
+  const money = (v, lo, hi) => v == null || (Number.isInteger(v) && v >= lo && v <= hi);
+  const count = (v) => v == null || (Number.isInteger(v) && v >= 0 && v <= 50000);
+  const AID_KEYS = ["cds_year", "tuition_fees", "room_board", "merit_n", "merit_avg", "intl_aid", "intl_n", "intl_avg", "intl_policy", "intl_full_need", "merit_named", "aid_url"];
+  const REQ_KEYS = ["teacher_recs", "teacher_recs_max", "counselor_rec", "tests", "english", "interview", "css_profile", "portfolio", "midyear", "supplements", "source_url", "as_of"];
+  const RNO = ["required", "optional", "none"];
+  const ENUM = { tests: ["required", "optional", "blind"], interview: ["required", "optional", "not_offered"], counselor_rec: RNO, english: RNO, css_profile: RNO, portfolio: RNO, midyear: RNO };
+  let nAid = 0, nReq = 0, nAdm = 0;
+  for (const id of ids) {
+    const s = schools.find((x) => x.id === id), d = det[id], e = dev.find((x) => x.id === id);
+    assert.ok(s && (!s.aid || JSON.stringify(s.aid) === JSON.stringify(d.aid)) && e.name === s.name, `${id}: base row exists and is not one of the 61 detailed`);
+    assert.deepEqual(Object.keys(d.aid), AID_KEYS, `${s.name}: aid shape`);
+    const a = d.aid, c = e.cds;
+    assert.ok(money(a.tuition_fees, 5000, 120000) && money(a.room_board, 3000, 40000) && count(a.merit_n) && money(a.merit_avg, 100, 120000) && count(a.intl_n) && money(a.intl_avg, 100, 120000), `${s.name}: aid ranges`);
+    assert.ok([true, false, null].includes(a.intl_aid) && [true, false, null].includes(a.intl_full_need) && [null, "need_blind", "need_aware"].includes(a.intl_policy), `${s.name}: enums`);
+    if (a.intl_aid === false) assert.ok(a.intl_n == null && a.intl_avg == null, `${s.name}: no counts when aid is not available`);
+    if (c) {
+      assert.ok(/^https:\/\//.test(c.source) && c.source_type === "official_cds" && c.year === a.cds_year && /^CDS 20\d\d-\d\d$/.test(c.year) && c.raw.every((r) => r.startsWith("hive/agents/god/cds-raw/")), `${s.name}: official CDS source`);
+      for (const k of ["tuition_fees", "room_board", "merit_n", "merit_avg", "intl_aid", "intl_n", "intl_avg"]) {
+        assert.ok(c.values[k] && c.values[k].value === a[k] && c.values[k].where, `${s.name}: ${k} has evidence`);
+        if (a[k] != null) nAid++;
+      }
+      if (a.tuition_fees != null) assert.equal(a.tuition_fees, c.values.tuition.value + (c.values.required_fees.value ?? 0), `${s.name}: tuition+fees adds up`);
+    } else for (const k of ["cds_year", "tuition_fees", "room_board", "merit_n", "merit_avg", "intl_aid", "intl_n", "intl_avg"]) assert.equal(a[k], null, `${s.name}: no CDS, no ${k}`);
+    if (a.intl_policy != null || a.intl_full_need != null || a.merit_named != null || a.aid_url != null) {
+      const p = e.aid_page;
+      assert.ok(p && p.url === a.aid_url && /^https:\/\/[^/]*\.edu\//.test(p.url) && p.source_type === "official_aid_page" && p.quote.length > 20, `${s.name}: aid page evidence`);
+      assert.ok(p.intl_policy === a.intl_policy && p.intl_full_need === a.intl_full_need && JSON.stringify(p.merit_named) === JSON.stringify(a.merit_named), `${s.name}: aid page values match`);
+      if (a.intl_policy === "need_blind") assert.match(p.quote, /need[- ]blind/i, `${s.name}: quote states need-blind`);
+      if (a.intl_policy === "need_aware") assert.match(p.quote, /need[- ]aware|\bfactor\b|not need[- ]blind/i, `${s.name}: quote states need-aware`);
+      assert.ok(a.merit_named == null || a.merit_named.every((m) => m.name && m.note), `${s.name}: named merit`);
+    } else assert.equal(e.aid_page, null);
+    // 요건: 형태, 값의 범위, null이 아닌 값은 모두 공식 출처 인용
+    assert.deepEqual(Object.keys(d.reqs), REQ_KEYS, `${s.name}: reqs shape`);
+    assert.equal(d.reqs.as_of, "2026-11-15");
+    for (const k of ["teacher_recs", "teacher_recs_max", "supplements"]) assert.ok(d.reqs[k] == null || (Number.isInteger(d.reqs[k]) && d.reqs[k] >= 0 && d.reqs[k] <= 10), `${s.name}: ${k}`);
+    for (const [k, vals] of Object.entries(ENUM)) assert.ok(d.reqs[k] == null || vals.includes(d.reqs[k]), `${s.name}: ${k} value`);
+    for (const k of REQ_KEYS.slice(0, 10)) {
+      if (d.reqs[k] == null) { assert.ok(!e.reqs[k], `${s.name}: no stray ${k} evidence`); continue; }
+      const q = e.reqs[k]; nReq++;
+      assert.ok(q && q.value === d.reqs[k] && (/^https:\/\/[^/]*\.edu\//.test(q.url) || q.url === c?.source) && q.quote.length > 15, `${s.name}: ${k} has evidence`); // .edu 페이지 또는 그 학교 CDS 파일
+    }
+    assert.ok(d.reqs.source_url == null || Object.values(e.reqs).some((q) => q.url === d.reqs.source_url), `${s.name}: reqs source_url is one of the evidence urls`);
+    // 입학 통계: 기존 값(IPEDS Fall 2023 이하)보다 새 CDS일 때만
+    if (d.admissions) {
+      const m = d.admissions; nAdm++;
+      assert.deepEqual(Object.keys(m), ["admit_rate", "sat25", "sat75", "act25", "act75", "cds_year"], `${s.name}: admissions shape`);
+      assert.ok(c && m.cds_year === c.year && (/IPEDS Fall 20(1\d|2[0-3])/.test(s.year) || (s.year === m.cds_year && s.admit_rate === m.admit_rate)), `${s.name}: admissions newer than base row`);
+      assert.equal(m.admit_rate, Math.round((c.values.admitted.value / c.values.applied.value) * 1000) / 1000, `${s.name}: admit rate = admitted / applied`);
+      assert.ok(m.admit_rate > 0 && m.admit_rate <= 1 && c.values.applied.where && c.values.admitted.where);
+      assert.ok((m.sat25 == null || (m.sat25 >= 400 && m.sat25 <= m.sat75 && m.sat75 <= 1600)) && (m.act25 == null || (m.act25 >= 1 && m.act25 <= m.act75 && m.act75 <= 36)), `${s.name}: score ranges`);
+      for (const k of ["sat25", "sat75", "act25", "act75"]) assert.ok(c.values[k] && c.values[k].value === m[k] && c.values[k].where, `${s.name}: ${k} has evidence`);
+    }
+    assert.ok(e.cds || e.note, `${s.name}: missing CDS is explained`);
+  }
+  console.log(`school detail check passed (${ids.length} schools, ${nAid} CDS aid values, ${nReq} requirement values, ${nAdm} admissions refreshes)`);
 }
 
 // 로그인 시 드라이브와 맞추기: 묻지 않고 덮어쓰지 않는다

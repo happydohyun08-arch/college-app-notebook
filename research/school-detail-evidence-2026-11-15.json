@@ -1,0 +1,2214 @@
+[
+  {
+    "id": "179867",
+    "name": "Washington University in St Louis",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://washu.edu/app/uploads/2026/06/2025-2026-WashU-CDS.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/179867.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 71310,
+          "where": "G1 p.21"
+        },
+        "required_fees": {
+          "value": 1412,
+          "where": "G1 p.21"
+        },
+        "tuition_fees": {
+          "value": 72722,
+          "where": "G1 p.21"
+        },
+        "room_board": {
+          "value": 24272,
+          "where": "G1 p.21"
+        },
+        "merit_n": {
+          "value": 44,
+          "where": "H2A p.26"
+        },
+        "merit_avg": {
+          "value": 36250,
+          "where": "H2A p.26"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.28"
+        },
+        "intl_n": {
+          "value": 30,
+          "where": "H6 p.28"
+        },
+        "intl_avg": {
+          "value": 71003,
+          "where": "H6 p.28"
+        },
+        "applied": {
+          "value": 33283,
+          "where": "C1 p.7"
+        },
+        "admitted": {
+          "value": 3968,
+          "where": "C1 p.7"
+        },
+        "admit_rate": {
+          "value": 0.119,
+          "where": "C1 p.7: admitted / applied"
+        },
+        "sat25": {
+          "value": 1500,
+          "where": "C9 p.11"
+        },
+        "sat75": {
+          "value": 1550,
+          "where": "C9 p.11"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 p.11"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 p.11"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.washu.edu/how-to-apply/first-year-international-applicants/",
+      "source_type": "official_aid_page",
+      "quote": "WashU meets 100 percent of demonstrated need for all admitted undergraduate students.",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": null
+  },
+  {
+    "id": "152080",
+    "name": "University of Notre Dame",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "CDS 2025-26 not found on an official Notre Dame page (only third-party copies)"
+  },
+  {
+    "id": "131496",
+    "name": "Georgetown University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://uadmissions.georgetown.edu/faq/faq-international-applicants/",
+      "source_type": "official_aid_page",
+      "quote": "Admitted students who have requested financial aid, and who are not US citizens or permanent residents, will be considered for a limited number of need-based scholarship awards.",
+      "intl_policy": null,
+      "intl_full_need": null,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": "CDS 2025-26 is a Box share link that needs a browser"
+  },
+  {
+    "id": "234076",
+    "name": "University of Virginia-Main Campus",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "UVA CDS page refuses automated download (HTTP 403)"
+  },
+  {
+    "id": "199120",
+    "name": "University of North Carolina at Chapel Hill",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://oira.unc.edu/wp-content/uploads/sites/297/2026/06/CDS_UNCCH_2025-26_20260615.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/199120.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 47472,
+          "where": "G1 p.22 (page image; out-of-state tuition, room & board)"
+        },
+        "required_fees": {
+          "value": 2129,
+          "where": "G1 p.22 (page image; out-of-state tuition, room & board)"
+        },
+        "tuition_fees": {
+          "value": 49601,
+          "where": "G1 p.22 (page image; out-of-state tuition, room & board)"
+        },
+        "room_board": {
+          "value": 15870,
+          "where": "G1 p.22 (page image; out-of-state tuition, room & board)"
+        },
+        "merit_n": {
+          "value": 275,
+          "where": "H2A p.27"
+        },
+        "merit_avg": {
+          "value": 7233,
+          "where": "H2A p.27"
+        },
+        "intl_aid": {
+          "value": false,
+          "where": "H6 p.28 (not available checked)"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6 p.28 (not available checked)"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6 p.28 (not available checked)"
+        },
+        "applied": {
+          "value": 76247,
+          "where": "C1 p.9 (page image)"
+        },
+        "admitted": {
+          "value": 12751,
+          "where": "C1 p.9 (page image)"
+        },
+        "admit_rate": {
+          "value": 0.167,
+          "where": "C1 p.9 (page image): admitted / applied"
+        },
+        "sat25": {
+          "value": 1400,
+          "where": "C9 p.13"
+        },
+        "sat75": {
+          "value": 1530,
+          "where": "C9 p.13"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": "ACT composite row left blank in C9"
+  },
+  {
+    "id": "240444",
+    "name": "University of Wisconsin-Madison",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "CDS 2025-26 is a Box share link that needs a browser"
+  },
+  {
+    "id": "243780",
+    "name": "Purdue University-Main Campus",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.purdue.edu/idata/wp-content/uploads/2026/04/CDS-2025-2026.xlsx",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/243780.xlsx"
+      ],
+      "values": {
+        "tuition": {
+          "value": 31830,
+          "where": "G1 sheet 'CDS-G - PWL' rows 32/35/36 (nonresident, West Lafayette)"
+        },
+        "required_fees": {
+          "value": 274,
+          "where": "G1 sheet 'CDS-G - PWL' rows 32/35/36 (nonresident, West Lafayette)"
+        },
+        "tuition_fees": {
+          "value": 32104,
+          "where": "G1 sheet 'CDS-G - PWL' rows 32/35/36 (nonresident, West Lafayette)"
+        },
+        "room_board": {
+          "value": 16734,
+          "where": "G1 sheet 'CDS-G - PWL' rows 32/35/36 (nonresident, West Lafayette)"
+        },
+        "merit_n": {
+          "value": null,
+          "where": "H2A not used: section H covers West Lafayette, Indianapolis and Statewide together"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A not used: section H covers West Lafayette, Indianapolis and Statewide together"
+        },
+        "intl_aid": {
+          "value": null,
+          "where": "H6 boxes and counts blank in the xlsx"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6 boxes and counts blank in the xlsx"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6 boxes and counts blank in the xlsx"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": "Admissions not refreshed: the existing row (Data Digest Fall 2026) is newer than CDS 2025-26, and CDS section C mixes campuses"
+  },
+  {
+    "id": "236948",
+    "name": "University of Washington-Seattle Campus",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.washington.edu/iads/files/docs/ipeds/common_data_set/cds_2025-2026_seattle.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/236948.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 43494,
+          "where": "G1 p.29 (form fields; international tuition)"
+        },
+        "required_fees": {
+          "value": 1146,
+          "where": "G1 p.29 (form fields; international tuition)"
+        },
+        "tuition_fees": {
+          "value": 44640,
+          "where": "G1 p.29 (form fields; international tuition)"
+        },
+        "room_board": {
+          "value": 18405,
+          "where": "G1 p.29 (form fields; international tuition)"
+        },
+        "merit_n": {
+          "value": 628,
+          "where": "H2A p.34 (form fields)"
+        },
+        "merit_avg": {
+          "value": 4399,
+          "where": "H2A p.34 (form fields)"
+        },
+        "intl_aid": {
+          "value": false,
+          "where": "H6 p.35 (form field: not available)"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6 p.35 (form field: not available)"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6 p.35 (form field: not available)"
+        },
+        "applied": {
+          "value": 72933,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admitted": {
+          "value": 30446,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admit_rate": {
+          "value": 0.417,
+          "where": "C1 p.14 (form fields): admitted / applied"
+        },
+        "sat25": {
+          "value": 1320,
+          "where": "C9 p.19 (form fields)"
+        },
+        "sat75": {
+          "value": 1502,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act25": {
+          "value": 30,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.19 (form fields)"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {
+      "css_profile": {
+        "value": "none",
+        "url": "https://www.washington.edu/iads/files/docs/ipeds/common_data_set/cds_2025-2026_seattle.pdf",
+        "quote": "CDS H7 p.36 (form field): CSS PROFILE box for nonresident aid applicants not checked"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "110680",
+    "name": "University of California-San Diego",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://ir.ucsd.edu/stats/undergrad/CDS-2025-2026-Final4.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/110680.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 53472,
+          "where": "G1 p.18 (nonresident tuition)"
+        },
+        "required_fees": {
+          "value": 3789,
+          "where": "G1 p.18 (nonresident tuition)"
+        },
+        "tuition_fees": {
+          "value": 57261,
+          "where": "G1 p.18 (nonresident tuition)"
+        },
+        "room_board": {
+          "value": 20443,
+          "where": "G1 p.18 (nonresident tuition)"
+        },
+        "merit_n": {
+          "value": 409,
+          "where": "H2A p.22"
+        },
+        "merit_avg": {
+          "value": 12722,
+          "where": "H2A p.22"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.23"
+        },
+        "intl_n": {
+          "value": 214,
+          "where": "H6 p.23"
+        },
+        "intl_avg": {
+          "value": 10290,
+          "where": "H6 p.23"
+        },
+        "applied": {
+          "value": 136750,
+          "where": "C1 p.7"
+        },
+        "admitted": {
+          "value": 39054,
+          "where": "C1 p.7"
+        },
+        "admit_rate": {
+          "value": 0.286,
+          "where": "C1 p.7: admitted / applied"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": "UC campuses do not use SAT/ACT; C9 blank"
+  },
+  {
+    "id": "110705",
+    "name": "University of California-Santa Barbara",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "UCSB CDS 2025-26 not found on an official page"
+  },
+  {
+    "id": "110644",
+    "name": "University of California-Davis",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://aggiedata.ucdavis.edu/sites/g/files/dgvnsk1841/files/media/documents/CDS_UCD_0.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/110644.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 53472,
+          "where": "G1 p.20 (nonresident tuition)"
+        },
+        "required_fees": {
+          "value": 3798,
+          "where": "G1 p.20 (nonresident tuition)"
+        },
+        "tuition_fees": {
+          "value": 57270,
+          "where": "G1 p.20 (nonresident tuition)"
+        },
+        "room_board": {
+          "value": 22125,
+          "where": "G1 p.20 (nonresident tuition)"
+        },
+        "merit_n": {
+          "value": 319,
+          "where": "H2A p.24"
+        },
+        "merit_avg": {
+          "value": 7912,
+          "where": "H2A p.24"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.25"
+        },
+        "intl_n": {
+          "value": 195,
+          "where": "H6 p.25"
+        },
+        "intl_avg": {
+          "value": 14753,
+          "where": "H6 p.25"
+        },
+        "applied": {
+          "value": 102988,
+          "where": "C1 p.9"
+        },
+        "admitted": {
+          "value": 45674,
+          "where": "C1 p.9"
+        },
+        "admit_rate": {
+          "value": 0.443,
+          "where": "C1 p.9: admitted / applied"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": "UC campuses do not use SAT/ACT; C9 blank"
+  },
+  {
+    "id": "110653",
+    "name": "University of California-Irvine",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://irap.uci.edu/files/2026/05/2025-26-CDS-PDF-Upload.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/110653.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1 p.29 left blank"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1 p.29 left blank"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1 p.29 left blank"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1 p.29 left blank"
+        },
+        "merit_n": {
+          "value": 212,
+          "where": "H2A p.34 (form fields)"
+        },
+        "merit_avg": {
+          "value": 10513,
+          "where": "H2A p.34 (form fields)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35 (form fields; non-need box checked, 'not available' box also checked)"
+        },
+        "intl_n": {
+          "value": 52,
+          "where": "H6 p.35 (form fields; non-need box checked, 'not available' box also checked)"
+        },
+        "intl_avg": {
+          "value": 24494,
+          "where": "H6 p.35 (form fields; non-need box checked, 'not available' box also checked)"
+        },
+        "applied": {
+          "value": 124231,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admitted": {
+          "value": 35964,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admit_rate": {
+          "value": 0.289,
+          "where": "C1 p.14 (form fields): admitted / applied"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "act25": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        },
+        "act75": {
+          "value": null,
+          "where": "C9 ACT composite blank"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "blind",
+        "url": "https://irap.uci.edu/files/2026/05/2025-26-CDS-PDF-Upload.pdf",
+        "quote": "CDS C8 p.17 (form field): Standardized exams (SAT, ACT) are not used for admissions or scholarship decisions."
+      },
+      "css_profile": {
+        "value": "none",
+        "url": "https://irap.uci.edu/files/2026/05/2025-26-CDS-PDF-Upload.pdf",
+        "quote": "CDS H7 p.36 (form field): CSS PROFILE box for nonresident aid applicants not checked"
+      }
+    },
+    "note": "UCI checked both 'non-need aid available' and 'not available' in H6 but reported 52 recipients; recorded as available"
+  },
+  {
+    "id": "167358",
+    "name": "Northeastern University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2024-25",
+      "source": "https://uds.northeastern.edu/wp-content/uploads/2026/03/CDS-2024-25.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/167358.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 67990,
+          "where": "G1 p.16"
+        },
+        "required_fees": {
+          "value": 1299,
+          "where": "G1 p.16"
+        },
+        "tuition_fees": {
+          "value": 69289,
+          "where": "G1 p.16"
+        },
+        "room_board": {
+          "value": 22048,
+          "where": "G1 p.16"
+        },
+        "merit_n": {
+          "value": 358,
+          "where": "H2A p.19"
+        },
+        "merit_avg": {
+          "value": 16112,
+          "where": "H2A p.19"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.21 (page image)"
+        },
+        "intl_n": {
+          "value": 368,
+          "where": "H6 p.21 (page image)"
+        },
+        "intl_avg": {
+          "value": 24539,
+          "where": "H6 p.21 (page image)"
+        },
+        "applied": {
+          "value": 98425,
+          "where": "C1 p.7 (men+women+unknown; another gender blank)"
+        },
+        "admitted": {
+          "value": 5133,
+          "where": "C1 p.7 (men+women+unknown; another gender blank)"
+        },
+        "admit_rate": {
+          "value": 0.052,
+          "where": "C1 p.7 (men+women+unknown; another gender blank): admitted / applied"
+        },
+        "sat25": {
+          "value": 1450,
+          "where": "C9 p.9"
+        },
+        "sat75": {
+          "value": 1520,
+          "where": "C9 p.9"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 p.9"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 p.9"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://studentfinance.northeastern.edu/applying-for-aid/international-students/",
+      "source_type": "official_aid_page",
+      "quote": "Undergraduate admission to Northeastern is need-aware for all international students ... citizens or eligible noncitizens are eligible for federal or university-provided need-based financial aid, international students may qualify for merit-based scholarships.",
+      "intl_policy": "need_aware",
+      "intl_full_need": false,
+      "merit_named": [
+        {
+          "name": "International Scholars Award",
+          "note": "Competitive merit award; incoming first-year international students are considered automatically through the admission application"
+        }
+      ]
+    },
+    "reqs": {},
+    "note": "Latest CDS on the Northeastern page is 2024-25"
+  },
+  {
+    "id": "165015",
+    "name": "Brandeis University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.brandeis.edu/institutional-research/docs/cds-2025-26.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/165015.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 73080,
+          "where": "G1 p.29 (page image; first-year column)"
+        },
+        "required_fees": {
+          "value": 1048,
+          "where": "G1 p.29 (page image; first-year column)"
+        },
+        "tuition_fees": {
+          "value": 74128,
+          "where": "G1 p.29 (page image; first-year column)"
+        },
+        "room_board": {
+          "value": 20260,
+          "where": "G1 p.29 (page image; first-year column)"
+        },
+        "merit_n": {
+          "value": 149,
+          "where": "H2A p.34"
+        },
+        "merit_avg": {
+          "value": 18791,
+          "where": "H2A p.34"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35"
+        },
+        "intl_n": {
+          "value": 146,
+          "where": "H6 p.35"
+        },
+        "intl_avg": {
+          "value": 57906,
+          "where": "H6 p.35"
+        },
+        "applied": {
+          "value": 9756,
+          "where": "C1 p.14"
+        },
+        "admitted": {
+          "value": 4430,
+          "where": "C1 p.14"
+        },
+        "admit_rate": {
+          "value": 0.454,
+          "where": "C1 p.14: admitted / applied"
+        },
+        "sat25": {
+          "value": 1370,
+          "where": "C9 p.19"
+        },
+        "sat75": {
+          "value": 1470,
+          "where": "C9 p.19"
+        },
+        "act25": {
+          "value": 31,
+          "where": "C9 p.19"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.19"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": null
+  },
+  {
+    "id": "195030",
+    "name": "University of Rochester",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.rochester.edu/provost/wp-content/uploads/2026/06/CDS-2025-26-completed-for-web.xlsx",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/195030.xlsx"
+      ],
+      "values": {
+        "tuition": {
+          "value": 71750,
+          "where": "G1 sheet CDS-G rows 21/30/31"
+        },
+        "required_fees": {
+          "value": 1622,
+          "where": "G1 sheet CDS-G rows 21/30/31"
+        },
+        "tuition_fees": {
+          "value": 73372,
+          "where": "G1 sheet CDS-G rows 21/30/31"
+        },
+        "room_board": {
+          "value": 21572,
+          "where": "G1 sheet CDS-G rows 21/30/31"
+        },
+        "merit_n": {
+          "value": 260,
+          "where": "H2A sheet CDS-H rows 86-87"
+        },
+        "merit_avg": {
+          "value": 16073,
+          "where": "H2A sheet CDS-H rows 86-87"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 sheet CDS-H rows 121-127"
+        },
+        "intl_n": {
+          "value": 510,
+          "where": "H6 sheet CDS-H rows 121-127"
+        },
+        "intl_avg": {
+          "value": 40057,
+          "where": "H6 sheet CDS-H rows 121-127"
+        },
+        "applied": {
+          "value": 21609,
+          "where": "C1 sheet CDS-C rows 37-38"
+        },
+        "admitted": {
+          "value": 9056,
+          "where": "C1 sheet CDS-C rows 37-38"
+        },
+        "admit_rate": {
+          "value": 0.419,
+          "where": "C1 sheet CDS-C rows 37-38: admitted / applied"
+        },
+        "sat25": {
+          "value": 1400,
+          "where": "C9 sheet CDS-C row 179"
+        },
+        "sat75": {
+          "value": 1510,
+          "where": "C9 sheet CDS-C row 179"
+        },
+        "act25": {
+          "value": 31,
+          "where": "C9 sheet CDS-C row 182"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 sheet CDS-C row 182"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.rochester.edu/applying/international-students/",
+      "source_type": "official_aid_page",
+      "quote": "We are committed to meeting the full demonstrated need of all admitted students regardless of citizenship. ... Financial need is a contributing factor, however, for international applicants.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "css_profile": {
+        "value": "required",
+        "url": "https://www.rochester.edu/provost/wp-content/uploads/2026/06/CDS-2025-26-completed-for-web.xlsx",
+        "quote": "CDS H7 sheet CDS-H row 134: x CSS Profile (nonresident first-year aid applicants)"
+      },
+      "interview": {
+        "value": "optional",
+        "url": "https://admissions.rochester.edu/applying/international-students/",
+        "quote": "You can also sign up for an interview (highly recommended) and submit the following optional materials"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "201645",
+    "name": "Case Western Reserve University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://case.edu/ir/sites/default/files/2026-02/CDS%202025-26%20Adjusted%20Final.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/201645.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 71410,
+          "where": "G1 p.20 (page image; fees and food/housing blank, 2026-27 costs pending)"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1 p.20 (page image; fees and food/housing blank, 2026-27 costs pending)"
+        },
+        "tuition_fees": {
+          "value": 71410,
+          "where": "G1 p.20 (page image; fees and food/housing blank, 2026-27 costs pending)"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1 p.20 (page image; fees and food/housing blank, 2026-27 costs pending)"
+        },
+        "merit_n": {
+          "value": 662,
+          "where": "H2A p.23"
+        },
+        "merit_avg": {
+          "value": 32560,
+          "where": "H2A p.23"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.25"
+        },
+        "intl_n": {
+          "value": 275,
+          "where": "H6 p.25"
+        },
+        "intl_avg": {
+          "value": 43200,
+          "where": "H6 p.25"
+        },
+        "applied": {
+          "value": 39332,
+          "where": "C1 p.8"
+        },
+        "admitted": {
+          "value": 13890,
+          "where": "C1 p.8"
+        },
+        "admit_rate": {
+          "value": 0.353,
+          "where": "C1 p.8: admitted / applied"
+        },
+        "sat25": {
+          "value": 1440,
+          "where": "C9 p.11"
+        },
+        "sat75": {
+          "value": 1530,
+          "where": "C9 p.11"
+        },
+        "act25": {
+          "value": 32,
+          "where": "C9 p.11"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.11"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {
+      "css_profile": {
+        "value": "required",
+        "url": "https://case.edu/financialaid/undergraduates/international-students",
+        "quote": "The CSS Profile is required for the awarding of need-based institutional grant, loan and campus employment."
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "199847",
+    "name": "Wake Forest University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://prod.wp.cdn.aws.wfu.edu/sites/202/2026/06/CDS_2025-2026-PDF_Template_WFU.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/199847.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 71894,
+          "where": "G1 p.29 (form fields; room only 12,900 + board only 10,530)"
+        },
+        "required_fees": {
+          "value": 1276,
+          "where": "G1 p.29 (form fields; room only 12,900 + board only 10,530)"
+        },
+        "tuition_fees": {
+          "value": 73170,
+          "where": "G1 p.29 (form fields; room only 12,900 + board only 10,530)"
+        },
+        "room_board": {
+          "value": 23430,
+          "where": "G1 p.29 (form fields; room only 12,900 + board only 10,530)"
+        },
+        "merit_n": {
+          "value": 54,
+          "where": "H2A p.34 (form fields)"
+        },
+        "merit_avg": {
+          "value": 23168,
+          "where": "H2A p.34 (form fields)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35 (form fields)"
+        },
+        "intl_n": {
+          "value": 40,
+          "where": "H6 p.35 (form fields)"
+        },
+        "intl_avg": {
+          "value": 20528,
+          "where": "H6 p.35 (form fields)"
+        },
+        "applied": {
+          "value": 19600,
+          "where": "C1 p.13 (form fields; men+women+unknown, total row left 0)"
+        },
+        "admitted": {
+          "value": 4068,
+          "where": "C1 p.13 (form fields; men+women+unknown, total row left 0)"
+        },
+        "admit_rate": {
+          "value": 0.208,
+          "where": "C1 p.13 (form fields; men+women+unknown, total row left 0): admitted / applied"
+        },
+        "sat25": {
+          "value": 1420,
+          "where": "C9 p.19 (form fields)"
+        },
+        "sat75": {
+          "value": 1490,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act25": {
+          "value": 32,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.19 (form fields)"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://admissions.wfu.edu/become-a-deacon/international/",
+      "source_type": "official_aid_page",
+      "quote": "Regrettably, Wake Forest University does not offer any need-based financial aid to foreign national students. ... International students are eligible for most merit-based scholarships , including a number of our full-cost awards (Carswell, Gordon, Reynolds, and Stamps Scholarships).",
+      "intl_policy": null,
+      "intl_full_need": false,
+      "merit_named": [
+        {
+          "name": "Carswell, Gordon, Reynolds and Stamps Scholarships",
+          "note": "Full-cost merit awards that international students are eligible for"
+        }
+      ]
+    },
+    "reqs": {
+      "css_profile": {
+        "value": "none",
+        "url": "https://prod.wp.cdn.aws.wfu.edu/sites/202/2026/06/CDS_2025-2026-PDF_Template_WFU.pdf",
+        "quote": "CDS H7 p.36 (form field): CSS PROFILE box for nonresident aid applicants not checked"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "168342",
+    "name": "Williams College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "Williams CDS file is behind a Cloudflare browser check"
+  },
+  {
+    "id": "164465",
+    "name": "Amherst College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.amherst.edu/about/facts/common_data_sets/2025",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/164465-C.pdf",
+        "hive/agents/god/cds-raw/x2/164465-H.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "section G file blocked by a human-verification page"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "section G file blocked by a human-verification page"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "section G file blocked by a human-verification page"
+        },
+        "room_board": {
+          "value": null,
+          "where": "section G file blocked by a human-verification page"
+        },
+        "merit_n": {
+          "value": 1,
+          "where": "H2A section H file p.3"
+        },
+        "merit_avg": {
+          "value": 22017,
+          "where": "H2A section H file p.3"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 section H file p.4"
+        },
+        "intl_n": {
+          "value": 204,
+          "where": "H6 section H file p.4"
+        },
+        "intl_avg": {
+          "value": 84590,
+          "where": "H6 section H file p.4"
+        },
+        "applied": {
+          "value": 15819,
+          "where": "C1 section C file p.1 (page image)"
+        },
+        "admitted": {
+          "value": 1222,
+          "where": "C1 section C file p.1 (page image)"
+        },
+        "admit_rate": {
+          "value": 0.077,
+          "where": "C1 section C file p.1 (page image): admitted / applied"
+        },
+        "sat25": {
+          "value": 1470,
+          "where": "C9 section C file p.4"
+        },
+        "sat75": {
+          "value": 1540,
+          "where": "C9 section C file p.4"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 section C file p.4"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 section C file p.4"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://www.amherst.edu/admission/apply/international",
+      "source_type": "official_aid_page",
+      "quote": "As a college that follows a need-blind policy in admission for international students and awards financial aid to international students on the same need-basis as domestic students ... Amherst meets 100% of calculated financial need for all international students who are admitted to the college and apply for need-based financial aid.",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "interview": {
+        "value": "not_offered",
+        "url": "https://www.amherst.edu/admission/apply/international",
+        "quote": "Please note that Amherst College does not offer interviews for prospective students."
+      },
+      "english": {
+        "value": "required",
+        "url": "https://www.amherst.edu/admission/apply/international",
+        "quote": "For international applicants required to submit evidence of English language proficiency, the following minimum scores are strongly recommended"
+      }
+    },
+    "note": "Amherst publishes each CDS section as its own PDF; section G could not be downloaded"
+  },
+  {
+    "id": "121345",
+    "name": "Pomona College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.pomona.edu/admissions/apply/international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "Admissions is need-aware for international applicants, but we meet the full need of every admitted international student.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": "Pomona publishes the CDS only as Tableau views"
+  },
+  {
+    "id": "168218",
+    "name": "Wellesley College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://wellesley-college.files.svdcdn.com/production/administrative-departments/OIR/CDS_2025-2026-FINAL.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/168218.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": null,
+          "where": "G1 p.17 left blank (2026-27 costs pending)"
+        },
+        "required_fees": {
+          "value": null,
+          "where": "G1 p.17 left blank (2026-27 costs pending)"
+        },
+        "tuition_fees": {
+          "value": null,
+          "where": "G1 p.17 left blank (2026-27 costs pending)"
+        },
+        "room_board": {
+          "value": null,
+          "where": "G1 p.17 left blank (2026-27 costs pending)"
+        },
+        "merit_n": {
+          "value": 4,
+          "where": "H2A p.21"
+        },
+        "merit_avg": {
+          "value": 55716,
+          "where": "H2A p.21"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.22"
+        },
+        "intl_n": {
+          "value": 71,
+          "where": "H6 p.22"
+        },
+        "intl_avg": {
+          "value": 94053,
+          "where": "H6 p.22"
+        },
+        "applied": {
+          "value": 8506,
+          "where": "C1 p.7"
+        },
+        "admitted": {
+          "value": 1258,
+          "where": "C1 p.7"
+        },
+        "admit_rate": {
+          "value": 0.148,
+          "where": "C1 p.7: admitted / applied"
+        },
+        "sat25": {
+          "value": 1460,
+          "where": "C9 p.9 (page image)"
+        },
+        "sat75": {
+          "value": 1540,
+          "where": "C9 p.9 (page image)"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 p.10"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 p.10"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://wellesley-college.files.svdcdn.com/production/administrative-departments/OIR/CDS_2025-2026-FINAL.pdf",
+        "quote": "CDS C8A p.9 (page image): SAT or ACT — X under 'Not required for admission, but considered if submitted'"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "230959",
+    "name": "Middlebury College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.middlebury.edu/office-student-financial-services/common-questions",
+      "source_type": "official_aid_page",
+      "quote": "Middlebury meets the full need, as determined by Student Financial Services, of any accepted international student, with a combination of work, loans, and grants.",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": "Only a preliminary 2024-25 file without section H was found"
+  },
+  {
+    "id": "161004",
+    "name": "Bowdoin College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.bowdoin.edu/ir/pdf/bowdoin-cds_2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/161004.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 71070,
+          "where": "G1 p.27 (form fields)"
+        },
+        "required_fees": {
+          "value": 670,
+          "where": "G1 p.27 (form fields)"
+        },
+        "tuition_fees": {
+          "value": 71740,
+          "where": "G1 p.27 (form fields)"
+        },
+        "room_board": {
+          "value": 19560,
+          "where": "G1 p.27 (form fields)"
+        },
+        "merit_n": {
+          "value": 17,
+          "where": "H2A p.32 (form fields)"
+        },
+        "merit_avg": {
+          "value": 1000,
+          "where": "H2A p.32 (form fields)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.33 (form fields)"
+        },
+        "intl_n": {
+          "value": 102,
+          "where": "H6 p.33 (form fields)"
+        },
+        "intl_avg": {
+          "value": 84882,
+          "where": "H6 p.33 (form fields)"
+        },
+        "applied": {
+          "value": 14045,
+          "where": "C1 p.12 (form fields)"
+        },
+        "admitted": {
+          "value": 957,
+          "where": "C1 p.12 (form fields)"
+        },
+        "admit_rate": {
+          "value": 0.068,
+          "where": "C1 p.12 (form fields): admitted / applied"
+        },
+        "sat25": {
+          "value": 1470,
+          "where": "C9 p.17 (form fields)"
+        },
+        "sat75": {
+          "value": 1540,
+          "where": "C9 p.17 (form fields)"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 p.17 (form fields)"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 p.17 (form fields)"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://www.bowdoin.edu/admissions/apply/international-students/index.html",
+      "source_type": "official_aid_page",
+      "quote": "Bowdoin College is need blind for international students ... meets the full calculated need of every student we admit, including international students.",
+      "intl_policy": "need_blind",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.bowdoin.edu/ir/pdf/bowdoin-cds_2025-2026.pdf",
+        "quote": "CDS C8 p.15 (form field): SAT or ACT scores are not required for admission to Bowdoin."
+      },
+      "css_profile": {
+        "value": "required",
+        "url": "https://www.bowdoin.edu/ir/pdf/bowdoin-cds_2025-2026.pdf",
+        "quote": "CDS H7 p.34 (form field): CSS/Financial Aid PROFILE checked for nonresident first-year aid applicants"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "161086",
+    "name": "Colby College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "Colby site refuses automated download (HTTP 403)"
+  },
+  {
+    "id": "191515",
+    "name": "Hamilton College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.hamilton.edu/admission/finaid/international",
+      "source_type": "official_aid_page",
+      "quote": "the College is not need-blind in admission for non-U.S. ... This means that a family’s ability to pay may be a factor in the admission decision for international candidates",
+      "intl_policy": "need_aware",
+      "intl_full_need": null,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": "Hamilton CDS page shows no downloadable file"
+  },
+  {
+    "id": "198385",
+    "name": "Davidson College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.davidson.edu/media/9718/download",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/198385.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 73090,
+          "where": "G1 p.29 (form fields)"
+        },
+        "required_fees": {
+          "value": 900,
+          "where": "G1 p.29 (form fields)"
+        },
+        "tuition_fees": {
+          "value": 73990,
+          "where": "G1 p.29 (form fields)"
+        },
+        "room_board": {
+          "value": 18780,
+          "where": "G1 p.29 (form fields)"
+        },
+        "merit_n": {
+          "value": 19,
+          "where": "H2A p.34 (form fields)"
+        },
+        "merit_avg": {
+          "value": 35495,
+          "where": "H2A p.34 (form fields)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35 (form fields)"
+        },
+        "intl_n": {
+          "value": 201,
+          "where": "H6 p.35 (form fields)"
+        },
+        "intl_avg": {
+          "value": 60298,
+          "where": "H6 p.35 (form fields)"
+        },
+        "applied": {
+          "value": 8933,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admitted": {
+          "value": 1127,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admit_rate": {
+          "value": 0.126,
+          "where": "C1 p.14 (form fields): admitted / applied"
+        },
+        "sat25": {
+          "value": 1410,
+          "where": "C9 p.19 (form fields)"
+        },
+        "sat75": {
+          "value": 1500,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act25": {
+          "value": 32,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.19 (form fields)"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://www.davidson.edu/admission-and-financial-aid/financial-aid/policies-resources",
+      "source_type": "official_aid_page",
+      "quote": "Although not need blind for international students, Davidson commits to meeting 100 percent of the calculated financial need for those who are both admitted and eligible for support.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "tests": {
+        "value": "optional",
+        "url": "https://www.davidson.edu/media/9718/download",
+        "quote": "CDS C8 p.17 (form field): If applicant wants test scores to be considered as part of their admission application, scores must be submitted by the application due date."
+      },
+      "css_profile": {
+        "value": "required",
+        "url": "https://www.davidson.edu/media/9718/download",
+        "quote": "CDS H7 p.36 (form field): CSS/Financial Aid PROFILE checked for nonresident first-year aid applicants"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "189097",
+    "name": "Barnard College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://barnard.edu/admissions/internationalstudents",
+      "source_type": "official_aid_page",
+      "quote": "Barnard will meet 100% of the financial need of admitted students. ... We are need-aware for non-U.S.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": "Barnard CDS 2025-26 is linked only through Google Drive"
+  },
+  {
+    "id": "160755",
+    "name": "Tulane University of Louisiana",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "Tulane CDS files are Box share links that need a browser"
+  },
+  {
+    "id": "174066",
+    "name": "University of Minnesota-Twin Cities",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "UMN CDS file is behind a Cloudflare browser check"
+  },
+  {
+    "id": "204796",
+    "name": "Ohio State University-Main Campus",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://irp.osu.edu/sites/default/files/documents/2026/03/CDS-2025-2026-OSU-Columbus-Campus.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/204796.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 44430,
+          "where": "G1 p.29 (page image; nonresident, undergraduates column — first-year column blank)"
+        },
+        "required_fees": {
+          "value": 1096,
+          "where": "G1 p.29 (page image; nonresident, undergraduates column — first-year column blank)"
+        },
+        "tuition_fees": {
+          "value": 45526,
+          "where": "G1 p.29 (page image; nonresident, undergraduates column — first-year column blank)"
+        },
+        "room_board": {
+          "value": 16222,
+          "where": "G1 p.29 (page image; nonresident, undergraduates column — first-year column blank)"
+        },
+        "merit_n": {
+          "value": 2508,
+          "where": "H2A p.34 (page image)"
+        },
+        "merit_avg": {
+          "value": 7336,
+          "where": "H2A p.34 (page image)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35 (page image)"
+        },
+        "intl_n": {
+          "value": 9,
+          "where": "H6 p.35 (page image)"
+        },
+        "intl_avg": {
+          "value": 1944,
+          "where": "H6 p.35 (page image)"
+        },
+        "applied": {
+          "value": 81392,
+          "where": "C1 p.14 (page image)"
+        },
+        "admitted": {
+          "value": 40047,
+          "where": "C1 p.14 (page image)"
+        },
+        "admit_rate": {
+          "value": 0.492,
+          "where": "C1 p.14 (page image): admitted / applied"
+        },
+        "sat25": {
+          "value": 1300,
+          "where": "C9 p.19 (page image)"
+        },
+        "sat75": {
+          "value": 1440,
+          "where": "C9 p.19 (page image)"
+        },
+        "act25": {
+          "value": 27,
+          "where": "C9 p.19 (page image)"
+        },
+        "act75": {
+          "value": 32,
+          "where": "C9 p.19 (page image)"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": null
+  },
+  {
+    "id": "186380",
+    "name": "Rutgers University-New Brunswick",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "Rutgers CDS 2025-26 file not found on oirap.rutgers.edu"
+  },
+  {
+    "id": "163286",
+    "name": "University of Maryland-College Park",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.irpa.umd.edu/InstitutionalData/CommonDataSet/CDS_2025-2026.xlsx",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/163286.xlsx"
+      ],
+      "values": {
+        "tuition": {
+          "value": 40253,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident)"
+        },
+        "required_fees": {
+          "value": 1800,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident)"
+        },
+        "tuition_fees": {
+          "value": 42053,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident)"
+        },
+        "room_board": {
+          "value": 16747,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident)"
+        },
+        "merit_n": {
+          "value": 1276,
+          "where": "H2A sheet CDS-H rows 86-87"
+        },
+        "merit_avg": {
+          "value": 8565,
+          "where": "H2A sheet CDS-H rows 86-87"
+        },
+        "intl_aid": {
+          "value": false,
+          "where": "H6 sheet CDS-H row 123 (not available: X)"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "H6 sheet CDS-H row 123 (not available: X)"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "H6 sheet CDS-H row 123 (not available: X)"
+        },
+        "applied": {
+          "value": 67101,
+          "where": "C1 sheet CDS-C rows 37-38"
+        },
+        "admitted": {
+          "value": 30218,
+          "where": "C1 sheet CDS-C rows 37-38"
+        },
+        "admit_rate": {
+          "value": 0.45,
+          "where": "C1 sheet CDS-C rows 37-38: admitted / applied"
+        },
+        "sat25": {
+          "value": 1410,
+          "where": "C9 sheet CDS-C row 180"
+        },
+        "sat75": {
+          "value": 1520,
+          "where": "C9 sheet CDS-C row 180"
+        },
+        "act25": {
+          "value": 32,
+          "where": "C9 sheet CDS-C row 183"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 sheet CDS-C row 183"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": null
+  },
+  {
+    "id": "233921",
+    "name": "Virginia Polytechnic Institute and State University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://aie.vt.edu/content/dam/aie_vt_edu/common-data-set/25-26/2025-2026-CDS.xlsx",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/233921.xlsx"
+      ],
+      "values": {
+        "tuition": {
+          "value": 36427,
+          "where": "Answer Sheet G.106/G.111/G.113+G.114 (housing 10,394 + food 6,826; combined line blank)"
+        },
+        "required_fees": {
+          "value": 3149,
+          "where": "Answer Sheet G.106/G.111/G.113+G.114 (housing 10,394 + food 6,826; combined line blank)"
+        },
+        "tuition_fees": {
+          "value": 39576,
+          "where": "Answer Sheet G.106/G.111/G.113+G.114 (housing 10,394 + food 6,826; combined line blank)"
+        },
+        "room_board": {
+          "value": 17220,
+          "where": "Answer Sheet G.106/G.111/G.113+G.114 (housing 10,394 + food 6,826; combined line blank)"
+        },
+        "merit_n": {
+          "value": 1123,
+          "where": "Answer Sheet H.2A01/H.2A02 (average 3,169.33 rounded)"
+        },
+        "merit_avg": {
+          "value": 3169,
+          "where": "Answer Sheet H.2A01/H.2A02 (average 3,169.33 rounded)"
+        },
+        "intl_aid": {
+          "value": false,
+          "where": "Answer Sheet H.603 = X (not available)"
+        },
+        "intl_n": {
+          "value": null,
+          "where": "Answer Sheet H.603 = X (not available)"
+        },
+        "intl_avg": {
+          "value": null,
+          "where": "Answer Sheet H.603 = X (not available)"
+        },
+        "applied": {
+          "value": 57755,
+          "where": "Answer Sheet C.116/C.117"
+        },
+        "admitted": {
+          "value": 31515,
+          "where": "Answer Sheet C.116/C.117"
+        },
+        "admit_rate": {
+          "value": 0.546,
+          "where": "Answer Sheet C.116/C.117: admitted / applied"
+        },
+        "sat25": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "sat75": {
+          "value": null,
+          "where": "C9 SAT composite blank"
+        },
+        "act25": {
+          "value": 28,
+          "where": "Answer Sheet C.914/C.916"
+        },
+        "act75": {
+          "value": 32,
+          "where": "Answer Sheet C.914/C.916"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": "SAT composite percentiles (C.905-C.907) left blank"
+  },
+  {
+    "id": "228778",
+    "name": "The University of Texas at Austin",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "UT Austin CDS is a Box share link that needs a browser"
+  },
+  {
+    "id": "216597",
+    "name": "Villanova University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.villanova.edu/content/dam/villanova/provost/decision_support/CDS-2025-2026-v3.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/216597.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 72990,
+          "where": "G1 p.20"
+        },
+        "required_fees": {
+          "value": 1024,
+          "where": "G1 p.20"
+        },
+        "tuition_fees": {
+          "value": 74014,
+          "where": "G1 p.20"
+        },
+        "room_board": {
+          "value": 19354,
+          "where": "G1 p.20"
+        },
+        "merit_n": {
+          "value": 119,
+          "where": "H2A p.24"
+        },
+        "merit_avg": {
+          "value": 38439,
+          "where": "H2A p.24"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 pp.25-26"
+        },
+        "intl_n": {
+          "value": 82,
+          "where": "H6 pp.25-26"
+        },
+        "intl_avg": {
+          "value": 67815,
+          "where": "H6 pp.25-26"
+        },
+        "applied": {
+          "value": 25841,
+          "where": "C1 p.8"
+        },
+        "admitted": {
+          "value": 7272,
+          "where": "C1 p.8"
+        },
+        "admit_rate": {
+          "value": 0.281,
+          "where": "C1 p.8: admitted / applied"
+        },
+        "sat25": {
+          "value": 1420,
+          "where": "C9 p.11"
+        },
+        "sat75": {
+          "value": 1490,
+          "where": "C9 p.11"
+        },
+        "act25": {
+          "value": 32,
+          "where": "C9 p.11"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.11"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://www.villanova.edu/university/office-of-financial-assistance/financial-aid-process/international-students.html",
+      "source_type": "official_aid_page",
+      "quote": "Admission for first-year international students is need-aware, which means your family's ability to pay for your education may be a factor in your admission decision.",
+      "intl_policy": "need_aware",
+      "intl_full_need": null,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": null
+  },
+  {
+    "id": "167835",
+    "name": "Smith College",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": {
+      "url": "https://www.smith.edu/admission-aid/tuition-aid-applicants/international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "The college will meet the full documented need, as determined by college policy, of all admitted students who apply for aid by the published deadlines. ... International students who do not apply for aid prior to admission are not eligible to receive institutional aid at Smith at any time",
+      "intl_policy": null,
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {},
+    "note": "Smith CDS is linked only through Google Drive"
+  },
+  {
+    "id": "190099",
+    "name": "Colgate University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.colgate.edu/sites/default/files/2026-07/CDS-PDF-2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/190099.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 73206,
+          "where": "G1 p.29 (form fields)"
+        },
+        "required_fees": {
+          "value": 440,
+          "where": "G1 p.29 (form fields)"
+        },
+        "tuition_fees": {
+          "value": 73646,
+          "where": "G1 p.29 (form fields)"
+        },
+        "room_board": {
+          "value": 18446,
+          "where": "G1 p.29 (form fields)"
+        },
+        "merit_n": {
+          "value": 0,
+          "where": "H2A p.34 (row N = 0)"
+        },
+        "merit_avg": {
+          "value": null,
+          "where": "H2A p.34 (row N = 0)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35 (form fields)"
+        },
+        "intl_n": {
+          "value": 119,
+          "where": "H6 p.35 (form fields)"
+        },
+        "intl_avg": {
+          "value": 86649,
+          "where": "H6 p.35 (form fields)"
+        },
+        "applied": {
+          "value": 17310,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admitted": {
+          "value": 3030,
+          "where": "C1 p.14 (form fields)"
+        },
+        "admit_rate": {
+          "value": 0.175,
+          "where": "C1 p.14 (form fields): admitted / applied"
+        },
+        "sat25": {
+          "value": 1450,
+          "where": "C9 p.19 (form fields)"
+        },
+        "sat75": {
+          "value": 1510,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act25": {
+          "value": 33,
+          "where": "C9 p.19 (form fields)"
+        },
+        "act75": {
+          "value": 35,
+          "where": "C9 p.19 (form fields)"
+        }
+      }
+    },
+    "aid_page": {
+      "url": "https://www.colgate.edu/admission-aid/apply/international-applicants",
+      "source_type": "official_aid_page",
+      "quote": "meeting 100% of every international student’s demonstrated financial need ... Need-aware admissions : We consider financial need during the review process for all applicants.",
+      "intl_policy": "need_aware",
+      "intl_full_need": true,
+      "merit_named": null
+    },
+    "reqs": {
+      "css_profile": {
+        "value": "required",
+        "url": "https://www.colgate.edu/sites/default/files/2026-07/CDS-PDF-2025-2026.pdf",
+        "quote": "CDS H7 p.36 (form field): CSS/Financial Aid PROFILE checked for nonresident first-year aid applicants"
+      }
+    },
+    "note": null
+  },
+  {
+    "id": "130697",
+    "name": "Wesleyan University",
+    "checked_at": "2026-11-18",
+    "cds": null,
+    "aid_page": null,
+    "reqs": {},
+    "note": "Wesleyan CDS 2025-26 file not found on the IR page"
+  },
+  {
+    "id": "164580",
+    "name": "Babson College",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.babson.edu/media/babson/assets/rankings/CDS-2025-2026.pdf",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/164580.pdf"
+      ],
+      "values": {
+        "tuition": {
+          "value": 60288,
+          "where": "G1 p.29 (page image)"
+        },
+        "required_fees": {
+          "value": 0,
+          "where": "G1 p.29 (page image)"
+        },
+        "tuition_fees": {
+          "value": 60288,
+          "where": "G1 p.29 (page image)"
+        },
+        "room_board": {
+          "value": 23218,
+          "where": "G1 p.29 (page image)"
+        },
+        "merit_n": {
+          "value": 30,
+          "where": "H2A p.34 (page image)"
+        },
+        "merit_avg": {
+          "value": 30222,
+          "where": "H2A p.34 (page image)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 p.35 (page image)"
+        },
+        "intl_n": {
+          "value": 170,
+          "where": "H6 p.35 (page image)"
+        },
+        "intl_avg": {
+          "value": 46246,
+          "where": "H6 p.35 (page image)"
+        },
+        "applied": {
+          "value": 10552,
+          "where": "C1 p.14 (page image)"
+        },
+        "admitted": {
+          "value": 1705,
+          "where": "C1 p.14 (page image)"
+        },
+        "admit_rate": {
+          "value": 0.162,
+          "where": "C1 p.14 (page image): admitted / applied"
+        },
+        "sat25": {
+          "value": 1410,
+          "where": "C9 p.19 (page image)"
+        },
+        "sat75": {
+          "value": 1510,
+          "where": "C9 p.19 (page image)"
+        },
+        "act25": {
+          "value": 30,
+          "where": "C9 p.19 (page image)"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 p.19 (page image)"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": null
+  },
+  {
+    "id": "196097",
+    "name": "Stony Brook University",
+    "checked_at": "2026-11-18",
+    "cds": {
+      "year": "CDS 2025-26",
+      "source": "https://www.stonybrook.edu/irpe/_media/Common_data_sets/CDS_2025-2026.xlsx",
+      "source_type": "official_cds",
+      "raw": [
+        "hive/agents/god/cds-raw/x2/196097.xlsx"
+      ],
+      "values": {
+        "tuition": {
+          "value": 31050,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident; fees 3,860.50 rounded to the dollar)"
+        },
+        "required_fees": {
+          "value": 3861,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident; fees 3,860.50 rounded to the dollar)"
+        },
+        "tuition_fees": {
+          "value": 34911,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident; fees 3,860.50 rounded to the dollar)"
+        },
+        "room_board": {
+          "value": 18874,
+          "where": "G1 sheet CDS-G rows 27/30/31 (nonresident; fees 3,860.50 rounded to the dollar)"
+        },
+        "merit_n": {
+          "value": 1520,
+          "where": "H2A sheet CDS-H rows 86-87 (average 3,671.95 rounded)"
+        },
+        "merit_avg": {
+          "value": 3672,
+          "where": "H2A sheet CDS-H rows 86-87 (average 3,671.95 rounded)"
+        },
+        "intl_aid": {
+          "value": true,
+          "where": "H6 sheet CDS-H rows 122-127 (non-need box x; average 3,798.83 rounded)"
+        },
+        "intl_n": {
+          "value": 968,
+          "where": "H6 sheet CDS-H rows 122-127 (non-need box x; average 3,798.83 rounded)"
+        },
+        "intl_avg": {
+          "value": 3799,
+          "where": "H6 sheet CDS-H rows 122-127 (non-need box x; average 3,798.83 rounded)"
+        },
+        "applied": {
+          "value": 64197,
+          "where": "C1 sheet CDS-C rows 11-18 (men+women+unknown; equals residency rows 37-38)"
+        },
+        "admitted": {
+          "value": 30930,
+          "where": "C1 sheet CDS-C rows 11-18 (men+women+unknown; equals residency rows 37-38)"
+        },
+        "admit_rate": {
+          "value": 0.482,
+          "where": "C1 sheet CDS-C rows 11-18 (men+women+unknown; equals residency rows 37-38): admitted / applied"
+        },
+        "sat25": {
+          "value": 1350,
+          "where": "C9 sheet CDS-C row 179"
+        },
+        "sat75": {
+          "value": 1470,
+          "where": "C9 sheet CDS-C row 179"
+        },
+        "act25": {
+          "value": 30,
+          "where": "C9 sheet CDS-C row 182"
+        },
+        "act75": {
+          "value": 34,
+          "where": "C9 sheet CDS-C row 182"
+        }
+      }
+    },
+    "aid_page": null,
+    "reqs": {},
+    "note": null
+  }
+]
