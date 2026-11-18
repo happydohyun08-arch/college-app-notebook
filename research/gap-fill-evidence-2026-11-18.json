@@ -346,6 +346,36 @@
    }
   }
  },
+ "130794": {
+  "name": "Yale University",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.teacher_recs": {
+    "value": 2,
+    "url": "https://admissions.yale.edu/requirements",
+    "quote": "Letters of recommendation from two teachers and one counselor",
+    "where": "first-year requirements list",
+    "source_type": "official_admissions_page"
+   },
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://admissions.yale.edu/requirements",
+    "quote": "Also request a letter from your school’s college counselor. If your school does not have someone serving as a college counselor, please request a recommendation from a school administrator.",
+    "where": "first-year requirements list",
+    "source_type": "official_admissions_page"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://admissions.yale.edu/requirements",
+    "quote": "High school seniors should also submit a Mid-Year Report with official grades from the first marking period of senior year once those grades are available - typically January or February.",
+    "where": "transcript section",
+    "source_type": "official_admissions_page"
+   }
+  },
+  "notes": [
+   "reqs.supplements: Yale asks several short answers plus an essay; count not stated as one number, left null"
+  ]
+ },
  "131496": {
   "name": "Georgetown University",
   "checked_at": "2026-11-18",
@@ -473,6 +503,33 @@
   "notes": [
    "aid.merit_n/merit_avg: CDS 2025-26 H2A line n and o are blank (no figure printed), left null"
   ]
+ },
+ "144050": {
+  "name": "University of Chicago",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.counselor_rec": {
+    "value": "required",
+    "url": "https://collegeadmissions.uchicago.edu/apply/application/required-materials/",
+    "quote": "Secondary School Report and School Counselor Recommendation ¦ The Secondary School Report provides us with an overview of your high school academic record.",
+    "where": "'Required Materials' page, section heading",
+    "source_type": "official_admissions_page"
+   },
+   "reqs.midyear": {
+    "value": "required",
+    "url": "https://collegeadmissions.uchicago.edu/apply/application/required-materials/",
+    "quote": "Please have your high school counselor submit a midyear report with grades or a transcript for your first semester or first trimester by February 1 of the year you have applied",
+    "where": "'Required Materials' page, Mid-year Report section",
+    "source_type": "official_admissions_page"
+   },
+   "reqs.supplements": {
+    "value": 2,
+    "url": "https://collegeadmissions.uchicago.edu/apply/application/required-materials/",
+    "quote": "The University of Chicago Supplement requires one extended essay of your choice from our list of several prompts and one short essay on why you would like to attend the University of Chicago.",
+    "where": "'Required Materials' page, Supplement section",
+    "source_type": "official_admissions_page"
+   }
+  }
  },
  "152080": {
   "name": "University of Notre Dame",
@@ -790,7 +847,10 @@
     "where": "ReqGrid.pdf p.8 (row read without the fee-waiver column; blanks not used)",
     "source_type": "common_app_grid"
    }
-  }
+  },
+  "notes": [
+   "No CDS on colby.edu (site search 2026-11-18 finds none); aid/admissions CDS fields left null"
+  ]
  },
  "163286": {
   "name": "University of Maryland-College Park",
@@ -1260,6 +1320,26 @@
    }
   }
  },
+ "170976": {
+  "name": "University of Michigan-Ann Arbor",
+  "checked_at": "2026-11-18",
+  "fields": {
+   "reqs.counselor_rec": {
+    "value": "optional",
+    "url": "https://admissions.umich.edu/apply/international-applicants/requirements-deadlines",
+    "quote": "Submit a Counselor Recommendation (encouraged, but not required).",
+    "where": "international applicants requirements list",
+    "source_type": "official_admissions_page"
+   },
+   "reqs.english": {
+    "value": "required",
+    "url": "https://admissions.umich.edu/apply/international-applicants/requirements-deadlines",
+    "quote": "If you are a speaker of English as a second language, you will need to submit a test score that demonstrates your English proficiency (e.g., TOEFL, IELTS, MET, etc.).",
+    "where": "international applicants requirements list",
+    "source_type": "official_admissions_page"
+   }
+  }
+ },
  "174066": {
   "name": "University of Minnesota-Twin Cities",
   "checked_at": "2026-11-18",
@@ -1431,7 +1511,8 @@
   "checked_at": "2026-11-18",
   "fields": {},
   "notes": [
-   "No 2025-26 CDS: oirap.rutgers.edu/ReportingCommonDataSet.html lists New Brunswick files only through 2023-2024 (checked 2026-11-18)"
+   "No 2025-26 CDS: oirap.rutgers.edu/ReportingCommonDataSet.html lists New Brunswick files only through 2023-2024 (checked 2026-11-18)",
+   "reqs: Common App grid row reads 'Rutgers University' without the campus, so not used"
   ]
  },
  "189097": {
@@ -1732,6 +1813,14 @@
    }
   }
  },
+ "193900": {
+  "name": "New York University",
+  "checked_at": "2026-11-18",
+  "fields": {},
+  "notes": [
+   "reqs counselor_rec/english/interview/midyear: NYU first-year page (nyu.edu/admissions/.../all-freshmen-applicants.html) gave no statement on these; left null"
+  ]
+ },
  "195030": {
   "name": "University of Rochester",
   "checked_at": "2026-11-18",
@@ -2003,6 +2092,14 @@
     "source_type": "common_app_grid"
    }
   }
+ },
+ "223232": {
+  "name": "Baylor University",
+  "checked_at": "2026-11-18",
+  "fields": {},
+  "notes": [
+   "reqs.tests: Baylor's international page lists 'Official SAT/ACT Scores (Optional)' but also a 'Majors Requiring Test Scores' list, so tests stays null; english/counselor/midyear sections were collapsed headings with no text"
+  ]
  },
  "228778": {
   "name": "The University of Texas at Austin",

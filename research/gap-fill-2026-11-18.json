@@ -68,6 +68,13 @@
    "english": "required"
   }
  },
+ "130794": {
+  "reqs": {
+   "teacher_recs": 2,
+   "counselor_rec": "required",
+   "midyear": "required"
+  }
+ },
  "131496": {
   "aid": {
    "cds_year": "CDS 2025-26",
@@ -91,6 +98,13 @@
    "midyear": "required",
    "counselor_rec": "required",
    "tests": "required"
+  }
+ },
+ "144050": {
+  "reqs": {
+   "counselor_rec": "required",
+   "midyear": "required",
+   "supplements": 2
   }
  },
  "152080": {
@@ -257,6 +271,12 @@
    "midyear": "required",
    "counselor_rec": "required",
    "tests": "optional"
+  }
+ },
+ "170976": {
+  "reqs": {
+   "counselor_rec": "optional",
+   "english": "required"
   }
  },
  "174066": {
